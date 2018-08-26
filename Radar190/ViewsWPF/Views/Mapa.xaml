@@ -18,6 +18,6 @@
         <Button Content="Estatisticas" HorizontalAlignment="Left" Margin="0,194,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
         <Button Content="Fale Conosco" HorizontalAlignment="Left" Margin="0,259,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
         <TextBox HorizontalAlignment="Center" Height="79" Margin="303,35,170,0" TextWrapping="Wrap" Text="Confira o índice de Crimes em sua Região" Width="319" TextChanged="TextBox_TextChanged" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Century Gothic" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBox HorizontalAlignment="Left" Height="245" Margin="208,130,0,0" TextWrapping="Wrap" Text="Mapa" VerticalAlignment="Top" Width="517"/>
+        <TextBox HorizontalAlignment="Left" Height="245" Margin="208,130,0,0" TextWrapping="Wrap" Text="Mapa." VerticalAlignment="Top" Width="517"/>
     </Grid>
 </Window>
