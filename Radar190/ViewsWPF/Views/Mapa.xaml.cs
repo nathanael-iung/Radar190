@@ -24,9 +24,9 @@ namespace ViewsWPF.Views
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void wbMaps_Initialized(object sender, EventArgs e)
         {
-
+            wbMaps.Source = new Uri("https://www.google.com.br/maps/place/R.+Alferes+%C3%82ngelo+Sampaio,+2300+-+Bigorrilho,+Curitiba+-+PR,+80730-460/@-25.4345076,-49.2894074,18z/data=!4m5!3m4!1s0x94dce3f4853685a3:0x19cf87634c35047a!8m2!3d-25.4344228!4d-49.2886188");
         }
     }
 }

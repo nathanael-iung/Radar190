@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ViewsWPF.Views"
         mc:Ignorable="d"
         Title="Index" Height="450" Width="800">
-    <Grid AllowDrop="True" Cursor="Cen">
+    <Grid AllowDrop="True">
         <DockPanel HorizontalAlignment="Left" Height="419" LastChildFill="False" VerticalAlignment="Top" Width="129" Background="#FF575757"/>
         <DockPanel HorizontalAlignment="Left" Height="0" LastChildFill="False" Margin="129,0,0,0" VerticalAlignment="Top" Width="663" Background="#FFD10909"/>
         <Button Content="Home" HorizontalAlignment="Left" Margin="0,54,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757">
@@ -14,8 +14,9 @@
         <Button Content="Cadastre-se" HorizontalAlignment="Left" Margin="0,89,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
         <Button Content="Mapa de Crimes" HorizontalAlignment="Left" Margin="0,159,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757" RenderTransformOrigin="0.566,7.367"/>
         <Button Content="Denuncie" HorizontalAlignment="Left" Margin="0,124,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
-        <Button Content="Dicas de Segurança" HorizontalAlignment="Left" Margin="0,229,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
-        <Button Content="Estatisticas" HorizontalAlignment="Left" Margin="0,194,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
-        <Button Content="Fale Conosco" HorizontalAlignment="Left" Margin="0,259,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
+        <Button Content="Dicas de Segurança" HorizontalAlignment="Left" Margin="0,264,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
+        <Button Content="Estatísticas" HorizontalAlignment="Left" Margin="0,194,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
+        <Button Content="Fale Conosco" HorizontalAlignment="Left" Margin="0,299,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
+        <Button Content="Contatos Emergenciais" HorizontalAlignment="Left" Margin="0,229,0,0" VerticalAlignment="Top" Width="129" Background="#FF575757" BorderBrush="#FF575757" Foreground="White" FontFamily="Century Gothic" Height="30" FontSize="11"/>
     </Grid>
 </Window>

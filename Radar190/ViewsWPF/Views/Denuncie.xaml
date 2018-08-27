@@ -14,9 +14,9 @@
         <Button Content="Cadastre-se" HorizontalAlignment="Left" Margin="0,89,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
         <Button Content="Mapa de Crimes" HorizontalAlignment="Left" Margin="0,159,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757" RenderTransformOrigin="0.566,7.367"/>
         <Button Content="Denuncie" HorizontalAlignment="Left" Margin="0,124,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
-        <Button Content="Dicas de Segurança" HorizontalAlignment="Left" Margin="0,229,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
         <Button Content="Estatisticas" HorizontalAlignment="Left" Margin="0,194,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
-        <Button Content="Fale Conosco" HorizontalAlignment="Left" Margin="0,259,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
+        <Button Content="Fale Conosco" HorizontalAlignment="Left" Margin="0,299,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
+        <Button Content="Contatos Emergenciais" HorizontalAlignment="Left" Margin="0,229,0,0" VerticalAlignment="Top" Width="129" Background="#FF575757" BorderBrush="#FF575757" Foreground="White" FontFamily="Century Gothic" Height="30" FontSize="11"/>
         <TextBox HorizontalAlignment="Center" Height="79" Margin="303,35,170,0" TextWrapping="Wrap" Text="Denuncie" Width="319" TextChanged="TextBox_TextChanged" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Century Gothic" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic"/>
         <Button Content="Vitima" HorizontalAlignment="Left" Margin="376,94,0,0" VerticalAlignment="Top" Width="75" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Button Content="Testemunha" HorizontalAlignment="Left" Margin="468,94,0,0" VerticalAlignment="Top" Width="75" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
@@ -40,5 +40,6 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="403,240,0,0" TextWrapping="Wrap" Text="Placa" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Button Content="DENUNCIAR" HorizontalAlignment="Left" Margin="621,357,0,0" VerticalAlignment="Top" Width="156" Height="39" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FFAC0E0E" Foreground="White" FontSize="16" FontWeight="Bold"/>
         <TextBox HorizontalAlignment="Left" Height="37" Margin="151,10,0,0" TextWrapping="Wrap" Text="--Itens como Cidade, UF,Bairro, Tipo Ocorrencia, Objetos Roubados, HH, MM,Sexo, Boletim e idade utilizaria o Combobox." VerticalAlignment="Top" Width="626" Foreground="#FFF50000" FontWeight="Bold"/>
+        <Button Content="Dicas de Segurança" HorizontalAlignment="Left" Margin="0,264,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Background="#FF575757" BorderBrush="#FF575757" Foreground="White"/>
     </Grid>
 </Window>
