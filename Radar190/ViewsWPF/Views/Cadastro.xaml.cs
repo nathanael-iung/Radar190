@@ -28,5 +28,12 @@ namespace ViewsWPF.Views
         {
 
         }
+
+        private void Cadastre_se_Click(object sender, RoutedEventArgs e)
+        {
+            Cadastro Cadastro = new Cadastro();
+            Cadastro.Show();
+            Cadastro.Close();
+        }
     }
 }

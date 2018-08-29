@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ViewsWPF.Views"
         mc:Ignorable="d"
         Title="Denuncie" Height="450" Width="800">
-    <Grid AllowDrop="True" Cursor="Cen">
+    <Grid AllowDrop="True">
         <DockPanel HorizontalAlignment="Left" Height="419" LastChildFill="False" VerticalAlignment="Top" Width="129" Background="#FF575757"/>
         <DockPanel HorizontalAlignment="Left" Height="0" LastChildFill="False" Margin="129,0,0,0" VerticalAlignment="Top" Width="663" Background="#FFD10909"/>
         <Button Content="Home" HorizontalAlignment="Left" Margin="0,54,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757">
@@ -31,7 +31,6 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="741,131,0,0" TextWrapping="Wrap" Text="MM" VerticalAlignment="Top" Width="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="403,165,0,0" TextWrapping="Wrap" Text="Objetos roubados" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="176,240,0,0" TextWrapping="Wrap" Text="Tipo Sexo" VerticalAlignment="Top" Width="170" BorderBrush="White" FontFamily="Century Gothic" FontSize="18" FontWeight="Bold" FontStyle="Italic" Foreground="#FF7A7878"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="171,333,0,0" TextWrapping="Wrap" Text="Sim Não" VerticalAlignment="Top" Width="175" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.233,0.522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="171,392,0,0" TextWrapping="Wrap" Text="Idade" VerticalAlignment="Top" Width="170" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.233,0.522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="171,305,0,0" TextWrapping="Wrap" Text="Registrou boletim" VerticalAlignment="Top" Width="170" BorderBrush="White" FontFamily="Century Gothic" FontSize="18" FontWeight="Bold" FontStyle="Italic" Foreground="#FF7A7878"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="176,364,0,0" TextWrapping="Wrap" Text="Registrou boletim" VerticalAlignment="Top" Width="170" BorderBrush="White" FontFamily="Century Gothic" FontSize="18" FontWeight="Bold" FontStyle="Italic" Foreground="#FF7A7878"/>
@@ -41,5 +40,10 @@
         <Button Content="DENUNCIAR" HorizontalAlignment="Left" Margin="621,357,0,0" VerticalAlignment="Top" Width="156" Height="39" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FFAC0E0E" Foreground="White" FontSize="16" FontWeight="Bold"/>
         <TextBox HorizontalAlignment="Left" Height="37" Margin="151,10,0,0" TextWrapping="Wrap" Text="--Itens como Cidade, UF,Bairro, Tipo Ocorrencia, Objetos Roubados, HH, MM,Sexo, Boletim e idade utilizaria o Combobox." VerticalAlignment="Top" Width="626" Foreground="#FFF50000" FontWeight="Bold"/>
         <Button Content="Dicas de Segurança" HorizontalAlignment="Left" Margin="0,264,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Background="#FF575757" BorderBrush="#FF575757" Foreground="White"/>
+        <ComboBox HorizontalAlignment="Left" Margin="195,333,0,0" VerticalAlignment="Top" Width="107" Height="26">
+            <Button Content="Selecione"/>
+            <CheckBox Content="Sim"/>
+            <CheckBox Content="Não"/>
+        </ComboBox>
     </Grid>
 </Window>
