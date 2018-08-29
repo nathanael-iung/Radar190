@@ -5,20 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ViewsWPF.Views"
         mc:Ignorable="d"
-        Title="Mapa" Height="450" Width="800">
-    <Grid AllowDrop="True">
-        <DockPanel HorizontalAlignment="Left" Height="419" LastChildFill="False" VerticalAlignment="Top" Width="129" Background="#FF575757"/>
-        <DockPanel HorizontalAlignment="Left" Height="0" LastChildFill="False" Margin="129,0,0,0" VerticalAlignment="Top" Width="663" Background="#FFD10909"/>
-        <Button Content="Home" HorizontalAlignment="Left" Margin="0,54,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757">
-        </Button>
-        <Button Content="Cadastre-se" HorizontalAlignment="Left" Margin="0,89,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
-        <Button Content="Mapa de Crimes" HorizontalAlignment="Left" Margin="0,159,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757" RenderTransformOrigin="0.566,7.367"/>
-        <Button Content="Denuncie" HorizontalAlignment="Left" Margin="0,124,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
-        <Button Content="Dicas de Segurança" HorizontalAlignment="Left" Margin="0,259,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
-        <Button Content="Estatísticas" HorizontalAlignment="Left" Margin="0,194,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
-        <Button Content="Fale Conosco" HorizontalAlignment="Left" Margin="0,294,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
-        <Button Content="Contatos Emergenciais" HorizontalAlignment="Left" Margin="0,224,0,0" VerticalAlignment="Top" Width="129" Background="#FF575757" BorderBrush="#FF575757" Foreground="White" FontFamily="Century Gothic" Height="30" FontSize="11"/>
-        <TextBox HorizontalAlignment="Center" Height="79" Margin="303,35,170,0" TextWrapping="Wrap" Text="Confira o índice de Crimes em sua Região" Width="319" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Century Gothic" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic"/>
-        <WebBrowser x:Name="wbMaps" HorizontalAlignment="Left" Height="276" Margin="158,124,0,0" VerticalAlignment="Top" Width="615" Initialized="wbMaps_Initialized"/>
+        Title="-------" Height="606" Width="850">
+    <Grid AllowDrop="True" Margin="0,0,0,-3">
+        <DockPanel HorizontalAlignment="Left" Height="569" LastChildFill="False" VerticalAlignment="Top" Width="162" Background="Black"/>
+        <DockPanel HorizontalAlignment="Left" Height="0" LastChildFill="False" Margin="129,0,0,0" VerticalAlignment="Top" Width="663" Background="White"/>
+        <Button Content="Fale Conosco" HorizontalAlignment="Left" Margin="0,520,0,0" VerticalAlignment="Top" Width="162" Height="41" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
+        <Button Content="Dicas de Segurança" HorizontalAlignment="Left" VerticalAlignment="Top" Width="162" Margin="0,465,0,0" Height="50" FontFamily="Century Gothic" FontSize="15" Background="Black" BorderBrush="Black" Foreground="White"/>
+        <Button Content="Contatos Emergênciais" HorizontalAlignment="Left" Margin="0,410,0,0" VerticalAlignment="Top" Width="162" Height="50" FontFamily="Century Gothic" FontSize="13" Background="Black" BorderBrush="Black" Foreground="White"/>
+        <Button Content="Chat" HorizontalAlignment="Left" Margin="0,355,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
+        <Button Content="Estatísticas" HorizontalAlignment="Left" Margin="0,300,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
+        <Button Content="Mapa do Crime" HorizontalAlignment="Left" Margin="0,245,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
+        <Button Content="Denuncie" HorizontalAlignment="Left" Margin="0,190,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
+        <Button Content="Cadastre-se" HorizontalAlignment="Left" Margin="0,135,0,0" VerticalAlignment="Top" Width="162" Height="50" FontFamily="Century Gothic" FontSize="15" Background="Black" BorderBrush="Black" Foreground="White"/>
+        <Button Content="Home" HorizontalAlignment="Left" Margin="0,80,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="56" Margin="31,10,0,0" VerticalAlignment="Top" Width="100" Source="Logo-fundo-preto.png"/>
+        <TextBox HorizontalAlignment="Center" Height="79" Margin="300,10,118,0" TextWrapping="Wrap" Text="Confira o índice de Crimes em sua Região" Width="424" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Century Gothic" Foreground="Black" FontWeight="Bold" FontStyle="Italic" SelectionBrush="#FF008EFF" IsEnabled="False"/>
+        <WebBrowser x:Name="wbMaps" HorizontalAlignment="Left" Height="451" Margin="185,110,0,0" VerticalAlignment="Top" Width="633" Initialized="WebBrowser_Initialized"/>
     </Grid>
 </Window>
