@@ -27,6 +27,7 @@ namespace ViewsWPF.Views
         private void WebBrowser_Initialized(object sender, EventArgs e)
         {
             //Abertura do MyMaps direto na tela com as marcações locais
+
             wbMaps.Source = new Uri("https://www.google.com/maps/d/embed?mid=1qqtQqSmTczMvEoBiuduaQE4uDY2U4RBi");
         }
     }
