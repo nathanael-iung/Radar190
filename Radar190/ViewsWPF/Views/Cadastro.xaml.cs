@@ -35,5 +35,10 @@ namespace ViewsWPF.Views
             Cadastro.Show();
             Cadastro.Close();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
