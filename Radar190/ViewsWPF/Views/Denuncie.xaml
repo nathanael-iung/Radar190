@@ -5,45 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ViewsWPF.Views"
         mc:Ignorable="d"
-        Title="Denuncie" Height="450" Width="800">
-    <Grid AllowDrop="True">
-        <DockPanel HorizontalAlignment="Left" Height="419" LastChildFill="False" VerticalAlignment="Top" Width="129" Background="#FF575757"/>
-        <DockPanel HorizontalAlignment="Left" Height="0" LastChildFill="False" Margin="129,0,0,0" VerticalAlignment="Top" Width="663" Background="#FFD10909"/>
-        <Button Content="Home" HorizontalAlignment="Left" Margin="0,54,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757">
-        </Button>
-        <Button Content="Cadastre-se" HorizontalAlignment="Left" Margin="0,89,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
-        <Button Content="Mapa de Crimes" HorizontalAlignment="Left" Margin="0,159,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757" RenderTransformOrigin="0.566,7.367"/>
-        <Button Content="Denuncie" HorizontalAlignment="Left" Margin="0,124,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
-        <Button Content="Estatisticas" HorizontalAlignment="Left" Margin="0,194,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
-        <Button Content="Fale Conosco" HorizontalAlignment="Left" Margin="0,299,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Foreground="White" BorderBrush="#FF575757" Background="#FF575757"/>
-        <Button Content="Contatos Emergenciais" HorizontalAlignment="Left" Margin="0,229,0,0" VerticalAlignment="Top" Width="129" Background="#FF575757" BorderBrush="#FF575757" Foreground="White" FontFamily="Century Gothic" Height="30" FontSize="11"/>
-        <TextBox HorizontalAlignment="Center" Height="79" Margin="303,35,170,0" TextWrapping="Wrap" Text="Denuncie" Width="319" TextChanged="TextBox_TextChanged" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Century Gothic" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic"/>
-        <Button Content="Vitima" HorizontalAlignment="Left" Margin="376,94,0,0" VerticalAlignment="Top" Width="75" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Button Content="Testemunha" HorizontalAlignment="Left" Margin="468,94,0,0" VerticalAlignment="Top" Width="75" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="171,130,0,0" TextWrapping="Wrap" Text="Cidade" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="303,131,0,0" TextWrapping="Wrap" Text="UF" VerticalAlignment="Top" Width="43" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.233,0.522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="171,165,0,0" TextWrapping="Wrap" Text="Endereço" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="171,200,0,0" TextWrapping="Wrap" Text="Bairro" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="403,131,0,0" TextWrapping="Wrap" Text="Tipo Ocorrência" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="609,130,0,0" TextWrapping="Wrap" Text="Data:" VerticalAlignment="Top" Width="60" BorderBrush="White" FontFamily="Century Gothic" FontSize="18" FontWeight="Bold" FontStyle="Italic" Foreground="#FF7A7878"/>
-        <Calendar HorizontalAlignment="Left" Margin="595,159,0,0" VerticalAlignment="Top" Height="165" Width="197"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="690,131,0,0" TextWrapping="Wrap" Text="HH" VerticalAlignment="Top" Width="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="741,131,0,0" TextWrapping="Wrap" Text="MM" VerticalAlignment="Top" Width="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="403,165,0,0" TextWrapping="Wrap" Text="Objetos roubados" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="176,240,0,0" TextWrapping="Wrap" Text="Tipo Sexo" VerticalAlignment="Top" Width="170" BorderBrush="White" FontFamily="Century Gothic" FontSize="18" FontWeight="Bold" FontStyle="Italic" Foreground="#FF7A7878"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="171,392,0,0" TextWrapping="Wrap" Text="Idade" VerticalAlignment="Top" Width="170" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.233,0.522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="171,305,0,0" TextWrapping="Wrap" Text="Registrou boletim" VerticalAlignment="Top" Width="170" BorderBrush="White" FontFamily="Century Gothic" FontSize="18" FontWeight="Bold" FontStyle="Italic" Foreground="#FF7A7878"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="176,364,0,0" TextWrapping="Wrap" Text="Registrou boletim" VerticalAlignment="Top" Width="170" BorderBrush="White" FontFamily="Century Gothic" FontSize="18" FontWeight="Bold" FontStyle="Italic" Foreground="#FF7A7878"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="171,268,0,0" TextWrapping="Wrap" Text="Sexo" VerticalAlignment="Top" Width="175" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.233,0.522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="403,201,0,0" TextWrapping="Wrap" Text="Modelo" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="403,240,0,0" TextWrapping="Wrap" Text="Placa" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Button Content="DENUNCIAR" HorizontalAlignment="Left" Margin="621,357,0,0" VerticalAlignment="Top" Width="156" Height="39" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FFAC0E0E" Foreground="White" FontSize="16" FontWeight="Bold"/>
-        <TextBox HorizontalAlignment="Left" Height="37" Margin="151,10,0,0" TextWrapping="Wrap" Text="--Itens como Cidade, UF,Bairro, Tipo Ocorrencia, Objetos Roubados, HH, MM,Sexo, Boletim e idade utilizaria o Combobox." VerticalAlignment="Top" Width="626" Foreground="#FFF50000" FontWeight="Bold"/>
-        <Button Content="Dicas de Segurança" HorizontalAlignment="Left" Margin="0,264,0,0" VerticalAlignment="Top" Width="129" Height="30" FontFamily="Century Gothic" Background="#FF575757" BorderBrush="#FF575757" Foreground="White"/>
-        <ComboBox HorizontalAlignment="Left" Margin="195,333,0,0" VerticalAlignment="Top" Width="107" Height="26">
+        Title="-------" Height="606" Width="850">
+    <Grid AllowDrop="True" Margin="0,0,0,-3">
+        <DockPanel HorizontalAlignment="Left" Height="569" LastChildFill="False" VerticalAlignment="Top" Width="162" Background="Black"/>
+        <DockPanel HorizontalAlignment="Left" Height="0" LastChildFill="False" Margin="129,0,0,0" VerticalAlignment="Top" Width="663" Background="White"/>
+        <Button Content="Fale Conosco" HorizontalAlignment="Left" Margin="0,520,0,0" VerticalAlignment="Top" Width="162" Height="41" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
+        <Button Content="Dicas de Segurança" HorizontalAlignment="Left" VerticalAlignment="Top" Width="162" Margin="0,465,0,0" Height="50" FontFamily="Century Gothic" FontSize="15" Background="Black" BorderBrush="Black" Foreground="White"/>
+        <Button Content="Contatos Emergênciais" HorizontalAlignment="Left" Margin="0,410,0,0" VerticalAlignment="Top" Width="162" Height="50" FontFamily="Century Gothic" FontSize="13" Background="Black" BorderBrush="Black" Foreground="White"/>
+        <Button Content="Chat" HorizontalAlignment="Left" Margin="0,355,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
+        <Button Content="Estatísticas" HorizontalAlignment="Left" Margin="0,300,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
+        <Button Content="Mapa do Crime" HorizontalAlignment="Left" Margin="0,245,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
+        <Button Content="Denuncie" HorizontalAlignment="Left" Margin="0,190,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
+        <Button Content="Cadastre-se" HorizontalAlignment="Left" Margin="0,135,0,0" VerticalAlignment="Top" Width="162" Height="50" FontFamily="Century Gothic" FontSize="15" Background="Black" BorderBrush="Black" Foreground="White"/>
+        <Button Content="Home" HorizontalAlignment="Left" Margin="0,80,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="56" Margin="31,10,0,0" VerticalAlignment="Top" Width="100" Source="Logo-fundo-preto.png"/>
+        <TextBox HorizontalAlignment="Center" Height="37" Margin="403,5,302,0" TextWrapping="Wrap" Text="Denuncie" Width="137" TextChanged="TextBox_TextChanged" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="183,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="335" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="346,439,0,0" TextWrapping="Wrap" Text="UF" VerticalAlignment="Top" Width="43" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.233,0.522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="420,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="574,488,0,0" TextWrapping="Wrap" Text="Bairro" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="475,279,0,0" TextWrapping="Wrap" Text="Tipo Ocorrência" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Calendar HorizontalAlignment="Left" Margin="176,179,0,0" VerticalAlignment="Top" Height="165" Width="197"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="188,389,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="478,314,0,0" TextWrapping="Wrap" Text="Objetos roubados" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="425,437,0,0" TextWrapping="Wrap" Text="Tipo Sexo" VerticalAlignment="Top" Width="170" BorderBrush="White" FontFamily="Century Gothic" FontSize="18" FontWeight="Bold" FontStyle="Italic" Foreground="#FF7A7878"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="564,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.233,0.522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="171,437,0,0" TextWrapping="Wrap" Text="Registrou boletim" VerticalAlignment="Top" Width="170" BorderBrush="White" FontFamily="Century Gothic" FontSize="18" FontWeight="Bold" FontStyle="Italic" Foreground="#FF7A7878"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="564,437,0,0" TextWrapping="Wrap" Text="Sexo" VerticalAlignment="Top" Width="175" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.233,0.522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="478,353,0,0" TextWrapping="Wrap" Text="Modelo" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="478,389,0,0" TextWrapping="Wrap" Text="Placa" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button Content="DENUNCIAR" HorizontalAlignment="Left" Margin="564,529,0,0" VerticalAlignment="Top" Width="268" Height="39" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FFAC0E0E" Foreground="White" FontSize="16" FontWeight="Bold"/>
+        <TextBox HorizontalAlignment="Left" Height="40" Margin="176,528,0,0" TextWrapping="Wrap" Text="--Itens como Cidade, UF,Bairro, Tipo Ocorrencia, Objetos Roubados, HH, MM,Sexo, Boletim e idade utilizaria o Combobox." VerticalAlignment="Top" Width="374" Foreground="#FFF50000" FontWeight="Bold"/>
+        <ComboBox HorizontalAlignment="Left" Margin="176,478,0,0" VerticalAlignment="Top" Width="107" Height="26">
             <Button Content="Selecione"/>
             <CheckBox Content="Sim"/>
             <CheckBox Content="Não"/>
         </ComboBox>
+        <CheckBox Content="Vítima" HorizontalAlignment="Left" Margin="645,94,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="13" Height="18"/>
+        <CheckBox Content="Testemunha" HorizontalAlignment="Left" Margin="725,94,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="13"/>
+        <Label Content="Nome Completo: " HorizontalAlignment="Left" Margin="183,62,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
+        <Label Content="Idade: " HorizontalAlignment="Left" Margin="564,62,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="44" IsEnabled="False"/>
+        <Label Content="Data do ocorrido: " HorizontalAlignment="Left" Margin="183,148,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
+        <Label Content="Horário da ocorrência: (HH:MM): " HorizontalAlignment="Left" Margin="183,358,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="190" IsEnabled="False"/>
+        <Label Content=" : " HorizontalAlignment="Left" Margin="229,387,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="17" IsEnabled="False"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="251,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Endereço: " HorizontalAlignment="Left" Margin="414,148,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="194" IsEnabled="False"/>
+        <Label Content="N° aproximado: " HorizontalAlignment="Left" Margin="725,148,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="725,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.233,0.522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
     </Grid>
 </Window>
+
+

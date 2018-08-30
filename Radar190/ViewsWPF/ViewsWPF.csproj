@@ -58,8 +58,23 @@
     <Compile Include="Views\Cadastro.xaml.cs">
       <DependentUpon>Cadastro.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Chat.xaml.cs">
+      <DependentUpon>Chat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Contatos_Emergencias.xaml.cs">
+      <DependentUpon>Contatos_Emergencias.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Denuncie.xaml.cs">
       <DependentUpon>Denuncie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dicas_de_Seguranca.xaml.cs">
+      <DependentUpon>Dicas_de_Seguranca.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Estatisticas.xaml.cs">
+      <DependentUpon>Estatisticas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Fale_Conosco.xaml.cs">
+      <DependentUpon>Fale_Conosco.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Index.xaml.cs">
       <DependentUpon>Index.xaml</DependentUpon>
@@ -83,7 +98,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Chat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Contatos_Emergencias.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Denuncie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dicas_de_Seguranca.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Estatisticas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Fale_Conosco.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
