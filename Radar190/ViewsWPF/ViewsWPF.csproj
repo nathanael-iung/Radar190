@@ -64,9 +64,6 @@
     <Compile Include="Views\Index.xaml.cs">
       <DependentUpon>Index.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\InterfaceInicial.xaml.cs">
-      <DependentUpon>InterfaceInicial.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Mapa.xaml.cs">
       <DependentUpon>Mapa.xaml</DependentUpon>
     </Compile>
@@ -91,10 +88,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Index.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\InterfaceInicial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -135,6 +128,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Views\Logo-fundo-preto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\sirene.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
