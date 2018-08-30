@@ -22,11 +22,11 @@
         <TextBox HorizontalAlignment="Center" Height="37" Margin="403,5,302,0" TextWrapping="Wrap" Text="Denuncie" Width="137" TextChanged="TextBox_TextChanged" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="183,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="335" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="346,439,0,0" TextWrapping="Wrap" Text="UF" VerticalAlignment="Top" Width="43" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.233,0.522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="420,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="420,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="574,488,0,0" TextWrapping="Wrap" Text="Bairro" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="475,279,0,0" TextWrapping="Wrap" Text="Tipo Ocorrência" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Calendar HorizontalAlignment="Left" Margin="176,179,0,0" VerticalAlignment="Top" Height="165" Width="197"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="188,389,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Calendar HorizontalAlignment="Left" Margin="176,161,0,0" VerticalAlignment="Top" Height="165" Width="197"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="188,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="478,314,0,0" TextWrapping="Wrap" Text="Objetos roubados" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="425,437,0,0" TextWrapping="Wrap" Text="Tipo Sexo" VerticalAlignment="Top" Width="170" BorderBrush="White" FontFamily="Century Gothic" FontSize="18" FontWeight="Bold" FontStyle="Italic" Foreground="#FF7A7878"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="564,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.233,0.522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
@@ -45,13 +45,13 @@
         <CheckBox Content="Testemunha" HorizontalAlignment="Left" Margin="725,94,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="13"/>
         <Label Content="Nome Completo: " HorizontalAlignment="Left" Margin="183,62,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
         <Label Content="Idade: " HorizontalAlignment="Left" Margin="564,62,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="44" IsEnabled="False"/>
-        <Label Content="Data do ocorrido: " HorizontalAlignment="Left" Margin="183,148,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
-        <Label Content="Horário da ocorrência: (HH:MM): " HorizontalAlignment="Left" Margin="183,358,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="190" IsEnabled="False"/>
-        <Label Content=" : " HorizontalAlignment="Left" Margin="229,387,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="17" IsEnabled="False"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="251,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label Content="Endereço: " HorizontalAlignment="Left" Margin="414,148,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="194" IsEnabled="False"/>
-        <Label Content="N° aproximado: " HorizontalAlignment="Left" Margin="725,148,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="725,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.233,0.522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Data do ocorrido: " HorizontalAlignment="Left" Margin="183,135,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
+        <Label Content="Horário da ocorrência: (HH:MM): " HorizontalAlignment="Left" Margin="188,335,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="190" IsEnabled="False"/>
+        <Label Content=" : " HorizontalAlignment="Left" Margin="229,361,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="17" IsEnabled="False"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="251,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Endereço: " HorizontalAlignment="Left" Margin="420,135,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="194" IsEnabled="False"/>
+        <Label Content="N° aproximado: " HorizontalAlignment="Left" Margin="725,135,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="725,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.233,0.522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
     </Grid>
 </Window>
 
