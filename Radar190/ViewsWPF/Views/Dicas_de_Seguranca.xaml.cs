@@ -23,5 +23,77 @@ namespace ViewsWPF.Views
         {
             InitializeComponent();
         }
+
+        private void btnDicasHome_Click(object sender, RoutedEventArgs e)
+        {
+            Dicas_de_Seguranca ChatFechar = new Dicas_de_Seguranca();
+            this.Close();
+
+            Index DicasparaHome = new Index();
+            DicasparaHome.Show();
+        }
+
+        private void btnDicasCadastro_Click(object sender, RoutedEventArgs e)
+        {
+            Dicas_de_Seguranca ChatFechar = new Dicas_de_Seguranca();
+            this.Close();
+
+            Cadastro DicasparaCadastro = new Cadastro();
+            DicasparaCadastro.Show();
+        }
+
+        private void btnDicasDenuncie_Click(object sender, RoutedEventArgs e)
+        {
+            Dicas_de_Seguranca ChatFechar = new Dicas_de_Seguranca();
+            this.Close();
+
+            Denuncie DicasparaDenuncie = new Denuncie();
+            DicasparaDenuncie.Show();
+        }
+
+        private void btnDicasMapa_Click(object sender, RoutedEventArgs e)
+        {
+            Dicas_de_Seguranca ChatFechar = new Dicas_de_Seguranca();
+            this.Close();
+
+            Mapa DicasparaMapa = new Mapa();
+            DicasparaMapa.Show();
+        }
+
+        private void btnDicasEstatisticas_Click(object sender, RoutedEventArgs e)
+        {
+            Dicas_de_Seguranca ChatFechar = new Dicas_de_Seguranca();
+            this.Close();
+
+            Estatisticas DicasparaEstatisticas = new Estatisticas();
+            DicasparaEstatisticas.Show();
+        }
+
+        private void btnDicasChat_Click(object sender, RoutedEventArgs e)
+        {
+            Dicas_de_Seguranca ChatFechar = new Dicas_de_Seguranca();
+            this.Close();
+
+            Chat DicasparaChat = new Chat();
+            DicasparaChat.Show();
+        }
+
+        private void btnDicasContatosEmergenciais_Click(object sender, RoutedEventArgs e)
+        {
+            Dicas_de_Seguranca ChatFechar = new Dicas_de_Seguranca();
+            this.Close();
+
+            Contatos_Emergencias DicasparaContatosEmergenciais = new Contatos_Emergencias();
+            DicasparaContatosEmergenciais.Show();
+        }
+
+        private void btnDicasFaleConosco_Click(object sender, RoutedEventArgs e)
+        {
+            Dicas_de_Seguranca ChatFechar = new Dicas_de_Seguranca();
+            this.Close();
+
+            Fale_Conosco DicasparaFaleConosco = new Fale_Conosco();
+            DicasparaFaleConosco.Show();
+        }
     }
 }
