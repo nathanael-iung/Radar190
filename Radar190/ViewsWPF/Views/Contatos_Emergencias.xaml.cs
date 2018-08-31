@@ -23,5 +23,79 @@ namespace ViewsWPF.Views
         {
             InitializeComponent();
         }
+
+       
+
+        private void btnContatosHome_Click(object sender, RoutedEventArgs e)
+        {
+            Contatos_Emergencias ChatFechar = new Contatos_Emergencias();
+            this.Close();
+
+            Index ChatparaHome = new Index();
+            ChatparaHome.Show();
+        }
+
+        private void btnContatosCadastro_Click(object sender, RoutedEventArgs e)
+        {
+            Contatos_Emergencias ChatFechar = new Contatos_Emergencias();
+            this.Close();
+
+            Cadastro ContatosEmergenciasparaCadastro = new Cadastro();
+            ContatosEmergenciasparaCadastro.Show();
+        }
+
+        private void btnContatosDenuncie_Click(object sender, RoutedEventArgs e)
+        {
+            Contatos_Emergencias ChatFechar = new Contatos_Emergencias();
+            this.Close();
+
+            Denuncie ContatosEmergenciasparaDenuncie = new Denuncie();
+            ContatosEmergenciasparaDenuncie.Show();
+        }
+
+        private void btnContatosMapa_Click(object sender, RoutedEventArgs e)
+        {
+            Contatos_Emergencias ChatFechar = new Contatos_Emergencias();
+            this.Close();
+
+            Mapa ContatosEmergenciasparaMapa = new Mapa();
+            ContatosEmergenciasparaMapa.Show();
+        }
+
+        private void btnContatosEstatisticas_Click(object sender, RoutedEventArgs e)
+        {
+            Contatos_Emergencias ChatFechar = new Contatos_Emergencias();
+            this.Close();
+
+            Estatisticas ContatosEmergenciasparaEstatisticas = new Estatisticas();
+            ContatosEmergenciasparaEstatisticas.Show();
+        }
+
+        private void btnContatosChat_Click(object sender, RoutedEventArgs e)
+        {
+            Contatos_Emergencias ChatFechar = new Contatos_Emergencias();
+            this.Close();
+
+            Chat ContatosEmergenciasparaChat = new Chat();
+            ContatosEmergenciasparaChat.Show();
+        }
+
+        private void btnContatosDicas_Click(object sender, RoutedEventArgs e)
+        {
+            Contatos_Emergencias ChatFechar = new Contatos_Emergencias();
+            this.Close();
+
+            Contatos_Emergencias ContatosEmergenciasparaContatosEmergencias = new Contatos_Emergencias();
+            ContatosEmergenciasparaContatosEmergencias.Show();
+        }
+
+        private void btnContatosFaleConosco_Click(object sender, RoutedEventArgs e)
+        {
+            Contatos_Emergencias ChatFechar = new Contatos_Emergencias();
+            this.Close();
+
+            Fale_Conosco ContatosEmergenciasparaFaleConosco = new Fale_Conosco();
+            ContatosEmergenciasparaFaleConosco.Show();
+        }
     }
 }
