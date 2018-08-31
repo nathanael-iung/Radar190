@@ -19,5 +19,7 @@
         <Button x:Name="btnContatosCadastro" Content="Cadastre-se" HorizontalAlignment="Left" Margin="0,135,0,0" VerticalAlignment="Top" Width="162" Height="50" FontFamily="Century Gothic" FontSize="15" Background="Black" BorderBrush="Black" Foreground="White" Click="btnContatosCadastro_Click"/>
         <Button x:Name="btnContatosHome" Content="Home" HorizontalAlignment="Left" Margin="0,80,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15" Click="btnContatosHome_Click"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="56" Margin="31,10,0,0" VerticalAlignment="Top" Width="100" Source="Logo-fundo-preto.png"/>
+        <TextBox HorizontalAlignment="Center" Height="37" Margin="350,5,170,0" TextWrapping="Wrap" Text="Contatos Emergênciais" Width="322" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
+        <Label x:Name="label" Content="Tabela completa com os contatos emergênciais , nome - números - descrição (em que caso deve ser acoinado)" HorizontalAlignment="Left" Margin="197,80,0,0" VerticalAlignment="Top" Height="458" Width="595"/>
     </Grid>
 </Window>

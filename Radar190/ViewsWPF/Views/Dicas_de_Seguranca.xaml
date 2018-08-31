@@ -19,5 +19,7 @@
         <Button x:Name="btnDicasCadastro" Content="Cadastre-se" HorizontalAlignment="Left" Margin="0,135,0,0" VerticalAlignment="Top" Width="162" Height="50" FontFamily="Century Gothic" FontSize="15" Background="Black" BorderBrush="Black" Foreground="White" Click="btnDicasCadastro_Click"/>
         <Button x:Name="btnDicasHome" Content="Home" HorizontalAlignment="Left" Margin="0,80,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15" Click="btnDicasHome_Click"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="56" Margin="31,10,0,0" VerticalAlignment="Top" Width="100" Source="Logo-fundo-preto.png"/>
+        <TextBox HorizontalAlignment="Center" Height="37" Margin="373,5,189,0" TextWrapping="Wrap" Text="Dicas de Segurança" Width="280" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
+        <Label Content="Tabela do BD com todas as dicas de segurança {talvez acrescentar elementos de mídia}" HorizontalAlignment="Left" Margin="184,80,0,0" VerticalAlignment="Top" Height="462" Width="608"/>
     </Grid>
 </Window>
