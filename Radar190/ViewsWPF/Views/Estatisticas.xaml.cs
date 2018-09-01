@@ -96,5 +96,5 @@ namespace ViewsWPF.Views
             EstatisticaparaFaleConosco.Show();
         }
     }
-    }
+    
 }
