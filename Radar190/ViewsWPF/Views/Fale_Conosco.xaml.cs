@@ -23,5 +23,77 @@ namespace ViewsWPF.Views
         {
             InitializeComponent();
         }
+
+        private void btnFaleConoscoHome_Click(object sender, RoutedEventArgs e)
+        {
+            Fale_Conosco FaleConoscoFechar = new Fale_Conosco();
+            this.Close();
+
+            Index FaleConoscoparaIndex = new Index();
+            FaleConoscoparaIndex.Show();
+        }
+
+        private void btnFaleConoscoCadastro_Click(object sender, RoutedEventArgs e)
+        {
+            Fale_Conosco FaleConoscoFechar = new Fale_Conosco();
+            this.Close();
+
+            Cadastro FaleConoscoparaCadastro = new Cadastro();
+            FaleConoscoparaCadastro.Show();
+        }
+
+        private void btnFaleConoscoDenuncie_Click(object sender, RoutedEventArgs e)
+        {
+            Fale_Conosco FaleConoscoFechar = new Fale_Conosco();
+            this.Close();
+
+            Denuncie FaleConoscoparaDenuncie = new Denuncie();
+            FaleConoscoparaDenuncie.Show();
+        }
+
+        private void btnFaleConoscoMapa_Click(object sender, RoutedEventArgs e)
+        {
+            Fale_Conosco FaleConoscoFechar = new Fale_Conosco();
+            this.Close();
+
+            Mapa FaleConoscoparaMapa = new Mapa();
+            FaleConoscoparaMapa.Show();
+        }
+
+        private void btnFaleConoscoEstatisticas_Click(object sender, RoutedEventArgs e)
+        {
+            Fale_Conosco FaleConoscoFechar = new Fale_Conosco();
+            this.Close();
+
+            Estatisticas FaleConoscoparaEstatisticas = new Estatisticas();
+            FaleConoscoparaEstatisticas.Show();
+        }
+
+        private void btnFaleConoscoChat_Click(object sender, RoutedEventArgs e)
+        {
+            Fale_Conosco FaleConoscoFechar = new Fale_Conosco();
+            this.Close();
+
+            Chat FaleConoscoparaChat = new Chat();
+            FaleConoscoparaChat.Show();
+        }
+
+        private void btnFaleConoscoContatosEmergenciais_Click(object sender, RoutedEventArgs e)
+        {
+            Fale_Conosco FaleConoscoFechar = new Fale_Conosco();
+            this.Close();
+
+            Contatos_Emergencias FaleConoscoparaContatosEmergencias = new Contatos_Emergencias();
+            FaleConoscoparaContatosEmergencias.Show();
+        }
+
+        private void btnFaleConoscoDicas_Click(object sender, RoutedEventArgs e)
+        {
+            Fale_Conosco FaleConoscoFechar = new Fale_Conosco();
+            this.Close();
+
+            Dicas_de_Seguranca FaleConoscoparaDicas = new Dicas_de_Seguranca();
+            FaleConoscoparaDicas.Show();
+        }
     }
 }
