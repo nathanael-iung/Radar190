@@ -26,7 +26,7 @@ namespace ViewsWPF.Views
 
         private void btnEstatisticaHome_Click(object sender, RoutedEventArgs e)
         {
-            Estatisticas ChatFechar = new Estatisticas();
+            Estatisticas EstatisticasFechar = new Estatisticas();
             this.Close();
 
             Index EstatisticaparaHome = new Index();
@@ -35,7 +35,7 @@ namespace ViewsWPF.Views
 
         private void btnEstatisticaCadastro_Click(object sender, RoutedEventArgs e)
         {
-            Estatisticas ChatFechar = new Estatisticas();
+            Estatisticas EstatisticasFechar = new Estatisticas();
             this.Close();
 
             Cadastro EstatisticaparaCadastro = new Cadastro();
@@ -44,7 +44,7 @@ namespace ViewsWPF.Views
 
         private void btnEstatisticaDenuncie_Click(object sender, RoutedEventArgs e)
         {
-            Estatisticas ChatFechar = new Estatisticas();
+            Estatisticas EstatisticasFechar = new Estatisticas();
             this.Close();
 
             Denuncie EstatisticaparaDenuncie = new Denuncie();
@@ -53,7 +53,7 @@ namespace ViewsWPF.Views
 
         private void btnEstatisticaMapa_Click(object sender, RoutedEventArgs e)
         {
-            Estatisticas ChatFechar = new Estatisticas();
+            Estatisticas EstatisticasFechar = new Estatisticas();
             this.Close();
 
             Mapa EstatisticaparaMapa = new Mapa();
@@ -62,7 +62,7 @@ namespace ViewsWPF.Views
 
         private void btnEstatisticaChat_Click(object sender, RoutedEventArgs e)
         {
-            Estatisticas ChatFechar = new Estatisticas();
+            Estatisticas EstatisticasFechar = new Estatisticas();
             this.Close();
 
             Chat EstatisticaparaChat = new Chat();
@@ -71,7 +71,7 @@ namespace ViewsWPF.Views
 
         private void btnEstatisticaContatosEmergencia_Click(object sender, RoutedEventArgs e)
         {
-            Estatisticas ChatFechar = new Estatisticas();
+            Estatisticas EstatisticasFechar = new Estatisticas();
             this.Close();
 
             Contatos_Emergencias EstatisticaparaContatosEmergenciais = new Contatos_Emergencias();
@@ -80,7 +80,7 @@ namespace ViewsWPF.Views
 
         private void btnEstatisticaDicas_Click(object sender, RoutedEventArgs e)
         {
-            Estatisticas ChatFechar = new Estatisticas();
+            Estatisticas EstatisticasFechar = new Estatisticas();
             this.Close();
 
             Dicas_de_Seguranca EstatisticaparaDicasDeSeguranca = new Dicas_de_Seguranca();
@@ -89,7 +89,7 @@ namespace ViewsWPF.Views
 
         private void btnEstatisticaFaleConosco_Click(object sender, RoutedEventArgs e)
         {
-            Estatisticas ChatFechar = new Estatisticas();
+            Estatisticas EstatisticasFechar = new Estatisticas();
             this.Close();
 
             Fale_Conosco EstatisticaparaFaleConosco = new Fale_Conosco();
