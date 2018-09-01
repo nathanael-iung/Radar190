@@ -39,7 +39,7 @@ namespace ViewsWPF.Views
   
         private void btnCadastroHome_Click(object sender, RoutedEventArgs e)
         {
-            Cadastro ChatFechar = new Cadastro();
+            Cadastro CadastroFechar = new Cadastro();
             this.Close();
 
             Index CadastroparaHome = new Index();
@@ -48,7 +48,7 @@ namespace ViewsWPF.Views
 
         private void btnCadastroDenuncie_Click(object sender, RoutedEventArgs e)
         {
-            Cadastro ChatFechar = new Cadastro();
+            Cadastro CadastroFechar = new Cadastro();
             this.Close();
 
             Denuncie CadastroparaDenuncie = new Denuncie();
@@ -57,7 +57,7 @@ namespace ViewsWPF.Views
 
         private void btnCadastroMapa_Click(object sender, RoutedEventArgs e)
         {
-            Cadastro ChatFechar = new Cadastro();
+            Cadastro CadastroFechar = new Cadastro();
             this.Close();
 
             Mapa CadastroparaMapa = new Mapa();
@@ -66,7 +66,7 @@ namespace ViewsWPF.Views
 
         private void btnCadastroEstatisticas_Click(object sender, RoutedEventArgs e)
         {
-            Cadastro ChatFechar = new Cadastro();
+            Cadastro CadastroFechar = new Cadastro();
             this.Close();
 
             Estatisticas CadastroparaEstatisticas = new Estatisticas();
@@ -75,7 +75,7 @@ namespace ViewsWPF.Views
 
         private void btnCadastroChat_Click(object sender, RoutedEventArgs e)
         {
-            Cadastro ChatFechar = new Cadastro();
+            Cadastro CadastroFechar = new Cadastro();
             this.Close();
 
             Chat CadastroparaChat = new Chat();
@@ -84,7 +84,7 @@ namespace ViewsWPF.Views
 
         private void btnCadastroContatosEmergencia_Click(object sender, RoutedEventArgs e)
         {
-            Cadastro ChatFechar = new Cadastro();
+            Cadastro CadastroFechar = new Cadastro();
             this.Close();
 
             Contatos_Emergencias CadastroparaContatosEmergenciais = new Contatos_Emergencias();
@@ -93,7 +93,7 @@ namespace ViewsWPF.Views
 
         private void btnCadastroDicas_Click(object sender, RoutedEventArgs e)
         {
-            Cadastro ChatFechar = new Cadastro();
+            Cadastro CadastroFechar = new Cadastro();
             this.Close();
 
             Dicas_de_Seguranca CadastroparaDicasSeguranca = new Dicas_de_Seguranca();
@@ -102,7 +102,7 @@ namespace ViewsWPF.Views
 
         private void btnCadastroFaleConosco_Click(object sender, RoutedEventArgs e)
         {
-            Cadastro ChatFechar = new Cadastro();
+            Cadastro CadastroFechar = new Cadastro();
             this.Close();
 
             Fale_Conosco CadastroparaFaleConosco = new Fale_Conosco();

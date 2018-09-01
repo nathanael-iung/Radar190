@@ -31,7 +31,7 @@ namespace ViewsWPF.Views
 
         private void btnDenuncieHome_Click(object sender, RoutedEventArgs e)
         {
-            Denuncie ChatFechar = new Denuncie();
+            Denuncie DenuncieFechar = new Denuncie();
             this.Close();
 
             Index DenuncieparaHome = new Index();
@@ -40,7 +40,7 @@ namespace ViewsWPF.Views
 
         private void btnDenuncieCadastro_Click(object sender, RoutedEventArgs e)
         {
-            Denuncie ChatFechar = new Denuncie();
+            Denuncie DenuncieFechar = new Denuncie();
             this.Close();
 
             Cadastro DenuncieparaCadastro = new Cadastro();
@@ -49,7 +49,7 @@ namespace ViewsWPF.Views
 
         private void btnDenuncieDenuncie_Click(object sender, RoutedEventArgs e)
         {
-            Denuncie ChatFechar = new Denuncie();
+            Denuncie DenuncieFechar = new Denuncie();
             this.Close();
 
             Denuncie DenuncieparaDenuncie = new Denuncie();
@@ -58,7 +58,7 @@ namespace ViewsWPF.Views
 
         private void btnDenuncieMapa_Click(object sender, RoutedEventArgs e)
         {
-            Denuncie ChatFechar = new Denuncie();
+            Denuncie DenuncieFechar = new Denuncie();
             this.Close();
 
             Mapa DenuncieparaMapa = new Mapa();
@@ -67,7 +67,7 @@ namespace ViewsWPF.Views
 
         private void btnDenuncieEstatisticas_Click(object sender, RoutedEventArgs e)
         {
-            Denuncie ChatFechar = new Denuncie();
+            Denuncie DenuncieFechar = new Denuncie();
             this.Close();
 
             Estatisticas DenuncieparaEstatistica = new Estatisticas();
@@ -76,7 +76,7 @@ namespace ViewsWPF.Views
 
         private void btnDenuncieChat_Click(object sender, RoutedEventArgs e)
         {
-            Denuncie ChatFechar = new Denuncie();
+            Denuncie DenuncieFechar = new Denuncie();
             this.Close();
 
             Chat DenuncieparaChat = new Chat();
@@ -85,7 +85,7 @@ namespace ViewsWPF.Views
 
         private void btnDenuncieContatosEmergencias_Click(object sender, RoutedEventArgs e)
         {
-            Denuncie ChatFechar = new Denuncie();
+            Denuncie DenuncieFechar = new Denuncie();
             this.Close();
 
             Contatos_Emergencias DenuncieparaContatosEmergenciais = new Contatos_Emergencias();
@@ -94,7 +94,7 @@ namespace ViewsWPF.Views
 
         private void btnDenuncieDicas_Click(object sender, RoutedEventArgs e)
         {
-            Denuncie ChatFechar = new Denuncie();
+            Denuncie DenuncieFechar = new Denuncie();
             this.Close();
 
             Dicas_de_Seguranca DenuncieparaDicas = new Dicas_de_Seguranca();
@@ -103,7 +103,7 @@ namespace ViewsWPF.Views
 
         private void btnDenuncieFaleConosco_Click(object sender, RoutedEventArgs e)
         {
-            Denuncie ChatFechar = new Denuncie();
+            Denuncie DenuncieFechar = new Denuncie();
             this.Close();
 
             Fale_Conosco DenuncieparaFaleConosco = new Fale_Conosco();

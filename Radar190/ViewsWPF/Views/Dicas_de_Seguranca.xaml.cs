@@ -26,7 +26,7 @@ namespace ViewsWPF.Views
 
         private void btnDicasHome_Click(object sender, RoutedEventArgs e)
         {
-            Dicas_de_Seguranca ChatFechar = new Dicas_de_Seguranca();
+            Dicas_de_Seguranca DicasFechar = new Dicas_de_Seguranca();
             this.Close();
 
             Index DicasparaHome = new Index();
@@ -35,7 +35,7 @@ namespace ViewsWPF.Views
 
         private void btnDicasCadastro_Click(object sender, RoutedEventArgs e)
         {
-            Dicas_de_Seguranca ChatFechar = new Dicas_de_Seguranca();
+            Dicas_de_Seguranca DicasFechar = new Dicas_de_Seguranca();
             this.Close();
 
             Cadastro DicasparaCadastro = new Cadastro();
@@ -44,7 +44,7 @@ namespace ViewsWPF.Views
 
         private void btnDicasDenuncie_Click(object sender, RoutedEventArgs e)
         {
-            Dicas_de_Seguranca ChatFechar = new Dicas_de_Seguranca();
+            Dicas_de_Seguranca DicasFechar = new Dicas_de_Seguranca();
             this.Close();
 
             Denuncie DicasparaDenuncie = new Denuncie();
@@ -53,7 +53,7 @@ namespace ViewsWPF.Views
 
         private void btnDicasMapa_Click(object sender, RoutedEventArgs e)
         {
-            Dicas_de_Seguranca ChatFechar = new Dicas_de_Seguranca();
+            Dicas_de_Seguranca DicasFechar = new Dicas_de_Seguranca();
             this.Close();
 
             Mapa DicasparaMapa = new Mapa();
@@ -62,7 +62,7 @@ namespace ViewsWPF.Views
 
         private void btnDicasEstatisticas_Click(object sender, RoutedEventArgs e)
         {
-            Dicas_de_Seguranca ChatFechar = new Dicas_de_Seguranca();
+            Dicas_de_Seguranca DicasFechar = new Dicas_de_Seguranca();
             this.Close();
 
             Estatisticas DicasparaEstatisticas = new Estatisticas();
@@ -71,7 +71,7 @@ namespace ViewsWPF.Views
 
         private void btnDicasChat_Click(object sender, RoutedEventArgs e)
         {
-            Dicas_de_Seguranca ChatFechar = new Dicas_de_Seguranca();
+            Dicas_de_Seguranca DicasFechar = new Dicas_de_Seguranca();
             this.Close();
 
             Chat DicasparaChat = new Chat();
@@ -80,7 +80,7 @@ namespace ViewsWPF.Views
 
         private void btnDicasContatosEmergenciais_Click(object sender, RoutedEventArgs e)
         {
-            Dicas_de_Seguranca ChatFechar = new Dicas_de_Seguranca();
+            Dicas_de_Seguranca DicasFechar = new Dicas_de_Seguranca();
             this.Close();
 
             Contatos_Emergencias DicasparaContatosEmergenciais = new Contatos_Emergencias();
@@ -89,7 +89,7 @@ namespace ViewsWPF.Views
 
         private void btnDicasFaleConosco_Click(object sender, RoutedEventArgs e)
         {
-            Dicas_de_Seguranca ChatFechar = new Dicas_de_Seguranca();
+            Dicas_de_Seguranca DicasFechar = new Dicas_de_Seguranca();
             this.Close();
 
             Fale_Conosco DicasparaFaleConosco = new Fale_Conosco();

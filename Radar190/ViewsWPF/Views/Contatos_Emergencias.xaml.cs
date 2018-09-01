@@ -28,7 +28,7 @@ namespace ViewsWPF.Views
 
         private void btnContatosHome_Click(object sender, RoutedEventArgs e)
         {
-            Contatos_Emergencias ChatFechar = new Contatos_Emergencias();
+            Contatos_Emergencias ContatosEmergenciaisFechar = new Contatos_Emergencias();
             this.Close();
 
             Index ChatparaHome = new Index();
@@ -37,7 +37,7 @@ namespace ViewsWPF.Views
 
         private void btnContatosCadastro_Click(object sender, RoutedEventArgs e)
         {
-            Contatos_Emergencias ChatFechar = new Contatos_Emergencias();
+            Contatos_Emergencias ContatosEmergenciaisFechar = new Contatos_Emergencias();
             this.Close();
 
             Cadastro ContatosEmergenciasparaCadastro = new Cadastro();
@@ -46,7 +46,7 @@ namespace ViewsWPF.Views
 
         private void btnContatosDenuncie_Click(object sender, RoutedEventArgs e)
         {
-            Contatos_Emergencias ChatFechar = new Contatos_Emergencias();
+            Contatos_Emergencias ContatosEmergenciaisFechar = new Contatos_Emergencias();
             this.Close();
 
             Denuncie ContatosEmergenciasparaDenuncie = new Denuncie();
@@ -55,7 +55,7 @@ namespace ViewsWPF.Views
 
         private void btnContatosMapa_Click(object sender, RoutedEventArgs e)
         {
-            Contatos_Emergencias ChatFechar = new Contatos_Emergencias();
+            Contatos_Emergencias ContatosEmergenciaisFechar = new Contatos_Emergencias();
             this.Close();
 
             Mapa ContatosEmergenciasparaMapa = new Mapa();
@@ -64,7 +64,7 @@ namespace ViewsWPF.Views
 
         private void btnContatosEstatisticas_Click(object sender, RoutedEventArgs e)
         {
-            Contatos_Emergencias ChatFechar = new Contatos_Emergencias();
+            Contatos_Emergencias ContatosEmergenciaisFechar = new Contatos_Emergencias();
             this.Close();
 
             Estatisticas ContatosEmergenciasparaEstatisticas = new Estatisticas();
@@ -73,7 +73,7 @@ namespace ViewsWPF.Views
 
         private void btnContatosChat_Click(object sender, RoutedEventArgs e)
         {
-            Contatos_Emergencias ChatFechar = new Contatos_Emergencias();
+            Contatos_Emergencias ContatosEmergenciaisFechar = new Contatos_Emergencias();
             this.Close();
 
             Chat ContatosEmergenciasparaChat = new Chat();
@@ -82,7 +82,7 @@ namespace ViewsWPF.Views
 
         private void btnContatosDicas_Click(object sender, RoutedEventArgs e)
         {
-            Contatos_Emergencias ChatFechar = new Contatos_Emergencias();
+            Contatos_Emergencias ContatosEmergenciaisFechar = new Contatos_Emergencias();
             this.Close();
 
             Contatos_Emergencias ContatosEmergenciasparaContatosEmergencias = new Contatos_Emergencias();
@@ -91,7 +91,7 @@ namespace ViewsWPF.Views
 
         private void btnContatosFaleConosco_Click(object sender, RoutedEventArgs e)
         {
-            Contatos_Emergencias ChatFechar = new Contatos_Emergencias();
+            Contatos_Emergencias ContatosEmergenciaisFechar = new Contatos_Emergencias();
             this.Close();
 
             Fale_Conosco ContatosEmergenciasparaFaleConosco = new Fale_Conosco();

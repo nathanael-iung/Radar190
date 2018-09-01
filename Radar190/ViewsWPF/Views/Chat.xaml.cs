@@ -93,8 +93,8 @@ namespace ViewsWPF.Views
               Chat ChatFechar = new Chat();
             this.Close();
 
-           Dicas_de_Seguranca ChatparaChatparaDicasDeSeguranca = new Dicas_de_Seguranca();
-            ChatparaChatparaDicasDeSeguranca.Show();
+           Dicas_de_Seguranca ChatparaDicasDeSeguranca = new Dicas_de_Seguranca();
+            ChatparaDicasDeSeguranca.Show();
         }
     }
 }
