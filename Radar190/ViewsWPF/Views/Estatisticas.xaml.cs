@@ -23,5 +23,78 @@ namespace ViewsWPF.Views
         {
             InitializeComponent();
         }
+
+        private void btnEstatisticaHome_Click(object sender, RoutedEventArgs e)
+        {
+            Estatisticas ChatFechar = new Estatisticas();
+            this.Close();
+
+            Index EstatisticaparaHome = new Index();
+            EstatisticaparaHome.Show();
+        }
+
+        private void btnEstatisticaCadastro_Click(object sender, RoutedEventArgs e)
+        {
+            Estatisticas ChatFechar = new Estatisticas();
+            this.Close();
+
+            Cadastro EstatisticaparaCadastro = new Cadastro();
+            EstatisticaparaCadastro.Show();
+        }
+
+        private void btnEstatisticaDenuncie_Click(object sender, RoutedEventArgs e)
+        {
+            Estatisticas ChatFechar = new Estatisticas();
+            this.Close();
+
+            Denuncie EstatisticaparaDenuncie = new Denuncie();
+            EstatisticaparaDenuncie.Show();
+        }
+
+        private void btnEstatisticaMapa_Click(object sender, RoutedEventArgs e)
+        {
+            Estatisticas ChatFechar = new Estatisticas();
+            this.Close();
+
+            Mapa EstatisticaparaMapa = new Mapa();
+            EstatisticaparaMapa.Show();
+        }
+
+        private void btnEstatisticaChat_Click(object sender, RoutedEventArgs e)
+        {
+            Estatisticas ChatFechar = new Estatisticas();
+            this.Close();
+
+            Chat EstatisticaparaChat = new Chat();
+            EstatisticaparaChat.Show();
+        }
+
+        private void btnEstatisticaContatosEmergencia_Click(object sender, RoutedEventArgs e)
+        {
+            Estatisticas ChatFechar = new Estatisticas();
+            this.Close();
+
+            Contatos_Emergencias EstatisticaparaContatosEmergenciais = new Contatos_Emergencias();
+            EstatisticaparaContatosEmergenciais.Show();
+        }
+
+        private void btnEstatisticaDicas_Click(object sender, RoutedEventArgs e)
+        {
+            Estatisticas ChatFechar = new Estatisticas();
+            this.Close();
+
+            Dicas_de_Seguranca EstatisticaparaDicasDeSeguranca = new Dicas_de_Seguranca();
+            EstatisticaparaDicasDeSeguranca.Show();
+        }
+
+        private void btnEstatisticaFaleConosco_Click(object sender, RoutedEventArgs e)
+        {
+            Estatisticas ChatFechar = new Estatisticas();
+            this.Close();
+
+            Fale_Conosco EstatisticaparaFaleConosco = new Fale_Conosco();
+            EstatisticaparaFaleConosco.Show();
+        }
+    }
     }
 }
