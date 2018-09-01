@@ -23,5 +23,77 @@ namespace ViewsWPF.Views
         {
             InitializeComponent();
         }
+
+        private void btnHomeCadastro_Click(object sender, RoutedEventArgs e)
+        {
+            Index IndexFechar = new Index();
+            this.Close();
+
+            Cadastro IndexparaCadastro = new Cadastro();
+            IndexparaCadastro.Show();
+        }
+
+        private void btnHomeDenuncie_Click(object sender, RoutedEventArgs e)
+        {
+            Index IndexFechar = new Index();
+            this.Close();
+
+            Denuncie IndexparaDenuncie = new Denuncie();
+            IndexparaDenuncie.Show();
+        }
+
+        private void btnHomeMapa_Click(object sender, RoutedEventArgs e)
+        {
+            Index IndexFechar = new Index();
+            this.Close();
+
+            Mapa IndexparaMapa = new Mapa();
+            IndexparaMapa.Show();
+        }
+
+        private void btnHomeEstatisticas_Click(object sender, RoutedEventArgs e)
+        {
+            Index IndexFechar = new Index();
+            this.Close();
+
+            Estatisticas IndexparaEstatisticas = new Estatisticas();
+            IndexparaEstatisticas.Show();
+        }
+
+        private void btnHomeChat_Click(object sender, RoutedEventArgs e)
+        {
+            Index IndexFechar = new Index();
+            this.Close();
+
+            Chat IndexparaChat = new Chat();
+            IndexparaChat.Show();
+        }
+
+        private void btnHomeContatosEmergenciais_Click(object sender, RoutedEventArgs e)
+        {
+            Index IndexFechar = new Index();
+            this.Close();
+
+            Contatos_Emergencias IndexparaConstatosEmergenciais = new Contatos_Emergencias();
+            IndexparaConstatosEmergenciais.Show();
+        }
+
+        private void btnHomeDicas_Click(object sender, RoutedEventArgs e)
+        {
+            Index IndexFechar = new Index();
+            this.Close();
+
+            Dicas_de_Seguranca IndexparaDicas = new Dicas_de_Seguranca();
+            IndexparaDicas.Show();
+        }
+
+        private void btnHomeFaleConosco_Click(object sender, RoutedEventArgs e)
+        {
+            Index IndexFechar = new Index();
+            this.Close();
+
+            Fale_Conosco IndexparaFaleConosco = new Fale_Conosco();
+            IndexparaFaleConosco.Show();
+        }
     }
 }
