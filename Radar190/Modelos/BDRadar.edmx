@@ -14,6 +14,12 @@
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="BDRadar" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
         <EntityContainer Name="BDRadarContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="UsuarioSet" EntityType="BDRadar.Usuario" />
+          <EntitySet Name="CidadeSet" EntityType="BDRadar.Cidade" />
+          <AssociationSet Name="UsuarioCidade" Association="BDRadar.UsuarioCidade">
+            <End Role="Usuario" EntitySet="UsuarioSet" />
+            <End Role="Cidade" EntitySet="CidadeSet" />
+          </AssociationSet>
+          <EntitySet Name="DenunciaSet" EntityType="BDRadar.Denuncia" />
         </EntityContainer>
         <EntityType Name="Usuario">
           <Key>
@@ -27,6 +33,35 @@
           <Property Name="Descricao" Type="String" Nullable="false" />
           <Property Name="User" Type="String" Nullable="false" />
           <Property Name="Senha" Type="String" Nullable="false" />
+          <NavigationProperty Name="Cidade" Relationship="BDRadar.UsuarioCidade" FromRole="Usuario" ToRole="Cidade" />
+          <Property Name="CidadeIdCidade" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cidade">
+          <Key>
+            <PropertyRef Name="IdCidade" />
+          </Key>
+          <Property Name="IdCidade" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="City" Type="String" Nullable="false" />
+          <Property Name="UF" Type="String" Nullable="false" />
+          <NavigationProperty Name="Usuarios" Relationship="BDRadar.UsuarioCidade" FromRole="Cidade" ToRole="Usuario" />
+        </EntityType>
+        <Association Name="UsuarioCidade">
+          <End Type="BDRadar.Usuario" Role="Usuario" Multiplicity="*" />
+          <End Type="BDRadar.Cidade" Role="Cidade" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Cidade">
+              <PropertyRef Name="IdCidade" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="CidadeIdCidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Denuncia">
+          <Key>
+            <PropertyRef Name="IdDenuncia" />
+          </Key>
+          <Property Name="IdDenuncia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
