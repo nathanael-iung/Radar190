@@ -4,11 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7d92a5fa58724ba5a3064afd7fcf3177" Name="Diagram1" >
-        <EntityTypeShape EntityType="BDRadar.Usuario" Width="1.5" PointX="0.5" PointY="0.5" />
-        <EntityTypeShape EntityType="BDRadar.Cidade" Width="1.5" PointX="2.75" PointY="0.5" />
+      <Diagram DiagramId="7d92a5fa58724ba5a3064afd7fcf3177" Name="Diagram1" ZoomLevel="74" >
+        <EntityTypeShape EntityType="BDRadar.Usuario" Width="1.5" PointX="6.75" PointY="0.5" />
+        <EntityTypeShape EntityType="BDRadar.Cidade" Width="1.5" PointX="4.625" PointY="0.5" />
         <AssociationConnector Association="BDRadar.UsuarioCidade" />
-        <EntityTypeShape EntityType="BDRadar.Denuncia" Width="1.5" PointX="4.875" PointY="0.5" />
+        <EntityTypeShape EntityType="BDRadar.Denuncia" Width="1.5" PointX="9" PointY="0.625" />
+        <EntityTypeShape EntityType="BDRadar.ObjRoubado" Width="1.5" PointX="11.375" PointY="0.5" />
+        <AssociationConnector Association="BDRadar.DenunciaObjRoubados" />
+        <EntityTypeShape EntityType="BDRadar.Mapa" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="BDRadar.Bairro" Width="1.5" PointX="2.5" PointY="0.5" />
+        <AssociationConnector Association="BDRadar.CidadeBairro" />
+        <AssociationConnector Association="BDRadar.MapaBairro" />
+        <EntityTypeShape EntityType="BDRadar.Administrador" Width="1.5" PointX="3.25" PointY="3.25" />
+        <AssociationConnector Association="BDRadar.AdministradorUsuario" />
+        <EntityTypeShape EntityType="BDRadar.Cadastro" Width="1.5" PointX="8.25" PointY="3.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
