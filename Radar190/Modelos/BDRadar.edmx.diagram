@@ -8,7 +8,7 @@
         <EntityTypeShape EntityType="BDRadar.Usuario" Width="1.5" PointX="0.5" PointY="0.5" />
         <EntityTypeShape EntityType="BDRadar.Cidade" Width="1.5" PointX="2.75" PointY="0.5" />
         <AssociationConnector Association="BDRadar.UsuarioCidade" />
-        <EntityTypeShape EntityType="BDRadar.Denuncia" Width="1.5" PointX="5.125" PointY="0.5" />
+        <EntityTypeShape EntityType="BDRadar.Denuncia" Width="1.5" PointX="4.875" PointY="0.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

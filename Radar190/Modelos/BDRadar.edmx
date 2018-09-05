@@ -62,6 +62,18 @@
             <PropertyRef Name="IdDenuncia" />
           </Key>
           <Property Name="IdDenuncia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomeCompleto" Type="String" Nullable="false" />
+          <Property Name="Idade" Type="Int16" Nullable="false" />
+          <Property Name="Tipo" Type="String" Nullable="false" />
+          <Property Name="Endereco" Type="String" Nullable="false" />
+          <Property Name="Numero" Type="Int16" Nullable="false" />
+          <Property Name="Bairro" Type="String" Nullable="false" />
+          <Property Name="Cidade" Type="String" Nullable="false" />
+          <Property Name="BO" Type="Boolean" Nullable="false" />
+          <Property Name="TipoOcorrencia" Type="String" Nullable="false" />
+          <Property Name="Hora" Type="DateTime" Nullable="false" />
+          <Property Name="Descricao" Type="String" Nullable="false" />
+          <Property Name="Prejuizo" Type="String" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
