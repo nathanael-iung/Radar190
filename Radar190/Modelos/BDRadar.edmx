@@ -40,7 +40,10 @@
             <End Role="Administrador" EntitySet="AdministradorSet" />
             <End Role="Usuario" EntitySet="UsuarioSet" />
           </AssociationSet>
-          <EntitySet Name="CadastroSet" EntityType="BDRadar.Cadastro" />
+          <AssociationSet Name="UsuarioDenuncia" Association="BDRadar.UsuarioDenuncia">
+            <End Role="Usuario" EntitySet="UsuarioSet" />
+            <End Role="Denuncia" EntitySet="DenunciaSet" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Usuario">
           <Key>
@@ -54,6 +57,9 @@
           <NavigationProperty Name="Cidade" Relationship="BDRadar.UsuarioCidade" FromRole="Usuario" ToRole="Cidade" />
           <Property Name="CidadeIdCidade" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Administrador" Relationship="BDRadar.AdministradorUsuario" FromRole="Usuario" ToRole="Administrador" />
+          <NavigationProperty Name="Denuncias" Relationship="BDRadar.UsuarioDenuncia" FromRole="Usuario" ToRole="Denuncia" />
+          <Property Name="User" Type="String" Nullable="false" />
+          <Property Name="Senha" Type="Int16" Nullable="false" />
         </EntityType>
         <EntityType Name="Cidade">
           <Key>
@@ -92,6 +98,8 @@
           <Property Name="Descricao" Type="String" Nullable="false" />
           <Property Name="Prejuizo" Type="String" Nullable="false" />
           <NavigationProperty Name="ObjRoubados" Relationship="BDRadar.DenunciaObjRoubados" FromRole="Denuncia" ToRole="ObjRoubados" />
+          <NavigationProperty Name="Usuario" Relationship="BDRadar.UsuarioDenuncia" FromRole="Denuncia" ToRole="Usuario" />
+          <Property Name="UsuarioIdUsuario" Type="Int32" Nullable="true" />
         </EntityType>
         <EntityType Name="ObjRoubado">
           <Key>
@@ -179,14 +187,18 @@
           <End Type="BDRadar.Administrador" Role="Administrador" Multiplicity="1" />
           <End Type="BDRadar.Usuario" Role="Usuario" Multiplicity="1" />
         </Association>
-        <EntityType Name="Cadastro">
-          <Key>
-            <PropertyRef Name="IdCadastro" />
-          </Key>
-          <Property Name="IdCadastro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Usuario" Type="String" Nullable="false" />
-          <Property Name="Senha" Type="String" Nullable="false" />
-        </EntityType>
+        <Association Name="UsuarioDenuncia">
+          <End Type="BDRadar.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="BDRadar.Denuncia" Role="Denuncia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Denuncia">
+              <PropertyRef Name="UsuarioIdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
