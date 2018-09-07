@@ -15,10 +15,6 @@
         <EntityContainer Name="BDRadarContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="UsuarioSet" EntityType="BDRadar.Usuario" />
           <EntitySet Name="CidadeSet" EntityType="BDRadar.Cidade" />
-          <AssociationSet Name="UsuarioCidade" Association="BDRadar.UsuarioCidade">
-            <End Role="Usuario" EntitySet="UsuarioSet" />
-            <End Role="Cidade" EntitySet="CidadeSet" />
-          </AssociationSet>
           <EntitySet Name="DenunciaSet" EntityType="BDRadar.Denuncia" />
           <EntitySet Name="ObjRoubadoSet" EntityType="BDRadar.ObjRoubado" />
           <AssociationSet Name="DenunciaObjRoubados" Association="BDRadar.DenunciaObjRoubados">
@@ -36,12 +32,31 @@
             <End Role="Bairro" EntitySet="BairroSet" />
           </AssociationSet>
           <EntitySet Name="AdministradorSet" EntityType="BDRadar.Administrador" />
+          <AssociationSet Name="UsuarioDenuncia" Association="BDRadar.UsuarioDenuncia">
+            <End Role="Usuario" EntitySet="UsuarioSet" />
+            <End Role="Denuncia" EntitySet="DenunciaSet" />
+          </AssociationSet>
           <AssociationSet Name="AdministradorUsuario" Association="BDRadar.AdministradorUsuario">
             <End Role="Administrador" EntitySet="AdministradorSet" />
             <End Role="Usuario" EntitySet="UsuarioSet" />
           </AssociationSet>
-          <AssociationSet Name="UsuarioDenuncia" Association="BDRadar.UsuarioDenuncia">
+          <EntitySet Name="ContatosEmergenciaisSet" EntityType="BDRadar.ContatosEmergenciais" />
+          <AssociationSet Name="AdministradorContatosEmergenciais" Association="BDRadar.AdministradorContatosEmergenciais">
+            <End Role="Administrador" EntitySet="AdministradorSet" />
+            <End Role="ContatosEmergenciais" EntitySet="ContatosEmergenciaisSet" />
+          </AssociationSet>
+          <EntitySet Name="DicasSegurancaSet" EntityType="BDRadar.DicasSeguranca" />
+          <AssociationSet Name="AdministradorDicasSeguranca" Association="BDRadar.AdministradorDicasSeguranca">
+            <End Role="Administrador" EntitySet="AdministradorSet" />
+            <End Role="DicasSeguranca" EntitySet="DicasSegurancaSet" />
+          </AssociationSet>
+          <EntitySet Name="FaleConoscoSet" EntityType="BDRadar.FaleConosco" />
+          <AssociationSet Name="UsuarioFaleConosco" Association="BDRadar.UsuarioFaleConosco">
             <End Role="Usuario" EntitySet="UsuarioSet" />
+            <End Role="FaleConosco" EntitySet="FaleConoscoSet" />
+          </AssociationSet>
+          <AssociationSet Name="MapaDenuncia" Association="BDRadar.MapaDenuncia">
+            <End Role="Mapa" EntitySet="MapaSet" />
             <End Role="Denuncia" EntitySet="DenunciaSet" />
           </AssociationSet>
         </EntityContainer>
@@ -50,16 +65,17 @@
             <PropertyRef Name="IdUsuario" />
           </Key>
           <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomeCompleto" Type="String" Nullable="false" />
           <Property Name="Cpf" Type="String" Nullable="false" />
           <Property Name="DtNasc" Type="DateTime" Nullable="false" />
           <Property Name="Experiencia" Type="Boolean" Nullable="false" />
           <Property Name="Descricao" Type="String" Nullable="false" />
-          <NavigationProperty Name="Cidade" Relationship="BDRadar.UsuarioCidade" FromRole="Usuario" ToRole="Cidade" />
-          <Property Name="CidadeIdCidade" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Administrador" Relationship="BDRadar.AdministradorUsuario" FromRole="Usuario" ToRole="Administrador" />
           <NavigationProperty Name="Denuncias" Relationship="BDRadar.UsuarioDenuncia" FromRole="Usuario" ToRole="Denuncia" />
           <Property Name="User" Type="String" Nullable="false" />
           <Property Name="Senha" Type="Int16" Nullable="false" />
+          <Property Name="CidadeIdCidade" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Administrador" Relationship="BDRadar.AdministradorUsuario" FromRole="Usuario" ToRole="Administrador" />
+          <NavigationProperty Name="FaleConosco" Relationship="BDRadar.UsuarioFaleConosco" FromRole="Usuario" ToRole="FaleConosco" />
         </EntityType>
         <EntityType Name="Cidade">
           <Key>
@@ -68,22 +84,9 @@
           <Property Name="IdCidade" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="City" Type="String" Nullable="false" />
           <Property Name="UF" Type="String" Nullable="false" />
-          <NavigationProperty Name="Usuarios" Relationship="BDRadar.UsuarioCidade" FromRole="Cidade" ToRole="Usuario" />
           <NavigationProperty Name="Bairros" Relationship="BDRadar.CidadeBairro" FromRole="Cidade" ToRole="Bairro" />
           <Property Name="BairroIdBairro" Type="Int32" Nullable="false" />
         </EntityType>
-        <Association Name="UsuarioCidade">
-          <End Type="BDRadar.Usuario" Role="Usuario" Multiplicity="*" />
-          <End Type="BDRadar.Cidade" Role="Cidade" Multiplicity="1" />
-          <ReferentialConstraint>
-            <Principal Role="Cidade">
-              <PropertyRef Name="IdCidade" />
-            </Principal>
-            <Dependent Role="Usuario">
-              <PropertyRef Name="CidadeIdCidade" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Denuncia">
           <Key>
             <PropertyRef Name="IdDenuncia" />
@@ -94,12 +97,14 @@
           <Property Name="Tipo" Type="String" Nullable="false" />
           <Property Name="BO" Type="Boolean" Nullable="false" />
           <Property Name="TipoOcorrencia" Type="String" Nullable="false" />
-          <Property Name="Hora" Type="DateTime" Nullable="false" />
-          <Property Name="Descricao" Type="String" Nullable="false" />
-          <Property Name="Prejuizo" Type="String" Nullable="false" />
+          <Property Name="DataHora" Type="DateTime" Nullable="false" />
+          <Property Name="Descricao" Type="String" Nullable="true" />
+          <Property Name="Prejuizo" Type="String" Nullable="true" />
           <NavigationProperty Name="ObjRoubados" Relationship="BDRadar.DenunciaObjRoubados" FromRole="Denuncia" ToRole="ObjRoubados" />
           <NavigationProperty Name="Usuario" Relationship="BDRadar.UsuarioDenuncia" FromRole="Denuncia" ToRole="Usuario" />
           <Property Name="UsuarioIdUsuario" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Mapa" Relationship="BDRadar.MapaDenuncia" FromRole="Denuncia" ToRole="Mapa" />
+          <Property Name="MapaIdMapa" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="ObjRoubado">
           <Key>
@@ -139,6 +144,7 @@
           <Property Name="Numero" Type="String" Nullable="false" />
           <NavigationProperty Name="Bairro" Relationship="BDRadar.MapaBairro" FromRole="Mapa" ToRole="Bairro" />
           <Property Name="BairroIdBairro" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Denuncias" Relationship="BDRadar.MapaDenuncia" FromRole="Mapa" ToRole="Denuncia" />
         </EntityType>
         <EntityType Name="Bairro">
           <Key>
@@ -181,12 +187,10 @@
           <Property Name="Nome" Type="String" Nullable="false" />
           <Property Name="Usuario" Type="String" Nullable="false" />
           <Property Name="Senha" Type="String" Nullable="false" />
-          <NavigationProperty Name="Usuario1" Relationship="BDRadar.AdministradorUsuario" FromRole="Administrador" ToRole="Usuario" />
+          <NavigationProperty Name="Usuarios" Relationship="BDRadar.AdministradorUsuario" FromRole="Administrador" ToRole="Usuario" />
+          <NavigationProperty Name="ContatosEmergenciais" Relationship="BDRadar.AdministradorContatosEmergenciais" FromRole="Administrador" ToRole="ContatosEmergenciais" />
+          <NavigationProperty Name="DicasSeguranca" Relationship="BDRadar.AdministradorDicasSeguranca" FromRole="Administrador" ToRole="DicasSeguranca" />
         </EntityType>
-        <Association Name="AdministradorUsuario">
-          <End Type="BDRadar.Administrador" Role="Administrador" Multiplicity="1" />
-          <End Type="BDRadar.Usuario" Role="Usuario" Multiplicity="1" />
-        </Association>
         <Association Name="UsuarioDenuncia">
           <End Type="BDRadar.Usuario" Role="Usuario" Multiplicity="1" />
           <End Type="BDRadar.Denuncia" Role="Denuncia" Multiplicity="*" />
@@ -196,6 +200,90 @@
             </Principal>
             <Dependent Role="Denuncia">
               <PropertyRef Name="UsuarioIdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AdministradorUsuario">
+          <End Type="BDRadar.Administrador" Role="Administrador" Multiplicity="1" />
+          <End Type="BDRadar.Usuario" Role="Usuario" Multiplicity="1" />
+        </Association>
+        <EntityType Name="ContatosEmergenciais">
+          <Key>
+            <PropertyRef Name="IdContEmergenciais" />
+          </Key>
+          <Property Name="IdContEmergenciais" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Numero" Type="String" Nullable="false" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Descricao" Type="String" Nullable="false" />
+          <NavigationProperty Name="Administrador" Relationship="BDRadar.AdministradorContatosEmergenciais" FromRole="ContatosEmergenciais" ToRole="Administrador" />
+          <Property Name="AdministradorIdAdministrador" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="AdministradorContatosEmergenciais">
+          <End Type="BDRadar.Administrador" Role="Administrador" Multiplicity="1" />
+          <End Type="BDRadar.ContatosEmergenciais" Role="ContatosEmergenciais" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Administrador">
+              <PropertyRef Name="IdAdministrador" />
+            </Principal>
+            <Dependent Role="ContatosEmergenciais">
+              <PropertyRef Name="AdministradorIdAdministrador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DicasSeguranca">
+          <Key>
+            <PropertyRef Name="IdDicasSeguranca" />
+          </Key>
+          <Property Name="IdDicasSeguranca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" Nullable="false" />
+          <NavigationProperty Name="Administrador" Relationship="BDRadar.AdministradorDicasSeguranca" FromRole="DicasSeguranca" ToRole="Administrador" />
+          <Property Name="AdministradorIdAdministrador" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="AdministradorDicasSeguranca">
+          <End Type="BDRadar.Administrador" Role="Administrador" Multiplicity="1" />
+          <End Type="BDRadar.DicasSeguranca" Role="DicasSeguranca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Administrador">
+              <PropertyRef Name="IdAdministrador" />
+            </Principal>
+            <Dependent Role="DicasSeguranca">
+              <PropertyRef Name="AdministradorIdAdministrador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FaleConosco">
+          <Key>
+            <PropertyRef Name="IdFaleConosco" />
+          </Key>
+          <Property Name="IdFaleConosco" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <Property Name="Assunto" Type="String" Nullable="false" />
+          <Property Name="Mensagem" Type="String" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="BDRadar.UsuarioFaleConosco" FromRole="FaleConosco" ToRole="Usuario" />
+          <Property Name="UsuarioIdUsuario" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="UsuarioFaleConosco">
+          <End Type="BDRadar.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="BDRadar.FaleConosco" Role="FaleConosco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="FaleConosco">
+              <PropertyRef Name="UsuarioIdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MapaDenuncia">
+          <End Type="BDRadar.Mapa" Role="Mapa" Multiplicity="1" />
+          <End Type="BDRadar.Denuncia" Role="Denuncia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mapa">
+              <PropertyRef Name="IdMapa" />
+            </Principal>
+            <Dependent Role="Denuncia">
+              <PropertyRef Name="MapaIdMapa" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
