@@ -21,25 +21,25 @@
         <Image x:Name="image" HorizontalAlignment="Left" Height="56" Margin="31,10,0,0" VerticalAlignment="Top" Width="100" Source="Logo-fundo-preto.png"/>
         <TextBox HorizontalAlignment="Center" Height="37" Margin="314,5,209,0" TextWrapping="Wrap" Text="Cadastre-se Agora" Width="319" TextChanged="TextBox_TextChanged" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="183,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="397" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="183,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="405,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="405,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="617,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="617,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="405,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="617,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Button Content="CADASTRAR" HorizontalAlignment="Left" Margin="405,519,0,0" VerticalAlignment="Top" Width="175" Height="39" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FF26CB0C" Foreground="White" FontSize="16" FontWeight="Bold"/>
         <Label Content="Nome Completo: " HorizontalAlignment="Left" Margin="183,80,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
-        <Calendar HorizontalAlignment="Left" Margin="613,106,0,0" VerticalAlignment="Top" Height="172"/>
         <Label Content="Data de Nascimento: " HorizontalAlignment="Left" Margin="613,80,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="126" IsEnabled="False"/>
-        <Label Content="CPF: " HorizontalAlignment="Left" Margin="183,147,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
-        <Label Content="Cidade:" HorizontalAlignment="Left" Margin="405,147,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="183,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label Content="Usuário: " HorizontalAlignment="Left" Margin="183,434,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
-        <Label Content="Senha: " HorizontalAlignment="Left" Margin="405,434,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
-        <Label Content="Confirmar Senha: " HorizontalAlignment="Left" Margin="617,434,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
-        <RadioButton Content="Sim" HorizontalAlignment="Left" Margin="192,263,0,0" VerticalAlignment="Top"/>
-        <RadioButton Content="Não" HorizontalAlignment="Left" Margin="283,263,0,0" VerticalAlignment="Top"/>
-        <Label Content="Possui por alguma experiência de furto ou roubo? " HorizontalAlignment="Left" Margin="183,222,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="290" IsEnabled="False"/>
-        <TextBox HorizontalAlignment="Left" Height="98" Margin="183,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="609"/>
-        <Label Content="Caso a resposta seja sim, conte-nos" HorizontalAlignment="Left" Margin="183,300,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="205" IsEnabled="False"/>
+        <Label Content="Cidade:" HorizontalAlignment="Left" Margin="617,147,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="183,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Usuário: " HorizontalAlignment="Left" Margin="183,367,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
+        <Label Content="Senha: " HorizontalAlignment="Left" Margin="405,367,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
+        <Label Content="Confirmar Senha: " HorizontalAlignment="Left" Margin="617,367,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
+        <RadioButton Content="Sim" HorizontalAlignment="Left" Margin="196,190,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Não" HorizontalAlignment="Left" Margin="271,189,0,0" VerticalAlignment="Top"/>
+        <Label Content="Possui por alguma experiência de furto ou roubo? " HorizontalAlignment="Left" Margin="183,155,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="290" IsEnabled="False"/>
+        <TextBox HorizontalAlignment="Left" Height="98" Margin="183,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="609"/>
+        <Label Content="Caso a resposta seja sim, conte-nos" HorizontalAlignment="Left" Margin="183,227,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="205" IsEnabled="False"/>
+        <DatePicker x:Name="dpCadastro" Text="Selecione uma data" HorizontalAlignment="Left" Margin="617,105,0,0" VerticalAlignment="Top" Width="175"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="405,477,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Captcha: Qual o resultado de 5 + 3 ?" HorizontalAlignment="Left" Margin="395,446,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="199" IsEnabled="False"/>
     </Grid>
 </Window>
 

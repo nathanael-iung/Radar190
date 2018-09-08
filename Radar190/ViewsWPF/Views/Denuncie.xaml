@@ -23,9 +23,8 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="188,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="335" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="420,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="420,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Calendar HorizontalAlignment="Left" Margin="171,135,0,0" VerticalAlignment="Top" Height="165" Width="197"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="188,336,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="564,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.233,0.522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="561,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.233,0.522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Button Content="DENUNCIAR" HorizontalAlignment="Left" Margin="390,532,0,0" VerticalAlignment="Top" Width="232" Height="29" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FFAC0E0E" Foreground="White" FontSize="16" FontWeight="Bold"/>
         <ComboBox x:Name="cbCidadeDenuncie1" HorizontalAlignment="Left" Margin="613,198,0,0" VerticalAlignment="Top" Width="156" Height="26">
             <ComboBoxItem Content="Curitiba"/>
@@ -36,8 +35,8 @@
             <ComboBoxItem Content="São José dos Pinhais"/>
         </ComboBox>
         <Label Content="Nome Completo: " HorizontalAlignment="Left" Margin="183,44,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
-        <Label Content="Idade: " HorizontalAlignment="Left" Margin="564,44,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="44" IsEnabled="False"/>
-        <Label Content="Data do ocorrido: " HorizontalAlignment="Left" Margin="183,104,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
+        <Label Content="Idade: " HorizontalAlignment="Left" Margin="561,44,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="44" IsEnabled="False"/>
+        <Label Content="Data do ocorrido: " HorizontalAlignment="Left" Margin="183,229,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
         <Label Content="Horário da ocorrência: (HH:MM): " HorizontalAlignment="Left" Margin="188,305,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="190" IsEnabled="False"/>
         <Label Content=" : " HorizontalAlignment="Left" Margin="229,333,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="17" IsEnabled="False"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="251,335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
@@ -47,7 +46,7 @@
         <Label Content="Bairro: " HorizontalAlignment="Left" Margin="420,167,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="49" IsEnabled="False"/>
         <Label Content="Cidade: " HorizontalAlignment="Left" Margin="613,172,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="53" IsEnabled="False"/>
         <Label Content="Registrou B.O. : " HorizontalAlignment="Left" Margin="420,227,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="98" IsEnabled="False"/>
-        <RadioButton Content="Vítima" HorizontalAlignment="Left" Margin="651,70,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="Vítima" HorizontalAlignment="Left" Margin="650,73,0,0" VerticalAlignment="Top"/>
         <RadioButton Content="Testemunha" HorizontalAlignment="Left" Margin="725,73,0,0" VerticalAlignment="Top"/>
         <RadioButton Content="Sim" HorizontalAlignment="Left" Margin="430,271,0,0" VerticalAlignment="Top"/>
         <RadioButton Content="Não" HorizontalAlignment="Left" Margin="499,271,0,0" VerticalAlignment="Top"/>
@@ -73,6 +72,12 @@
         <CheckBox x:Name="checkBox1_Copy5" Content="Outros" HorizontalAlignment="Left" Margin="698,398,0,0" VerticalAlignment="Top"/>
         <Label Content="Descrição Detalhada do Ocorrido:  (Em que situação ocorreu, quem estava presente, quantos envolvidos e etc." HorizontalAlignment="Left" Margin="188,425,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="597" IsEnabled="False"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="59" Margin="188,456,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="641"/>
+        <DatePicker x:Name="dpDenuncie" Text="Selecione uma data" HorizontalAlignment="Left" Margin="183,260,0,0" VerticalAlignment="Top" Width="180" Height="28" DisplayDateStart="2018-01-01" FirstDayOfWeek="Monday" IsTodayHighlighted="True" SelectedDateFormat="Short" />
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="183,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="CPF:" HorizontalAlignment="Left" Margin="188,167,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="36" IsEnabled="False"/>
+        <RadioButton Content="Feminino" HorizontalAlignment="Left" Margin="183,143,0,0" VerticalAlignment="Top"/>
+        <Label Content="Sexo: " HorizontalAlignment="Left" Margin="183,104,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="41" IsEnabled="False"/>
+        <RadioButton Content="Masculino" HorizontalAlignment="Left" Margin="290,143,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
 
