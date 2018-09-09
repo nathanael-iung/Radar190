@@ -7,8 +7,10 @@
         mc:Ignorable="d"
         Title="-------" Height="606" Width="850">
     <Grid AllowDrop="True" Margin="0,0,0,-3">
+        
         <DockPanel HorizontalAlignment="Left" Height="569" LastChildFill="False" VerticalAlignment="Top" Width="162" Background="Black"/>
         <DockPanel HorizontalAlignment="Left" Height="0" LastChildFill="False" Margin="129,0,0,0" VerticalAlignment="Top" Width="663" Background="White"/>
+        
         <Button x:Name="btnMapaFaleConosco" Content="Fale Conosco" HorizontalAlignment="Left" Margin="0,520,0,0" VerticalAlignment="Top" Width="162" Height="41" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15" Click="btnMapaFaleConosco_Click"/>
         <Button x:Name="btnMapaDicas" Content="Dicas de Segurança" HorizontalAlignment="Left" VerticalAlignment="Top" Width="162" Margin="0,465,0,0" Height="50" FontFamily="Century Gothic" FontSize="15" Background="Black" BorderBrush="Black" Foreground="White" Click="btnMapaDicas_Click"/>
         <Button x:Name="btnMapaContatosEmergenciais" Content="Contatos Emergênciais" HorizontalAlignment="Left" Margin="0,410,0,0" VerticalAlignment="Top" Width="162" Height="50" FontFamily="Century Gothic" FontSize="13" Background="Black" BorderBrush="Black" Foreground="White" Click="btnMapaContatosEmergenciais_Click"/>
@@ -19,7 +21,9 @@
         <Button x:Name="btnMapaCadastro" Content="Cadastre-se" HorizontalAlignment="Left" Margin="0,135,0,0" VerticalAlignment="Top" Width="162" Height="50" FontFamily="Century Gothic" FontSize="15" Background="Black" BorderBrush="Black" Foreground="White" Click="btnMapaCadastro_Click"/>
         <Button x:Name="btnMapaHome" Content="Home" HorizontalAlignment="Left" Margin="0,80,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15" Click="btnMapaHome_Click"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="56" Margin="31,10,0,0" VerticalAlignment="Top" Width="100" Source="Logo-fundo-preto.png"/>
-        <TextBox HorizontalAlignment="Center" Height="79" Margin="300,10,118,0" TextWrapping="Wrap" Text="Confira o índice de Crimes em sua Região" Width="424" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Century Gothic" Foreground="Black" FontWeight="Bold" FontStyle="Italic" SelectionBrush="#FF008EFF" IsEnabled="False"/>
+        
+        <TextBox x:Name="txtMapaTitulo" HorizontalAlignment="Center" Height="79" Margin="300,10,118,0" TextWrapping="Wrap" Text="Confira o índice de Crimes em sua Região" Width="424" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
         <WebBrowser x:Name="wbMaps" HorizontalAlignment="Left" Height="451" Margin="185,110,0,0" VerticalAlignment="Top" Width="633" Initialized="WebBrowser_Initialized"/>
+        
     </Grid>
 </Window>

@@ -7,8 +7,11 @@
         mc:Ignorable="d"
         Title="-------" Height="606" Width="850">
     <Grid AllowDrop="True" Margin="0,0,0,-3">
+        
         <DockPanel HorizontalAlignment="Left" Height="569" LastChildFill="False" VerticalAlignment="Top" Width="162" Background="Black"/>
         <DockPanel HorizontalAlignment="Left" Height="0" LastChildFill="False" Margin="129,0,0,0" VerticalAlignment="Top" Width="663" Background="White"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="56" Margin="31,10,0,0" VerticalAlignment="Top" Width="100" Source="Logo-fundo-preto.png"/>
+        
         <Button x:Name="btnFaleConoscoFaleConosco" Content="Fale Conosco" HorizontalAlignment="Left" Margin="0,520,0,0" VerticalAlignment="Top" Width="162" Height="41" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
         <Button x:Name="btnFaleConoscoDicas" Content="Dicas de Segurança" HorizontalAlignment="Left" VerticalAlignment="Top" Width="162" Margin="0,465,0,0" Height="50" FontFamily="Century Gothic" FontSize="15" Background="Black" BorderBrush="Black" Foreground="White" Click="btnFaleConoscoDicas_Click"/>
         <Button x:Name="btnFaleConoscoContatosEmergenciais" Content="Contatos Emergênciais" HorizontalAlignment="Left" Margin="0,410,0,0" VerticalAlignment="Top" Width="162" Height="50" FontFamily="Century Gothic" FontSize="13" Background="Black" BorderBrush="Black" Foreground="White" Click="btnFaleConoscoContatosEmergenciais_Click"/>
@@ -18,19 +21,22 @@
         <Button x:Name="btnFaleConoscoDenuncie" Content="Denuncie" HorizontalAlignment="Left" Margin="0,190,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15" Click="btnFaleConoscoDenuncie_Click"/>
         <Button x:Name="btnFaleConoscoCadastro" Content="Cadastre-se" HorizontalAlignment="Left" Margin="0,135,0,0" VerticalAlignment="Top" Width="162" Height="50" FontFamily="Century Gothic" FontSize="15" Background="Black" BorderBrush="Black" Foreground="White" Click="btnFaleConoscoCadastro_Click"/>
         <Button x:Name="btnFaleConoscoHome" Content="Home" HorizontalAlignment="Left" Margin="0,80,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15" Click="btnFaleConoscoHome_Click"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="56" Margin="31,10,0,0" VerticalAlignment="Top" Width="100" Source="Logo-fundo-preto.png"/>
-        <TextBox HorizontalAlignment="Center" Height="37" Margin="403,5,221,0" TextWrapping="Wrap" Text="Fale Conosco" Width="218" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
-        <Label Content="Nome Completo: " HorizontalAlignment="Left" Margin="189,80,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="189,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="363" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label Content="E-mail: " HorizontalAlignment="Left" Margin="189,159,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="59" IsEnabled="False"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="189,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="363" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label Content="Assunto: " HorizontalAlignment="Left" Margin="189,245,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="59" IsEnabled="False"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="189,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="363" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label Content="Mensagem: " HorizontalAlignment="Left" Margin="189,324,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="73" IsEnabled="False"/>
-        <TextBox HorizontalAlignment="Left" Height="116" Margin="189,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="633" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Button Content="ENVIAR MENSAGEM" HorizontalAlignment="Left" Margin="379,504,0,0" VerticalAlignment="Top" Width="242" Height="39" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FF26CB0C" Foreground="White" FontSize="16" FontWeight="Bold"/>
-        <Label x:Name="label" Content="Agradecemos" HorizontalAlignment="Left" Margin="602,102,0,0" VerticalAlignment="Top" Height="32" Width="220" IsEnabled="False" FontSize="18" FontFamily="Wide Latin"/>
-        <Label x:Name="label_Copy" Content="o seu " HorizontalAlignment="Left" Margin="665,190,0,0" VerticalAlignment="Top" Height="38" Width="91" IsEnabled="False" FontFamily="Wide Latin" FontSize="18"/>
-        <Label x:Name="label_Copy1" Content="Feedback" HorizontalAlignment="Left" Margin="636,273,0,0" VerticalAlignment="Top" Height="31" Width="156" IsEnabled="False" FontFamily="Wide Latin" FontSize="18"/>
+        
+        <TextBox x:Name="FaleConoscoTitulo" HorizontalAlignment="Center" Height="37" Margin="403,5,221,0" TextWrapping="Wrap" Text="Fale Conosco" Width="218" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
+        
+        <Label x:Name="FaleConoscoNome" Content="Nome Completo: " HorizontalAlignment="Left" Margin="189,80,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
+        <TextBox x:Name="txtFaleConoscoNome" HorizontalAlignment="Left" Height="23" Margin="189,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="363" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        
+        <Label x:Name="FaleConoscoEmail" Content="E-mail: " HorizontalAlignment="Left" Margin="189,159,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="59" IsEnabled="False"/>
+        <TextBox x:Name="txtFaleConoscoEmail" HorizontalAlignment="Left" Height="23" Margin="189,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="363" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        
+        <Label x:Name="FaleConoscoAssunto" Content="Assunto: " HorizontalAlignment="Left" Margin="189,245,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="59" IsEnabled="False"/>
+        <TextBox x:Name="txtFaleConoscoAssunto" HorizontalAlignment="Left" Height="23" Margin="189,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="363" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        
+        <Label x:Name="FaleConoscoMensagem" Content="Mensagem: " HorizontalAlignment="Left" Margin="189,324,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="73" IsEnabled="False"/>
+        <TextBox x:Name="txtFaleConoscoMensagem" HorizontalAlignment="Left" Height="116" Margin="189,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="633" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        
+        <Button x:Name="btnFaleConoscoEnviarMensagem" Content="ENVIAR MENSAGEM" HorizontalAlignment="Left" Margin="379,504,0,0" VerticalAlignment="Top" Width="242" Height="39" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FF26CB0C" Foreground="White" FontSize="16" FontWeight="Bold"/>
+        
     </Grid>
 </Window>

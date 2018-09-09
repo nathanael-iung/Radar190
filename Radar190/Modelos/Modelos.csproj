@@ -49,13 +49,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador.cs">
+      <DependentUpon>BDRadar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bairro.cs">
+      <DependentUpon>BDRadar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDRadar.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDRadar.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDRadar.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDRadar.tt</DependentUpon>
+    </Compile>
     <Compile Include="BDRadar.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BDRadar.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Cidade.cs">
+      <DependentUpon>BDRadar.tt</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="ContatosEmergenciais.cs">
+      <DependentUpon>BDRadar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Denuncia.cs">
+      <DependentUpon>BDRadar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DicasSeguranca.cs">
+      <DependentUpon>BDRadar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FaleConosco.cs">
+      <DependentUpon>BDRadar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mapa.cs">
+      <DependentUpon>BDRadar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ObjRoubado.cs">
+      <DependentUpon>BDRadar.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuario.cs">
+      <DependentUpon>BDRadar.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -67,6 +107,22 @@
       <DependentUpon>BDRadar.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BDRadar.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BDRadar.Context.cs</LastGenOutput>
+      <DependentUpon>BDRadar.edmx</DependentUpon>
+    </Content>
+    <Content Include="BDRadar.edmx.sql" />
+    <Content Include="BDRadar.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BDRadar.cs</LastGenOutput>
+      <DependentUpon>BDRadar.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
