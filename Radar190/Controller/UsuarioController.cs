@@ -72,12 +72,5 @@ namespace Controller
             return contexto.UsuarioSet.ToList();
         }
 
-
-
-
-
-
-
-
     }
 }
