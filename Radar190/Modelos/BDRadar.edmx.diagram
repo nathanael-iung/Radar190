@@ -22,8 +22,8 @@
         <EntityTypeShape EntityType="BDRadar.FaleConosco" Width="1.5" PointX="4.25" PointY="5.5" />
         <AssociationConnector Association="BDRadar.UsuarioFaleConosco" />
         <AssociationConnector Association="BDRadar.MapaDenuncia" />
-        <AssociationConnector Association="BDRadar.UsuarioDenuncia" />
         <AssociationConnector Association="BDRadar.CidadeBairro" />
+        <AssociationConnector Association="BDRadar.UsuarioDenuncia" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

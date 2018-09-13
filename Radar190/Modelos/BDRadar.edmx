@@ -317,13 +317,13 @@
             <End Role="Mapa" EntitySet="MapaSet" />
             <End Role="Denuncia" EntitySet="DenunciaSet" />
           </AssociationSet>
-          <AssociationSet Name="UsuarioDenuncia" Association="BDRadar.UsuarioDenuncia">
-            <End Role="Usuario" EntitySet="UsuarioSet" />
-            <End Role="Denuncia" EntitySet="DenunciaSet" />
-          </AssociationSet>
           <AssociationSet Name="CidadeBairro" Association="BDRadar.CidadeBairro">
             <End Role="Cidade" EntitySet="CidadeSet" />
             <End Role="Bairro" EntitySet="BairroSet" />
+          </AssociationSet>
+          <AssociationSet Name="UsuarioDenuncia" Association="BDRadar.UsuarioDenuncia">
+            <End Role="Usuario" EntitySet="UsuarioSet" />
+            <End Role="Denuncia" EntitySet="DenunciaSet" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Usuario">
@@ -531,10 +531,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="UsuarioDenuncia">
-          <End Type="BDRadar.Usuario" Role="Usuario" Multiplicity="1" />
-          <End Type="BDRadar.Denuncia" Role="Denuncia" Multiplicity="1" />
-        </Association>
         <Association Name="CidadeBairro">
           <End Type="BDRadar.Cidade" Role="Cidade" Multiplicity="1" />
           <End Type="BDRadar.Bairro" Role="Bairro" Multiplicity="*" />
@@ -546,6 +542,10 @@
               <PropertyRef Name="CidadeIdCidade" />
             </Dependent>
           </ReferentialConstraint>
+        </Association>
+        <Association Name="UsuarioDenuncia">
+          <End Type="BDRadar.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="BDRadar.Denuncia" Role="Denuncia" Multiplicity="0..1" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -680,14 +680,6 @@
       </EndProperty>
       <EndProperty Name="Administrador">
         <ScalarProperty Name="IdAdministrador" ColumnName="IdAdministrador" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="UsuarioDenuncia" TypeName="BDRadar.UsuarioDenuncia" StoreEntitySet="UsuarioSet">
-      <EndProperty Name="Denuncia">
-        <ScalarProperty Name="IdDenuncia" ColumnName="Denuncia_IdDenuncia" />
-      </EndProperty>
-      <EndProperty Name="Usuario">
-        <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>
