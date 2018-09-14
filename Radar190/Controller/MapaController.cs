@@ -7,53 +7,52 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    class CidadeController
+    class MapaController
     {
-        void Insert(Cidade cid)
+        void Insert(Mapa map)
         {
             BDRadarContainer contexto = new BDRadarContainer();
-            contexto.CidadeSet.Add(cid);
+            contexto.MapaSet.Add(map);
             contexto.SaveChanges();
         }
 
-        Cidade BuscaID(int id)
+        Mapa BuscaID(int id)
         {
             BDRadarContainer contexto = new BDRadarContainer();
-            return contexto.CidadeSet.Find();
+            return contexto.MapaSet.Find();
         }
 
-        void Edit(int id, Cidade cidEditado)
+        void Edit(int id, Mapa mapEditado)
         {
-            Cidade cidAntigo = BuscaID(id);
+            Mapa mapAntigo = BuscaID(id);
 
-            if (cidAntigo != null)
+            if(mapAntigo != null)
             {
-                cidAntigo.City = cidEditado.City;
-                cidAntigo.UF = cidEditado.UF;
+                mapAntigo.Endereco = mapEditado.Endereco;
+                mapAntigo.Numero = mapEditado.Numero;
 
                 BDRadarContainer contexto = new BDRadarContainer();
-                contexto.Entry(cidAntigo).State = System.Data.Entity.EntityState.Modified;
+                contexto.Entry(mapAntigo).State = System.Data.Entity.EntityState.Modified;
                 contexto.SaveChanges();
             }
         }
 
         void Delete(int id)
         {
-            Cidade cidExcluir = new Cidade();
+            Mapa mapExcluir = BuscaID(id);
 
-            if (cidExcluir != null)
+            if (mapExcluir != null)
             {
                 BDRadarContainer contexto = new BDRadarContainer();
-                contexto.CidadeSet.Remove(cidExcluir);
+                contexto.MapaSet.Remove(mapExcluir);
                 contexto.SaveChanges();
             }
         }
 
-        List<Cidade> ListCidades()
+        List<Mapa> ListMap()
         {
             BDRadarContainer contexto = new BDRadarContainer();
-            return contexto.CidadeSet.ToList();
+            return contexto.MapaSet.ToList();
         }
-
     }
 }

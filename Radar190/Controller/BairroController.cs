@@ -7,53 +7,51 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    class CidadeController
+    class BairroController
     {
-        void Insert(Cidade cid)
+        void Insert(Bairro bai)
         {
             BDRadarContainer contexto = new BDRadarContainer();
-            contexto.CidadeSet.Add(cid);
+            contexto.BairroSet.Add(bai);
             contexto.SaveChanges();
         }
 
-        Cidade BuscaID(int id)
+        Bairro BuscaID(int id)
         {
             BDRadarContainer contexto = new BDRadarContainer();
-            return contexto.CidadeSet.Find();
+            return contexto.BairroSet.Find();
         }
 
-        void Edit(int id, Cidade cidEditado)
+        void Edit(int id, Bairro baiEditado)
         {
-            Cidade cidAntigo = BuscaID(id);
+            Bairro baiAntigo = BuscaID(id);
 
-            if (cidAntigo != null)
+            if(baiAntigo != null)
             {
-                cidAntigo.City = cidEditado.City;
-                cidAntigo.UF = cidEditado.UF;
+                baiAntigo.Distrito = baiEditado.Distrito;
 
                 BDRadarContainer contexto = new BDRadarContainer();
-                contexto.Entry(cidAntigo).State = System.Data.Entity.EntityState.Modified;
+                contexto.Entry(baiAntigo).State = System.Data.Entity.EntityState.Modified;
                 contexto.SaveChanges();
             }
         }
 
         void Delete(int id)
         {
-            Cidade cidExcluir = new Cidade();
+            Bairro baiExcluir = BuscaID(id);
 
-            if (cidExcluir != null)
+            if(baiExcluir != null)
             {
                 BDRadarContainer contexto = new BDRadarContainer();
-                contexto.CidadeSet.Remove(cidExcluir);
+                contexto.BairroSet.Remove(baiExcluir);
                 contexto.SaveChanges();
             }
         }
 
-        List<Cidade> ListCidades()
+        List<Bairro> ListBairros()
         {
             BDRadarContainer contexto = new BDRadarContainer();
-            return contexto.CidadeSet.ToList();
+            return contexto.BairroSet.ToList();
         }
-
     }
 }
