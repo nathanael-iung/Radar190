@@ -4,277 +4,291 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="BDRadar.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="AdministradorSet">
-          <Key>
-            <PropertyRef Name="IdAdministrador" />
-          </Key>
-          <Property Name="IdAdministrador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Usuario" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Usuarios_IdUsuario" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="BairroSet">
-          <Key>
-            <PropertyRef Name="IdBairro" />
-          </Key>
-          <Property Name="IdBairro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Distrito" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="CidadeIdCidade" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="CidadeSet">
-          <Key>
-            <PropertyRef Name="IdCidade" />
-          </Key>
-          <Property Name="IdCidade" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="City" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="UF" Type="nvarchar(max)" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ContatosEmergenciaisSet">
-          <Key>
-            <PropertyRef Name="IdContEmergenciais" />
-          </Key>
-          <Property Name="IdContEmergenciais" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Numero" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="AdministradorIdAdministrador" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="DenunciaSet">
-          <Key>
-            <PropertyRef Name="IdDenuncia" />
-          </Key>
-          <Property Name="IdDenuncia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NomeCompleto" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Idade" Type="smallint" />
-          <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Sexo" Type="nvarchar(max)" />
-          <Property Name="CPF" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="DataHora" Type="datetime" Nullable="false" />
-          <Property Name="BO" Type="bit" />
-          <Property Name="TipoOcorrencia" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Descricao" Type="nvarchar(max)" />
-          <Property Name="Prejuizo" Type="nvarchar(max)" />
-          <Property Name="UsuarioIdUsuario" Type="int" />
-          <Property Name="MapaIdMapa" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="DicasSegurancaSet">
-          <Key>
-            <PropertyRef Name="IdDicasSeguranca" />
-          </Key>
-          <Property Name="IdDicasSeguranca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="AdministradorIdAdministrador" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="FaleConoscoSet">
-          <Key>
-            <PropertyRef Name="IdFaleConosco" />
-          </Key>
-          <Property Name="IdFaleConosco" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Assunto" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Mensagem" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="UsuarioIdUsuario" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="MapaSet">
-          <Key>
-            <PropertyRef Name="IdMapa" />
-          </Key>
-          <Property Name="IdMapa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Endereco" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Numero" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="BairroIdBairro" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ObjRoubadoSet">
-          <Key>
-            <PropertyRef Name="IdObjRoubados" />
-          </Key>
-          <Property Name="IdObjRoubados" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Dinheiro" Type="bit" />
-          <Property Name="Carteira" Type="bit" />
-          <Property Name="Documentos" Type="bit" />
-          <Property Name="Celular" Type="bit" />
-          <Property Name="Notebook" Type="bit" />
-          <Property Name="Motocicleta" Type="bit" />
-          <Property Name="Veiculo" Type="bit" />
-          <Property Name="OutrosEletronicos" Type="bit" />
-          <Property Name="Outros" Type="bit" />
-          <Property Name="DenunciaIdDenuncia" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="UsuarioSet">
-          <Key>
-            <PropertyRef Name="IdUsuario" />
-          </Key>
-          <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NomeCompleto" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="DtNasc" Type="datetime" Nullable="false" />
-          <Property Name="Experiencia" Type="bit" />
-          <Property Name="Cidade" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="User" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Senha" Type="smallint" Nullable="false" />
-          <Property Name="CidadeIdCidade" Type="int" Nullable="false" />
-          <Property Name="Denuncia_IdDenuncia" Type="int" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_AdministradorContatosEmergenciais">
-          <End Role="AdministradorSet" Type="Self.AdministradorSet" Multiplicity="1" />
-          <End Role="ContatosEmergenciaisSet" Type="Self.ContatosEmergenciaisSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AdministradorSet">
-              <PropertyRef Name="IdAdministrador" />
-            </Principal>
-            <Dependent Role="ContatosEmergenciaisSet">
-              <PropertyRef Name="AdministradorIdAdministrador" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_AdministradorDicasSeguranca">
-          <End Role="AdministradorSet" Type="Self.AdministradorSet" Multiplicity="1" />
-          <End Role="DicasSegurancaSet" Type="Self.DicasSegurancaSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AdministradorSet">
-              <PropertyRef Name="IdAdministrador" />
-            </Principal>
-            <Dependent Role="DicasSegurancaSet">
-              <PropertyRef Name="AdministradorIdAdministrador" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_AdministradorUsuario">
-          <End Role="UsuarioSet" Type="Self.UsuarioSet" Multiplicity="1" />
-          <End Role="AdministradorSet" Type="Self.AdministradorSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UsuarioSet">
-              <PropertyRef Name="IdUsuario" />
-            </Principal>
-            <Dependent Role="AdministradorSet">
-              <PropertyRef Name="Usuarios_IdUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CidadeBairro">
-          <End Role="CidadeSet" Type="Self.CidadeSet" Multiplicity="1" />
-          <End Role="BairroSet" Type="Self.BairroSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CidadeSet">
-              <PropertyRef Name="IdCidade" />
-            </Principal>
-            <Dependent Role="BairroSet">
-              <PropertyRef Name="CidadeIdCidade" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_DenunciaObjRoubados">
-          <End Role="DenunciaSet" Type="Self.DenunciaSet" Multiplicity="1" />
-          <End Role="ObjRoubadoSet" Type="Self.ObjRoubadoSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DenunciaSet">
-              <PropertyRef Name="IdDenuncia" />
-            </Principal>
-            <Dependent Role="ObjRoubadoSet">
-              <PropertyRef Name="DenunciaIdDenuncia" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_MapaBairro">
-          <End Role="BairroSet" Type="Self.BairroSet" Multiplicity="1" />
-          <End Role="MapaSet" Type="Self.MapaSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BairroSet">
-              <PropertyRef Name="IdBairro" />
-            </Principal>
-            <Dependent Role="MapaSet">
-              <PropertyRef Name="BairroIdBairro" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_MapaDenuncia">
-          <End Role="MapaSet" Type="Self.MapaSet" Multiplicity="1" />
-          <End Role="DenunciaSet" Type="Self.DenunciaSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MapaSet">
-              <PropertyRef Name="IdMapa" />
-            </Principal>
-            <Dependent Role="DenunciaSet">
-              <PropertyRef Name="MapaIdMapa" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_UsuarioDenuncia">
-          <End Role="DenunciaSet" Type="Self.DenunciaSet" Multiplicity="1" />
-          <End Role="UsuarioSet" Type="Self.UsuarioSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DenunciaSet">
-              <PropertyRef Name="IdDenuncia" />
-            </Principal>
-            <Dependent Role="UsuarioSet">
-              <PropertyRef Name="Denuncia_IdDenuncia" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_UsuarioFaleConosco">
-          <End Role="UsuarioSet" Type="Self.UsuarioSet" Multiplicity="1" />
-          <End Role="FaleConoscoSet" Type="Self.FaleConoscoSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UsuarioSet">
-              <PropertyRef Name="IdUsuario" />
-            </Principal>
-            <Dependent Role="FaleConoscoSet">
-              <PropertyRef Name="UsuarioIdUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="BDRadarStoreContainer">
-          <EntitySet Name="AdministradorSet" EntityType="Self.AdministradorSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="BairroSet" EntityType="Self.BairroSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CidadeSet" EntityType="Self.CidadeSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ContatosEmergenciaisSet" EntityType="Self.ContatosEmergenciaisSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="DenunciaSet" EntityType="Self.DenunciaSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="DicasSegurancaSet" EntityType="Self.DicasSegurancaSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="FaleConoscoSet" EntityType="Self.FaleConoscoSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="MapaSet" EntityType="Self.MapaSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ObjRoubadoSet" EntityType="Self.ObjRoubadoSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="UsuarioSet" EntityType="Self.UsuarioSet" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_AdministradorContatosEmergenciais" Association="Self.FK_AdministradorContatosEmergenciais">
-            <End Role="AdministradorSet" EntitySet="AdministradorSet" />
-            <End Role="ContatosEmergenciaisSet" EntitySet="ContatosEmergenciaisSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AdministradorDicasSeguranca" Association="Self.FK_AdministradorDicasSeguranca">
-            <End Role="AdministradorSet" EntitySet="AdministradorSet" />
-            <End Role="DicasSegurancaSet" EntitySet="DicasSegurancaSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AdministradorUsuario" Association="Self.FK_AdministradorUsuario">
-            <End Role="UsuarioSet" EntitySet="UsuarioSet" />
-            <End Role="AdministradorSet" EntitySet="AdministradorSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CidadeBairro" Association="Self.FK_CidadeBairro">
-            <End Role="CidadeSet" EntitySet="CidadeSet" />
-            <End Role="BairroSet" EntitySet="BairroSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_DenunciaObjRoubados" Association="Self.FK_DenunciaObjRoubados">
-            <End Role="DenunciaSet" EntitySet="DenunciaSet" />
-            <End Role="ObjRoubadoSet" EntitySet="ObjRoubadoSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MapaBairro" Association="Self.FK_MapaBairro">
-            <End Role="BairroSet" EntitySet="BairroSet" />
-            <End Role="MapaSet" EntitySet="MapaSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MapaDenuncia" Association="Self.FK_MapaDenuncia">
-            <End Role="MapaSet" EntitySet="MapaSet" />
-            <End Role="DenunciaSet" EntitySet="DenunciaSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UsuarioDenuncia" Association="Self.FK_UsuarioDenuncia">
-            <End Role="DenunciaSet" EntitySet="DenunciaSet" />
-            <End Role="UsuarioSet" EntitySet="UsuarioSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UsuarioFaleConosco" Association="Self.FK_UsuarioFaleConosco">
-            <End Role="UsuarioSet" EntitySet="UsuarioSet" />
-            <End Role="FaleConoscoSet" EntitySet="FaleConoscoSet" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema></edmx:StorageModels>
+    <Schema Namespace="BDRadar.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="BDRadarStoreContainer">
+    <EntitySet Name="UsuarioSet" EntityType="BDRadar.Store.UsuarioSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CidadeSet" EntityType="BDRadar.Store.CidadeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DenunciaSet" EntityType="BDRadar.Store.DenunciaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ObjRoubadoSet" EntityType="BDRadar.Store.ObjRoubadoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MapaSet" EntityType="BDRadar.Store.MapaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BairroSet" EntityType="BDRadar.Store.BairroSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AdministradorSet" EntityType="BDRadar.Store.AdministradorSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContatosEmergenciaisSet" EntityType="BDRadar.Store.ContatosEmergenciaisSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DicasSegurancaSet" EntityType="BDRadar.Store.DicasSegurancaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FaleConoscoSet" EntityType="BDRadar.Store.FaleConoscoSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="MapaBairro" Association="BDRadar.Store.MapaBairro">
+      <End Role="Mapa" EntitySet="MapaSet" />
+      <End Role="Bairro" EntitySet="BairroSet" />
+    </AssociationSet>
+    <AssociationSet Name="AdministradorContatosEmergenciais" Association="BDRadar.Store.AdministradorContatosEmergenciais">
+      <End Role="Administrador" EntitySet="AdministradorSet" />
+      <End Role="ContatosEmergenciais" EntitySet="ContatosEmergenciaisSet" />
+    </AssociationSet>
+    <AssociationSet Name="AdministradorDicasSeguranca" Association="BDRadar.Store.AdministradorDicasSeguranca">
+      <End Role="Administrador" EntitySet="AdministradorSet" />
+      <End Role="DicasSeguranca" EntitySet="DicasSegurancaSet" />
+    </AssociationSet>
+    <AssociationSet Name="UsuarioFaleConosco" Association="BDRadar.Store.UsuarioFaleConosco">
+      <End Role="Usuario" EntitySet="UsuarioSet" />
+      <End Role="FaleConosco" EntitySet="FaleConoscoSet" />
+    </AssociationSet>
+    <AssociationSet Name="CidadeBairro" Association="BDRadar.Store.CidadeBairro">
+      <End Role="Cidade" EntitySet="CidadeSet" />
+      <End Role="Bairro" EntitySet="BairroSet" />
+    </AssociationSet>
+    <AssociationSet Name="DenunciaMapa" Association="BDRadar.Store.DenunciaMapa">
+      <End Role="Denuncia" EntitySet="DenunciaSet" />
+      <End Role="Mapa" EntitySet="MapaSet" />
+    </AssociationSet>
+    <AssociationSet Name="DenunciaObjRoubado" Association="BDRadar.Store.DenunciaObjRoubado">
+      <End Role="Denuncia" EntitySet="DenunciaSet" />
+      <End Role="ObjRoubado" EntitySet="ObjRoubadoSet" />
+    </AssociationSet>
+    <AssociationSet Name="UsuarioCidade" Association="BDRadar.Store.UsuarioCidade">
+      <End Role="Usuario" EntitySet="UsuarioSet" />
+      <End Role="Cidade" EntitySet="CidadeSet" />
+    </AssociationSet>
+    <AssociationSet Name="UsuarioDenuncia" Association="BDRadar.Store.UsuarioDenuncia">
+      <End Role="Usuario" EntitySet="UsuarioSet" />
+      <End Role="Denuncia" EntitySet="DenunciaSet" />
+    </AssociationSet>
+    <AssociationSet Name="AdministradorUsuario" Association="BDRadar.Store.AdministradorUsuario">
+      <End Role="Administrador" EntitySet="AdministradorSet" />
+      <End Role="Usuario" EntitySet="UsuarioSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UsuarioSet">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomeCompleto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DtNasc" Type="datetime" Nullable="false" />
+    <Property Name="Experiencia" Type="bit" Nullable="true" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="User" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Senha" Type="smallint" Nullable="false" />
+    <Property Name="CidadeIdCidade" Type="int" Nullable="false" />
+    <Property Name="AdministradorUsuario_Usuario_IdAdministrador" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="CidadeSet">
+    <Key>
+      <PropertyRef Name="IdCidade" />
+    </Key>
+    <Property Name="IdCidade" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UF" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DenunciaSet">
+    <Key>
+      <PropertyRef Name="IdDenuncia" />
+    </Key>
+    <Property Name="IdDenuncia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomeCompleto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Idade" Type="smallint" Nullable="true" />
+    <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Sexo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CPF" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DataHora" Type="datetime" Nullable="false" />
+    <Property Name="BO" Type="bit" Nullable="true" />
+    <Property Name="TipoOcorrencia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Prejuizo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MapaIdMapa" Type="int" Nullable="false" />
+    <Property Name="UsuarioIdUsuario" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ObjRoubadoSet">
+    <Key>
+      <PropertyRef Name="IdObjRoubados" />
+    </Key>
+    <Property Name="IdObjRoubados" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dinheiro" Type="bit" Nullable="true" />
+    <Property Name="Carteira" Type="bit" Nullable="true" />
+    <Property Name="Documentos" Type="bit" Nullable="true" />
+    <Property Name="Celular" Type="bit" Nullable="true" />
+    <Property Name="Notebook" Type="bit" Nullable="true" />
+    <Property Name="Motocicleta" Type="bit" Nullable="true" />
+    <Property Name="Veiculo" Type="bit" Nullable="true" />
+    <Property Name="OutrosEletronicos" Type="bit" Nullable="true" />
+    <Property Name="Outros" Type="bit" Nullable="true" />
+    <Property Name="DenunciaIdDenuncia" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MapaSet">
+    <Key>
+      <PropertyRef Name="IdMapa" />
+    </Key>
+    <Property Name="IdMapa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Endereco" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Numero" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BairroIdBairro" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BairroSet">
+    <Key>
+      <PropertyRef Name="IdBairro" />
+    </Key>
+    <Property Name="IdBairro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distrito" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CidadeIdCidade" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdministradorSet">
+    <Key>
+      <PropertyRef Name="IdAdministrador" />
+    </Key>
+    <Property Name="IdAdministrador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Usuario" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContatosEmergenciaisSet">
+    <Key>
+      <PropertyRef Name="IdContEmergenciais" />
+    </Key>
+    <Property Name="IdContEmergenciais" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Numero" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AdministradorIdAdministrador" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DicasSegurancaSet">
+    <Key>
+      <PropertyRef Name="IdDicasSeguranca" />
+    </Key>
+    <Property Name="IdDicasSeguranca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AdministradorIdAdministrador" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FaleConoscoSet">
+    <Key>
+      <PropertyRef Name="IdFaleConosco" />
+    </Key>
+    <Property Name="IdFaleConosco" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Assunto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mensagem" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UsuarioIdUsuario" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="MapaBairro">
+    <End Role="Mapa" Type="BDRadar.Store.MapaSet" Multiplicity="*" />
+    <End Role="Bairro" Type="BDRadar.Store.BairroSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Bairro">
+        <PropertyRef Name="IdBairro" />
+      </Principal>
+      <Dependent Role="Mapa">
+        <PropertyRef Name="BairroIdBairro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdministradorContatosEmergenciais">
+    <End Role="Administrador" Type="BDRadar.Store.AdministradorSet" Multiplicity="1" />
+    <End Role="ContatosEmergenciais" Type="BDRadar.Store.ContatosEmergenciaisSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrador">
+        <PropertyRef Name="IdAdministrador" />
+      </Principal>
+      <Dependent Role="ContatosEmergenciais">
+        <PropertyRef Name="AdministradorIdAdministrador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdministradorDicasSeguranca">
+    <End Role="Administrador" Type="BDRadar.Store.AdministradorSet" Multiplicity="1" />
+    <End Role="DicasSeguranca" Type="BDRadar.Store.DicasSegurancaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrador">
+        <PropertyRef Name="IdAdministrador" />
+      </Principal>
+      <Dependent Role="DicasSeguranca">
+        <PropertyRef Name="AdministradorIdAdministrador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsuarioFaleConosco">
+    <End Role="Usuario" Type="BDRadar.Store.UsuarioSet" Multiplicity="1" />
+    <End Role="FaleConosco" Type="BDRadar.Store.FaleConoscoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="FaleConosco">
+        <PropertyRef Name="UsuarioIdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CidadeBairro">
+    <End Role="Cidade" Type="BDRadar.Store.CidadeSet" Multiplicity="1" />
+    <End Role="Bairro" Type="BDRadar.Store.BairroSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cidade">
+        <PropertyRef Name="IdCidade" />
+      </Principal>
+      <Dependent Role="Bairro">
+        <PropertyRef Name="CidadeIdCidade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DenunciaMapa">
+    <End Role="Denuncia" Type="BDRadar.Store.DenunciaSet" Multiplicity="*" />
+    <End Role="Mapa" Type="BDRadar.Store.MapaSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Mapa">
+        <PropertyRef Name="IdMapa" />
+      </Principal>
+      <Dependent Role="Denuncia">
+        <PropertyRef Name="MapaIdMapa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DenunciaObjRoubado">
+    <End Role="Denuncia" Type="BDRadar.Store.DenunciaSet" Multiplicity="1" />
+    <End Role="ObjRoubado" Type="BDRadar.Store.ObjRoubadoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Denuncia">
+        <PropertyRef Name="IdDenuncia" />
+      </Principal>
+      <Dependent Role="ObjRoubado">
+        <PropertyRef Name="DenunciaIdDenuncia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsuarioCidade">
+    <End Role="Usuario" Type="BDRadar.Store.UsuarioSet" Multiplicity="*" />
+    <End Role="Cidade" Type="BDRadar.Store.CidadeSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Cidade">
+        <PropertyRef Name="IdCidade" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="CidadeIdCidade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsuarioDenuncia">
+    <End Role="Usuario" Type="BDRadar.Store.UsuarioSet" Multiplicity="0..1" />
+    <End Role="Denuncia" Type="BDRadar.Store.DenunciaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Denuncia">
+        <PropertyRef Name="UsuarioIdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdministradorUsuario">
+    <End Role="Administrador" Type="BDRadar.Store.AdministradorSet" Multiplicity="0..1" />
+    <End Role="Usuario" Type="BDRadar.Store.UsuarioSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrador">
+        <PropertyRef Name="IdAdministrador" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="AdministradorUsuario_Usuario_IdAdministrador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="BDRadar" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
@@ -283,10 +297,6 @@
           <EntitySet Name="CidadeSet" EntityType="BDRadar.Cidade" />
           <EntitySet Name="DenunciaSet" EntityType="BDRadar.Denuncia" />
           <EntitySet Name="ObjRoubadoSet" EntityType="BDRadar.ObjRoubado" />
-          <AssociationSet Name="DenunciaObjRoubados" Association="BDRadar.DenunciaObjRoubados">
-            <End Role="Denuncia" EntitySet="DenunciaSet" />
-            <End Role="ObjRoubados" EntitySet="ObjRoubadoSet" />
-          </AssociationSet>
           <EntitySet Name="MapaSet" EntityType="BDRadar.Mapa" />
           <EntitySet Name="BairroSet" EntityType="BDRadar.Bairro" />
           <AssociationSet Name="MapaBairro" Association="BDRadar.MapaBairro">
@@ -294,10 +304,6 @@
             <End Role="Bairro" EntitySet="BairroSet" />
           </AssociationSet>
           <EntitySet Name="AdministradorSet" EntityType="BDRadar.Administrador" />
-          <AssociationSet Name="AdministradorUsuario" Association="BDRadar.AdministradorUsuario">
-            <End Role="Administrador" EntitySet="AdministradorSet" />
-            <End Role="Usuario" EntitySet="UsuarioSet" />
-          </AssociationSet>
           <EntitySet Name="ContatosEmergenciaisSet" EntityType="BDRadar.ContatosEmergenciais" />
           <AssociationSet Name="AdministradorContatosEmergenciais" Association="BDRadar.AdministradorContatosEmergenciais">
             <End Role="Administrador" EntitySet="AdministradorSet" />
@@ -313,17 +319,29 @@
             <End Role="Usuario" EntitySet="UsuarioSet" />
             <End Role="FaleConosco" EntitySet="FaleConoscoSet" />
           </AssociationSet>
-          <AssociationSet Name="MapaDenuncia" Association="BDRadar.MapaDenuncia">
-            <End Role="Mapa" EntitySet="MapaSet" />
-            <End Role="Denuncia" EntitySet="DenunciaSet" />
-          </AssociationSet>
           <AssociationSet Name="CidadeBairro" Association="BDRadar.CidadeBairro">
             <End Role="Cidade" EntitySet="CidadeSet" />
             <End Role="Bairro" EntitySet="BairroSet" />
           </AssociationSet>
+          <AssociationSet Name="DenunciaMapa" Association="BDRadar.DenunciaMapa">
+            <End Role="Denuncia" EntitySet="DenunciaSet" />
+            <End Role="Mapa" EntitySet="MapaSet" />
+          </AssociationSet>
+          <AssociationSet Name="DenunciaObjRoubado" Association="BDRadar.DenunciaObjRoubado">
+            <End Role="Denuncia" EntitySet="DenunciaSet" />
+            <End Role="ObjRoubado" EntitySet="ObjRoubadoSet" />
+          </AssociationSet>
+          <AssociationSet Name="UsuarioCidade" Association="BDRadar.UsuarioCidade">
+            <End Role="Usuario" EntitySet="UsuarioSet" />
+            <End Role="Cidade" EntitySet="CidadeSet" />
+          </AssociationSet>
           <AssociationSet Name="UsuarioDenuncia" Association="BDRadar.UsuarioDenuncia">
             <End Role="Usuario" EntitySet="UsuarioSet" />
             <End Role="Denuncia" EntitySet="DenunciaSet" />
+          </AssociationSet>
+          <AssociationSet Name="AdministradorUsuario" Association="BDRadar.AdministradorUsuario">
+            <End Role="Administrador" EntitySet="AdministradorSet" />
+            <End Role="Usuario" EntitySet="UsuarioSet" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Usuario">
@@ -334,13 +352,12 @@
           <Property Name="NomeCompleto" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="DtNasc" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Experiencia" Type="Boolean" Nullable="true" />
-          <Property Name="Cidade" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="User" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Senha" Type="Int16" Nullable="false" />
-          <Property Name="CidadeIdCidade" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Administrador" Relationship="BDRadar.AdministradorUsuario" FromRole="Usuario" ToRole="Administrador" />
           <NavigationProperty Name="FaleConosco" Relationship="BDRadar.UsuarioFaleConosco" FromRole="Usuario" ToRole="FaleConosco" />
+          <NavigationProperty Name="Cidade" Relationship="BDRadar.UsuarioCidade" FromRole="Usuario" ToRole="Cidade" />
+          <Property Name="CidadeIdCidade" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Denuncia" Relationship="BDRadar.UsuarioDenuncia" FromRole="Usuario" ToRole="Denuncia" />
         </EntityType>
         <EntityType Name="Cidade">
@@ -351,6 +368,7 @@
           <Property Name="City" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="UF" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Bairros" Relationship="BDRadar.CidadeBairro" FromRole="Cidade" ToRole="Bairro" />
+          <NavigationProperty Name="Usuario" Relationship="BDRadar.UsuarioCidade" FromRole="Cidade" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Denuncia">
           <Key>
@@ -367,11 +385,11 @@
           <Property Name="TipoOcorrencia" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Descricao" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Prejuizo" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="ObjRoubados" Relationship="BDRadar.DenunciaObjRoubados" FromRole="Denuncia" ToRole="ObjRoubados" />
-          <Property Name="UsuarioIdUsuario" Type="Int32" Nullable="true" />
-          <NavigationProperty Name="Mapa" Relationship="BDRadar.MapaDenuncia" FromRole="Denuncia" ToRole="Mapa" />
+          <NavigationProperty Name="Mapa" Relationship="BDRadar.DenunciaMapa" FromRole="Denuncia" ToRole="Mapa" />
           <Property Name="MapaIdMapa" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ObjRoubado" Relationship="BDRadar.DenunciaObjRoubado" FromRole="Denuncia" ToRole="ObjRoubado" />
           <NavigationProperty Name="Usuario" Relationship="BDRadar.UsuarioDenuncia" FromRole="Denuncia" ToRole="Usuario" />
+          <Property Name="UsuarioIdUsuario" Type="Int32" Nullable="true" />
         </EntityType>
         <EntityType Name="ObjRoubado">
           <Key>
@@ -387,21 +405,9 @@
           <Property Name="Veiculo" Type="Boolean" Nullable="true" />
           <Property Name="OutrosEletronicos" Type="Boolean" Nullable="true" />
           <Property Name="Outros" Type="Boolean" Nullable="true" />
-          <NavigationProperty Name="Denuncia" Relationship="BDRadar.DenunciaObjRoubados" FromRole="ObjRoubados" ToRole="Denuncia" />
+          <NavigationProperty Name="Denuncia" Relationship="BDRadar.DenunciaObjRoubado" FromRole="ObjRoubado" ToRole="Denuncia" />
           <Property Name="DenunciaIdDenuncia" Type="Int32" Nullable="false" />
         </EntityType>
-        <Association Name="DenunciaObjRoubados">
-          <End Type="BDRadar.Denuncia" Role="Denuncia" Multiplicity="1" />
-          <End Type="BDRadar.ObjRoubado" Role="ObjRoubados" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Denuncia">
-              <PropertyRef Name="IdDenuncia" />
-            </Principal>
-            <Dependent Role="ObjRoubados">
-              <PropertyRef Name="DenunciaIdDenuncia" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Mapa">
           <Key>
             <PropertyRef Name="IdMapa" />
@@ -411,7 +417,7 @@
           <Property Name="Numero" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Bairro" Relationship="BDRadar.MapaBairro" FromRole="Mapa" ToRole="Bairro" />
           <Property Name="BairroIdBairro" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Denuncias" Relationship="BDRadar.MapaDenuncia" FromRole="Mapa" ToRole="Denuncia" />
+          <NavigationProperty Name="Denuncia" Relationship="BDRadar.DenunciaMapa" FromRole="Mapa" ToRole="Denuncia" />
         </EntityType>
         <EntityType Name="Bairro">
           <Key>
@@ -443,14 +449,9 @@
           <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Usuario" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Senha" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Usuarios" Relationship="BDRadar.AdministradorUsuario" FromRole="Administrador" ToRole="Usuario" />
           <NavigationProperty Name="ContatosEmergenciais" Relationship="BDRadar.AdministradorContatosEmergenciais" FromRole="Administrador" ToRole="ContatosEmergenciais" />
           <NavigationProperty Name="DicasSeguranca" Relationship="BDRadar.AdministradorDicasSeguranca" FromRole="Administrador" ToRole="DicasSeguranca" />
         </EntityType>
-        <Association Name="AdministradorUsuario">
-          <End Type="BDRadar.Administrador" Role="Administrador" Multiplicity="1" />
-          <End Type="BDRadar.Usuario" Role="Usuario" Multiplicity="1" />
-        </Association>
         <EntityType Name="ContatosEmergenciais">
           <Key>
             <PropertyRef Name="IdContEmergenciais" />
@@ -519,18 +520,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="MapaDenuncia">
-          <End Type="BDRadar.Mapa" Role="Mapa" Multiplicity="1" />
-          <End Type="BDRadar.Denuncia" Role="Denuncia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Mapa">
-              <PropertyRef Name="IdMapa" />
-            </Principal>
-            <Dependent Role="Denuncia">
-              <PropertyRef Name="MapaIdMapa" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="CidadeBairro">
           <End Type="BDRadar.Cidade" Role="Cidade" Multiplicity="1" />
           <End Type="BDRadar.Bairro" Role="Bairro" Multiplicity="*" />
@@ -543,9 +532,57 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="DenunciaMapa">
+          <End Type="BDRadar.Denuncia" Role="Denuncia" Multiplicity="*" />
+          <End Type="BDRadar.Mapa" Role="Mapa" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Mapa">
+              <PropertyRef Name="IdMapa" />
+            </Principal>
+            <Dependent Role="Denuncia">
+              <PropertyRef Name="MapaIdMapa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DenunciaObjRoubado">
+          <End Type="BDRadar.Denuncia" Role="Denuncia" Multiplicity="1" />
+          <End Type="BDRadar.ObjRoubado" Role="ObjRoubado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Denuncia">
+              <PropertyRef Name="IdDenuncia" />
+            </Principal>
+            <Dependent Role="ObjRoubado">
+              <PropertyRef Name="DenunciaIdDenuncia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UsuarioCidade">
+          <End Type="BDRadar.Usuario" Role="Usuario" Multiplicity="*" />
+          <End Type="BDRadar.Cidade" Role="Cidade" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Cidade">
+              <PropertyRef Name="IdCidade" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="CidadeIdCidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="UsuarioDenuncia">
-          <End Type="BDRadar.Usuario" Role="Usuario" Multiplicity="1" />
-          <End Type="BDRadar.Denuncia" Role="Denuncia" Multiplicity="0..1" />
+          <End Type="BDRadar.Usuario" Role="Usuario" Multiplicity="0..1" />
+          <End Type="BDRadar.Denuncia" Role="Denuncia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Denuncia">
+              <PropertyRef Name="UsuarioIdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AdministradorUsuario">
+          <End Type="BDRadar.Administrador" Role="Administrador" Multiplicity="0..1" />
+          <End Type="BDRadar.Usuario" Role="Usuario" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -560,7 +597,6 @@
           <ScalarProperty Name="NomeCompleto" ColumnName="NomeCompleto" />
           <ScalarProperty Name="DtNasc" ColumnName="DtNasc" />
           <ScalarProperty Name="Experiencia" ColumnName="Experiencia" />
-          <ScalarProperty Name="Cidade" ColumnName="Cidade" />
           <ScalarProperty Name="Descricao" ColumnName="Descricao" />
           <ScalarProperty Name="User" ColumnName="User" />
           <ScalarProperty Name="Senha" ColumnName="Senha" />
@@ -591,8 +627,8 @@
           <ScalarProperty Name="TipoOcorrencia" ColumnName="TipoOcorrencia" />
           <ScalarProperty Name="Descricao" ColumnName="Descricao" />
           <ScalarProperty Name="Prejuizo" ColumnName="Prejuizo" />
-          <ScalarProperty Name="UsuarioIdUsuario" ColumnName="UsuarioIdUsuario" />
           <ScalarProperty Name="MapaIdMapa" ColumnName="MapaIdMapa" />
+          <ScalarProperty Name="UsuarioIdUsuario" ColumnName="UsuarioIdUsuario" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -674,13 +710,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="AdministradorUsuario" TypeName="BDRadar.AdministradorUsuario" StoreEntitySet="AdministradorSet">
-      <EndProperty Name="Usuario">
-        <ScalarProperty Name="IdUsuario" ColumnName="Usuarios_IdUsuario" />
-      </EndProperty>
+    <AssociationSetMapping Name="AdministradorUsuario" TypeName="BDRadar.AdministradorUsuario" StoreEntitySet="UsuarioSet">
       <EndProperty Name="Administrador">
-        <ScalarProperty Name="IdAdministrador" ColumnName="IdAdministrador" />
+        <ScalarProperty Name="IdAdministrador" ColumnName="AdministradorUsuario_Usuario_IdAdministrador" />
       </EndProperty>
+      <EndProperty Name="Usuario">
+        <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+      </EndProperty>
+      <Condition ColumnName="AdministradorUsuario_Usuario_IdAdministrador" IsNull="false" />
     </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>

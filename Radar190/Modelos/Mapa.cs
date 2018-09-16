@@ -17,7 +17,7 @@ namespace Modelos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Mapa()
         {
-            this.Denuncias = new HashSet<Denuncia>();
+            this.Denuncia = new HashSet<Denuncia>();
         }
     
         public int IdMapa { get; set; }
@@ -27,6 +27,6 @@ namespace Modelos
     
         public virtual Bairro Bairro { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Denuncia> Denuncias { get; set; }
+        public virtual ICollection<Denuncia> Denuncia { get; set; }
     }
 }

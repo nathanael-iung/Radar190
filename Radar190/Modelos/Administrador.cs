@@ -26,7 +26,6 @@ namespace Modelos
         public string Usuario { get; set; }
         public string Senha { get; set; }
     
-        public virtual Usuario Usuarios { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ContatosEmergenciais> ContatosEmergenciais { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

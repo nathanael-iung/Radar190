@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -107,6 +108,32 @@ namespace ViewsWPF.Views
 
             Fale_Conosco CadastroparaFaleConosco = new Fale_Conosco();
             CadastroparaFaleConosco.Show();
+        }
+
+        private void btnCadastroCadastrar_Click(object sender, RoutedEventArgs e)
+        {
+            /*
+
+            //Exemplo de cadastro no Banco de Dados. Nome completo, Descrição e Captcha da tela Cadastro estão jogando os dados
+            //respectivamente em Nome, Usuário e Senha da tabela Administador do BD apenas como exemplo de teste
+            Administrador admin = new Administrador();
+            admin.Nome = txtCadastroNome.Text;
+            admin.Usuario = txtCadastroDescricao.Text;
+            admin.Senha = txtCadastroCaptcha.Text;
+
+            using (BDRadarContainer contexto = new BDRadarContainer())
+            {
+                //Função da classe controller. Adição do objeto e salvamento das mudanças
+                contexto.AdministradorSet.Add(admin);
+                contexto.SaveChanges();
+            }
+
+            */
+           
+            Usuario user = new Usuario();
+            user.NomeCompleto = txtCadastroNome.Text;
+            user.DtNasc = ;
+            
         }
     }
 }

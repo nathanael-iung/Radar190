@@ -18,21 +18,22 @@ namespace Modelos
         public Usuario()
         {
             this.FaleConosco = new HashSet<FaleConosco>();
+            this.Denuncia = new HashSet<Denuncia>();
         }
     
         public int IdUsuario { get; set; }
         public string NomeCompleto { get; set; }
         public System.DateTime DtNasc { get; set; }
         public Nullable<bool> Experiencia { get; set; }
-        public string Cidade { get; set; }
         public string Descricao { get; set; }
         public string User { get; set; }
         public short Senha { get; set; }
         public int CidadeIdCidade { get; set; }
     
-        public virtual Administrador Administrador { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FaleConosco> FaleConosco { get; set; }
-        public virtual Denuncia Denuncia { get; set; }
+        public virtual Cidade Cidade { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Denuncia> Denuncia { get; set; }
     }
 }

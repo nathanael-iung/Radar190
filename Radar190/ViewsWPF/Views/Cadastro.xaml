@@ -60,7 +60,7 @@
         <Label x:Name="CadastroCaptcha" Content="Captcha: Qual o resultado de 5 + 3 ?" HorizontalAlignment="Left" Margin="395,446,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="199" IsEnabled="False"/>
         <TextBox x:Name="txtCadastroCaptcha" HorizontalAlignment="Left" Height="23" Margin="405,477,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         
-        <Button x:Name="btnCadastroCadastrar" Content="CADASTRAR" HorizontalAlignment="Left" Margin="405,519,0,0" VerticalAlignment="Top" Width="175" Height="39" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FF26CB0C" Foreground="White" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="btnCadastroCadastrar" Content="CADASTRAR" HorizontalAlignment="Left" Margin="405,519,0,0" VerticalAlignment="Top" Width="175" Height="39" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FF26CB0C" Foreground="White" FontSize="16" FontWeight="Bold" Click="btnCadastroCadastrar_Click"/>
         
     </Grid>
 </Window>

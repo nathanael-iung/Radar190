@@ -17,7 +17,7 @@ namespace Modelos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Denuncia()
         {
-            this.ObjRoubados = new HashSet<ObjRoubado>();
+            this.ObjRoubado = new HashSet<ObjRoubado>();
         }
     
         public int IdDenuncia { get; set; }
@@ -31,12 +31,12 @@ namespace Modelos
         public string TipoOcorrencia { get; set; }
         public string Descricao { get; set; }
         public string Prejuizo { get; set; }
-        public Nullable<int> UsuarioIdUsuario { get; set; }
         public int MapaIdMapa { get; set; }
+        public Nullable<int> UsuarioIdUsuario { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ObjRoubado> ObjRoubados { get; set; }
         public virtual Mapa Mapa { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ObjRoubado> ObjRoubado { get; set; }
         public virtual Usuario Usuario { get; set; }
     }
 }

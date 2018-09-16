@@ -18,6 +18,7 @@ namespace Modelos
         public Cidade()
         {
             this.Bairros = new HashSet<Bairro>();
+            this.Usuario = new HashSet<Usuario>();
         }
     
         public int IdCidade { get; set; }
@@ -26,5 +27,7 @@ namespace Modelos
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bairro> Bairros { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Usuario> Usuario { get; set; }
     }
 }

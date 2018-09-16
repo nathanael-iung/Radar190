@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/08/2018 23:24:46
+-- Date Created: 09/16/2018 02:27:56
 -- Generated from EDMX file: C:\Users\natha\Documents\CSharp\Radar190\Radar190\Modelos\BDRadar.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [master];
+USE [Radar190DB];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -17,11 +17,68 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_AdministradorContatosEmergenciais]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ContatosEmergenciaisSet] DROP CONSTRAINT [FK_AdministradorContatosEmergenciais];
+GO
+IF OBJECT_ID(N'[dbo].[FK_AdministradorDicasSeguranca]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DicasSegurancaSet] DROP CONSTRAINT [FK_AdministradorDicasSeguranca];
+GO
+IF OBJECT_ID(N'[dbo].[FK_AdministradorUsuario]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[AdministradorSet] DROP CONSTRAINT [FK_AdministradorUsuario];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CidadeBairro]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[BairroSet] DROP CONSTRAINT [FK_CidadeBairro];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DenunciaObjRoubados]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ObjRoubadoSet] DROP CONSTRAINT [FK_DenunciaObjRoubados];
+GO
+IF OBJECT_ID(N'[dbo].[FK_MapaBairro]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[MapaSet] DROP CONSTRAINT [FK_MapaBairro];
+GO
+IF OBJECT_ID(N'[dbo].[FK_MapaDenuncia]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DenunciaSet] DROP CONSTRAINT [FK_MapaDenuncia];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UsuarioDenuncia]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UsuarioSet] DROP CONSTRAINT [FK_UsuarioDenuncia];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UsuarioFaleConosco]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[FaleConoscoSet] DROP CONSTRAINT [FK_UsuarioFaleConosco];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[AdministradorSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[AdministradorSet];
+GO
+IF OBJECT_ID(N'[dbo].[BairroSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[BairroSet];
+GO
+IF OBJECT_ID(N'[dbo].[CidadeSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CidadeSet];
+GO
+IF OBJECT_ID(N'[dbo].[ContatosEmergenciaisSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ContatosEmergenciaisSet];
+GO
+IF OBJECT_ID(N'[dbo].[DenunciaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DenunciaSet];
+GO
+IF OBJECT_ID(N'[dbo].[DicasSegurancaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DicasSegurancaSet];
+GO
+IF OBJECT_ID(N'[dbo].[FaleConoscoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FaleConoscoSet];
+GO
+IF OBJECT_ID(N'[dbo].[MapaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MapaSet];
+GO
+IF OBJECT_ID(N'[dbo].[ObjRoubadoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ObjRoubadoSet];
+GO
+IF OBJECT_ID(N'[dbo].[UsuarioSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UsuarioSet];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -33,12 +90,11 @@ CREATE TABLE [dbo].[UsuarioSet] (
     [NomeCompleto] nvarchar(max)  NOT NULL,
     [DtNasc] datetime  NOT NULL,
     [Experiencia] bit  NULL,
-    [Cidade] nvarchar(max)  NOT NULL,
     [Descricao] nvarchar(max)  NOT NULL,
     [User] nvarchar(max)  NOT NULL,
     [Senha] smallint  NOT NULL,
     [CidadeIdCidade] int  NOT NULL,
-    [Denuncia_IdDenuncia] int  NOT NULL
+    [AdministradorUsuario_Usuario_IdAdministrador] int  NULL
 );
 GO
 
@@ -63,8 +119,8 @@ CREATE TABLE [dbo].[DenunciaSet] (
     [TipoOcorrencia] nvarchar(max)  NOT NULL,
     [Descricao] nvarchar(max)  NULL,
     [Prejuizo] nvarchar(max)  NULL,
-    [UsuarioIdUsuario] int  NULL,
-    [MapaIdMapa] int  NOT NULL
+    [MapaIdMapa] int  NOT NULL,
+    [UsuarioIdUsuario] int  NULL
 );
 GO
 
@@ -106,8 +162,7 @@ CREATE TABLE [dbo].[AdministradorSet] (
     [IdAdministrador] int IDENTITY(1,1) NOT NULL,
     [Nome] nvarchar(max)  NOT NULL,
     [Usuario] nvarchar(max)  NOT NULL,
-    [Senha] nvarchar(max)  NOT NULL,
-    [Usuarios_IdUsuario] int  NOT NULL
+    [Senha] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -208,21 +263,6 @@ GO
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
 
--- Creating foreign key on [DenunciaIdDenuncia] in table 'ObjRoubadoSet'
-ALTER TABLE [dbo].[ObjRoubadoSet]
-ADD CONSTRAINT [FK_DenunciaObjRoubados]
-    FOREIGN KEY ([DenunciaIdDenuncia])
-    REFERENCES [dbo].[DenunciaSet]
-        ([IdDenuncia])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_DenunciaObjRoubados'
-CREATE INDEX [IX_FK_DenunciaObjRoubados]
-ON [dbo].[ObjRoubadoSet]
-    ([DenunciaIdDenuncia]);
-GO
-
 -- Creating foreign key on [BairroIdBairro] in table 'MapaSet'
 ALTER TABLE [dbo].[MapaSet]
 ADD CONSTRAINT [FK_MapaBairro]
@@ -236,21 +276,6 @@ GO
 CREATE INDEX [IX_FK_MapaBairro]
 ON [dbo].[MapaSet]
     ([BairroIdBairro]);
-GO
-
--- Creating foreign key on [Usuarios_IdUsuario] in table 'AdministradorSet'
-ALTER TABLE [dbo].[AdministradorSet]
-ADD CONSTRAINT [FK_AdministradorUsuario]
-    FOREIGN KEY ([Usuarios_IdUsuario])
-    REFERENCES [dbo].[UsuarioSet]
-        ([IdUsuario])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_AdministradorUsuario'
-CREATE INDEX [IX_FK_AdministradorUsuario]
-ON [dbo].[AdministradorSet]
-    ([Usuarios_IdUsuario]);
 GO
 
 -- Creating foreign key on [AdministradorIdAdministrador] in table 'ContatosEmergenciaisSet'
@@ -298,36 +323,6 @@ ON [dbo].[FaleConoscoSet]
     ([UsuarioIdUsuario]);
 GO
 
--- Creating foreign key on [MapaIdMapa] in table 'DenunciaSet'
-ALTER TABLE [dbo].[DenunciaSet]
-ADD CONSTRAINT [FK_MapaDenuncia]
-    FOREIGN KEY ([MapaIdMapa])
-    REFERENCES [dbo].[MapaSet]
-        ([IdMapa])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_MapaDenuncia'
-CREATE INDEX [IX_FK_MapaDenuncia]
-ON [dbo].[DenunciaSet]
-    ([MapaIdMapa]);
-GO
-
--- Creating foreign key on [Denuncia_IdDenuncia] in table 'UsuarioSet'
-ALTER TABLE [dbo].[UsuarioSet]
-ADD CONSTRAINT [FK_UsuarioDenuncia]
-    FOREIGN KEY ([Denuncia_IdDenuncia])
-    REFERENCES [dbo].[DenunciaSet]
-        ([IdDenuncia])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_UsuarioDenuncia'
-CREATE INDEX [IX_FK_UsuarioDenuncia]
-ON [dbo].[UsuarioSet]
-    ([Denuncia_IdDenuncia]);
-GO
-
 -- Creating foreign key on [CidadeIdCidade] in table 'BairroSet'
 ALTER TABLE [dbo].[BairroSet]
 ADD CONSTRAINT [FK_CidadeBairro]
@@ -341,6 +336,81 @@ GO
 CREATE INDEX [IX_FK_CidadeBairro]
 ON [dbo].[BairroSet]
     ([CidadeIdCidade]);
+GO
+
+-- Creating foreign key on [MapaIdMapa] in table 'DenunciaSet'
+ALTER TABLE [dbo].[DenunciaSet]
+ADD CONSTRAINT [FK_DenunciaMapa]
+    FOREIGN KEY ([MapaIdMapa])
+    REFERENCES [dbo].[MapaSet]
+        ([IdMapa])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_DenunciaMapa'
+CREATE INDEX [IX_FK_DenunciaMapa]
+ON [dbo].[DenunciaSet]
+    ([MapaIdMapa]);
+GO
+
+-- Creating foreign key on [DenunciaIdDenuncia] in table 'ObjRoubadoSet'
+ALTER TABLE [dbo].[ObjRoubadoSet]
+ADD CONSTRAINT [FK_DenunciaObjRoubado]
+    FOREIGN KEY ([DenunciaIdDenuncia])
+    REFERENCES [dbo].[DenunciaSet]
+        ([IdDenuncia])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_DenunciaObjRoubado'
+CREATE INDEX [IX_FK_DenunciaObjRoubado]
+ON [dbo].[ObjRoubadoSet]
+    ([DenunciaIdDenuncia]);
+GO
+
+-- Creating foreign key on [CidadeIdCidade] in table 'UsuarioSet'
+ALTER TABLE [dbo].[UsuarioSet]
+ADD CONSTRAINT [FK_UsuarioCidade]
+    FOREIGN KEY ([CidadeIdCidade])
+    REFERENCES [dbo].[CidadeSet]
+        ([IdCidade])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_UsuarioCidade'
+CREATE INDEX [IX_FK_UsuarioCidade]
+ON [dbo].[UsuarioSet]
+    ([CidadeIdCidade]);
+GO
+
+-- Creating foreign key on [UsuarioIdUsuario] in table 'DenunciaSet'
+ALTER TABLE [dbo].[DenunciaSet]
+ADD CONSTRAINT [FK_UsuarioDenuncia]
+    FOREIGN KEY ([UsuarioIdUsuario])
+    REFERENCES [dbo].[UsuarioSet]
+        ([IdUsuario])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_UsuarioDenuncia'
+CREATE INDEX [IX_FK_UsuarioDenuncia]
+ON [dbo].[DenunciaSet]
+    ([UsuarioIdUsuario]);
+GO
+
+-- Creating foreign key on [AdministradorUsuario_Usuario_IdAdministrador] in table 'UsuarioSet'
+ALTER TABLE [dbo].[UsuarioSet]
+ADD CONSTRAINT [FK_AdministradorUsuario]
+    FOREIGN KEY ([AdministradorUsuario_Usuario_IdAdministrador])
+    REFERENCES [dbo].[AdministradorSet]
+        ([IdAdministrador])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_AdministradorUsuario'
+CREATE INDEX [IX_FK_AdministradorUsuario]
+ON [dbo].[UsuarioSet]
+    ([AdministradorUsuario_Usuario_IdAdministrador]);
 GO
 
 -- --------------------------------------------------
