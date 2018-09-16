@@ -110,6 +110,13 @@ namespace ViewsWPF.Views
             CadastroparaFaleConosco.Show();
         }
 
+        private void dpCadastroDataNascimento_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //Armazenamento da data em um TextBox invisível para que haja a conversão para DateTime ao pressionar o botão
+            txtCadastroData.Text = dpCadastroDataNascimento.ToString();
+
+        }
+
         private void btnCadastroCadastrar_Click(object sender, RoutedEventArgs e)
         {
             /*
@@ -129,11 +136,44 @@ namespace ViewsWPF.Views
             }
 
             */
-           
+
+            //Converter o PasswordBox em String
+            string senha = txtCadastroSenha.Password;
+            //Boolean para Sim ou Não
+            bool dec;
+
+            if (cbCadastroCidade.Items.Equals("Sim"))
+            {
+                dec = true;
+            }
+            else if (cbCadastroCidade.Items.Equals("Não"))
+            {
+                dec = false;
+            }
+            else
+            {
+                dec = false;
+            }
+
             Usuario user = new Usuario();
             user.NomeCompleto = txtCadastroNome.Text;
-            user.DtNasc = ;
+            user.DtNasc = Convert.ToDateTime(txtCadastroData.Text);
+            user.Experiencia = dec;
+            user.Descricao = txtCadastroDescricao.Text;
+            user.User = txtCadastroUsuario.Text;
+            user.Senha = Convert.ToInt16(senha);
+            user.CidadeIdCidade = 1;
+
+            using (BDRadarContainer contexto = new BDRadarContainer())
+            {
+                //Função da classe controller. Como chamar o UsuarioController??
+                contexto.UsuarioSet.Add(user);
+                contexto.SaveChanges();
+            }
+             
             
         }
+
+        
     }
 }

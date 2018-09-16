@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="-------" Height="606" Width="850">
     <Grid AllowDrop="True" Margin="0,0,0,-3">
-        
+
         <DockPanel HorizontalAlignment="Left" Height="569" LastChildFill="False" VerticalAlignment="Top" Width="162" Background="Black"/>
         <DockPanel HorizontalAlignment="Left" Height="0" LastChildFill="False" Margin="129,0,0,0" VerticalAlignment="Top" Width="663" Background="White"/>
 
@@ -23,12 +23,12 @@
         <Image x:Name="image" HorizontalAlignment="Left" Height="56" Margin="31,10,0,0" VerticalAlignment="Top" Width="100" Source="Logo-fundo-preto.png"/>
 
         <TextBox x:Name="txtCadastroTitulo" HorizontalAlignment="Center" Height="37" Margin="314,5,209,0" TextWrapping="Wrap" Text="Cadastre-se Agora" Width="319" TextChanged="TextBox_TextChanged" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
-        
+
         <Label x:Name="CadastroNome" Content="Nome Completo: " HorizontalAlignment="Left" Margin="183,80,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
         <TextBox x:Name="txtCadastroNome" HorizontalAlignment="Left" Height="23" Margin="183,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="397" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
         <Label x:Name="CadastroDataNascimento" Content="Data de Nascimento: " HorizontalAlignment="Left" Margin="613,80,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="126" IsEnabled="False"/>
-        <DatePicker x:Name="dpCadastroDataNascimento" Text="Selecione uma data" HorizontalAlignment="Left" Margin="617,105,0,0" VerticalAlignment="Top" Width="175" Language="pt-BR" DisplayDateStart="01/01/1900" DisplayDateEnd="12/31/2018" />
+        <DatePicker x:Name="dpCadastroDataNascimento" Text="Selecione uma data" HorizontalAlignment="Left" Margin="617,105,0,0" VerticalAlignment="Top" Width="175" Language="pt-BR" DisplayDateStart="01/01/1900" DisplayDateEnd="12/31/2018" SelectedDateChanged="dpCadastroDataNascimento_SelectedDateChanged" />
 
         <Label x:Name="CadastroExperiencia" Content="Possui por alguma experiência de furto ou roubo? " HorizontalAlignment="Left" Margin="183,155,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="290" IsEnabled="False"/>
         <RadioButton x:Name="rbCadastroExperienciaSim" Content="Sim" HorizontalAlignment="Left" Margin="196,190,0,0" VerticalAlignment="Top" GroupName="Experiencia" />
@@ -59,9 +59,10 @@
 
         <Label x:Name="CadastroCaptcha" Content="Captcha: Qual o resultado de 5 + 3 ?" HorizontalAlignment="Left" Margin="395,446,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="199" IsEnabled="False"/>
         <TextBox x:Name="txtCadastroCaptcha" HorizontalAlignment="Left" Height="23" Margin="405,477,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        
+
         <Button x:Name="btnCadastroCadastrar" Content="CADASTRAR" HorizontalAlignment="Left" Margin="405,519,0,0" VerticalAlignment="Top" Width="175" Height="39" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FF26CB0C" Foreground="White" FontSize="16" FontWeight="Bold" Click="btnCadastroCadastrar_Click"/>
-        
+        <TextBox x:Name="txtCadastroData" HorizontalAlignment="Left" Height="8" Margin="619,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" Visibility="Hidden"/>
+
     </Grid>
 </Window>
 
