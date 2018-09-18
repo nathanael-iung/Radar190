@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    class MapaController
+    public class MapaController
     {
-        void Insert(Mapa map)
+        public void Insert(Mapa map)
         {
             BDRadarContainer contexto = new BDRadarContainer();
             contexto.MapaSet.Add(map);
             contexto.SaveChanges();
         }
 
-        Mapa BuscaID(int id)
+        public Mapa BuscaID(int id)
         {
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.MapaSet.Find();
         }
 
-        void Edit(int id, Mapa mapEditado)
+        public void Edit(int id, Mapa mapEditado)
         {
             Mapa mapAntigo = BuscaID(id);
 
@@ -37,7 +37,7 @@ namespace Controller
             }
         }
 
-        void Delete(int id)
+        public void Delete(int id)
         {
             Mapa mapExcluir = BuscaID(id);
 
@@ -49,7 +49,7 @@ namespace Controller
             }
         }
 
-        List<Mapa> ListMap()
+        public List<Mapa> ListMap()
         {
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.MapaSet.ToList();

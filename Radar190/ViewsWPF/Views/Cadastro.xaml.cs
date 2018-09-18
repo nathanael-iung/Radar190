@@ -156,13 +156,17 @@ namespace ViewsWPF.Views
             }
 
             Usuario user = new Usuario();
+            Cidade city = new Cidade();
             user.NomeCompleto = txtCadastroNome.Text;
             user.DtNasc = Convert.ToDateTime(txtCadastroData.Text);
             user.Experiencia = dec;
             user.Descricao = txtCadastroDescricao.Text;
             user.User = txtCadastroUsuario.Text;
             user.Senha = Convert.ToInt16(senha);
-            user.CidadeIdCidade = 1;
+            user.CidadeIdCidade = city.IdCidade;
+
+            Controller.UsuarioController dt = new Controller.UsuarioController();
+            dt.Insert(user);
 
             using (BDRadarContainer contexto = new BDRadarContainer())
             {
@@ -171,6 +175,7 @@ namespace ViewsWPF.Views
                 contexto.SaveChanges();
             }
              
+           
             
         }
 

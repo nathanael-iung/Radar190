@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    class FaleConoscoController
+    public class FaleConoscoController
     {
-        void Insert(FaleConosco fale)
+        public void Insert(FaleConosco fale)
         {
             BDRadarContainer contexto = new BDRadarContainer();
             contexto.FaleConoscoSet.Add(fale);
             contexto.SaveChanges();
         }
 
-        FaleConosco BuscaID(int id)
+        public FaleConosco BuscaID(int id)
         {
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.FaleConoscoSet.Find();
         }
 
-        void Edit(int id, FaleConosco faleEditado)
+        public void Edit(int id, FaleConosco faleEditado)
         {
             FaleConosco faleAntigo = BuscaID(id);
 
@@ -39,7 +39,7 @@ namespace Controller
             }
         }
 
-        void Excluir(int id)
+        public void Excluir(int id)
         {
             FaleConosco faleExcluir = BuscaID(id);
             
@@ -51,7 +51,7 @@ namespace Controller
             }
         }
 
-        List<FaleConosco> ListFaleConosco()
+        public List<FaleConosco> ListFaleConosco()
         {
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.FaleConoscoSet.ToList();

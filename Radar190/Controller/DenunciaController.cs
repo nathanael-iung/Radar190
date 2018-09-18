@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    class DenunciaController
+    public class DenunciaController
     {
-        void Insert(Denuncia denun)
+        public void Insert(Denuncia denun)
         {
             BDRadarContainer contexto = new BDRadarContainer();
             contexto.DenunciaSet.Add(denun);
             contexto.SaveChanges();
         }
 
-        Denuncia BuscaID(int id)
+        public Denuncia BuscaID(int id)
         {
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.DenunciaSet.Find();
         }
 
-        void Edit(int id, Denuncia denunEditado)
+        public void Edit(int id, Denuncia denunEditado)
         {
             Denuncia denunAntigo = BuscaID(id);
 
@@ -45,7 +45,7 @@ namespace Controller
             }
         }
 
-        void Delete(int id)
+        public void Delete(int id)
         {
             Denuncia denunExcluir = BuscaID(id);
 
@@ -57,7 +57,7 @@ namespace Controller
             }
         }
 
-        List<Denuncia> ListDenuncia()
+        public List<Denuncia> ListDenuncia()
         {
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.DenunciaSet.ToList();

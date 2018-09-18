@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    class ObjRoubadocontroller
+    public class ObjRoubadocontroller
     {
-        void Insert(ObjRoubado obj)
+        public void Insert(ObjRoubado obj)
         {
             BDRadarContainer contexto = new BDRadarContainer();
             contexto.ObjRoubadoSet.Add(obj);
             contexto.SaveChanges();
         }
 
-        ObjRoubado BuscaID(int id)
+        public ObjRoubado BuscaID(int id)
         {
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.ObjRoubadoSet.Find();
         }
 
-        void Edit(int id, ObjRoubado objEditado)
+        public void Edit(int id, ObjRoubado objEditado)
         {
             ObjRoubado objAntigo = BuscaID(id);
 
@@ -44,7 +44,7 @@ namespace Controller
             }
         }
 
-        void Delete(int id)
+        public void Delete(int id)
         {
             ObjRoubado objExcluir = BuscaID(id);
 
@@ -56,7 +56,7 @@ namespace Controller
             }
         }
 
-        List<ObjRoubado> ListObjRoubado()
+        public List<ObjRoubado> ListObjRoubado()
         {
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.ObjRoubadoSet.ToList();

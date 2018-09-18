@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    class ContatosEmergenciaisController
+    public class ContatosEmergenciaisController
     {
-        void Insert(ContatosEmergenciais cont)
+        public void Insert(ContatosEmergenciais cont)
         {
             //UsuarioSet ?? Usuario
             BDRadarContainer contexto = new BDRadarContainer();
@@ -17,14 +17,14 @@ namespace Controller
             contexto.SaveChanges();
         }
 
-        ContatosEmergenciais BuscaID(int id)
+        public ContatosEmergenciais BuscaID(int id)
         {
             //UsuarioSet ?? Usuario
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.ContatosEmergenciaisSet.Find();
         }
 
-        void Edit(int id, ContatosEmergenciais contEditado)
+        public void Edit(int id, ContatosEmergenciais contEditado)
         {
             ContatosEmergenciais contAntigo = BuscaID(id);
 
@@ -41,7 +41,7 @@ namespace Controller
             }
         }
 
-        void Delete(int id)
+        public void Delete(int id)
         {
             ContatosEmergenciais contExcluir = BuscaID(id);
 
@@ -53,7 +53,7 @@ namespace Controller
             }
         }
 
-        List<ContatosEmergenciais> ListContatosEmergenciais()
+        public List<ContatosEmergenciais> ListContatosEmergenciais()
         {
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.ContatosEmergenciaisSet.ToList();

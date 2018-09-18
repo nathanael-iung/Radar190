@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    class BairroController
+    public class BairroController
     {
-        void Insert(Bairro bai)
+        public void Insert(Bairro bai)
         {
             BDRadarContainer contexto = new BDRadarContainer();
             contexto.BairroSet.Add(bai);
             contexto.SaveChanges();
         }
 
-        Bairro BuscaID(int id)
+        public Bairro BuscaID(int id)
         {
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.BairroSet.Find();
         }
 
-        void Edit(int id, Bairro baiEditado)
+        public void Edit(int id, Bairro baiEditado)
         {
             Bairro baiAntigo = BuscaID(id);
 
@@ -36,7 +36,7 @@ namespace Controller
             }
         }
 
-        void Delete(int id)
+        public void Delete(int id)
         {
             Bairro baiExcluir = BuscaID(id);
 
@@ -48,7 +48,7 @@ namespace Controller
             }
         }
 
-        List<Bairro> ListBairros()
+        public List<Bairro> ListBairros()
         {
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.BairroSet.ToList();

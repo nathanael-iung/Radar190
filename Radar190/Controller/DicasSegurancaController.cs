@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    class DicasSegurancaController
+    public class DicasSegurancaController
     {
-        void Insert(DicasSeguranca dic)
+        public void Insert(DicasSeguranca dic)
         {
             //UsuarioSet ?? Usuario
             BDRadarContainer contexto = new BDRadarContainer();
@@ -17,14 +17,14 @@ namespace Controller
             contexto.SaveChanges();
         }
 
-        DicasSeguranca BuscaID(int id)
+        public DicasSeguranca BuscaID(int id)
         {
             //UsuarioSet ?? Usuario
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.DicasSegurancaSet.Find();
         }
 
-        void Edit(int id, DicasSeguranca dicEditado)
+        public void Edit(int id, DicasSeguranca dicEditado)
         {
             DicasSeguranca dicAntigo = BuscaID(id);
 
@@ -38,7 +38,7 @@ namespace Controller
             }
         }
 
-        void Delete(int id)
+        public void Delete(int id)
         {
             DicasSeguranca dicExcluir = BuscaID(id);
 
@@ -50,7 +50,7 @@ namespace Controller
             }
         }
 
-        List<DicasSeguranca> ListDicasSeguranca()
+        public List<DicasSeguranca> ListDicasSeguranca()
         {
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.DicasSegurancaSet.ToList();

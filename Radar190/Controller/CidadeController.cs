@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    class CidadeController
+    public class CidadeController
     {
-        void Insert(Cidade cid)
+        public void Insert(Cidade cid)
         {
             BDRadarContainer contexto = new BDRadarContainer();
             contexto.CidadeSet.Add(cid);
             contexto.SaveChanges();
         }
 
-        Cidade BuscaID(int id)
+        public Cidade BuscaID(int id)
         {
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.CidadeSet.Find();
         }
 
-        void Edit(int id, Cidade cidEditado)
+        public void Edit(int id, Cidade cidEditado)
         {
             Cidade cidAntigo = BuscaID(id);
 
@@ -37,7 +37,7 @@ namespace Controller
             }
         }
 
-        void Delete(int id)
+        public void Delete(int id)
         {
             Cidade cidExcluir = new Cidade();
 
@@ -49,7 +49,7 @@ namespace Controller
             }
         }
 
-        List<Cidade> ListCidades()
+        public List<Cidade> ListCidades()
         {
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.CidadeSet.ToList();

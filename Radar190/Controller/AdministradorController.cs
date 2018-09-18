@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    class AdministradorController
+    public class AdministradorController
     {
-        void Insert(Administrador admin)
+        public void Insert(Administrador admin)
         {
             BDRadarContainer contexto = new BDRadarContainer();
             contexto.AdministradorSet.Add(admin);
             contexto.SaveChanges();
         }
 
-        Administrador BuscaID(int id)
+        public Administrador BuscaID(int id)
         {
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.AdministradorSet.Find();
         }
 
-        void Edit(int id, Administrador adminEditado)
+        public void Edit(int id, Administrador adminEditado)
         {
             Administrador adminAntigo = BuscaID(id);
 
@@ -38,7 +38,7 @@ namespace Controller
             }
         }
 
-        void Delete(int id)
+        public void Delete(int id)
         {
             Administrador adminExcluir = BuscaID(id);
 
@@ -50,7 +50,7 @@ namespace Controller
             }
         }
 
-        List<Administrador> ListAdministradores()
+        public List<Administrador> ListAdministradores()
         {
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.AdministradorSet.ToList();

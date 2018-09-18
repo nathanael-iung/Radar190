@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    class UsuarioController
+    public class UsuarioController
     {
         //List<Product> PesquisarPorCor(string cor)
         //{
@@ -19,7 +19,7 @@ namespace Controller
         //    return list.ToList();
         //}
 
-        void Insert (Usuario user)
+        public void Insert (Usuario user)
         {
             //UsuarioSet ?? Usuario
             BDRadarContainer contexto = new BDRadarContainer();
@@ -27,14 +27,14 @@ namespace Controller
             contexto.SaveChanges();
         }
 
-        Usuario BuscaID(int id)
+        public Usuario BuscaID(int id)
         {   
             //UsuarioSet ?? Usuario
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.UsuarioSet.Find();
         }
 
-        void Edit(int id, Usuario usuarioEditado)
+        public void Edit(int id, Usuario usuarioEditado)
         {
             Usuario usuarioAntigo = BuscaID(id);
 
@@ -54,7 +54,7 @@ namespace Controller
             }
         }
 
-        void Delete(int id)
+        public void Delete(int id)
         {
             Usuario usuarioExcluir = BuscaID(id);
 
@@ -66,7 +66,7 @@ namespace Controller
             }
         }
 
-        List<Usuario> ListUsuarios()
+        public List<Usuario> ListUsuarios()
         {
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.UsuarioSet.ToList();
