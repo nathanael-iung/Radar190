@@ -25,6 +25,8 @@
         <AssociationConnector Association="BDRadar.UsuarioCidade" />
         <AssociationConnector Association="BDRadar.UsuarioDenuncia" />
         <AssociationConnector Association="BDRadar.AdministradorUsuario" />
+        <EntityTypeShape EntityType="BDRadar.Chat" Width="1.5" PointX="10" PointY="8" />
+        <AssociationConnector Association="BDRadar.UsuarioChat" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

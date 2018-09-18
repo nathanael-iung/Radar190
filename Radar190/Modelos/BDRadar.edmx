@@ -343,6 +343,11 @@
             <End Role="Administrador" EntitySet="AdministradorSet" />
             <End Role="Usuario" EntitySet="UsuarioSet" />
           </AssociationSet>
+          <EntitySet Name="ChatSet" EntityType="BDRadar.Chat" />
+          <AssociationSet Name="UsuarioChat" Association="BDRadar.UsuarioChat">
+            <End Role="Usuario" EntitySet="UsuarioSet" />
+            <End Role="Chat" EntitySet="ChatSet" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Usuario">
           <Key>
@@ -359,6 +364,7 @@
           <NavigationProperty Name="Cidade" Relationship="BDRadar.UsuarioCidade" FromRole="Usuario" ToRole="Cidade" />
           <Property Name="CidadeIdCidade" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Denuncia" Relationship="BDRadar.UsuarioDenuncia" FromRole="Usuario" ToRole="Denuncia" />
+          <NavigationProperty Name="Chat" Relationship="BDRadar.UsuarioChat" FromRole="Usuario" ToRole="Chat" />
         </EntityType>
         <EntityType Name="Cidade">
           <Key>
@@ -583,6 +589,28 @@
         <Association Name="AdministradorUsuario">
           <End Type="BDRadar.Administrador" Role="Administrador" Multiplicity="0..1" />
           <End Type="BDRadar.Usuario" Role="Usuario" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Chat">
+          <Key>
+            <PropertyRef Name="IdChat" />
+          </Key>
+          <Property Name="IdChat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Mensagem" Type="String" Nullable="false" />
+          <NavigationProperty Name="Usuarios" Relationship="BDRadar.UsuarioChat" FromRole="Chat" ToRole="Usuario" />
+          <Property Name="UsuarioIdUsuario" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="UsuarioChat">
+          <End Type="BDRadar.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="BDRadar.Chat" Role="Chat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Chat">
+              <PropertyRef Name="UsuarioIdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
