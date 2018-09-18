@@ -20,6 +20,13 @@ namespace ViewsWPF.Views
     /// </summary>
     public partial class Cadastro : Window
     {
+        //variável que receberá a decisão do RadioButton experiência
+        private bool dec;
+        //variável que receberá o número da FK da cidade na página cadastro
+        private int fkCidade;
+        //variável que receberá o conteúdo do PasswordBox
+        private string senha;
+
         public Cadastro()
         {
             InitializeComponent();
@@ -37,7 +44,7 @@ namespace ViewsWPF.Views
             Cadastro.Close();
         }
 
-  
+
         private void btnCadastroHome_Click(object sender, RoutedEventArgs e)
         {
             Cadastro CadastroFechar = new Cadastro();
@@ -117,68 +124,55 @@ namespace ViewsWPF.Views
 
         }
 
-        private void btnCadastroCadastrar_Click(object sender, RoutedEventArgs e)
+        private void rbCadastroExperienciaSim_Checked(object sender, RoutedEventArgs e)
         {
-            /*
+            dec = true;
+        }
 
-            //Exemplo de cadastro no Banco de Dados. Nome completo, Descrição e Captcha da tela Cadastro estão jogando os dados
-            //respectivamente em Nome, Usuário e Senha da tabela Administador do BD apenas como exemplo de teste
-            Administrador admin = new Administrador();
-            admin.Nome = txtCadastroNome.Text;
-            admin.Usuario = txtCadastroDescricao.Text;
-            admin.Senha = txtCadastroCaptcha.Text;
+        private void rbCadastroExperienciaNao_Checked(object sender, RoutedEventArgs e)
+        {
+            dec = false;
+        }
 
-            using (BDRadarContainer contexto = new BDRadarContainer())
+        private void txtCadastroSenha_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            senha = txtCadastroSenha.Password;
+        }
+
+        private void cbCadastroCidade_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            if (cbCadastroCidade.SelectedItem.Equals("Curitiba"))
             {
-                //Função da classe controller. Adição do objeto e salvamento das mudanças
-                contexto.AdministradorSet.Add(admin);
-                contexto.SaveChanges();
-            }
-
-            */
-
-            //Converter o PasswordBox em String
-            string senha = txtCadastroSenha.Password;
-            //Boolean para Sim ou Não
-            bool dec;
-
-            if (cbCadastroCidade.Items.Equals("Sim"))
-            {
-                dec = true;
-            }
-            else if (cbCadastroCidade.Items.Equals("Não"))
-            {
-                dec = false;
+                fkCidade = 1;
             }
             else
             {
-                dec = false;
+                fkCidade = 0;
+                MessageBox.Show("Algo de errado ocorreu");
             }
+        }
 
+        private void btnCadastroCadastrar_Click(object sender, RoutedEventArgs e)
+        {
             Usuario user = new Usuario();
-            Cidade city = new Cidade();
+
             user.NomeCompleto = txtCadastroNome.Text;
+            //DtNasc recebe o valor de um TextBox invisível para que seja convertido
             user.DtNasc = Convert.ToDateTime(txtCadastroData.Text);
+            //Variável bool que recebe a decisão do rabio button
             user.Experiencia = dec;
             user.Descricao = txtCadastroDescricao.Text;
             user.User = txtCadastroUsuario.Text;
+            //Recebe a String em que o PasswordBox foi armazenado
             user.Senha = Convert.ToInt16(senha);
-            user.CidadeIdCidade = city.IdCidade;
+            //Recebe a variável que será utilizada como FK da cidade dentro de Cadastro
+            user.CidadeIdCidade = fkCidade;
 
-            Controller.UsuarioController dt = new Controller.UsuarioController();
-            dt.Insert(user);
+            Controller.UsuarioController userController = new Controller.UsuarioController();
+            userController.Insert(user);
 
-            using (BDRadarContainer contexto = new BDRadarContainer())
-            {
-                //Função da classe controller. Como chamar o UsuarioController??
-                contexto.UsuarioSet.Add(user);
-                contexto.SaveChanges();
-            }
-             
-           
-            
         }
 
-        
     }
 }

@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="AdministradorController.cs" />
     <Compile Include="BairroController.cs" />
+    <Compile Include="ChatController.cs" />
     <Compile Include="CidadeController.cs" />
     <Compile Include="ContatosEmergenciaisController.cs" />
     <Compile Include="DenunciaController.cs" />

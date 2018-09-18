@@ -11,7 +11,7 @@
         <DockPanel HorizontalAlignment="Left" Height="0" LastChildFill="False" Margin="129,0,0,0" VerticalAlignment="Top" Width="663" Background="White"/>
 
         <TextBox x:Name="ChatTitulo" HorizontalAlignment="Center" Height="37" Margin="440,5,284,0" TextWrapping="Wrap" Text="Chat" Width="118" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
-        
+
         <Button x:Name="btnChatFaleConosco" Content="Fale Conosco" HorizontalAlignment="Left" Margin="0,520,0,0" VerticalAlignment="Top" Width="162" Height="41" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15" Click="btnChatFaleConosco_Click"/>
         <Button x:Name="btnChatDicas" Content="Dicas de Segurança" HorizontalAlignment="Left" VerticalAlignment="Top" Width="162" Margin="0,465,0,0" Height="50" FontFamily="Century Gothic" FontSize="15" Background="Black" BorderBrush="Black" Foreground="White" Click="btnChatDicas_Click"/>
         <Button x:Name="btnChatContatosEmergencia" Content="Contatos Emergênciais" HorizontalAlignment="Left" Margin="0,410,0,0" VerticalAlignment="Top" Width="162" Height="50" FontFamily="Century Gothic" FontSize="13" Background="Black" BorderBrush="Black" Foreground="White" Click="btnChatContatosEmergencia_Click"/>
@@ -23,16 +23,16 @@
         <Button x:Name="btnChatHome" Content="Home" HorizontalAlignment="Left" Margin="0,80,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15" Click="btnChatHome_Click"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="56" Margin="31,10,0,0" VerticalAlignment="Top" Width="100" Source="Logo-fundo-preto.png"/>
 
-        
+
         <TextBox x:Name="txtChatNome" HorizontalAlignment="Left" Height="23" Margin="183,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="397" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label x:Name="ChatNome" Content="Nome Completo: " HorizontalAlignment="Left" Margin="183,48,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
-        
+
         <TextBox x:Name="txtChatMensagem" HorizontalAlignment="Left" Height="98" Margin="183,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="609" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto" />
         <Label x:Name="ChatMensagem" Content="Caso a resposta seja sim, conte-nos" HorizontalAlignment="Left" Margin="183,107,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="205" IsEnabled="False"/>
-        
-        <DataGrid x:Name="dgChat" HorizontalAlignment="Left" Height="261" Margin="198,300,0,0" VerticalAlignment="Top" Width="594"/>
-        
-        <Button x:Name="btnChatEnviarMensagem" Content="ENVIAR MENSAGEM" HorizontalAlignment="Left" Margin="383,245,0,0" VerticalAlignment="Top" Width="175" Height="45" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FF26CB0C" Foreground="White" FontSize="16" FontWeight="Bold" />
+
+        <DataGrid x:Name="dgChat" HorizontalAlignment="Left" Height="261" Margin="183,300,0,0" VerticalAlignment="Top" Width="609"/>
+
+        <Button x:Name="btnChatEnviarMensagem" Content="ENVIAR MENSAGEM" HorizontalAlignment="Left" Margin="383,245,0,0" VerticalAlignment="Top" Width="175" Height="45" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FF26CB0C" Foreground="White" FontSize="16" FontWeight="Bold" Click="btnChatEnviarMensagem_Click" />
 
     </Grid>
 </Window>

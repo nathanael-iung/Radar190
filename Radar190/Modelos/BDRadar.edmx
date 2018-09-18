@@ -323,10 +323,6 @@
             <End Role="Cidade" EntitySet="CidadeSet" />
             <End Role="Bairro" EntitySet="BairroSet" />
           </AssociationSet>
-          <AssociationSet Name="DenunciaMapa" Association="BDRadar.DenunciaMapa">
-            <End Role="Denuncia" EntitySet="DenunciaSet" />
-            <End Role="Mapa" EntitySet="MapaSet" />
-          </AssociationSet>
           <AssociationSet Name="DenunciaObjRoubado" Association="BDRadar.DenunciaObjRoubado">
             <End Role="Denuncia" EntitySet="DenunciaSet" />
             <End Role="ObjRoubado" EntitySet="ObjRoubadoSet" />
@@ -347,6 +343,10 @@
           <AssociationSet Name="UsuarioChat" Association="BDRadar.UsuarioChat">
             <End Role="Usuario" EntitySet="UsuarioSet" />
             <End Role="Chat" EntitySet="ChatSet" />
+          </AssociationSet>
+          <AssociationSet Name="DenunciaMapa" Association="BDRadar.DenunciaMapa">
+            <End Role="Denuncia" EntitySet="DenunciaSet" />
+            <End Role="Mapa" EntitySet="MapaSet" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Usuario">
@@ -391,11 +391,10 @@
           <Property Name="TipoOcorrencia" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Descricao" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Prejuizo" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Mapa" Relationship="BDRadar.DenunciaMapa" FromRole="Denuncia" ToRole="Mapa" />
-          <Property Name="MapaIdMapa" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ObjRoubado" Relationship="BDRadar.DenunciaObjRoubado" FromRole="Denuncia" ToRole="ObjRoubado" />
           <NavigationProperty Name="Usuario" Relationship="BDRadar.UsuarioDenuncia" FromRole="Denuncia" ToRole="Usuario" />
           <Property Name="UsuarioIdUsuario" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Mapa" Relationship="BDRadar.DenunciaMapa" FromRole="Denuncia" ToRole="Mapa" />
         </EntityType>
         <EntityType Name="ObjRoubado">
           <Key>
@@ -424,6 +423,7 @@
           <NavigationProperty Name="Bairro" Relationship="BDRadar.MapaBairro" FromRole="Mapa" ToRole="Bairro" />
           <Property Name="BairroIdBairro" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Denuncia" Relationship="BDRadar.DenunciaMapa" FromRole="Mapa" ToRole="Denuncia" />
+          <Property Name="DenunciaIdDenuncia" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Bairro">
           <Key>
@@ -538,18 +538,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="DenunciaMapa">
-          <End Type="BDRadar.Denuncia" Role="Denuncia" Multiplicity="*" />
-          <End Type="BDRadar.Mapa" Role="Mapa" Multiplicity="1" />
-          <ReferentialConstraint>
-            <Principal Role="Mapa">
-              <PropertyRef Name="IdMapa" />
-            </Principal>
-            <Dependent Role="Denuncia">
-              <PropertyRef Name="MapaIdMapa" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="DenunciaObjRoubado">
           <End Type="BDRadar.Denuncia" Role="Denuncia" Multiplicity="1" />
           <End Type="BDRadar.ObjRoubado" Role="ObjRoubado" Multiplicity="*" />
@@ -612,6 +600,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="DenunciaMapa">
+          <End Type="BDRadar.Denuncia" Role="Denuncia" Multiplicity="1" />
+          <End Type="BDRadar.Mapa" Role="Mapa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Denuncia">
+              <PropertyRef Name="IdDenuncia" />
+            </Principal>
+            <Dependent Role="Mapa">
+              <PropertyRef Name="DenunciaIdDenuncia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -655,7 +655,6 @@
           <ScalarProperty Name="TipoOcorrencia" ColumnName="TipoOcorrencia" />
           <ScalarProperty Name="Descricao" ColumnName="Descricao" />
           <ScalarProperty Name="Prejuizo" ColumnName="Prejuizo" />
-          <ScalarProperty Name="MapaIdMapa" ColumnName="MapaIdMapa" />
           <ScalarProperty Name="UsuarioIdUsuario" ColumnName="UsuarioIdUsuario" />
         </MappingFragment>
       </EntityTypeMapping>

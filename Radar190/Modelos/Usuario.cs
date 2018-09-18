@@ -19,6 +19,7 @@ namespace Modelos
         {
             this.FaleConosco = new HashSet<FaleConosco>();
             this.Denuncia = new HashSet<Denuncia>();
+            this.Chat = new HashSet<Chat>();
         }
     
         public int IdUsuario { get; set; }
@@ -35,5 +36,7 @@ namespace Modelos
         public virtual Cidade Cidade { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Denuncia> Denuncia { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Chat> Chat { get; set; }
     }
 }

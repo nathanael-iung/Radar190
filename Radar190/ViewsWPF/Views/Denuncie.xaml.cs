@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,10 +26,24 @@ namespace ViewsWPF.Views
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
+        //Variável que receberá o conteúdo do TextBox idade
+        private string idade;
+        //Variável que receberá o resultado do radio button sexo
+        private string sx;
+        //Variável que receberá o conteúdo de Endereço
+        private string numEndereco;
+        //Variável que recebrá o valor do ComboBox bairro
+        private string cbBairro;
+        //variável que receberá o valor do ComboBox cidade;
+        private string cbCidade;
+        //Variáveis que recebrão a data e hora do ocorrido
+        private string dt, hr, min, DataHora;
+        //Variável que receberá o resultado do radio button B.O.
+        private bool bo;
+        //variável que receberá o valor do ComboBox TipoOcorrência
+        private string cbTipoOcorrencia;
+        //Variável que recebrá o valor do prejuízo
+        private string preju;
 
         private void btnDenuncieHome_Click(object sender, RoutedEventArgs e)
         {
@@ -108,6 +124,135 @@ namespace ViewsWPF.Views
 
             Fale_Conosco DenuncieparaFaleConosco = new Fale_Conosco();
             DenuncieparaFaleConosco.Show();
+        }
+
+        private void txtDenuncieIdade_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            idade = txtDenuncieIdade.Text;
+        }
+
+        private void txtDenuncieNumero_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            numEndereco = txtDenuncieEndereco.Text;
+        }
+
+        private void txtDenuncieHorarioHoras_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            hr = txtDenuncieHorarioHoras.Text;
+        }
+
+        private void txtDenuncieHorarioMinutos_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            min = txtDenuncieHorarioMinutos.Text;
+        }
+
+        private void rbDenuncieFeminino_Checked(object sender, RoutedEventArgs e)
+        {
+            sx = "fem";
+        }
+
+        private void rbDenuncieMasculino_Checked(object sender, RoutedEventArgs e)
+        {
+            sx = "masc";
+        }
+
+        private void txtDenuncieNumero_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+        }
+
+        private void txtDenuncieCPF_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+        }
+
+        private void txtDenuncieIdade_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+        }
+
+        private void txtDenuncieHorarioHoras_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+        }
+
+        private void txtDenuncieHorarioMinutos_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+        }
+
+        private void txtDenunciePrejuizo_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+
+        }
+
+        private void cbDenuncieBairro_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            cbBairro = cbDenuncieBairro.SelectedValue.ToString();
+        }
+
+        private void rbDenuncieBOsim_Checked(object sender, RoutedEventArgs e)
+        {
+            bo = true;
+        }
+
+        private void rbDenuncieBOnao_Checked(object sender, RoutedEventArgs e)
+        {
+            bo = false;
+        }
+
+        private void cbDenuncieTipoOcorrencia_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            cbTipoOcorrencia = cbDenuncieTipoOcorrencia.SelectedValue.ToString();
+        }
+
+        private void cbDenuncieCidade_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            cbCidade = cbDenuncieCidade.SelectedValue.ToString();
+        }
+
+        private void dpDenuncieDataocorrido_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            dt = dpDenuncieDataocorrido.ToString();
+        }
+
+
+        private void btnDenuncieDenunciar_Click(object sender, RoutedEventArgs e)
+        {
+            Denuncia denun = new Denuncia();
+            Mapa maps = new Mapa();
+            Bairro bairro = new Bairro();
+            Cidade city = new Cidade();
+            //Concatenação das strings de Data, Hora e minutos
+            DataHora = string.Concat(dt, " ", hr, ":", min);
+
+            denun.NomeCompleto = txtDenuncieNome.Text;
+            denun.Idade = Convert.ToInt16(idade);
+            denun.Sexo = sx;
+            //maps.Endereco = txtDenuncieEndereco.Text;
+            //maps.Numero = Convert.ToInt16(numEndereco);
+            denun.CPF = txtDenuncieCPF.Text;
+            bairro.Distrito = cbBairro;
+            city.City = cbCidade;
+            denun.DataHora = Convert.ToDateTime(DataHora);
+            denun.BO = bo;
+            denun.TipoOcorrencia = cbTipoOcorrencia;
+            denun.Prejuizo = txtDenunciePrejuizo.Text;
+            denun.Descricao = txtDenuncieDetalhes.Text;
+
+            Controller.DenunciaController denunController = new Controller.DenunciaController();
+            denunController.Insert(denun);
+
+            //Controller.MapaController mapController = new Controller.MapaController();
+            //mapController.Insert(maps);
+
+            Controller.BairroController baiController = new Controller.BairroController();
+            baiController.Insert(bairro);
+
+            Controller.CidadeController cidController = new Controller.CidadeController();
+            cidController.Insert(city);
+
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -94,6 +95,20 @@ namespace ViewsWPF.Views
 
             Dicas_de_Seguranca FaleConoscoparaDicas = new Dicas_de_Seguranca();
             FaleConoscoparaDicas.Show();
+        }
+
+        private void btnFaleConoscoEnviarMensagem_Click(object sender, RoutedEventArgs e)
+        {
+            FaleConosco feedback = new FaleConosco();
+
+            feedback.Nome = txtFaleConoscoNome.Text;
+            feedback.Email = txtFaleConoscoEmail.Text;
+            feedback.Assunto = txtFaleConoscoAssunto.Text;
+            feedback.Mensagem = txtFaleConoscoMensagem.Text;
+
+            Controller.FaleConoscoController feedController = new Controller.FaleConoscoController();
+            feedController.Insert(feedback);
+
         }
     }
 }

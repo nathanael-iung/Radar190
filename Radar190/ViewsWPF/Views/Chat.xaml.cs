@@ -1,4 +1,5 @@
 ﻿using System;
+using Modelos;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -95,6 +96,19 @@ namespace ViewsWPF.Views
 
            Dicas_de_Seguranca ChatparaDicasDeSeguranca = new Dicas_de_Seguranca();
             ChatparaDicasDeSeguranca.Show();
+        }
+
+        private void btnChatEnviarMensagem_Click(object sender, RoutedEventArgs e)
+        {
+            Chat cht = new Chat();
+
+            cht.Nome = txtChatNome.Text;
+            cht.Mensagem = txtChatMensagem.Text;
+            //Necessita correção
+            cht.UsuarioIdUsuario = 1;
+
+            Controller.ChatController chtController = new Controller.ChatController();
+            chtController.Insert(cht);
         }
     }
 }

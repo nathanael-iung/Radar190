@@ -36,7 +36,7 @@
         <Label x:Name="FaleConoscoMensagem" Content="Mensagem: " HorizontalAlignment="Left" Margin="189,324,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="73" IsEnabled="False"/>
         <TextBox x:Name="txtFaleConoscoMensagem" HorizontalAlignment="Left" Height="116" Margin="189,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="633" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         
-        <Button x:Name="btnFaleConoscoEnviarMensagem" Content="ENVIAR MENSAGEM" HorizontalAlignment="Left" Margin="379,504,0,0" VerticalAlignment="Top" Width="242" Height="39" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FF26CB0C" Foreground="White" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="btnFaleConoscoEnviarMensagem" Content="ENVIAR MENSAGEM" HorizontalAlignment="Left" Margin="379,504,0,0" VerticalAlignment="Top" Width="242" Height="39" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FF26CB0C" Foreground="White" FontSize="16" FontWeight="Bold" Click="btnFaleConoscoEnviarMensagem_Click"/>
         
     </Grid>
 </Window>

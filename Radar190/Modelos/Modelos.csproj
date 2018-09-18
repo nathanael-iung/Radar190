@@ -70,6 +70,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BDRadar.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Chat.cs">
+      <DependentUpon>BDRadar.tt</DependentUpon>
+    </Compile>
     <Compile Include="Cidade.cs">
       <DependentUpon>BDRadar.tt</DependentUpon>
     </Compile>

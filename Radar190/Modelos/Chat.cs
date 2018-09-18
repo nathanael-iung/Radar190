@@ -12,15 +12,13 @@ namespace Modelos
     using System;
     using System.Collections.Generic;
     
-    public partial class Mapa
+    public partial class Chat
     {
-        public int IdMapa { get; set; }
-        public string Endereco { get; set; }
-        public string Numero { get; set; }
-        public int BairroIdBairro { get; set; }
-        public int DenunciaIdDenuncia { get; set; }
+        public int IdChat { get; set; }
+        public string Nome { get; set; }
+        public string Mensagem { get; set; }
+        public int UsuarioIdUsuario { get; set; }
     
-        public virtual Bairro Bairro { get; set; }
-        public virtual Denuncia Denuncia { get; set; }
+        public virtual Usuario Usuarios { get; set; }
     }
 }
