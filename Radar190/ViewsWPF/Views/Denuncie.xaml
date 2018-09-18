@@ -48,7 +48,86 @@
         <TextBox x:Name="txtDenuncieCPF" HorizontalAlignment="Left" Height="23" Margin="183,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
         <Label x:Name="DenuncieBairro" Content="Bairro: " HorizontalAlignment="Left" Margin="420,167,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="49" IsEnabled="False"/>
-        <TextBox x:Name="txtDenuncieBairro" HorizontalAlignment="Left" Height="23" Margin="420,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <ComboBox x:Name="cbDenuncieBairro" HorizontalAlignment="Left" Margin="420,198,0,0" VerticalAlignment="Top" Width="156" Height="26">
+            <ComboBoxItem Content="Abranches"/>
+            <ComboBoxItem Content="Agua Verde"/>
+            <ComboBoxItem Content="Ahú"/>
+            <ComboBoxItem Content="Alto Boqueirão"/>
+            <ComboBoxItem Content="Alto da Glória"/>
+            <ComboBoxItem Content="Alto da Rua XV"/>
+            <ComboBoxItem Content="Atuba"/>
+            <ComboBoxItem Content="Augusta"/>
+            <ComboBoxItem Content="Bacacheri"/>
+            <ComboBoxItem Content="Bairro Alto"/>
+            <ComboBoxItem Content="Barreirinha"/>
+            <ComboBoxItem Content="Batel"/>
+            <ComboBoxItem Content="Bigorrilho"/>
+            <ComboBoxItem Content="Boa Vista"/>
+            <ComboBoxItem Content="Bom Retiro"/>
+            <ComboBoxItem Content="Boqueirão"/>
+            <ComboBoxItem Content="Butiatuvinha"/>
+            <ComboBoxItem Content="Cabral"/>
+            <ComboBoxItem Content="Cachoeira"/>
+            <ComboBoxItem Content="Cajuru"/>
+            <ComboBoxItem Content="Campina do Siqueira"/>
+            <ComboBoxItem Content="Campo Comprido"/>
+            <ComboBoxItem Content="Campo de Santana"/>
+            <ComboBoxItem Content="Capão da Imbuia"/>
+            <ComboBoxItem Content="Capão Raso"/>
+            <ComboBoxItem Content="Cascatinha"/>
+            <ComboBoxItem Content="Caximba"/>
+            <ComboBoxItem Content="Centro Cívico"/>
+            <ComboBoxItem Content="Centro"/>
+            <ComboBoxItem Content="Cidade Industrial de Curitiba"/>
+            <ComboBoxItem Content="Cristo Rei"/>
+            <ComboBoxItem Content="Fanny"/>
+            <ComboBoxItem Content="Fazendinha"/>
+            <ComboBoxItem Content="Ganchinho"/>
+            <ComboBoxItem Content="Guabirotuba"/>
+            <ComboBoxItem Content="Guaíra"/>
+            <ComboBoxItem Content="Hauer"/>
+            <ComboBoxItem Content="Hugo Lange"/>
+            <ComboBoxItem Content="Jardim Botânico"/>
+            <ComboBoxItem Content="Jardim das Américas"/>
+            <ComboBoxItem Content="Jardim Social"/>
+            <ComboBoxItem Content="Juvevê"/>
+            <ComboBoxItem Content="Lamenha Pequena"/>
+            <ComboBoxItem Content="Lindóia"/>
+            <ComboBoxItem Content="Merces"/>
+            <ComboBoxItem Content="Mossunguê"/>
+            <ComboBoxItem Content="Novo Mundo"/>
+            <ComboBoxItem Content="Orleans"/>
+            <ComboBoxItem Content="Parolin"/>
+            <ComboBoxItem Content="Pilarzinho"/>
+            <ComboBoxItem Content="Pinheirinho"/>
+            <ComboBoxItem Content="Portão"/>
+            <ComboBoxItem Content="Prado Velho"/>
+            <ComboBoxItem Content="Rebouças"/>
+            <ComboBoxItem Content="Riviera"/>
+            <ComboBoxItem Content="Santa Cândida"/>
+            <ComboBoxItem Content="Santa Felicidade"/>
+            <ComboBoxItem Content="Santa Quitéria"/>
+            <ComboBoxItem Content="Santo Inácio"/>
+            <ComboBoxItem Content="São Braz"/>
+            <ComboBoxItem Content="São Francisco"/>
+            <ComboBoxItem Content="São João"/>
+            <ComboBoxItem Content="São Lourenço"/>
+            <ComboBoxItem Content="São Miguel"/>
+            <ComboBoxItem Content="Seminário"/>
+            <ComboBoxItem Content="Sítio Cercado"/>
+            <ComboBoxItem Content="Taboão"/>
+            <ComboBoxItem Content="Tarumã"/>
+            <ComboBoxItem Content="Tatuquara"/>
+            <ComboBoxItem Content="Tingui"/>
+            <ComboBoxItem Content="Uberaba"/>
+            <ComboBoxItem Content="Umbará"/>
+            <ComboBoxItem Content="Vila Izabel"/>
+            <ComboBoxItem Content="Vista Alegre"/>
+            <ComboBoxItem Content="Xaxim"/>
+
+        </ComboBox>
+
+
 
         <Label x:Name="DenuncieCidade" Content="Cidade: " HorizontalAlignment="Left" Margin="613,172,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="53" IsEnabled="False"/>
         <ComboBox x:Name="cbDenuncieCidade" HorizontalAlignment="Left" Margin="613,198,0,0" VerticalAlignment="Top" Width="156" Height="26">
