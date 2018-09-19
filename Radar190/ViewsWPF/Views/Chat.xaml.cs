@@ -20,6 +20,7 @@ namespace ViewsWPF.Views
     /// </summary>
     public partial class Chat : Window
     {
+
         public Chat()
         {
             InitializeComponent();
@@ -100,8 +101,9 @@ namespace ViewsWPF.Views
 
         private void btnChatEnviarMensagem_Click(object sender, RoutedEventArgs e)
         {
-            Chat cht = new Chat();
-
+            Modelos.Chat cht = new Modelos.Chat();
+            Chat chat = new Chat();
+            
             cht.Nome = txtChatNome.Text;
             cht.Mensagem = txtChatMensagem.Text;
             //Necessita correção
@@ -109,6 +111,8 @@ namespace ViewsWPF.Views
 
             Controller.ChatController chtController = new Controller.ChatController();
             chtController.Insert(cht);
+
+                       
         }
     }
 }

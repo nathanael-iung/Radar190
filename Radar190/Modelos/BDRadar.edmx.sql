@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/16/2018 02:27:56
--- Generated from EDMX file: C:\Users\natha\Documents\CSharp\Radar190\Radar190\Modelos\BDRadar.edmx
+-- Date Created: 09/18/2018 21:44:32
+-- Generated from EDMX file: C:\Users\1718167\Documents\1718167\Radar190\Radar190\Modelos\BDRadar.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,52 +17,67 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_MapaBairro]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[MapaSet] DROP CONSTRAINT [FK_MapaBairro];
+GO
 IF OBJECT_ID(N'[dbo].[FK_AdministradorContatosEmergenciais]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ContatosEmergenciaisSet] DROP CONSTRAINT [FK_AdministradorContatosEmergenciais];
 GO
 IF OBJECT_ID(N'[dbo].[FK_AdministradorDicasSeguranca]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[DicasSegurancaSet] DROP CONSTRAINT [FK_AdministradorDicasSeguranca];
 GO
-IF OBJECT_ID(N'[dbo].[FK_AdministradorUsuario]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[AdministradorSet] DROP CONSTRAINT [FK_AdministradorUsuario];
+IF OBJECT_ID(N'[dbo].[FK_UsuarioFaleConosco]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[FaleConoscoSet] DROP CONSTRAINT [FK_UsuarioFaleConosco];
 GO
 IF OBJECT_ID(N'[dbo].[FK_CidadeBairro]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[BairroSet] DROP CONSTRAINT [FK_CidadeBairro];
 GO
-IF OBJECT_ID(N'[dbo].[FK_DenunciaObjRoubados]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ObjRoubadoSet] DROP CONSTRAINT [FK_DenunciaObjRoubados];
+IF OBJECT_ID(N'[dbo].[FK_DenunciaObjRoubado]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ObjRoubadoSet] DROP CONSTRAINT [FK_DenunciaObjRoubado];
 GO
-IF OBJECT_ID(N'[dbo].[FK_MapaBairro]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[MapaSet] DROP CONSTRAINT [FK_MapaBairro];
-GO
-IF OBJECT_ID(N'[dbo].[FK_MapaDenuncia]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[DenunciaSet] DROP CONSTRAINT [FK_MapaDenuncia];
+IF OBJECT_ID(N'[dbo].[FK_UsuarioCidade]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UsuarioSet] DROP CONSTRAINT [FK_UsuarioCidade];
 GO
 IF OBJECT_ID(N'[dbo].[FK_UsuarioDenuncia]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[UsuarioSet] DROP CONSTRAINT [FK_UsuarioDenuncia];
+    ALTER TABLE [dbo].[DenunciaSet] DROP CONSTRAINT [FK_UsuarioDenuncia];
 GO
-IF OBJECT_ID(N'[dbo].[FK_UsuarioFaleConosco]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[FaleConoscoSet] DROP CONSTRAINT [FK_UsuarioFaleConosco];
+IF OBJECT_ID(N'[dbo].[FK_AdministradorUsuario]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UsuarioSet] DROP CONSTRAINT [FK_AdministradorUsuario];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UsuarioChat]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ChatSet] DROP CONSTRAINT [FK_UsuarioChat];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DenunciaMapa]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[MapaSet] DROP CONSTRAINT [FK_DenunciaMapa];
 GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[AdministradorSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[AdministradorSet];
-GO
-IF OBJECT_ID(N'[dbo].[BairroSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[BairroSet];
+IF OBJECT_ID(N'[dbo].[UsuarioSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UsuarioSet];
 GO
 IF OBJECT_ID(N'[dbo].[CidadeSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[CidadeSet];
 GO
-IF OBJECT_ID(N'[dbo].[ContatosEmergenciaisSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[ContatosEmergenciaisSet];
-GO
 IF OBJECT_ID(N'[dbo].[DenunciaSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[DenunciaSet];
+GO
+IF OBJECT_ID(N'[dbo].[ObjRoubadoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ObjRoubadoSet];
+GO
+IF OBJECT_ID(N'[dbo].[MapaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MapaSet];
+GO
+IF OBJECT_ID(N'[dbo].[BairroSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[BairroSet];
+GO
+IF OBJECT_ID(N'[dbo].[AdministradorSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[AdministradorSet];
+GO
+IF OBJECT_ID(N'[dbo].[ContatosEmergenciaisSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ContatosEmergenciaisSet];
 GO
 IF OBJECT_ID(N'[dbo].[DicasSegurancaSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[DicasSegurancaSet];
@@ -70,14 +85,8 @@ GO
 IF OBJECT_ID(N'[dbo].[FaleConoscoSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[FaleConoscoSet];
 GO
-IF OBJECT_ID(N'[dbo].[MapaSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[MapaSet];
-GO
-IF OBJECT_ID(N'[dbo].[ObjRoubadoSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[ObjRoubadoSet];
-GO
-IF OBJECT_ID(N'[dbo].[UsuarioSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[UsuarioSet];
+IF OBJECT_ID(N'[dbo].[ChatSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ChatSet];
 GO
 
 -- --------------------------------------------------
@@ -114,12 +123,12 @@ CREATE TABLE [dbo].[DenunciaSet] (
     [Tipo] nvarchar(max)  NOT NULL,
     [Sexo] nvarchar(max)  NULL,
     [CPF] nvarchar(max)  NOT NULL,
-    [DataHora] datetime  NOT NULL,
+    [Data] datetime  NOT NULL,
+    [Hora] nvarchar(max)  NOT NULL,
     [BO] bit  NULL,
     [TipoOcorrencia] nvarchar(max)  NOT NULL,
     [Descricao] nvarchar(max)  NULL,
     [Prejuizo] nvarchar(max)  NULL,
-    [MapaIdMapa] int  NOT NULL,
     [UsuarioIdUsuario] int  NULL
 );
 GO
@@ -145,7 +154,8 @@ CREATE TABLE [dbo].[MapaSet] (
     [IdMapa] int IDENTITY(1,1) NOT NULL,
     [Endereco] nvarchar(max)  NOT NULL,
     [Numero] nvarchar(max)  NOT NULL,
-    [BairroIdBairro] int  NOT NULL
+    [BairroIdBairro] int  NOT NULL,
+    [DenunciaIdDenuncia] int  NOT NULL
 );
 GO
 
@@ -190,6 +200,15 @@ CREATE TABLE [dbo].[FaleConoscoSet] (
     [Nome] nvarchar(max)  NOT NULL,
     [Email] nvarchar(max)  NOT NULL,
     [Assunto] nvarchar(max)  NOT NULL,
+    [Mensagem] nvarchar(max)  NOT NULL,
+    [UsuarioIdUsuario] int  NOT NULL
+);
+GO
+
+-- Creating table 'ChatSet'
+CREATE TABLE [dbo].[ChatSet] (
+    [IdChat] int IDENTITY(1,1) NOT NULL,
+    [Nome] nvarchar(max)  NOT NULL,
     [Mensagem] nvarchar(max)  NOT NULL,
     [UsuarioIdUsuario] int  NOT NULL
 );
@@ -257,6 +276,12 @@ GO
 ALTER TABLE [dbo].[FaleConoscoSet]
 ADD CONSTRAINT [PK_FaleConoscoSet]
     PRIMARY KEY CLUSTERED ([IdFaleConosco] ASC);
+GO
+
+-- Creating primary key on [IdChat] in table 'ChatSet'
+ALTER TABLE [dbo].[ChatSet]
+ADD CONSTRAINT [PK_ChatSet]
+    PRIMARY KEY CLUSTERED ([IdChat] ASC);
 GO
 
 -- --------------------------------------------------
@@ -338,21 +363,6 @@ ON [dbo].[BairroSet]
     ([CidadeIdCidade]);
 GO
 
--- Creating foreign key on [MapaIdMapa] in table 'DenunciaSet'
-ALTER TABLE [dbo].[DenunciaSet]
-ADD CONSTRAINT [FK_DenunciaMapa]
-    FOREIGN KEY ([MapaIdMapa])
-    REFERENCES [dbo].[MapaSet]
-        ([IdMapa])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_DenunciaMapa'
-CREATE INDEX [IX_FK_DenunciaMapa]
-ON [dbo].[DenunciaSet]
-    ([MapaIdMapa]);
-GO
-
 -- Creating foreign key on [DenunciaIdDenuncia] in table 'ObjRoubadoSet'
 ALTER TABLE [dbo].[ObjRoubadoSet]
 ADD CONSTRAINT [FK_DenunciaObjRoubado]
@@ -411,6 +421,36 @@ GO
 CREATE INDEX [IX_FK_AdministradorUsuario]
 ON [dbo].[UsuarioSet]
     ([AdministradorUsuario_Usuario_IdAdministrador]);
+GO
+
+-- Creating foreign key on [UsuarioIdUsuario] in table 'ChatSet'
+ALTER TABLE [dbo].[ChatSet]
+ADD CONSTRAINT [FK_UsuarioChat]
+    FOREIGN KEY ([UsuarioIdUsuario])
+    REFERENCES [dbo].[UsuarioSet]
+        ([IdUsuario])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_UsuarioChat'
+CREATE INDEX [IX_FK_UsuarioChat]
+ON [dbo].[ChatSet]
+    ([UsuarioIdUsuario]);
+GO
+
+-- Creating foreign key on [DenunciaIdDenuncia] in table 'MapaSet'
+ALTER TABLE [dbo].[MapaSet]
+ADD CONSTRAINT [FK_DenunciaMapa]
+    FOREIGN KEY ([DenunciaIdDenuncia])
+    REFERENCES [dbo].[DenunciaSet]
+        ([IdDenuncia])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_DenunciaMapa'
+CREATE INDEX [IX_FK_DenunciaMapa]
+ON [dbo].[MapaSet]
+    ([DenunciaIdDenuncia]);
 GO
 
 -- --------------------------------------------------

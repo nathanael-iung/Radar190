@@ -27,7 +27,8 @@ namespace Modelos
         public string Tipo { get; set; }
         public string Sexo { get; set; }
         public string CPF { get; set; }
-        public System.DateTime DataHora { get; set; }
+        public System.DateTime Data { get; set; }
+        public string Hora { get; set; }
         public Nullable<bool> BO { get; set; }
         public string TipoOcorrencia { get; set; }
         public string Descricao { get; set; }

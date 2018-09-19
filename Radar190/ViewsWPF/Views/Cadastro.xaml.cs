@@ -142,7 +142,7 @@ namespace ViewsWPF.Views
         private void cbCadastroCidade_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            if (cbCadastroCidade.SelectedItem.Equals("Curitiba"))
+            if (cbCadastroCidade.SelectedValue.ToString().Equals("Curitiba"))
             {
                 fkCidade = 1;
             }
@@ -156,6 +156,7 @@ namespace ViewsWPF.Views
         private void btnCadastroCadastrar_Click(object sender, RoutedEventArgs e)
         {
             Usuario user = new Usuario();
+            Cidade city = new Cidade();
 
             user.NomeCompleto = txtCadastroNome.Text;
             //DtNasc recebe o valor de um TextBox invisível para que seja convertido
@@ -167,7 +168,7 @@ namespace ViewsWPF.Views
             //Recebe a String em que o PasswordBox foi armazenado
             user.Senha = Convert.ToInt16(senha);
             //Recebe a variável que será utilizada como FK da cidade dentro de Cadastro
-            user.CidadeIdCidade = fkCidade;
+            user.CidadeIdCidade = int.Parse(cbCadastroCidade.SelectedValue.ToString());
 
             Controller.UsuarioController userController = new Controller.UsuarioController();
             userController.Insert(user);

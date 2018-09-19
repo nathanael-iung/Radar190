@@ -16,6 +16,7 @@
     <EntitySet Name="ContatosEmergenciaisSet" EntityType="BDRadar.Store.ContatosEmergenciaisSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DicasSegurancaSet" EntityType="BDRadar.Store.DicasSegurancaSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="FaleConoscoSet" EntityType="BDRadar.Store.FaleConoscoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChatSet" EntityType="BDRadar.Store.ChatSet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="MapaBairro" Association="BDRadar.Store.MapaBairro">
       <End Role="Mapa" EntitySet="MapaSet" />
       <End Role="Bairro" EntitySet="BairroSet" />
@@ -36,10 +37,6 @@
       <End Role="Cidade" EntitySet="CidadeSet" />
       <End Role="Bairro" EntitySet="BairroSet" />
     </AssociationSet>
-    <AssociationSet Name="DenunciaMapa" Association="BDRadar.Store.DenunciaMapa">
-      <End Role="Denuncia" EntitySet="DenunciaSet" />
-      <End Role="Mapa" EntitySet="MapaSet" />
-    </AssociationSet>
     <AssociationSet Name="DenunciaObjRoubado" Association="BDRadar.Store.DenunciaObjRoubado">
       <End Role="Denuncia" EntitySet="DenunciaSet" />
       <End Role="ObjRoubado" EntitySet="ObjRoubadoSet" />
@@ -55,6 +52,14 @@
     <AssociationSet Name="AdministradorUsuario" Association="BDRadar.Store.AdministradorUsuario">
       <End Role="Administrador" EntitySet="AdministradorSet" />
       <End Role="Usuario" EntitySet="UsuarioSet" />
+    </AssociationSet>
+    <AssociationSet Name="UsuarioChat" Association="BDRadar.Store.UsuarioChat">
+      <End Role="Usuario" EntitySet="UsuarioSet" />
+      <End Role="Chat" EntitySet="ChatSet" />
+    </AssociationSet>
+    <AssociationSet Name="DenunciaMapa" Association="BDRadar.Store.DenunciaMapa">
+      <End Role="Denuncia" EntitySet="DenunciaSet" />
+      <End Role="Mapa" EntitySet="MapaSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="UsuarioSet">
@@ -89,12 +94,12 @@
     <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Sexo" Type="nvarchar(max)" Nullable="true" />
     <Property Name="CPF" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="DataHora" Type="datetime" Nullable="false" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+    <Property Name="Hora" Type="nvarchar(max)" Nullable="false" />
     <Property Name="BO" Type="bit" Nullable="true" />
     <Property Name="TipoOcorrencia" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Descricao" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Prejuizo" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="MapaIdMapa" Type="int" Nullable="false" />
     <Property Name="UsuarioIdUsuario" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="ObjRoubadoSet">
@@ -121,6 +126,7 @@
     <Property Name="Endereco" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Numero" Type="nvarchar(max)" Nullable="false" />
     <Property Name="BairroIdBairro" Type="int" Nullable="false" />
+    <Property Name="DenunciaIdDenuncia" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="BairroSet">
     <Key>
@@ -165,6 +171,15 @@
     <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Assunto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mensagem" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UsuarioIdUsuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChatSet">
+    <Key>
+      <PropertyRef Name="IdChat" />
+    </Key>
+    <Property Name="IdChat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Mensagem" Type="nvarchar(max)" Nullable="false" />
     <Property Name="UsuarioIdUsuario" Type="int" Nullable="false" />
   </EntityType>
@@ -228,18 +243,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="DenunciaMapa">
-    <End Role="Denuncia" Type="BDRadar.Store.DenunciaSet" Multiplicity="*" />
-    <End Role="Mapa" Type="BDRadar.Store.MapaSet" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Mapa">
-        <PropertyRef Name="IdMapa" />
-      </Principal>
-      <Dependent Role="Denuncia">
-        <PropertyRef Name="MapaIdMapa" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="DenunciaObjRoubado">
     <End Role="Denuncia" Type="BDRadar.Store.DenunciaSet" Multiplicity="1" />
     <End Role="ObjRoubado" Type="BDRadar.Store.ObjRoubadoSet" Multiplicity="*" />
@@ -285,6 +288,30 @@
       </Principal>
       <Dependent Role="Usuario">
         <PropertyRef Name="AdministradorUsuario_Usuario_IdAdministrador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsuarioChat">
+    <End Role="Usuario" Type="BDRadar.Store.UsuarioSet" Multiplicity="1" />
+    <End Role="Chat" Type="BDRadar.Store.ChatSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Chat">
+        <PropertyRef Name="UsuarioIdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DenunciaMapa">
+    <End Role="Denuncia" Type="BDRadar.Store.DenunciaSet" Multiplicity="1" />
+    <End Role="Mapa" Type="BDRadar.Store.MapaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Denuncia">
+        <PropertyRef Name="IdDenuncia" />
+      </Principal>
+      <Dependent Role="Mapa">
+        <PropertyRef Name="DenunciaIdDenuncia" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -386,7 +413,8 @@
           <Property Name="Tipo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Sexo" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="CPF" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="DataHora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Data" Type="DateTime" Nullable="false" />
+          <Property Name="Hora" Type="String" Nullable="false" />
           <Property Name="BO" Type="Boolean" Nullable="true" />
           <Property Name="TipoOcorrencia" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Descricao" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
@@ -583,8 +611,8 @@
             <PropertyRef Name="IdChat" />
           </Key>
           <Property Name="IdChat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" />
-          <Property Name="Mensagem" Type="String" Nullable="false" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Mensagem" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Usuarios" Relationship="BDRadar.UsuarioChat" FromRole="Chat" ToRole="Usuario" />
           <Property Name="UsuarioIdUsuario" Type="Int32" Nullable="false" />
         </EntityType>
@@ -650,7 +678,8 @@
           <ScalarProperty Name="Tipo" ColumnName="Tipo" />
           <ScalarProperty Name="Sexo" ColumnName="Sexo" />
           <ScalarProperty Name="CPF" ColumnName="CPF" />
-          <ScalarProperty Name="DataHora" ColumnName="DataHora" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Hora" ColumnName="Hora" />
           <ScalarProperty Name="BO" ColumnName="BO" />
           <ScalarProperty Name="TipoOcorrencia" ColumnName="TipoOcorrencia" />
           <ScalarProperty Name="Descricao" ColumnName="Descricao" />
@@ -683,6 +712,7 @@
           <ScalarProperty Name="Endereco" ColumnName="Endereco" />
           <ScalarProperty Name="Numero" ColumnName="Numero" />
           <ScalarProperty Name="BairroIdBairro" ColumnName="BairroIdBairro" />
+          <ScalarProperty Name="DenunciaIdDenuncia" ColumnName="DenunciaIdDenuncia" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -732,6 +762,16 @@
           <ScalarProperty Name="Nome" ColumnName="Nome" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Assunto" ColumnName="Assunto" />
+          <ScalarProperty Name="Mensagem" ColumnName="Mensagem" />
+          <ScalarProperty Name="UsuarioIdUsuario" ColumnName="UsuarioIdUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChatSet">
+      <EntityTypeMapping TypeName="IsTypeOf(BDRadar.Chat)">
+        <MappingFragment StoreEntitySet="ChatSet">
+          <ScalarProperty Name="IdChat" ColumnName="IdChat" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
           <ScalarProperty Name="Mensagem" ColumnName="Mensagem" />
           <ScalarProperty Name="UsuarioIdUsuario" ColumnName="UsuarioIdUsuario" />
         </MappingFragment>

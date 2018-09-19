@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-    class ChatController
+    public class ChatController
     {
         public void Insert(Chat ch)
         {

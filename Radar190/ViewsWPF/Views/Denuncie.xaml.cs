@@ -44,6 +44,9 @@ namespace ViewsWPF.Views
         private string cbTipoOcorrencia;
         //Variável que recebrá o valor do prejuízo
         private string preju;
+        //Variável que recebrá o tipo da denpuncia - testemunha e vitima
+        private string tip;
+        
 
         private void btnDenuncieHome_Click(object sender, RoutedEventArgs e)
         {
@@ -126,26 +129,6 @@ namespace ViewsWPF.Views
             DenuncieparaFaleConosco.Show();
         }
 
-        private void txtDenuncieIdade_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            idade = txtDenuncieIdade.Text;
-        }
-
-        private void txtDenuncieNumero_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            numEndereco = txtDenuncieEndereco.Text;
-        }
-
-        private void txtDenuncieHorarioHoras_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            hr = txtDenuncieHorarioHoras.Text;
-        }
-
-        private void txtDenuncieHorarioMinutos_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            min = txtDenuncieHorarioMinutos.Text;
-        }
-
         private void rbDenuncieFeminino_Checked(object sender, RoutedEventArgs e)
         {
             sx = "fem";
@@ -154,6 +137,16 @@ namespace ViewsWPF.Views
         private void rbDenuncieMasculino_Checked(object sender, RoutedEventArgs e)
         {
             sx = "masc";
+        }
+
+        private void rbDenuncieVitima_Checked(object sender, RoutedEventArgs e)
+        {
+            tip = "Vítima";
+        }
+
+        private void rbDenuncieTestemunha_Checked(object sender, RoutedEventArgs e)
+        {
+            tip = "Testemunha";
         }
 
         private void txtDenuncieNumero_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -187,10 +180,12 @@ namespace ViewsWPF.Views
 
         }
 
+        /*
         private void cbDenuncieBairro_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             cbBairro = cbDenuncieBairro.SelectedValue.ToString();
         }
+        */
 
         private void rbDenuncieBOsim_Checked(object sender, RoutedEventArgs e)
         {
@@ -204,8 +199,9 @@ namespace ViewsWPF.Views
 
         private void cbDenuncieTipoOcorrencia_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            cbTipoOcorrencia = cbDenuncieTipoOcorrencia.SelectedValue.ToString();
+            cbTipoOcorrencia = cbDenuncieTipoOcorrencia.SelectionBoxItem.ToString();
         }
+
 
         private void cbDenuncieCidade_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -220,22 +216,29 @@ namespace ViewsWPF.Views
 
         private void btnDenuncieDenunciar_Click(object sender, RoutedEventArgs e)
         {
+            idade = txtDenuncieIdade.Text;
+            numEndereco = txtDenuncieEndereco.Text;
+            hr = txtDenuncieHorarioHoras.Text;
+            min = txtDenuncieHorarioMinutos.Text;
+
             Denuncia denun = new Denuncia();
             Mapa maps = new Mapa();
             Bairro bairro = new Bairro();
             Cidade city = new Cidade();
             //Concatenação das strings de Data, Hora e minutos
-            DataHora = string.Concat(dt, " ", hr, ":", min);
+            string Hora = string.Concat(txtDenuncieHorarioHoras.Text,":",txtDenuncieHorarioMinutos.Text);
 
             denun.NomeCompleto = txtDenuncieNome.Text;
             denun.Idade = Convert.ToInt16(idade);
             denun.Sexo = sx;
+            denun.Tipo = tip;
             //maps.Endereco = txtDenuncieEndereco.Text;
             //maps.Numero = Convert.ToInt16(numEndereco);
             denun.CPF = txtDenuncieCPF.Text;
-            bairro.Distrito = cbBairro;
-            city.City = cbCidade;
-            denun.DataHora = Convert.ToDateTime(DataHora);
+            //bairro.Distrito = cbBairro;
+            //city.City = int.Parse(cbDenuncieCidade.SelectedValue.ToString());
+            denun.Data = Convert.ToDateTime(dt);
+            denun.Hora = Hora;
             denun.BO = bo;
             denun.TipoOcorrencia = cbTipoOcorrencia;
             denun.Prejuizo = txtDenunciePrejuizo.Text;
@@ -247,11 +250,11 @@ namespace ViewsWPF.Views
             //Controller.MapaController mapController = new Controller.MapaController();
             //mapController.Insert(maps);
 
-            Controller.BairroController baiController = new Controller.BairroController();
-            baiController.Insert(bairro);
+            //Controller.BairroController baiController = new Controller.BairroController();
+            //baiController.Insert(bairro);
 
-            Controller.CidadeController cidController = new Controller.CidadeController();
-            cidController.Insert(city);
+            //Controller.CidadeController cidController = new Controller.CidadeController();
+            //cidController.Insert(city);
 
         }
     }
