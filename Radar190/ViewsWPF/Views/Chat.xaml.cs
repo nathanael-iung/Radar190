@@ -28,9 +28,9 @@ namespace ViewsWPF.Views
 
         private void btnChatHome_Click(object sender, RoutedEventArgs e)
         {
-             
+
             Chat ChatFechar = new Chat();
-           this.Close();
+            this.Close();
 
             Index ChatparaHome = new Index();
             ChatparaHome.Show();
@@ -92,10 +92,10 @@ namespace ViewsWPF.Views
 
         private void btnChatDicas_Click(object sender, RoutedEventArgs e)
         {
-              Chat ChatFechar = new Chat();
+            Chat ChatFechar = new Chat();
             this.Close();
 
-           Dicas_de_Seguranca ChatparaDicasDeSeguranca = new Dicas_de_Seguranca();
+            Dicas_de_Seguranca ChatparaDicasDeSeguranca = new Dicas_de_Seguranca();
             ChatparaDicasDeSeguranca.Show();
         }
 
@@ -103,7 +103,7 @@ namespace ViewsWPF.Views
         {
             Modelos.Chat cht = new Modelos.Chat();
             Chat chat = new Chat();
-            
+
             cht.Nome = txtChatNome.Text;
             cht.Mensagem = txtChatMensagem.Text;
             //Necessita correção
@@ -111,8 +111,16 @@ namespace ViewsWPF.Views
 
             Controller.ChatController chtController = new Controller.ChatController();
             chtController.Insert(cht);
+            dgChatLista.ItemsSource = chtController.ListChat();
 
-                       
+
+        }
+
+        private void wwChat_Loaded(object sender, RoutedEventArgs e)
+        {
+            Controller.ChatController chtController = new Controller.ChatController();
+            dgChatLista.ItemsSource = chtController.ListChat();
+            
         }
     }
 }

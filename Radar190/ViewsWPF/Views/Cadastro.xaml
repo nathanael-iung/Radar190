@@ -7,9 +7,13 @@
         mc:Ignorable="d"
         Title="-------" Height="606" Width="850">
     <Grid AllowDrop="True" Margin="0,0,0,-3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="89*"/>
+            <ColumnDefinition Width="332*"/>
+        </Grid.ColumnDefinitions>
 
         <DockPanel HorizontalAlignment="Left" Height="569" LastChildFill="False" VerticalAlignment="Top" Width="162" Background="Black"/>
-        <DockPanel HorizontalAlignment="Left" Height="0" LastChildFill="False" Margin="129,0,0,0" VerticalAlignment="Top" Width="663" Background="White"/>
+        <DockPanel HorizontalAlignment="Left" Height="0" LastChildFill="False" Margin="129,0,0,0" VerticalAlignment="Top" Width="663" Background="White" Grid.ColumnSpan="2"/>
 
         <Button x:Name="btnCadastroFaleConosco" Content="Fale Conosco" HorizontalAlignment="Left" Margin="0,520,0,0" VerticalAlignment="Top" Width="162" Height="41" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15" Click="btnCadastroFaleConosco_Click"/>
         <Button x:Name="btnCadastroDicas" Content="Dicas de Segurança" HorizontalAlignment="Left" VerticalAlignment="Top" Width="162" Margin="0,465,0,0" Height="50" FontFamily="Century Gothic" FontSize="15" Background="Black" BorderBrush="Black" Foreground="White" Click="btnCadastroDicas_Click"/>
@@ -22,20 +26,20 @@
         <Button x:Name="btnCadastroHome" Content="Home" HorizontalAlignment="Left" Margin="0,80,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15" Click="btnCadastroHome_Click"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="56" Margin="31,10,0,0" VerticalAlignment="Top" Width="100" Source="Logo-fundo-preto.png"/>
 
-        <TextBox x:Name="txtCadastroTitulo" HorizontalAlignment="Center" Height="37" Margin="314,5,209,0" TextWrapping="Wrap" Text="Cadastre-se Agora" Width="319" TextChanged="TextBox_TextChanged" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
+        <TextBox x:Name="txtCadastroTitulo" HorizontalAlignment="Center" Height="37" Margin="136.098,5,209,0" TextWrapping="Wrap" Text="Cadastre-se Agora" Width="319" TextChanged="TextBox_TextChanged" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False" Grid.Column="1"/>
 
-        <Label x:Name="CadastroNome" Content="Nome Completo: " HorizontalAlignment="Left" Margin="183,80,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
-        <TextBox x:Name="txtCadastroNome" HorizontalAlignment="Left" Height="23" Margin="183,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="397" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="CadastroNome" Content="Nome Completo: " HorizontalAlignment="Left" Margin="5.098,80,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False" Grid.Column="1"/>
+        <TextBox x:Name="txtCadastroNome" HorizontalAlignment="Left" Height="23" Margin="5.098,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="397" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"/>
 
-        <Label x:Name="CadastroDataNascimento" Content="Data de Nascimento: " HorizontalAlignment="Left" Margin="613,80,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="126" IsEnabled="False"/>
-        <DatePicker x:Name="dpCadastroDataNascimento" Text="Selecione uma data" HorizontalAlignment="Left" Margin="617,105,0,0" VerticalAlignment="Top" Width="175" Language="pt-BR" DisplayDateStart="01/01/1900" DisplayDateEnd="12/31/2018" SelectedDateChanged="dpCadastroDataNascimento_SelectedDateChanged" />
+        <Label x:Name="CadastroDataNascimento" Content="Data de Nascimento: " HorizontalAlignment="Left" Margin="435.098,80,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="126" IsEnabled="False" Grid.Column="1"/>
+        <DatePicker x:Name="dpCadastroDataNascimento" Text="Selecione uma data" HorizontalAlignment="Left" Margin="439.098,105,0,0" VerticalAlignment="Top" Width="175" Language="pt-BR" DisplayDateStart="01/01/1900" DisplayDateEnd="12/31/2018" SelectedDateChanged="dpCadastroDataNascimento_SelectedDateChanged" Grid.Column="1" />
 
-        <Label x:Name="CadastroExperiencia" Content="Possui por alguma experiência de furto ou roubo? " HorizontalAlignment="Left" Margin="183,155,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="290" IsEnabled="False"/>
-        <RadioButton x:Name="rbCadastroExperienciaSim" Content="Sim" HorizontalAlignment="Left" Margin="196,190,0,0" VerticalAlignment="Top" GroupName="Experiencia" Checked="rbCadastroExperienciaSim_Checked" />
-        <RadioButton x:Name="rbCadastroExperienciaNao" Content="Não" HorizontalAlignment="Left" Margin="271,189,0,0" VerticalAlignment="Top" GroupName="Experiencia" Checked="rbCadastroExperienciaNao_Checked" />
+        <Label x:Name="CadastroExperiencia" Content="Possui por alguma experiência de furto ou roubo? " HorizontalAlignment="Left" Margin="5.098,155,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="290" IsEnabled="False" Grid.Column="1"/>
+        <RadioButton x:Name="rbCadastroExperienciaSim" Content="Sim" HorizontalAlignment="Left" Margin="18.098,190,0,0" VerticalAlignment="Top" GroupName="Experiencia" Checked="rbCadastroExperienciaSim_Checked" Grid.Column="1" />
+        <RadioButton x:Name="rbCadastroExperienciaNao" Content="Não" HorizontalAlignment="Left" Margin="93.098,189,0,0" VerticalAlignment="Top" GroupName="Experiencia" Checked="rbCadastroExperienciaNao_Checked" Grid.Column="1" />
 
-        <Label x:Name="CadastroCidade" Content="Cidade:" HorizontalAlignment="Left" Margin="617,147,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
-        <ComboBox x:Name="cbCadastroCidade" DisplayMemberPath="City" SelectedValuePath="IdCidade"  HorizontalAlignment="Left" Margin="624,178,0,0" VerticalAlignment="Top" Width="168" Height="26" SelectionChanged="cbCadastroCidade_SelectionChanged">
+        <Label x:Name="CadastroCidade" Content="Cidade:" HorizontalAlignment="Left" Margin="439.098,147,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False" Grid.Column="1"/>
+        <ComboBox x:Name="cbCadastroCidade" DisplayMemberPath="City" SelectedValuePath="IdCidade"  HorizontalAlignment="Left" Margin="446.098,178,0,0" VerticalAlignment="Top" Width="168" Height="26" SelectionChanged="cbCadastroCidade_SelectionChanged" Grid.Column="1">
             <ComboBoxItem Content="Curitiba"/>
             <!--<ComboBoxItem Content="Araucária"/>
             <ComboBoxItem Content="Colombo"/>
@@ -45,24 +49,24 @@
             <ComboBoxItem Content="Outros"/>-->
         </ComboBox>
 
-        <Label x:Name="CadastroDescricao" Content="Caso a resposta seja sim, conte-nos" HorizontalAlignment="Left" Margin="183,227,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="205" IsEnabled="False"/>
-        <TextBox x:Name="txtCadastroDescricao" HorizontalAlignment="Left" Height="98" Margin="183,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="609" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+        <Label x:Name="CadastroDescricao" Content="Caso a resposta seja sim, conte-nos" HorizontalAlignment="Left" Margin="5.098,227,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="205" IsEnabled="False" Grid.Column="1"/>
+        <TextBox x:Name="txtCadastroDescricao" HorizontalAlignment="Left" Height="98" Margin="5.098,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="609" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Column="1" />
 
-        <Label x:Name="CadastroUsuario" Content="Usuário: " HorizontalAlignment="Left" Margin="183,367,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
-        <TextBox x:Name="txtCadastroUsuario" HorizontalAlignment="Left" Height="23" Margin="183,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="CadastroUsuario" Content="Usuário: " HorizontalAlignment="Left" Margin="5.098,367,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False" Grid.Column="1"/>
+        <TextBox x:Name="txtCadastroUsuario" HorizontalAlignment="Left" Height="23" Margin="5.098,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"/>
 
-        <Label x:Name="CadastroSenha" Content="Senha: " HorizontalAlignment="Left" Margin="405,367,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
-        <PasswordBox x:Name="txtCadastroSenha" HorizontalAlignment="Left" Height="23" Margin="405,398,0,0" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxLength="16" PasswordChanged="txtCadastroSenha_PasswordChanged" />
+        <Label x:Name="CadastroSenha" Content="Senha: " HorizontalAlignment="Left" Margin="227.098,367,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False" Grid.Column="1"/>
+        <PasswordBox x:Name="txtCadastroSenha" HorizontalAlignment="Left" Height="23" Margin="227.098,398,0,0" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxLength="16" PasswordChanged="txtCadastroSenha_PasswordChanged" Grid.Column="1" />
 
-        <Label x:Name="CadastroConfirmarSenha" Content="Confirmar Senha: " HorizontalAlignment="Left" Margin="617,367,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
-        <PasswordBox x:Name="txtCadastroConfirmarSenha" HorizontalAlignment="Left" Height="23" Margin="617,398,0,0" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxLength="16" />
+        <Label x:Name="CadastroConfirmarSenha" Content="Confirmar Senha: " HorizontalAlignment="Left" Margin="439.098,367,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False" Grid.Column="1"/>
+        <PasswordBox x:Name="txtCadastroConfirmarSenha" HorizontalAlignment="Left" Height="23" Margin="439.098,398,0,0" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxLength="16" Grid.Column="1" />
 
-        <Label x:Name="CadastroCaptcha" Content="Captcha: Qual o resultado de 5 + 3 ?" HorizontalAlignment="Left" Margin="395,446,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="199" IsEnabled="False"/>
-        <TextBox x:Name="txtCadastroCaptcha" HorizontalAlignment="Left" Height="23" Margin="405,477,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="CadastroCaptcha" Content="Captcha: Qual o resultado de 5 + 3 ?" HorizontalAlignment="Left" Margin="217.098,446,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="199" IsEnabled="False" Grid.Column="1"/>
+        <TextBox x:Name="txtCadastroCaptcha" HorizontalAlignment="Left" Height="23" Margin="227.098,477,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"/>
 
-        <Button x:Name="btnCadastroCadastrar" Content="CADASTRAR" HorizontalAlignment="Left" Margin="405,519,0,0" VerticalAlignment="Top" Width="175" Height="39" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FF26CB0C" Foreground="White" FontSize="16" FontWeight="Bold" Click="btnCadastroCadastrar_Click"/>
-        <TextBox x:Name="txtCadastroData" HorizontalAlignment="Left" Height="8" Margin="619,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" Visibility="Hidden"/>
-
+        <Button x:Name="btnCadastroCadastrar" Content="CADASTRAR" HorizontalAlignment="Left" Margin="227.098,519,0,0" VerticalAlignment="Top" Width="175" Height="39" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FF26CB0C" Foreground="White" FontSize="16" FontWeight="Bold" Click="btnCadastroCadastrar_Click" Grid.Column="1"/>
+        <TextBox x:Name="txtCadastroData" HorizontalAlignment="Left" Height="8" Margin="441.098,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" Visibility="Hidden" Grid.Column="1"/>
+        
     </Grid>
 </Window>
 

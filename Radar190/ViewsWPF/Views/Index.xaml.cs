@@ -95,5 +95,12 @@ namespace ViewsWPF.Views
             Fale_Conosco IndexparaFaleConosco = new Fale_Conosco();
             IndexparaFaleConosco.Show();
         }
+
+        private void btnIndexLogin_Click(object sender, RoutedEventArgs e)
+        {
+            Login abrirLogin = new Login();
+            abrirLogin.Show();
+
+        }
     }
 }

@@ -1,14 +1,18 @@
 ﻿using Modelos;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Controller
 {
-    public class UsuarioController
+        public class UsuarioController
     {
+        private bool logado;
+
         //List<Product> PesquisarPorCor(string cor)
         //{
         //    AdventureWorks2016Entities contexto = new AdventureWorks2016Entities();
@@ -18,6 +22,25 @@ namespace Controller
 
         //    return list.ToList();
         //}
+
+        public bool VerificaLogin(String usuario, String senha)
+        {
+            BDRadarContainer contexto = new BDRadarContainer();
+            SqlCommand sql = new SqlCommand("SELECT * FROM UsuarioSet WHERE User = '" + usuario + "' AND Senha = '" + senha + "'");
+            sql.CommandType = CommandType.Text;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = sql;
+            DataSet dataSet = new DataSet();
+            adapter.Fill(dataSet);
+
+            if(dataSet.Tables[0].Rows.Count > 0)
+            {
+                return logado = true; 
+            } else
+            {
+                return logado = false;
+            }
+        }
 
         public void Insert (Usuario user)
         {

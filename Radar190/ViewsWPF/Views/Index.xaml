@@ -19,5 +19,6 @@
         <Button x:Name="btnHomeCadastro" Content="Cadastre-se" HorizontalAlignment="Left" Margin="0,135,0,0" VerticalAlignment="Top" Width="162" Height="50" FontFamily="Century Gothic" FontSize="15" Background="Black" BorderBrush="Black" Foreground="White" Click="btnHomeCadastro_Click"/>
         <Button x:Name="btnHomeHome" Content="Home" HorizontalAlignment="Left" Margin="0,80,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="56" Margin="31,10,0,0" VerticalAlignment="Top" Width="100" Source="Logo-fundo-preto.png"/>
+        <Button x:Name="btnIndexLogin" Content="Login" HorizontalAlignment="Left" Margin="783,10,0,0" VerticalAlignment="Top" Width="49" Background="Black" BorderBrush="Black" Foreground="White" Click="btnIndexLogin_Click"/>
     </Grid>
 </Window>
