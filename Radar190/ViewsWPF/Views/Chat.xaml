@@ -28,7 +28,7 @@
         <Label x:Name="ChatNome" Content="Nome Completo: " HorizontalAlignment="Left" Margin="183,48,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
 
         <TextBox x:Name="txtChatMensagem" HorizontalAlignment="Left" Height="98" Margin="183,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="609" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto" />
-        <Label x:Name="ChatMensagem" Content="Caso a resposta seja sim, conte-nos" HorizontalAlignment="Left" Margin="183,107,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="205" IsEnabled="False"/>
+        <Label x:Name="ChatMensagem" Content="Mensagem: " HorizontalAlignment="Left" Margin="183,107,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="205" IsEnabled="False"/>
 
         <DataGrid x:Name="dgChatLista" HorizontalAlignment="Left" Height="261" Margin="183,300,0,0" VerticalAlignment="Top" Width="609"/>
 

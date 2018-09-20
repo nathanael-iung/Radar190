@@ -120,6 +120,7 @@ namespace ViewsWPF.Views
         private void wwChat_Loaded(object sender, RoutedEventArgs e)
         {
             Controller.ChatController chtController = new Controller.ChatController();
+
             dgChatLista.ItemsSource = chtController.ListChat();
             
         }

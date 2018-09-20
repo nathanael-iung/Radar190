@@ -23,9 +23,7 @@ namespace ViewsWPF.Views
         {
             InitializeComponent();
         }
-
        
-
         private void btnContatosHome_Click(object sender, RoutedEventArgs e)
         {
             Contatos_Emergencias ContatosEmergenciaisFechar = new Contatos_Emergencias();
@@ -96,6 +94,13 @@ namespace ViewsWPF.Views
 
             Fale_Conosco ContatosEmergenciasparaFaleConosco = new Fale_Conosco();
             ContatosEmergenciasparaFaleConosco.Show();
+        }
+
+        private void wwContatosEmergenciais_Loaded(object sender, RoutedEventArgs e)
+        {
+            Controller.ContatosEmergenciaisController contatosController = new Controller.ContatosEmergenciaisController();
+
+            dgContatosEmergenciaisLista.ItemsSource = contatosController.ListContatosEmergenciais();
         }
     }
 }

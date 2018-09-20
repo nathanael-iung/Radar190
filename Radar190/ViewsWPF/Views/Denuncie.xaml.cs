@@ -225,6 +225,8 @@ namespace ViewsWPF.Views
             Mapa maps = new Mapa();
             Bairro bairro = new Bairro();
             Cidade city = new Cidade();
+            ObjRoubado objs = new ObjRoubado();
+
             //Concatenação das strings de Data, Hora e minutos
             string Hora = string.Concat(txtDenuncieHorarioHoras.Text,":",txtDenuncieHorarioMinutos.Text);
 

@@ -11,8 +11,6 @@ namespace Controller
 {
     public class UsuarioController
     {
-        public bool logado;
-
         //List<Product> PesquisarPorCor(string cor)
         //{
         //    AdventureWorks2016Entities contexto = new AdventureWorks2016Entities();
@@ -23,14 +21,21 @@ namespace Controller
         //    return list.ToList();
         //}
 
-        public bool VerificaLogin(string usuario)
+        public bool VerificaLogin(string usuario, string senha)
         {
             BDRadarContainer contexto = new BDRadarContainer();
+
             var log = from usu in contexto.UsuarioSet
                       where usu.User == usuario
                       select usu;
 
-            if (log.ToList().Count > 0)
+            //necessita verificação
+            var pas = from usu in contexto.UsuarioSet
+                      where usu.Senha.Equals(senha)
+                      select usu;
+
+            //retorna true caso seja encontrada usuário e senha no BD e false caso o resultado do select seja 0
+            if (log.ToList().Count > 0 && pas.ToList().Count > 0)
             {
                 return true;
             }
@@ -38,41 +43,20 @@ namespace Controller
             {
                 return false;
             }
-
-            /*
-            BDRadarContainer contexto = new BDRadarContainer();
-            SqlConnection con = new SqlConnection("data source = DESKTOP - V1BANKD; initial catalog = Radar190DB;integrated security=True;MultipleActiveResultSets=True;");
-            con.Open();
-            SqlCommand sql = new SqlCommand("SELECT * FROM UsuarioSet WHERE User = '" + usuario + "' AND Senha = '" + senha + "'");
-            sql.CommandType = CommandType.Text;
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.SelectCommand = sql;
-            DataSet dataSet = new DataSet();
-            adapter.Fill(dataSet);
-
-            if (dataSet.Tables[0].Rows.Count > 0)
-            {
-                return logado = true;
-            }
-            else
-            {
-                return logado = false;
-            }
-            */
         }
 
         public void Insert(Usuario user)
         {
-            //UsuarioSet ?? Usuario
             BDRadarContainer contexto = new BDRadarContainer();
+
             contexto.UsuarioSet.Add(user);
             contexto.SaveChanges();
         }
 
         public Usuario BuscaID(int id)
         {
-            //UsuarioSet ?? Usuario
             BDRadarContainer contexto = new BDRadarContainer();
+
             return contexto.UsuarioSet.Find();
         }
 
@@ -91,6 +75,7 @@ namespace Controller
                 usuarioAntigo.Senha = usuarioEditado.Senha;
 
                 BDRadarContainer contexto = new BDRadarContainer();
+
                 contexto.Entry(usuarioAntigo).State = System.Data.Entity.EntityState.Modified;
                 contexto.SaveChanges();
             }
@@ -103,6 +88,7 @@ namespace Controller
             if (usuarioExcluir != null)
             {
                 BDRadarContainer contexto = new BDRadarContainer();
+
                 contexto.UsuarioSet.Remove(usuarioExcluir);
                 contexto.SaveChanges();
             }
@@ -111,6 +97,7 @@ namespace Controller
         public List<Usuario> ListUsuarios()
         {
             BDRadarContainer contexto = new BDRadarContainer();
+
             return contexto.UsuarioSet.ToList();
         }
 

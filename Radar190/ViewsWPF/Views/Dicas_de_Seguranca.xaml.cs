@@ -95,5 +95,12 @@ namespace ViewsWPF.Views
             Fale_Conosco DicasparaFaleConosco = new Fale_Conosco();
             DicasparaFaleConosco.Show();
         }
+
+        private void wwDicasDeSeguranca_Loaded(object sender, RoutedEventArgs e)
+        {
+            Controller.DicasSegurancaController dicasController = new Controller.DicasSegurancaController();
+            
+            dgDicasSegurancaLista.ItemsSource = dicasController.ListDicasSeguranca();
+        }
     }
 }

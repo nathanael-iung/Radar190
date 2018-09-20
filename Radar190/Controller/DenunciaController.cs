@@ -14,7 +14,6 @@ namespace Controller
         {
             try
             {
-                //seu código
                 BDRadarContainer contexto = new BDRadarContainer();
                 contexto.DenunciaSet.Add(denun);
                 contexto.SaveChanges();

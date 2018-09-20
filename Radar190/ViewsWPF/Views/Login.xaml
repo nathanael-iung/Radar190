@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ViewsWPF.Views"
         mc:Ignorable="d"
-        Title="--" Height="238.88" Width="198.309">
+        Title="--" Height="238.88" Width="202.309">
     <Grid>
 
-        <Label x:Name="LoginUsuario" Content="Usuário: " HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="60" IsEnabled="False"/>
-        <TextBox x:Name="txtLoginNome" HorizontalAlignment="Center" Height="18" Margin="0,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="LoginUsuario" Content="Usuário: " HorizontalAlignment="Left" Margin="30,19,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="60" IsEnabled="False"/>
+        <TextBox x:Name="txtLoginNome" HorizontalAlignment="Center" Height="18" Margin="30,50,28,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
-        <Label x:Name="LoginSenha" Content="Senha: " HorizontalAlignment="Left" Margin="30,64,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="44" IsEnabled="False"/>
-        <PasswordBox x:Name="pbLoginSenha" HorizontalAlignment="Center" Margin="0,95,0,0" VerticalAlignment="Top" Width="131" Height="18"/>
+        <Label x:Name="LoginSenha" Content="Senha: " HorizontalAlignment="Left" Margin="30,73,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="44" IsEnabled="False"/>
+        <PasswordBox x:Name="pbLoginSenha" HorizontalAlignment="Center" Margin="30,104,29,0" VerticalAlignment="Top" Width="131" Height="18"/>
 
-        <Button x:Name="btnLoginEntrar" Content="ENTRAR" HorizontalAlignment="Center" Margin="30,152,29,0" VerticalAlignment="Top" Width="131" Height="29" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FF26CB0C" Foreground="White" FontSize="16" FontWeight="Bold" Click="btnLoginEntrar_Click"/>
+        <Button x:Name="btnLoginEntrar" Content="ENTRAR" HorizontalAlignment="Center" Margin="30,152,29,0" VerticalAlignment="Top" Width="131" Height="29" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FFBD1010" Foreground="White" FontSize="16" FontWeight="Bold" Click="btnLoginEntrar_Click"/>
 
     </Grid>
 </Window>

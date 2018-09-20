@@ -102,5 +102,18 @@ namespace ViewsWPF.Views
             abrirLogin.Show();
 
         }
+
+        private void wwIndex_Activated(object sender, EventArgs e)
+        {
+            Login welcome = new Login();
+
+            if (welcome.logado)
+            {
+                lblIndexOla.Content = ("Olá, " + welcome.nomeUsuario);
+                btnIndexLogin.IsEnabled = false;
+            }
+        }
+
+        // Construir queries de estatísticas
     }
 }
