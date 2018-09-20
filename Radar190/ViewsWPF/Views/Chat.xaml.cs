@@ -102,7 +102,7 @@ namespace ViewsWPF.Views
         private void btnChatEnviarMensagem_Click(object sender, RoutedEventArgs e)
         {
             Modelos.Chat cht = new Modelos.Chat();
-            Chat chat = new Chat();
+            //Chat chat = new Chat();
 
             cht.Nome = txtChatNome.Text;
             cht.Mensagem = txtChatMensagem.Text;
@@ -111,6 +111,7 @@ namespace ViewsWPF.Views
 
             Controller.ChatController chtController = new Controller.ChatController();
             chtController.Insert(cht);
+
             dgChatLista.ItemsSource = chtController.ListChat();
 
 

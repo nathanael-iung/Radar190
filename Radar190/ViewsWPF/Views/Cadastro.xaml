@@ -39,9 +39,10 @@
         <RadioButton x:Name="rbCadastroExperienciaNao" Content="Não" HorizontalAlignment="Left" Margin="93.098,189,0,0" VerticalAlignment="Top" GroupName="Experiencia" Checked="rbCadastroExperienciaNao_Checked" Grid.Column="1" />
 
         <Label x:Name="CadastroCidade" Content="Cidade:" HorizontalAlignment="Left" Margin="439.098,147,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False" Grid.Column="1"/>
-        <ComboBox x:Name="cbCadastroCidade" DisplayMemberPath="City" SelectedValuePath="IdCidade"  HorizontalAlignment="Left" Margin="446.098,178,0,0" VerticalAlignment="Top" Width="168" Height="26" SelectionChanged="cbCadastroCidade_SelectionChanged" Grid.Column="1">
+        <ComboBox x:Name="cbCadastroCidade"   HorizontalAlignment="Left" Margin="446.098,178,0,0" VerticalAlignment="Top" Width="168" Height="26" Grid.Column="1">
             <ComboBoxItem Content="Curitiba"/>
             <!--<ComboBoxItem Content="Araucária"/>
+            DisplayMemberPath="City" SelectedValuePath="City"
             <ComboBoxItem Content="Colombo"/>
             <ComboBoxItem Content="Pinhais"/>
             <ComboBoxItem Content="Santa Felicidade"/>

@@ -23,17 +23,12 @@ namespace ViewsWPF.Views
         {
             InitializeComponent();
         }
-
-        public string user, senha;
-
+    
         private void btnLoginEntrar_Click(object sender, RoutedEventArgs e)
         {
-            user = txtLoginNome.Text;
-            senha = pbLoginSenha.Password;
-
             Controller.UsuarioController userController = new Controller.UsuarioController();
 
-            if (userController.VerificaLogin(user, senha))
+            if (userController.VerificaLogin(txtLoginNome.Text))
             {
                 MessageBox.Show("Login efetuado com sucesso");
             }

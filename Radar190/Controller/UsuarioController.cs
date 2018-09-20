@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Controller
 {
-        public class UsuarioController
+    public class UsuarioController
     {
-        private bool logado;
+        public bool logado;
 
         //List<Product> PesquisarPorCor(string cor)
         //{
@@ -23,9 +23,26 @@ namespace Controller
         //    return list.ToList();
         //}
 
-        public bool VerificaLogin(String usuario, String senha)
+        public bool VerificaLogin(string usuario)
         {
             BDRadarContainer contexto = new BDRadarContainer();
+            var log = from usu in contexto.UsuarioSet
+                      where usu.User == usuario
+                      select usu;
+
+            if (log.ToList().Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+            /*
+            BDRadarContainer contexto = new BDRadarContainer();
+            SqlConnection con = new SqlConnection("data source = DESKTOP - V1BANKD; initial catalog = Radar190DB;integrated security=True;MultipleActiveResultSets=True;");
+            con.Open();
             SqlCommand sql = new SqlCommand("SELECT * FROM UsuarioSet WHERE User = '" + usuario + "' AND Senha = '" + senha + "'");
             sql.CommandType = CommandType.Text;
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -33,16 +50,18 @@ namespace Controller
             DataSet dataSet = new DataSet();
             adapter.Fill(dataSet);
 
-            if(dataSet.Tables[0].Rows.Count > 0)
+            if (dataSet.Tables[0].Rows.Count > 0)
             {
-                return logado = true; 
-            } else
+                return logado = true;
+            }
+            else
             {
                 return logado = false;
             }
+            */
         }
 
-        public void Insert (Usuario user)
+        public void Insert(Usuario user)
         {
             //UsuarioSet ?? Usuario
             BDRadarContainer contexto = new BDRadarContainer();
@@ -51,7 +70,7 @@ namespace Controller
         }
 
         public Usuario BuscaID(int id)
-        {   
+        {
             //UsuarioSet ?? Usuario
             BDRadarContainer contexto = new BDRadarContainer();
             return contexto.UsuarioSet.Find();
@@ -61,7 +80,7 @@ namespace Controller
         {
             Usuario usuarioAntigo = BuscaID(id);
 
-            if(usuarioAntigo != null)
+            if (usuarioAntigo != null)
             {
                 usuarioAntigo.NomeCompleto = usuarioEditado.NomeCompleto;
                 usuarioAntigo.DtNasc = usuarioEditado.DtNasc;
@@ -81,7 +100,7 @@ namespace Controller
         {
             Usuario usuarioExcluir = BuscaID(id);
 
-            if(usuarioExcluir != null)
+            if (usuarioExcluir != null)
             {
                 BDRadarContainer contexto = new BDRadarContainer();
                 contexto.UsuarioSet.Remove(usuarioExcluir);

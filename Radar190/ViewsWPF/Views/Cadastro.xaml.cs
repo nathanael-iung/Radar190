@@ -139,20 +139,6 @@ namespace ViewsWPF.Views
             senha = txtCadastroSenha.Password;
         }
 
-        private void cbCadastroCidade_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-            if (cbCadastroCidade.SelectedValue.ToString().Equals("Curitiba"))
-            {
-                fkCidade = 1;
-            }
-            else
-            {
-                fkCidade = 0;
-                MessageBox.Show("Algo de errado ocorreu");
-            }
-        }
-
         private void btnCadastroCadastrar_Click(object sender, RoutedEventArgs e)
         {
             Usuario user = new Usuario();
@@ -168,7 +154,8 @@ namespace ViewsWPF.Views
             //Recebe a String em que o PasswordBox foi armazenado
             user.Senha = Convert.ToInt16(senha);
             //Recebe a variável que será utilizada como FK da cidade dentro de Cadastro
-            user.CidadeIdCidade = int.Parse(cbCadastroCidade.SelectedValue.ToString());
+            //user.CidadeIdCidade = int.Parse(cbCadastroCidade.SelectedValue.ToString());
+            user.CidadeIdCidade = 1;
 
             Controller.UsuarioController userController = new Controller.UsuarioController();
             userController.Insert(user);
