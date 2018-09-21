@@ -49,7 +49,7 @@
     <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
     <Property Name="User" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Cidade" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CidadeIdCidade" Type="int" Nullable="false" />
     <Property Name="AdministradorUsuario_Usuario_IdAdministrador" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="DenunciaSet">
@@ -61,27 +61,13 @@
     <Property Name="Idade" Type="smallint" Nullable="true" />
     <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Sexo" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Endereco" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Numero" Type="smallint" Nullable="true" />
     <Property Name="CPF" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Bairro" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Cidade" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="UF" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Data" Type="datetime" Nullable="false" />
     <Property Name="Hora" Type="nvarchar(max)" Nullable="false" />
     <Property Name="BO" Type="bit" Nullable="true" />
     <Property Name="TipoOcorrencia" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Prejuizo" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Descricao" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Dinheiro" Type="bit" Nullable="true" />
-    <Property Name="Carteira" Type="bit" Nullable="true" />
-    <Property Name="Documentos" Type="bit" Nullable="true" />
-    <Property Name="Celular" Type="bit" Nullable="true" />
-    <Property Name="Notebook" Type="bit" Nullable="true" />
-    <Property Name="Motocicleta" Type="bit" Nullable="true" />
-    <Property Name="Veiculo" Type="bit" Nullable="true" />
-    <Property Name="OutrosEletronicos" Type="bit" Nullable="true" />
-    <Property Name="Outros" Type="bit" Nullable="true" />
+    <Property Name="Prejuizo" Type="nvarchar(max)" Nullable="true" />
     <Property Name="UsuarioIdUsuario" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="AdministradorSet">
@@ -265,29 +251,28 @@
           <Property Name="Idade" Type="Int16" Nullable="true" />
           <Property Name="Tipo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Sexo" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Endereco" Type="String" Nullable="false" />
-          <Property Name="Numero" Type="Int16" Nullable="true" />
           <Property Name="CPF" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Bairro" Type="String" Nullable="false" />
-          <Property Name="Cidade" Type="String" Nullable="false" />
-          <Property Name="UF" Type="String" Nullable="true" />
           <Property Name="Data" Type="DateTime" Nullable="false" />
           <Property Name="Hora" Type="String" Nullable="false" />
           <Property Name="BO" Type="Boolean" Nullable="true" />
           <Property Name="TipoOcorrencia" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Prejuizo" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Descricao" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Prejuizo" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Usuario" Relationship="BDRadar.UsuarioDenuncia" FromRole="Denuncia" ToRole="Usuario" />
-          <Property Name="Dinheiro" Type="Boolean" Nullable="true" />
-          <Property Name="Carteira" Type="Boolean" Nullable="true" />
-          <Property Name="Documentos" Type="Boolean" Nullable="true" />
-          <Property Name="Celular" Type="Boolean" Nullable="true" />
-          <Property Name="Notebook" Type="Boolean" Nullable="true" />
-          <Property Name="Motocicleta" Type="Boolean" Nullable="true" />
-          <Property Name="Veiculo" Type="Boolean" Nullable="true" />
-          <Property Name="OutrosEletronicos" Type="Boolean" Nullable="true" />
-          <Property Name="Outros" Type="Boolean" Nullable="true" />
           <Property Name="UsuarioIdUsuario" Type="Int32" Nullable="true" />
+          <Property Name="Endereco" Type="String" Nullable="false" />
+          <Property Name="Numero" Type="String" Nullable="false" />
+          <Property Name="Distrito" Type="String" Nullable="false" />
+          <Property Name="City" Type="String" Nullable="false" />
+          <Property Name="Dinheiro" Type="Boolean" Nullable="false" />
+          <Property Name="Carteira" Type="Boolean" Nullable="false" />
+          <Property Name="Documentos" Type="Boolean" Nullable="false" />
+          <Property Name="Celular" Type="Boolean" Nullable="false" />
+          <Property Name="Notebook" Type="Boolean" Nullable="false" />
+          <Property Name="Motocicleta" Type="Boolean" Nullable="false" />
+          <Property Name="Veiculo" Type="Boolean" Nullable="false" />
+          <Property Name="OutrosEletronicos" Type="Boolean" Nullable="false" />
+          <Property Name="Outros" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Administrador">
           <Key>
@@ -422,7 +407,6 @@
           <ScalarProperty Name="Descricao" ColumnName="Descricao" />
           <ScalarProperty Name="User" ColumnName="User" />
           <ScalarProperty Name="Senha" ColumnName="Senha" />
-          <ScalarProperty Name="Cidade" ColumnName="Cidade" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -434,27 +418,13 @@
           <ScalarProperty Name="Idade" ColumnName="Idade" />
           <ScalarProperty Name="Tipo" ColumnName="Tipo" />
           <ScalarProperty Name="Sexo" ColumnName="Sexo" />
-          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
-          <ScalarProperty Name="Numero" ColumnName="Numero" />
           <ScalarProperty Name="CPF" ColumnName="CPF" />
-          <ScalarProperty Name="Bairro" ColumnName="Bairro" />
-          <ScalarProperty Name="Cidade" ColumnName="Cidade" />
-          <ScalarProperty Name="UF" ColumnName="UF" />
           <ScalarProperty Name="Data" ColumnName="Data" />
           <ScalarProperty Name="Hora" ColumnName="Hora" />
           <ScalarProperty Name="BO" ColumnName="BO" />
           <ScalarProperty Name="TipoOcorrencia" ColumnName="TipoOcorrencia" />
-          <ScalarProperty Name="Prejuizo" ColumnName="Prejuizo" />
           <ScalarProperty Name="Descricao" ColumnName="Descricao" />
-          <ScalarProperty Name="Dinheiro" ColumnName="Dinheiro" />
-          <ScalarProperty Name="Carteira" ColumnName="Carteira" />
-          <ScalarProperty Name="Documentos" ColumnName="Documentos" />
-          <ScalarProperty Name="Celular" ColumnName="Celular" />
-          <ScalarProperty Name="Notebook" ColumnName="Notebook" />
-          <ScalarProperty Name="Motocicleta" ColumnName="Motocicleta" />
-          <ScalarProperty Name="Veiculo" ColumnName="Veiculo" />
-          <ScalarProperty Name="OutrosEletronicos" ColumnName="OutrosEletronicos" />
-          <ScalarProperty Name="Outros" ColumnName="Outros" />
+          <ScalarProperty Name="Prejuizo" ColumnName="Prejuizo" />
           <ScalarProperty Name="UsuarioIdUsuario" ColumnName="UsuarioIdUsuario" />
         </MappingFragment>
       </EntityTypeMapping>

@@ -41,6 +41,19 @@ namespace Modelos
         public Nullable<bool> OutrosEletronicos { get; set; }
         public Nullable<bool> Outros { get; set; }
         public Nullable<int> UsuarioIdUsuario { get; set; }
+        public string Endereco { get; set; }
+        public string Numero { get; set; }
+        public string Distrito { get; set; }
+        public string City { get; set; }
+        public bool Dinheiro { get; set; }
+        public bool Carteira { get; set; }
+        public bool Documentos { get; set; }
+        public bool Celular { get; set; }
+        public bool Notebook { get; set; }
+        public bool Motocicleta { get; set; }
+        public bool Veiculo { get; set; }
+        public bool OutrosEletronicos { get; set; }
+        public bool Outros { get; set; }
     
         public virtual Usuario Usuario { get; set; }
     }
