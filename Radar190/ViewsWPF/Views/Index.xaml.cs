@@ -24,6 +24,7 @@ namespace ViewsWPF.Views
             InitializeComponent();
         }
 
+        #region "Botões de transição de telas"
         private void btnHomeCadastro_Click(object sender, RoutedEventArgs e)
         {
             Index IndexFechar = new Index();
@@ -102,15 +103,44 @@ namespace ViewsWPF.Views
             abrirLogin.Show();
 
         }
+        #endregion
+
+        private string nomeUsuario; // Armazena o login do usuário para que seja exibido no Label da index antes que o txtLogin seja limpo
+        public bool logado; // Verificação se o usuário está logado ou não
+        private int id;
 
         private void wwIndex_Loaded(object sender, RoutedEventArgs e)
         {
             Login welcome = new Login();
 
-            if (welcome.logado)
+            btnIndexLogin.IsEnabled = false;
+
+            if(logado == false)
             {
-                lblIndexOla.Content = ("Olá, " + welcome.nomeUsuario);
-                btnIndexLogin.IsEnabled = false;
+                btnHomeMapa.IsEnabled = false;
+                btnHomeEstatisticas.IsEnabled = false;
+                btnHomeChat.IsEnabled = false;
+            }
+        }
+
+        private void btnIndexEntrar_Click(object sender, RoutedEventArgs e)
+        {
+            Controller.UsuarioController userController = new Controller.UsuarioController();
+
+            if (userController.VerificaLogin(txtIndexUsuario.Text, pbIndexSenha.Password))
+            {
+                nomeUsuario = txtIndexUsuario.Text;
+                logado = true;
+                btnIndexEntrar.IsEnabled = false;
+                txtIndexUsuario.Text = "";
+                pbIndexSenha.Password = "";
+                MessageBox.Show("Login efetuado com sucesso");
+                lblIndexOla.Content = ("Olá, " + nomeUsuario);
+            }
+            else
+            {
+                MessageBox.Show("Usuário e/ou Senha inválido(a)");
+                logado = false;
             }
         }
 

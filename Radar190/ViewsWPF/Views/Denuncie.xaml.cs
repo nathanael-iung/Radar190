@@ -243,7 +243,6 @@ namespace ViewsWPF.Views
 
         private void btnDenuncieDenunciar_Click(object sender, RoutedEventArgs e)
         {
-         
             Denuncia denun = new Denuncia();
 
             denun.NomeCompleto = txtDenuncieNome.Text;
@@ -253,9 +252,9 @@ namespace ViewsWPF.Views
             denun.Endereco = txtDenuncieEndereco.Text;
             denun.Numero = short.Parse(txtDenuncieNumero.Text);
             denun.CPF = txtDenuncieCPF.Text;
-            denun.Bairro = cbDenuncieBairro.SelectedItem.ToString();
-            denun.Cidade = cbDenuncieCidade.SelectedItem.ToString();
-            denun.Data = Convert.ToDateTime(dpDenuncieDataocorrido.ToString()); //Conversão do DatePicker para DateTime
+            denun.Distrito = cbDenuncieBairro.SelectedItem.ToString();
+            denun.City = cbDenuncieCidade.SelectedItem.ToString();
+            denun.Data = Convert.ToDateTime(dpDenuncieDataocorrido.SelectedDate.ToString()); //Conversão do DatePicker para DateTime
             denun.Hora = string.Concat(txtDenuncieHorarioHoras.Text, ":", txtDenuncieHorarioMinutos.Text); // Concatenação das strings de Hora e Minutos
             denun.BO = bo; //Bool com a resposta do CheckBox B.O.
             denun.TipoOcorrencia = cbDenuncieTipoOcorrencia.SelectedItem.ToString();
@@ -270,7 +269,7 @@ namespace ViewsWPF.Views
             denun.Veiculo = veiculoBool;
             denun.Outros = outrosBool;
             denun.Descricao = txtDenuncieDetalhes.Text;
-   
+
             Controller.DenunciaController denunController = new Controller.DenunciaController();
             denunController.Insert(denun);
 

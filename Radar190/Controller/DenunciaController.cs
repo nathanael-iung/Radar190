@@ -63,7 +63,7 @@ namespace Controller
                 contexto.SaveChanges();
             }
         }
-
+        
         public void Delete(int id)
         {
             Denuncia denunExcluir = BuscaID(id);

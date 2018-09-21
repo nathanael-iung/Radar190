@@ -20,10 +20,10 @@ namespace Modelos
         public string Tipo { get; set; }
         public string Sexo { get; set; }
         public string Endereco { get; set; }
-        public Nullable<short> Numero { get; set; }
+        public short Numero { get; set; }
         public string CPF { get; set; }
-        public string Bairro { get; set; }
-        public string Cidade { get; set; }
+        public string Distrito { get; set; }
+        public string City { get; set; }
         public string UF { get; set; }
         public System.DateTime Data { get; set; }
         public string Hora { get; set; }
@@ -41,19 +41,6 @@ namespace Modelos
         public Nullable<bool> OutrosEletronicos { get; set; }
         public Nullable<bool> Outros { get; set; }
         public Nullable<int> UsuarioIdUsuario { get; set; }
-        public string Endereco { get; set; }
-        public string Numero { get; set; }
-        public string Distrito { get; set; }
-        public string City { get; set; }
-        public bool Dinheiro { get; set; }
-        public bool Carteira { get; set; }
-        public bool Documentos { get; set; }
-        public bool Celular { get; set; }
-        public bool Notebook { get; set; }
-        public bool Motocicleta { get; set; }
-        public bool Veiculo { get; set; }
-        public bool OutrosEletronicos { get; set; }
-        public bool Outros { get; set; }
     
         public virtual Usuario Usuario { get; set; }
     }

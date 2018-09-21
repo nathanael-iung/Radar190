@@ -20,11 +20,15 @@ namespace Controller
 
         //    return list.ToList();
         //}
+
+        BDRadarContainer contexto = new BDRadarContainer();
+
         public bool userOk, pasOk;
+
+        public string id;
+
         public bool VerificaLogin(string usuario, string senha)
         {
-            BDRadarContainer contexto = new BDRadarContainer();
-
             var log = from usu in contexto.UsuarioSet
                       where usu.User == usuario
                       select usu;
@@ -54,18 +58,28 @@ namespace Controller
             }
         }
 
+        /*
+        public Usuario RetornaId(string usuario, string senha)
+        {
+            
+            var verifica = "SELECT Usuario.IdUsuario FROM Usuario WHERE Usuario.User =" + usuario + " AND USUario.Senha =" + senha;
+
+            //contexto.UsuarioSet.SqlQuery("SELECT Usuario.IdUsuario FROM Usuario WHERE Usuario.User =" + usuario + " AND USUario.Senha =" + senha);
+
+            //contexto.UsuarioSet.Find();
+
+            //return id = verifica;
+        }
+        */
+
         public void Insert(Usuario user)
         {
-            BDRadarContainer contexto = new BDRadarContainer();
-
             contexto.UsuarioSet.Add(user);
             contexto.SaveChanges();
         }
 
         public Usuario BuscaID(int id)
         {
-            BDRadarContainer contexto = new BDRadarContainer();
-
             return contexto.UsuarioSet.Find();
         }
 
@@ -83,8 +97,6 @@ namespace Controller
                 usuarioAntigo.User = usuarioEditado.User;
                 usuarioAntigo.Senha = usuarioEditado.Senha;
 
-                BDRadarContainer contexto = new BDRadarContainer();
-
                 contexto.Entry(usuarioAntigo).State = System.Data.Entity.EntityState.Modified;
                 contexto.SaveChanges();
             }
@@ -96,8 +108,6 @@ namespace Controller
 
             if (usuarioExcluir != null)
             {
-                BDRadarContainer contexto = new BDRadarContainer();
-
                 contexto.UsuarioSet.Remove(usuarioExcluir);
                 contexto.SaveChanges();
             }
@@ -105,8 +115,6 @@ namespace Controller
 
         public List<Usuario> ListUsuarios()
         {
-            BDRadarContainer contexto = new BDRadarContainer();
-
             return contexto.UsuarioSet.ToList();
         }
 

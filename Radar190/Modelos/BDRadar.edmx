@@ -251,28 +251,29 @@
           <Property Name="Idade" Type="Int16" Nullable="true" />
           <Property Name="Tipo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Sexo" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="CPF" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Endereco" Type="String" Nullable="false" />
+          <Property Name="Numero" Type="Int16" Nullable="false" />
+          <Property Name="CPF" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" MaxLength="Max" Unicode="true" FixedLength="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <NavigationProperty Name="Usuario" Relationship="BDRadar.UsuarioDenuncia" FromRole="Denuncia" ToRole="Usuario" />
+          <Property Name="Distrito" Type="String" Nullable="false" />
+          <Property Name="City" Type="String" Nullable="false" />
+          <Property Name="UF" Type="String" Nullable="false" />
           <Property Name="Data" Type="DateTime" Nullable="false" />
           <Property Name="Hora" Type="String" Nullable="false" />
           <Property Name="BO" Type="Boolean" Nullable="true" />
           <Property Name="TipoOcorrencia" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Descricao" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Prejuizo" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Usuario" Relationship="BDRadar.UsuarioDenuncia" FromRole="Denuncia" ToRole="Usuario" />
+          <Property Name="Descricao" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Dinheiro" Type="Boolean" Nullable="true" />
+          <Property Name="Carteira" Type="Boolean" Nullable="true" />
+          <Property Name="Documentos" Type="Boolean" Nullable="true" />
+          <Property Name="Celular" Type="Boolean" Nullable="true" />
+          <Property Name="Notebook" Type="Boolean" Nullable="true" />
+          <Property Name="Motocicleta" Type="Boolean" Nullable="true" />
+          <Property Name="Veiculo" Type="Boolean" Nullable="true" />
+          <Property Name="OutrosEletronicos" Type="Boolean" Nullable="true" />
+          <Property Name="Outros" Type="Boolean" Nullable="true" />
           <Property Name="UsuarioIdUsuario" Type="Int32" Nullable="true" />
-          <Property Name="Endereco" Type="String" Nullable="false" />
-          <Property Name="Numero" Type="String" Nullable="false" />
-          <Property Name="Distrito" Type="String" Nullable="false" />
-          <Property Name="City" Type="String" Nullable="false" />
-          <Property Name="Dinheiro" Type="Boolean" Nullable="false" />
-          <Property Name="Carteira" Type="Boolean" Nullable="false" />
-          <Property Name="Documentos" Type="Boolean" Nullable="false" />
-          <Property Name="Celular" Type="Boolean" Nullable="false" />
-          <Property Name="Notebook" Type="Boolean" Nullable="false" />
-          <Property Name="Motocicleta" Type="Boolean" Nullable="false" />
-          <Property Name="Veiculo" Type="Boolean" Nullable="false" />
-          <Property Name="OutrosEletronicos" Type="Boolean" Nullable="false" />
-          <Property Name="Outros" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Administrador">
           <Key>

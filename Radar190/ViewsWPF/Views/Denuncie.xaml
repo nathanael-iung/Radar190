@@ -48,8 +48,9 @@
         <TextBox x:Name="txtDenuncieCPF" HorizontalAlignment="Left" Height="23" Margin="183,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="txtDenuncieCPF_PreviewTextInput"/>
 
         <Label x:Name="DenuncieBairro" Content="Bairro: " HorizontalAlignment="Left" Margin="420,167,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="49" IsEnabled="False"/>
-        <ComboBox x:Name="cbDenuncieBairro" HorizontalAlignment="Left" Margin="420,198,0,0" VerticalAlignment="Top" Width="156" Height="26" DisplayMemberPath="Distrito" SelectedValuePath="IdBairro">
-            <!--SelectionChanged="cbDenuncieBairro_SelectionChanged"-->
+        <ComboBox x:Name="cbDenuncieBairro" HorizontalAlignment="Left" Margin="420,198,0,0" VerticalAlignment="Top" Width="156" Height="26" >
+            <!-- SelectionChanged="cbDenuncieBairro_SelectionChanged" -->
+            <!-- DisplayMemberPath="Distrito" SelectedValuePath="IdBairro" -->
             <ComboBoxItem Content="Abranches"/>
             <ComboBoxItem Content="Agua Verde"/>
             <ComboBoxItem Content="Ahú"/>
@@ -140,14 +141,14 @@
         </ComboBox>
 
         <Label x:Name="DenuncieDataOcorrido" Content="Data do ocorrido: " HorizontalAlignment="Left" Margin="183,229,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="104" IsEnabled="False"/>
-        <DatePicker x:Name="dpDenuncieDataocorrido" Text="Selecione uma data" HorizontalAlignment="Left" Margin="183,260,0,0" VerticalAlignment="Top" Width="180" Height="28" FirstDayOfWeek="Monday" IsTodayHighlighted="True" SelectedDateFormat="Short" DisplayDateStart="2018-06-06" DisplayDateEnd="2018-12-31" SelectedDateChanged="dpDenuncieDataocorrido_SelectedDateChanged" />
+        <DatePicker x:Name="dpDenuncieDataocorrido" Text="Selecione uma data" HorizontalAlignment="Left" Margin="183,260,0,0" VerticalAlignment="Top" Width="180" Height="28" FirstDayOfWeek="Monday" IsTodayHighlighted="True" SelectedDateFormat="Short" DisplayDateStart="2018-06-06" DisplayDateEnd="2018-12-31" />
 
         <Label x:Name="DenuncieBO" Content="Registrou B.O. : " HorizontalAlignment="Left" Margin="420,237,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="98" IsEnabled="False"/>
         <RadioButton x:Name="rbDenuncieBOsim" Content="Sim" HorizontalAlignment="Left" Margin="430,271,0,0" VerticalAlignment="Top" GroupName="BO" Checked="rbDenuncieBOsim_Checked"/>
         <RadioButton x:Name="rbDenuncieBOnao" Content="Não" HorizontalAlignment="Left" Margin="499,271,0,0" VerticalAlignment="Top" GroupName="BO" Checked="rbDenuncieBOnao_Checked"/>
 
         <Label x:Name="DenuncieTipoOcorrencia" Content="Tipo de Ocorrência: " HorizontalAlignment="Left" Margin="613,229,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="128" IsEnabled="False"/>
-        <ComboBox x:Name="cbDenuncieTipoOcorrencia" HorizontalAlignment="Left" Margin="613,260,0,0" VerticalAlignment="Top" Width="156" Height="26" SelectionChanged="cbDenuncieTipoOcorrencia_SelectionChanged">
+        <ComboBox x:Name="cbDenuncieTipoOcorrencia" HorizontalAlignment="Left" Margin="613,260,0,0" VerticalAlignment="Top" Width="156" Height="26" >
             <ComboBoxItem Content="Tentativa de Assalto"/>
             <ComboBoxItem Content="Furto"/>
             <ComboBoxItem Content="Roubo"/>

@@ -22,8 +22,8 @@
         <Button x:Name="btnMapaHome" Content="Home" HorizontalAlignment="Left" Margin="0,80,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15" Click="btnMapaHome_Click"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="56" Margin="31,10,0,0" VerticalAlignment="Top" Width="100" Source="Logo-fundo-preto.png"/>
 
-        <TextBox x:Name="txtMapaTitulo" HorizontalAlignment="Center" Height="79" Margin="300,10,118,0" TextWrapping="Wrap" Text="Confira o índice de Crimes em sua Região" Width="424" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
-        <WebBrowser x:Name="wbMaps" HorizontalAlignment="Left" Height="451" Margin="185,110,0,0" VerticalAlignment="Top" Width="633" Initialized="WebBrowser_Initialized"/>
+        <TextBox x:Name="txtMapaTitulo" HorizontalAlignment="Center" Height="61" Margin="230,5,73,0" TextWrapping="Wrap" Text="Confira o índice de Crimes em sua Região" Width="539" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
+        <WebBrowser x:Name="wbMaps" HorizontalAlignment="Left" Height="495" Margin="185,66,0,0" VerticalAlignment="Top" Width="633" Initialized="WebBrowser_Initialized"/>
     </Grid>
 </Window>
     

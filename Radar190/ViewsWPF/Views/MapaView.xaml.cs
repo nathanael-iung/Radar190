@@ -32,7 +32,7 @@ namespace ViewsWPF.Views
 
         private void btnMapaHome_Click(object sender, RoutedEventArgs e)
         {
-            Mapa MapaFechar = new Mapa();
+            MapaView MapaFechar = new MapaView();
             this.Close();
 
             Index MapaparaHome = new Index();
@@ -41,7 +41,7 @@ namespace ViewsWPF.Views
 
         private void btnMapaCadastro_Click(object sender, RoutedEventArgs e)
         {
-            Mapa MapaFechar = new Mapa();
+            MapaView MapaFechar = new MapaView();
             this.Close();
 
             Cadastro MapaparaCadastro = new Cadastro();
@@ -50,7 +50,7 @@ namespace ViewsWPF.Views
 
         private void btnMapaDenuncie_Click(object sender, RoutedEventArgs e)
         {
-            Mapa MapaFechar = new Mapa();
+            MapaView MapaFechar = new MapaView();
             this.Close();
 
             Denuncie MapaparaDenuncie = new Denuncie();
@@ -59,7 +59,7 @@ namespace ViewsWPF.Views
 
         private void btnMapaEstatisticas_Click(object sender, RoutedEventArgs e)
         {
-            Mapa MapaFechar = new Mapa();
+            MapaView MapaFechar = new MapaView();
             this.Close();
 
             Estatisticas MapaparaEstatisticas = new Estatisticas();
@@ -68,7 +68,7 @@ namespace ViewsWPF.Views
 
         private void btnMapaChat_Click(object sender, RoutedEventArgs e)
         {
-            Mapa MapaFechar = new Mapa();
+            MapaView MapaFechar = new MapaView();
             this.Close();
 
             Chat MapaparaChat = new Chat();
