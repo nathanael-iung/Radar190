@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/20/2018 19:48:31
--- Generated from EDMX file: C:\Users\1718167\Documents\cSharp\Radar190\Radar190\Modelos\BDRadar.edmx
+-- Date Created: 09/21/2018 00:04:34
+-- Generated from EDMX file: C:\Users\natha\Documents\CSharp\Radar190\Radar190\Modelos\BDRadar.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,9 +17,6 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_MapaBairro]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[MapaSet] DROP CONSTRAINT [FK_MapaBairro];
-GO
 IF OBJECT_ID(N'[dbo].[FK_AdministradorContatosEmergenciais]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ContatosEmergenciaisSet] DROP CONSTRAINT [FK_AdministradorContatosEmergenciais];
 GO
@@ -28,15 +25,6 @@ IF OBJECT_ID(N'[dbo].[FK_AdministradorDicasSeguranca]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_UsuarioFaleConosco]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[FaleConoscoSet] DROP CONSTRAINT [FK_UsuarioFaleConosco];
-GO
-IF OBJECT_ID(N'[dbo].[FK_CidadeBairro]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[BairroSet] DROP CONSTRAINT [FK_CidadeBairro];
-GO
-IF OBJECT_ID(N'[dbo].[FK_DenunciaObjRoubado]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ObjRoubadoSet] DROP CONSTRAINT [FK_DenunciaObjRoubado];
-GO
-IF OBJECT_ID(N'[dbo].[FK_UsuarioCidade]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[UsuarioSet] DROP CONSTRAINT [FK_UsuarioCidade];
 GO
 IF OBJECT_ID(N'[dbo].[FK_UsuarioDenuncia]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[DenunciaSet] DROP CONSTRAINT [FK_UsuarioDenuncia];
@@ -47,9 +35,6 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_UsuarioChat]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ChatSet] DROP CONSTRAINT [FK_UsuarioChat];
 GO
-IF OBJECT_ID(N'[dbo].[FK_DenunciaMapa]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[MapaSet] DROP CONSTRAINT [FK_DenunciaMapa];
-GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -58,20 +43,8 @@ GO
 IF OBJECT_ID(N'[dbo].[UsuarioSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[UsuarioSet];
 GO
-IF OBJECT_ID(N'[dbo].[CidadeSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[CidadeSet];
-GO
 IF OBJECT_ID(N'[dbo].[DenunciaSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[DenunciaSet];
-GO
-IF OBJECT_ID(N'[dbo].[ObjRoubadoSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[ObjRoubadoSet];
-GO
-IF OBJECT_ID(N'[dbo].[MapaSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[MapaSet];
-GO
-IF OBJECT_ID(N'[dbo].[BairroSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[BairroSet];
 GO
 IF OBJECT_ID(N'[dbo].[AdministradorSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[AdministradorSet];
@@ -102,16 +75,8 @@ CREATE TABLE [dbo].[UsuarioSet] (
     [Descricao] nvarchar(max)  NOT NULL,
     [User] nvarchar(max)  NOT NULL,
     [Senha] nvarchar(max)  NOT NULL,
-    [CidadeIdCidade] int  NOT NULL,
+    [Cidade] nvarchar(max)  NOT NULL,
     [AdministradorUsuario_Usuario_IdAdministrador] int  NULL
-);
-GO
-
--- Creating table 'CidadeSet'
-CREATE TABLE [dbo].[CidadeSet] (
-    [IdCidade] int IDENTITY(1,1) NOT NULL,
-    [City] nvarchar(max)  NOT NULL,
-    [UF] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -122,20 +87,18 @@ CREATE TABLE [dbo].[DenunciaSet] (
     [Idade] smallint  NULL,
     [Tipo] nvarchar(max)  NOT NULL,
     [Sexo] nvarchar(max)  NULL,
+    [Endereco] nvarchar(max)  NOT NULL,
+    [Numero] smallint  NULL,
     [CPF] nvarchar(max)  NOT NULL,
+    [Bairro] nvarchar(max)  NOT NULL,
+    [Cidade] nvarchar(max)  NOT NULL,
+    [UF] nvarchar(max)  NULL,
     [Data] datetime  NOT NULL,
     [Hora] nvarchar(max)  NOT NULL,
     [BO] bit  NULL,
     [TipoOcorrencia] nvarchar(max)  NOT NULL,
-    [Descricao] nvarchar(max)  NULL,
     [Prejuizo] nvarchar(max)  NULL,
-    [UsuarioIdUsuario] int  NULL
-);
-GO
-
--- Creating table 'ObjRoubadoSet'
-CREATE TABLE [dbo].[ObjRoubadoSet] (
-    [IdObjRoubados] int IDENTITY(1,1) NOT NULL,
+    [Descricao] nvarchar(max)  NULL,
     [Dinheiro] bit  NULL,
     [Carteira] bit  NULL,
     [Documentos] bit  NULL,
@@ -145,25 +108,7 @@ CREATE TABLE [dbo].[ObjRoubadoSet] (
     [Veiculo] bit  NULL,
     [OutrosEletronicos] bit  NULL,
     [Outros] bit  NULL,
-    [DenunciaIdDenuncia] int  NOT NULL
-);
-GO
-
--- Creating table 'MapaSet'
-CREATE TABLE [dbo].[MapaSet] (
-    [IdMapa] int IDENTITY(1,1) NOT NULL,
-    [Endereco] nvarchar(max)  NOT NULL,
-    [Numero] nvarchar(max)  NOT NULL,
-    [BairroIdBairro] int  NOT NULL,
-    [DenunciaIdDenuncia] int  NOT NULL
-);
-GO
-
--- Creating table 'BairroSet'
-CREATE TABLE [dbo].[BairroSet] (
-    [IdBairro] int IDENTITY(1,1) NOT NULL,
-    [Distrito] nvarchar(max)  NOT NULL,
-    [CidadeIdCidade] int  NOT NULL
+    [UsuarioIdUsuario] int  NULL
 );
 GO
 
@@ -224,34 +169,10 @@ ADD CONSTRAINT [PK_UsuarioSet]
     PRIMARY KEY CLUSTERED ([IdUsuario] ASC);
 GO
 
--- Creating primary key on [IdCidade] in table 'CidadeSet'
-ALTER TABLE [dbo].[CidadeSet]
-ADD CONSTRAINT [PK_CidadeSet]
-    PRIMARY KEY CLUSTERED ([IdCidade] ASC);
-GO
-
 -- Creating primary key on [IdDenuncia] in table 'DenunciaSet'
 ALTER TABLE [dbo].[DenunciaSet]
 ADD CONSTRAINT [PK_DenunciaSet]
     PRIMARY KEY CLUSTERED ([IdDenuncia] ASC);
-GO
-
--- Creating primary key on [IdObjRoubados] in table 'ObjRoubadoSet'
-ALTER TABLE [dbo].[ObjRoubadoSet]
-ADD CONSTRAINT [PK_ObjRoubadoSet]
-    PRIMARY KEY CLUSTERED ([IdObjRoubados] ASC);
-GO
-
--- Creating primary key on [IdMapa] in table 'MapaSet'
-ALTER TABLE [dbo].[MapaSet]
-ADD CONSTRAINT [PK_MapaSet]
-    PRIMARY KEY CLUSTERED ([IdMapa] ASC);
-GO
-
--- Creating primary key on [IdBairro] in table 'BairroSet'
-ALTER TABLE [dbo].[BairroSet]
-ADD CONSTRAINT [PK_BairroSet]
-    PRIMARY KEY CLUSTERED ([IdBairro] ASC);
 GO
 
 -- Creating primary key on [IdAdministrador] in table 'AdministradorSet'
@@ -287,21 +208,6 @@ GO
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
-
--- Creating foreign key on [BairroIdBairro] in table 'MapaSet'
-ALTER TABLE [dbo].[MapaSet]
-ADD CONSTRAINT [FK_MapaBairro]
-    FOREIGN KEY ([BairroIdBairro])
-    REFERENCES [dbo].[BairroSet]
-        ([IdBairro])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_MapaBairro'
-CREATE INDEX [IX_FK_MapaBairro]
-ON [dbo].[MapaSet]
-    ([BairroIdBairro]);
-GO
 
 -- Creating foreign key on [AdministradorIdAdministrador] in table 'ContatosEmergenciaisSet'
 ALTER TABLE [dbo].[ContatosEmergenciaisSet]
@@ -348,51 +254,6 @@ ON [dbo].[FaleConoscoSet]
     ([UsuarioIdUsuario]);
 GO
 
--- Creating foreign key on [CidadeIdCidade] in table 'BairroSet'
-ALTER TABLE [dbo].[BairroSet]
-ADD CONSTRAINT [FK_CidadeBairro]
-    FOREIGN KEY ([CidadeIdCidade])
-    REFERENCES [dbo].[CidadeSet]
-        ([IdCidade])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_CidadeBairro'
-CREATE INDEX [IX_FK_CidadeBairro]
-ON [dbo].[BairroSet]
-    ([CidadeIdCidade]);
-GO
-
--- Creating foreign key on [DenunciaIdDenuncia] in table 'ObjRoubadoSet'
-ALTER TABLE [dbo].[ObjRoubadoSet]
-ADD CONSTRAINT [FK_DenunciaObjRoubado]
-    FOREIGN KEY ([DenunciaIdDenuncia])
-    REFERENCES [dbo].[DenunciaSet]
-        ([IdDenuncia])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_DenunciaObjRoubado'
-CREATE INDEX [IX_FK_DenunciaObjRoubado]
-ON [dbo].[ObjRoubadoSet]
-    ([DenunciaIdDenuncia]);
-GO
-
--- Creating foreign key on [CidadeIdCidade] in table 'UsuarioSet'
-ALTER TABLE [dbo].[UsuarioSet]
-ADD CONSTRAINT [FK_UsuarioCidade]
-    FOREIGN KEY ([CidadeIdCidade])
-    REFERENCES [dbo].[CidadeSet]
-        ([IdCidade])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_UsuarioCidade'
-CREATE INDEX [IX_FK_UsuarioCidade]
-ON [dbo].[UsuarioSet]
-    ([CidadeIdCidade]);
-GO
-
 -- Creating foreign key on [UsuarioIdUsuario] in table 'DenunciaSet'
 ALTER TABLE [dbo].[DenunciaSet]
 ADD CONSTRAINT [FK_UsuarioDenuncia]
@@ -436,21 +297,6 @@ GO
 CREATE INDEX [IX_FK_UsuarioChat]
 ON [dbo].[ChatSet]
     ([UsuarioIdUsuario]);
-GO
-
--- Creating foreign key on [DenunciaIdDenuncia] in table 'MapaSet'
-ALTER TABLE [dbo].[MapaSet]
-ADD CONSTRAINT [FK_DenunciaMapa]
-    FOREIGN KEY ([DenunciaIdDenuncia])
-    REFERENCES [dbo].[DenunciaSet]
-        ([IdDenuncia])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_DenunciaMapa'
-CREATE INDEX [IX_FK_DenunciaMapa]
-ON [dbo].[MapaSet]
-    ([DenunciaIdDenuncia]);
 GO
 
 -- --------------------------------------------------

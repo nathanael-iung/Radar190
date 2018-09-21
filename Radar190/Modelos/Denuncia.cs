@@ -14,31 +14,34 @@ namespace Modelos
     
     public partial class Denuncia
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Denuncia()
-        {
-            this.ObjRoubado = new HashSet<ObjRoubado>();
-            this.Mapa = new HashSet<Mapa>();
-        }
-    
         public int IdDenuncia { get; set; }
         public string NomeCompleto { get; set; }
         public Nullable<short> Idade { get; set; }
         public string Tipo { get; set; }
         public string Sexo { get; set; }
+        public string Endereco { get; set; }
+        public Nullable<short> Numero { get; set; }
         public string CPF { get; set; }
+        public string Bairro { get; set; }
+        public string Cidade { get; set; }
+        public string UF { get; set; }
         public System.DateTime Data { get; set; }
         public string Hora { get; set; }
         public Nullable<bool> BO { get; set; }
         public string TipoOcorrencia { get; set; }
-        public string Descricao { get; set; }
         public string Prejuizo { get; set; }
+        public string Descricao { get; set; }
+        public Nullable<bool> Dinheiro { get; set; }
+        public Nullable<bool> Carteira { get; set; }
+        public Nullable<bool> Documentos { get; set; }
+        public Nullable<bool> Celular { get; set; }
+        public Nullable<bool> Notebook { get; set; }
+        public Nullable<bool> Motocicleta { get; set; }
+        public Nullable<bool> Veiculo { get; set; }
+        public Nullable<bool> OutrosEletronicos { get; set; }
+        public Nullable<bool> Outros { get; set; }
         public Nullable<int> UsuarioIdUsuario { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ObjRoubado> ObjRoubado { get; set; }
         public virtual Usuario Usuario { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Mapa> Mapa { get; set; }
     }
 }

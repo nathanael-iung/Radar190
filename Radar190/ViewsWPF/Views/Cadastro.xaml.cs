@@ -22,19 +22,10 @@ namespace ViewsWPF.Views
     {
         //variável que receberá a decisão do RadioButton experiência
         private bool dec;
-        //variável que receberá o número da FK da cidade na página cadastro
-        private int fkCidade;
-        //variável que receberá o conteúdo do PasswordBox
-        private string senha;
 
         public Cadastro()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
 
         private void Cadastre_se_Click(object sender, RoutedEventArgs e)
@@ -121,16 +112,17 @@ namespace ViewsWPF.Views
         {
             //Armazenamento da data em um TextBox invisível para que haja a conversão para DateTime ao pressionar o botão
             txtCadastroData.Text = dpCadastroDataNascimento.ToString();
-
         }
 
         private void rbCadastroExperienciaSim_Checked(object sender, RoutedEventArgs e)
         {
+            //dec recebe true caso Sim seja Checkado
             dec = true;
         }
 
         private void rbCadastroExperienciaNao_Checked(object sender, RoutedEventArgs e)
         {
+            //dec rece false caso Não seja Checkado
             dec = false;
         }
 
@@ -148,10 +140,11 @@ namespace ViewsWPF.Views
             user.NomeCompleto = txtCadastroNome.Text;
             user.DtNasc = Convert.ToDateTime(txtCadastroData.Text);
             user.Experiencia = dec;
+            user.Cidade = cbCadastroCidade.SelectedItem.ToString();
             user.Descricao = txtCadastroDescricao.Text;
             user.User = txtCadastroUsuario.Text;
             user.Senha = (txtCadastroSenha.Password.ToString());
-            user.CidadeIdCidade = 1;
+            
 
             //Verificação - campos senha e Confirmação de Senha são iguais e se a Captcha está correta
             if (txtCadastroCaptcha.Text.Equals("8") && txtCadastroSenha.Password.ToString().Equals(txtCadastroConfirmarSenha.Password.ToString()))

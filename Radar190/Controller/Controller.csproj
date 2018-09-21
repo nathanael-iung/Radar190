@@ -48,15 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdministradorController.cs" />
-    <Compile Include="BairroController.cs" />
     <Compile Include="ChatController.cs" />
-    <Compile Include="CidadeController.cs" />
     <Compile Include="ContatosEmergenciaisController.cs" />
     <Compile Include="DenunciaController.cs" />
     <Compile Include="DicasSegurancaController.cs" />
     <Compile Include="FaleConoscoController.cs" />
-    <Compile Include="MapaController.cs" />
-    <Compile Include="ObjRoubadocontroller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioController.cs" />
   </ItemGroup>

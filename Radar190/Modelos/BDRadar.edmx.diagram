@@ -5,28 +5,19 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="7d92a5fa58724ba5a3064afd7fcf3177" Name="Diagram1" ZoomLevel="72" >
-        <EntityTypeShape EntityType="BDRadar.Usuario" Width="1.5" PointX="7.5" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDRadar.Cidade" Width="1.5" PointX="0.5" PointY="1.25" />
-        <EntityTypeShape EntityType="BDRadar.Denuncia" Width="1.5" PointX="7.5" PointY="0.5" />
-        <EntityTypeShape EntityType="BDRadar.ObjRoubado" Width="1.5" PointX="9.75" PointY="0.5" />
-        <EntityTypeShape EntityType="BDRadar.Mapa" Width="1.875" PointX="4.875" PointY="1.25" />
-        <EntityTypeShape EntityType="BDRadar.Bairro" Width="1.5" PointX="2.875" PointY="1.125" />
-        <AssociationConnector Association="BDRadar.MapaBairro" />
-        <EntityTypeShape EntityType="BDRadar.Administrador" Width="1.5" PointX="12.125" PointY="5.125" />
-        <EntityTypeShape EntityType="BDRadar.ContatosEmergenciais" Width="1.875" PointX="12.125" PointY="0.875" />
+        <EntityTypeShape EntityType="BDRadar.Usuario" Width="1.5" PointX="3" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDRadar.Denuncia" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="BDRadar.Administrador" Width="1.5" PointX="5.75" PointY="0.5" />
+        <EntityTypeShape EntityType="BDRadar.ContatosEmergenciais" Width="1.875" PointX="8.5" PointY="0.5" />
         <AssociationConnector Association="BDRadar.AdministradorContatosEmergenciais" />
-        <EntityTypeShape EntityType="BDRadar.DicasSeguranca" Width="1.5" PointX="12.125" PointY="8" />
+        <EntityTypeShape EntityType="BDRadar.DicasSeguranca" Width="1.5" PointX="5.75" PointY="3.5" />
         <AssociationConnector Association="BDRadar.AdministradorDicasSeguranca" />
-        <EntityTypeShape EntityType="BDRadar.FaleConosco" Width="1.5" PointX="4.25" PointY="5" />
+        <EntityTypeShape EntityType="BDRadar.FaleConosco" Width="1.5" PointX="5.75" PointY="6" />
         <AssociationConnector Association="BDRadar.UsuarioFaleConosco" />
-        <AssociationConnector Association="BDRadar.CidadeBairro" />
-        <AssociationConnector Association="BDRadar.DenunciaObjRoubado" />
-        <AssociationConnector Association="BDRadar.UsuarioCidade" />
         <AssociationConnector Association="BDRadar.UsuarioDenuncia" />
         <AssociationConnector Association="BDRadar.AdministradorUsuario" />
-        <EntityTypeShape EntityType="BDRadar.Chat" Width="1.5" PointX="7.5" PointY="8.875" />
+        <EntityTypeShape EntityType="BDRadar.Chat" Width="1.5" PointX="0.5" PointY="7.5" />
         <AssociationConnector Association="BDRadar.UsuarioChat" />
-        <AssociationConnector Association="BDRadar.DenunciaMapa" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -26,28 +26,24 @@ namespace ViewsWPF.Views
             InitializeComponent();
         }
 
-        //Variável que receberá o conteúdo do TextBox idade
-        private string idade;
-        //Variável que receberá o resultado do radio button sexo
-        private string sx;
-        //Variável que receberá o conteúdo de Endereço
-        private string numEndereco;
-        //Variável que recebrá o valor do ComboBox bairro
-        private string cbBairro;
-        //variável que receberá o valor do ComboBox cidade;
-        private string cbCidade;
-        //Variáveis que recebrão a data e hora do ocorrido
-        private string dt, hr, min, DataHora;
-        //Variável que receberá o resultado do radio button B.O.
-        private bool bo;
-        //variável que receberá o valor do ComboBox TipoOcorrência
-        private string cbTipoOcorrencia;
-        //Variável que recebrá o valor do prejuízo
-        private string preju;
         //Variável que recebrá o tipo da denpuncia - testemunha e vitima
         private string tip;
-        
+        //Variável que receberá o resultado do radio button sexo
+        private string sx;
+        //Variável que receberá o resultado do radio button B.O.
+        private bool bo;
+        //Bool's que receberão o true ou false do CheckBox Objs Roubados
+        private bool dinheiroBool = false;
+        private bool carteiraBool = false;
+        private bool documentosBool = false;
+        private bool celularBool = false;
+        private bool notebookBool = false;
+        private bool outEletronicosBool = false;
+        private bool motoBool = false;
+        private bool veiculoBool = false;
+        private bool outrosBool = false;
 
+        #region "Botões de transição de telas"
         private void btnDenuncieHome_Click(object sender, RoutedEventArgs e)
         {
             Denuncie DenuncieFechar = new Denuncie();
@@ -80,7 +76,7 @@ namespace ViewsWPF.Views
             Denuncie DenuncieFechar = new Denuncie();
             this.Close();
 
-            Mapa DenuncieparaMapa = new Mapa();
+            MapaView DenuncieparaMapa = new MapaView();
             DenuncieparaMapa.Show();
         }
 
@@ -128,7 +124,9 @@ namespace ViewsWPF.Views
             Fale_Conosco DenuncieparaFaleConosco = new Fale_Conosco();
             DenuncieparaFaleConosco.Show();
         }
+        #endregion
 
+        #region "RadioButton Sexo"
         private void rbDenuncieFeminino_Checked(object sender, RoutedEventArgs e)
         {
             sx = "fem";
@@ -138,7 +136,9 @@ namespace ViewsWPF.Views
         {
             sx = "masc";
         }
+        #endregion
 
+        #region "Radiobutton Vítima ou Testemunha"
         private void rbDenuncieVitima_Checked(object sender, RoutedEventArgs e)
         {
             tip = "Vítima";
@@ -148,7 +148,9 @@ namespace ViewsWPF.Views
         {
             tip = "Testemunha";
         }
+        #endregion
 
+        #region "Apenas números aceitos nos TextBox indicados"
         private void txtDenuncieNumero_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
@@ -177,16 +179,10 @@ namespace ViewsWPF.Views
         private void txtDenunciePrejuizo_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
-
         }
+        #endregion
 
-        /*
-        private void cbDenuncieBairro_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            cbBairro = cbDenuncieBairro.SelectedValue.ToString();
-        }
-        */
-
+        #region "RadioButton B.O.
         private void rbDenuncieBOsim_Checked(object sender, RoutedEventArgs e)
         {
             bo = true;
@@ -196,71 +192,87 @@ namespace ViewsWPF.Views
         {
             bo = false;
         }
+        #endregion
 
-        private void cbDenuncieTipoOcorrencia_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        #region "Booleans CheckBox ObjsRoubados
+        private void cbDenuncieDinheiro_Checked(object sender, RoutedEventArgs e)
         {
-            cbTipoOcorrencia = cbDenuncieTipoOcorrencia.SelectionBoxItem.ToString();
+            dinheiroBool = true;
         }
 
-
-        private void cbDenuncieCidade_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void cbDenuncieCarteira_Checked(object sender, RoutedEventArgs e)
         {
-            cbCidade = cbDenuncieCidade.SelectedValue.ToString();
+            carteiraBool = true;
         }
 
-        private void dpDenuncieDataocorrido_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        private void cbDenuncieDocumentos_Checked(object sender, RoutedEventArgs e)
         {
-            dt = dpDenuncieDataocorrido.ToString();
+            documentosBool = true;
         }
 
+        private void cbDenuncieCelular_Checked(object sender, RoutedEventArgs e)
+        {
+            celularBool = true;
+        }
+
+        private void cbDenuncieNotebook_Checked(object sender, RoutedEventArgs e)
+        {
+            notebookBool = true;
+        }
+
+        private void cbDenuncieOutrosEletronicos_Checked(object sender, RoutedEventArgs e)
+        {
+            outEletronicosBool = true;
+        }
+
+        private void cbDenuncieMotocicleta_Checked(object sender, RoutedEventArgs e)
+        {
+            motoBool = true;
+        }
+
+        private void cbDenuncieVeiculo_Checked(object sender, RoutedEventArgs e)
+        {
+            veiculoBool = true;
+        }
+
+        private void cbDenuncieOutros_Checked(object sender, RoutedEventArgs e)
+        {
+            outrosBool = true;
+        }
+        #endregion
 
         private void btnDenuncieDenunciar_Click(object sender, RoutedEventArgs e)
         {
-            // Denuncia
+         
             Denuncia denun = new Denuncia();
-            denun.Idade = short.Parse(txtDenuncieIdade.Text);
+
             denun.NomeCompleto = txtDenuncieNome.Text;
-            denun.Idade = Convert.ToInt16(idade);
+            denun.Idade = short.Parse(txtDenuncieIdade.Text);
+            denun.Tipo = tip; //Bool com o tipo de ocorrência
             denun.Sexo = sx;
-            denun.Tipo = tip;
-            //Concatenação das strings de Data, Hora e minutos
-            denun.Hora = string.Concat(txtDenuncieHorarioHoras.Text, ":", txtDenuncieHorarioMinutos.Text);
+            denun.Endereco = txtDenuncieEndereco.Text;
+            denun.Numero = short.Parse(txtDenuncieNumero.Text);
             denun.CPF = txtDenuncieCPF.Text;
-            denun.Data = Convert.ToDateTime(dt);
-            denun.BO = bo;
-            denun.TipoOcorrencia = cbTipoOcorrencia;
+            denun.Bairro = cbDenuncieBairro.SelectedItem.ToString();
+            denun.Cidade = cbDenuncieCidade.SelectedItem.ToString();
+            denun.Data = Convert.ToDateTime(dpDenuncieDataocorrido.ToString()); //Conversão do DatePicker para DateTime
+            denun.Hora = string.Concat(txtDenuncieHorarioHoras.Text, ":", txtDenuncieHorarioMinutos.Text); // Concatenação das strings de Hora e Minutos
+            denun.BO = bo; //Bool com a resposta do CheckBox B.O.
+            denun.TipoOcorrencia = cbDenuncieTipoOcorrencia.SelectedItem.ToString();
             denun.Prejuizo = txtDenunciePrejuizo.Text;
+            denun.Dinheiro = dinheiroBool; //Bool's do CheckBox Objs Roubados 
+            denun.Carteira = carteiraBool;
+            denun.Documentos = documentosBool;
+            denun.Celular = celularBool;
+            denun.Notebook = notebookBool;
+            denun.OutrosEletronicos = outEletronicosBool;
+            denun.Motocicleta = motoBool;
+            denun.Veiculo = veiculoBool;
+            denun.Outros = outrosBool;
             denun.Descricao = txtDenuncieDetalhes.Text;
-          
-
-            // Mapa
-            Mapa maps = new Mapa();
-            maps.Numero = txtDenuncieEndereco.Text;
-            maps.BairroIdBairro = int.Parse(cbDenuncieBairro.SelectedValue.ToString());
-            maps.Endereco = txtDenuncieEndereco.Text;
-
-            maps.Denuncia = denun;
-
-            denun.ObjRoubado = new List<ObjRoubado>();
-
-            if (cbDenuncieCarteira.IsChecked.Value)
-            {
-                denun.ObjRoubado.Add(new ObjRoubado() { Carteira = true });
-            } else
-            {
-                denun.ObjRoubado.Add(new ObjRoubado() { Carteira = false });
-            }
-
-            if (cbDenuncieDinheiro.IsChecked.Value)
-            {
-
-            }
-                
-
-
+   
             Controller.DenunciaController denunController = new Controller.DenunciaController();
             denunController.Insert(denun);
-
 
         }
     }

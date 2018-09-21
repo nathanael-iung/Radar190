@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ViewsWPF.Views"
         mc:Ignorable="d"
-         Title="-------" Height="606" Width="850">
+         Title="-------" Height="606" Width="850" Top="60" Left="250">
     <Grid AllowDrop="True" Margin="0,0,0,-3">
         
         <DockPanel HorizontalAlignment="Left" Height="569" LastChildFill="False" VerticalAlignment="Top" Width="162" Background="Black"/>
