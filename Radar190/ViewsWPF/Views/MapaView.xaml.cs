@@ -17,9 +17,9 @@ namespace ViewsWPF.Views
     /// <summary>
     /// Interaction logic for Mapa.xaml
     /// </summary>
-    public partial class Mapa : Window
+    public partial class MapaView : Window
     {
-        public Mapa()
+        public MapaView()
         {
             InitializeComponent();
         }
@@ -77,7 +77,7 @@ namespace ViewsWPF.Views
 
         private void btnMapaContatosEmergenciais_Click(object sender, RoutedEventArgs e)
         {
-            Mapa MapaFechar = new Mapa();
+            MapaView MapaFechar = new MapaView();
             this.Close();
 
             Contatos_Emergencias MapaparaContatosEmergenciais = new Contatos_Emergencias();
@@ -86,7 +86,7 @@ namespace ViewsWPF.Views
 
         private void btnMapaDicas_Click(object sender, RoutedEventArgs e)
         {
-            Mapa MapaFechar = new Mapa();
+            MapaView MapaFechar = new MapaView();
             this.Close();
 
             Dicas_de_Seguranca MapaparaDicas = new Dicas_de_Seguranca();
@@ -95,7 +95,7 @@ namespace ViewsWPF.Views
 
         private void btnMapaFaleConosco_Click(object sender, RoutedEventArgs e)
         {
-            Mapa MapaFechar = new Mapa();
+            MapaView MapaFechar = new MapaView();
             this.Close();
 
             Fale_Conosco MapaparaFaleConosco = new Fale_Conosco();

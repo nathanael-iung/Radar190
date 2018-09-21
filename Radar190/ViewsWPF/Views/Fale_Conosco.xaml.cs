@@ -57,7 +57,7 @@ namespace ViewsWPF.Views
             Fale_Conosco FaleConoscoFechar = new Fale_Conosco();
             this.Close();
 
-            Mapa FaleConoscoparaMapa = new Mapa();
+            MapaView FaleConoscoparaMapa = new MapaView();
             FaleConoscoparaMapa.Show();
         }
 

@@ -216,47 +216,51 @@ namespace ViewsWPF.Views
 
         private void btnDenuncieDenunciar_Click(object sender, RoutedEventArgs e)
         {
-            idade = txtDenuncieIdade.Text;
-            numEndereco = txtDenuncieEndereco.Text;
-            hr = txtDenuncieHorarioHoras.Text;
-            min = txtDenuncieHorarioMinutos.Text;
-
+            // Denuncia
             Denuncia denun = new Denuncia();
-            Mapa maps = new Mapa();
-            Bairro bairro = new Bairro();
-            Cidade city = new Cidade();
-            ObjRoubado objs = new ObjRoubado();
-
-            //Concatenação das strings de Data, Hora e minutos
-            string Hora = string.Concat(txtDenuncieHorarioHoras.Text,":",txtDenuncieHorarioMinutos.Text);
-
+            denun.Idade = short.Parse(txtDenuncieIdade.Text);
             denun.NomeCompleto = txtDenuncieNome.Text;
             denun.Idade = Convert.ToInt16(idade);
             denun.Sexo = sx;
             denun.Tipo = tip;
-            //maps.Endereco = txtDenuncieEndereco.Text;
-            //maps.Numero = Convert.ToInt16(numEndereco);
+            //Concatenação das strings de Data, Hora e minutos
+            denun.Hora = string.Concat(txtDenuncieHorarioHoras.Text, ":", txtDenuncieHorarioMinutos.Text);
             denun.CPF = txtDenuncieCPF.Text;
-            //bairro.Distrito = cbBairro;
-            //city.City = int.Parse(cbDenuncieCidade.SelectedValue.ToString());
             denun.Data = Convert.ToDateTime(dt);
-            denun.Hora = Hora;
             denun.BO = bo;
             denun.TipoOcorrencia = cbTipoOcorrencia;
             denun.Prejuizo = txtDenunciePrejuizo.Text;
             denun.Descricao = txtDenuncieDetalhes.Text;
+          
+
+            // Mapa
+            Mapa maps = new Mapa();
+            maps.Numero = txtDenuncieEndereco.Text;
+            maps.BairroIdBairro = int.Parse(cbDenuncieBairro.SelectedValue.ToString());
+            maps.Endereco = txtDenuncieEndereco.Text;
+
+            maps.Denuncia = denun;
+
+            denun.ObjRoubado = new List<ObjRoubado>();
+
+            if (cbDenuncieCarteira.IsChecked.Value)
+            {
+                denun.ObjRoubado.Add(new ObjRoubado() { Carteira = true });
+            } else
+            {
+                denun.ObjRoubado.Add(new ObjRoubado() { Carteira = false });
+            }
+
+            if (cbDenuncieDinheiro.IsChecked.Value)
+            {
+
+            }
+                
+
 
             Controller.DenunciaController denunController = new Controller.DenunciaController();
             denunController.Insert(denun);
 
-            //Controller.MapaController mapController = new Controller.MapaController();
-            //mapController.Insert(maps);
-
-            //Controller.BairroController baiController = new Controller.BairroController();
-            //baiController.Insert(bairro);
-
-            //Controller.CidadeController cidController = new Controller.CidadeController();
-            //cidController.Insert(city);
 
         }
     }

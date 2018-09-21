@@ -20,7 +20,7 @@ namespace Controller
 
         //    return list.ToList();
         //}
-
+        public bool userOk, pasOk;
         public bool VerificaLogin(string usuario, string senha)
         {
             BDRadarContainer contexto = new BDRadarContainer();
@@ -31,11 +31,20 @@ namespace Controller
 
             //necessita verificação
             var pas = from usu in contexto.UsuarioSet
-                      where usu.Senha.Equals(senha)
+                      where usu.Senha == senha
                       select usu;
 
             //retorna true caso seja encontrada usuário e senha no BD e false caso o resultado do select seja 0
-            if (log.ToList().Count > 0 && pas.ToList().Count > 0)
+            if (log.ToList().Count > 0)
+            {
+                userOk = true;
+            }
+            if (pas.ToList().Count > 0)
+            {
+                pasOk = true;
+            }
+
+            if (userOk && pasOk)
             {
                 return true;
             }

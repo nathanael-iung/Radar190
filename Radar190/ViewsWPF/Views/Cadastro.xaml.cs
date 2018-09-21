@@ -68,8 +68,8 @@ namespace ViewsWPF.Views
             Cadastro CadastroFechar = new Cadastro();
             this.Close();
 
-            Mapa CadastroparaMapa = new Mapa();
-            CadastroparaMapa.Show();
+            MapaView CadastroparaMapaView = new MapaView();
+            CadastroparaMapaView.Show();
         }
 
         private void btnCadastroEstatisticas_Click(object sender, RoutedEventArgs e)
@@ -150,7 +150,7 @@ namespace ViewsWPF.Views
             user.Experiencia = dec;
             user.Descricao = txtCadastroDescricao.Text;
             user.User = txtCadastroUsuario.Text;
-            user.Senha = Convert.ToInt16(txtCadastroSenha.Password.ToString());
+            user.Senha = (txtCadastroSenha.Password.ToString());
             user.CidadeIdCidade = 1;
 
             //Verificação - campos senha e Confirmação de Senha são iguais e se a Captcha está correta

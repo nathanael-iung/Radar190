@@ -68,7 +68,7 @@ namespace ViewsWPF.Views
             Chat ChatFechar = new Chat();
             this.Close();
 
-            Mapa ChatparaMapa = new Mapa();
+            MapaView ChatparaMapa = new MapaView();
             ChatparaMapa.Show();
         }
 

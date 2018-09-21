@@ -28,7 +28,7 @@ namespace Modelos
         public Nullable<bool> Experiencia { get; set; }
         public string Descricao { get; set; }
         public string User { get; set; }
-        public short Senha { get; set; }
+        public string Senha { get; set; }
         public int CidadeIdCidade { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -26,18 +26,20 @@ namespace ViewsWPF.Views
 
         public bool logado;
         public string nomeUsuario;
+        public string senhaUsuario;
 
         private void btnLoginEntrar_Click(object sender, RoutedEventArgs e)
         {
+            Index ind = new Index();
             Controller.UsuarioController userController = new Controller.UsuarioController();
-
+            senhaUsuario = pbLoginSenha.Password;
             //Caso o resultado de VerificaLogin seja true, o 1° Message box é exibido indicando o sucesso do Login
-            if (userController.VerificaLogin(txtLoginNome.Text, pbLoginSenha.Password))
+            if (userController.VerificaLogin(txtLoginNome.Text, senhaUsuario))
             {
+                nomeUsuario = txtLoginNome.Text;
+                logado = true;
                 MessageBox.Show("Login efetuado com sucesso");
                 this.Close();
-                logado = true;
-                nomeUsuario = txtLoginNome.Text;
             }
             else
             {

@@ -56,7 +56,7 @@ namespace ViewsWPF.Views
             Dicas_de_Seguranca DicasFechar = new Dicas_de_Seguranca();
             this.Close();
 
-            Mapa DicasparaMapa = new Mapa();
+            MapaView DicasparaMapa = new MapaView();
             DicasparaMapa.Show();
         }
 

@@ -47,7 +47,7 @@ namespace ViewsWPF.Views
             Index IndexFechar = new Index();
             this.Close();
 
-            Mapa IndexparaMapa = new Mapa();
+            MapaView IndexparaMapa = new MapaView();
             IndexparaMapa.Show();
         }
 
@@ -103,7 +103,7 @@ namespace ViewsWPF.Views
 
         }
 
-        private void wwIndex_Activated(object sender, EventArgs e)
+        private void wwIndex_Loaded(object sender, RoutedEventArgs e)
         {
             Login welcome = new Login();
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ViewsWPF.Views"
         mc:Ignorable="d"
-        Title="-------" Height="606" Width="850" Activated="wwIndex_Activated">
+        Title="-------" Height="606" Width="850" Loaded="wwIndex_Loaded" Top="60" Left="250">
     <Grid AllowDrop="True" Margin="0,0,0,-3">
         <DockPanel HorizontalAlignment="Left" Height="569" LastChildFill="False" VerticalAlignment="Top" Width="162" Background="Black"/>
         <DockPanel HorizontalAlignment="Left" Height="0" LastChildFill="False" Margin="129,0,0,0" VerticalAlignment="Top" Width="663" Background="White"/>
@@ -20,6 +20,6 @@
         <Button x:Name="btnHomeHome" Content="Home" HorizontalAlignment="Left" Margin="0,80,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="56" Margin="31,10,0,0" VerticalAlignment="Top" Width="100" Source="Logo-fundo-preto.png"/>
         <Button x:Name="btnIndexLogin" Content="Login" HorizontalAlignment="Left" Margin="783,10,0,0" VerticalAlignment="Top" Width="49" Background="Black" BorderBrush="Black" Foreground="White" Click="btnIndexLogin_Click"/>
-        <Label x:Name="lblIndexOla" Content="" HorizontalAlignment="Left" Margin="635,10,0,0" VerticalAlignment="Top" Width="130" Height="20" IsEnabled="False" FontSize="9"/>
+        <Label x:Name="lblIndexOla" Content="A" HorizontalAlignment="Left" Margin="635,10,0,0" VerticalAlignment="Top" Width="130" Height="32" IsEnabled="False" FontSize="16"/>
     </Grid>
 </Window>

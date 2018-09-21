@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/19/2018 23:07:47
--- Generated from EDMX file: C:\Users\natha\Documents\CSharp\Radar190\Radar190\Modelos\BDRadar.edmx
+-- Date Created: 09/20/2018 19:48:31
+-- Generated from EDMX file: C:\Users\1718167\Documents\cSharp\Radar190\Radar190\Modelos\BDRadar.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -101,7 +101,7 @@ CREATE TABLE [dbo].[UsuarioSet] (
     [Experiencia] bit  NULL,
     [Descricao] nvarchar(max)  NOT NULL,
     [User] nvarchar(max)  NOT NULL,
-    [Senha] smallint  NOT NULL,
+    [Senha] nvarchar(max)  NOT NULL,
     [CidadeIdCidade] int  NOT NULL,
     [AdministradorUsuario_Usuario_IdAdministrador] int  NULL
 );

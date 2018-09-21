@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="BDRadar.Cidade" Width="1.5" PointX="0.5" PointY="1.25" />
         <EntityTypeShape EntityType="BDRadar.Denuncia" Width="1.5" PointX="7.5" PointY="0.5" />
         <EntityTypeShape EntityType="BDRadar.ObjRoubado" Width="1.5" PointX="9.75" PointY="0.5" />
-        <EntityTypeShape EntityType="BDRadar.Mapa" Width="1.5" PointX="5.25" PointY="1.125" />
+        <EntityTypeShape EntityType="BDRadar.Mapa" Width="1.875" PointX="4.875" PointY="1.25" />
         <EntityTypeShape EntityType="BDRadar.Bairro" Width="1.5" PointX="2.875" PointY="1.125" />
         <AssociationConnector Association="BDRadar.MapaBairro" />
         <EntityTypeShape EntityType="BDRadar.Administrador" Width="1.5" PointX="12.125" PointY="5.125" />

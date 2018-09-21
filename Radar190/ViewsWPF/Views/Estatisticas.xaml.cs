@@ -56,7 +56,7 @@ namespace ViewsWPF.Views
             Estatisticas EstatisticasFechar = new Estatisticas();
             this.Close();
 
-            Mapa EstatisticaparaMapa = new Mapa();
+            MapaView EstatisticaparaMapa = new MapaView();
             EstatisticaparaMapa.Show();
         }
 

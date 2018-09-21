@@ -56,7 +56,7 @@ namespace ViewsWPF.Views
             Contatos_Emergencias ContatosEmergenciaisFechar = new Contatos_Emergencias();
             this.Close();
 
-            Mapa ContatosEmergenciasparaMapa = new Mapa();
+            MapaView ContatosEmergenciasparaMapa = new MapaView();
             ContatosEmergenciasparaMapa.Show();
         }
 

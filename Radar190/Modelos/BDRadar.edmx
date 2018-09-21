@@ -72,7 +72,7 @@
     <Property Name="Experiencia" Type="bit" Nullable="true" />
     <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
     <Property Name="User" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Senha" Type="smallint" Nullable="false" />
+    <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CidadeIdCidade" Type="int" Nullable="false" />
     <Property Name="AdministradorUsuario_Usuario_IdAdministrador" Type="int" Nullable="true" />
   </EntityType>
@@ -386,7 +386,7 @@
           <Property Name="Experiencia" Type="Boolean" Nullable="true" />
           <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="User" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Senha" Type="Int16" Nullable="false" />
+          <Property Name="Senha" Type="String" Nullable="false" />
           <NavigationProperty Name="FaleConosco" Relationship="BDRadar.UsuarioFaleConosco" FromRole="Usuario" ToRole="FaleConosco" />
           <NavigationProperty Name="Cidade" Relationship="BDRadar.UsuarioCidade" FromRole="Usuario" ToRole="Cidade" />
           <Property Name="CidadeIdCidade" Type="Int32" Nullable="false" />
@@ -423,6 +423,7 @@
           <NavigationProperty Name="Usuario" Relationship="BDRadar.UsuarioDenuncia" FromRole="Denuncia" ToRole="Usuario" />
           <Property Name="UsuarioIdUsuario" Type="Int32" Nullable="true" />
           <NavigationProperty Name="Mapa" Relationship="BDRadar.DenunciaMapa" FromRole="Denuncia" ToRole="Mapa" />
+          <Property Name="Property1" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="ObjRoubado">
           <Key>

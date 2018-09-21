@@ -48,7 +48,7 @@
         <TextBox x:Name="txtDenuncieCPF" HorizontalAlignment="Left" Height="23" Margin="183,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="txtDenuncieCPF_PreviewTextInput"/>
 
         <Label x:Name="DenuncieBairro" Content="Bairro: " HorizontalAlignment="Left" Margin="420,167,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="49" IsEnabled="False"/>
-        <ComboBox x:Name="cbDenuncieBairro" HorizontalAlignment="Left" Margin="420,198,0,0" VerticalAlignment="Top" Width="156" Height="26">
+        <ComboBox x:Name="cbDenuncieBairro" HorizontalAlignment="Left" Margin="420,198,0,0" VerticalAlignment="Top" Width="156" Height="26" DisplayMemberPath="Distrito" SelectedValuePath="IdBairro">
             <!--SelectionChanged="cbDenuncieBairro_SelectionChanged"-->
             <ComboBoxItem Content="Abranches"/>
             <ComboBoxItem Content="Agua Verde"/>
