@@ -8,7 +8,6 @@
   <EntityContainer Name="BDRadarStoreContainer">
     <EntitySet Name="UsuarioSet" EntityType="BDRadar.Store.UsuarioSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DenunciaSet" EntityType="BDRadar.Store.DenunciaSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ObjRoubadoSet" EntityType="BDRadar.Store.ObjRoubadoSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="AdministradorSet" EntityType="BDRadar.Store.AdministradorSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ContatosEmergenciaisSet" EntityType="BDRadar.Store.ContatosEmergenciaisSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DicasSegurancaSet" EntityType="BDRadar.Store.DicasSegurancaSet" store:Type="Tables" Schema="dbo" />
@@ -25,10 +24,6 @@
     <AssociationSet Name="UsuarioFaleConosco" Association="BDRadar.Store.UsuarioFaleConosco">
       <End Role="Usuario" EntitySet="UsuarioSet" />
       <End Role="FaleConosco" EntitySet="FaleConoscoSet" />
-    </AssociationSet>
-    <AssociationSet Name="DenunciaObjRoubado" Association="BDRadar.Store.DenunciaObjRoubado">
-      <End Role="Denuncia" EntitySet="DenunciaSet" />
-      <End Role="ObjRoubado" EntitySet="ObjRoubadoSet" />
     </AssociationSet>
     <AssociationSet Name="UsuarioDenuncia" Association="BDRadar.Store.UsuarioDenuncia">
       <End Role="Usuario" EntitySet="UsuarioSet" />
@@ -74,22 +69,6 @@
     <Property Name="Descricao" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Prejuizo" Type="nvarchar(max)" Nullable="true" />
     <Property Name="UsuarioIdUsuario" Type="int" Nullable="true" />
-  </EntityType>
-  <EntityType Name="ObjRoubadoSet">
-    <Key>
-      <PropertyRef Name="IdObjRoubados" />
-    </Key>
-    <Property Name="IdObjRoubados" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Dinheiro" Type="bit" Nullable="true" />
-    <Property Name="Carteira" Type="bit" Nullable="true" />
-    <Property Name="Documentos" Type="bit" Nullable="true" />
-    <Property Name="Celular" Type="bit" Nullable="true" />
-    <Property Name="Notebook" Type="bit" Nullable="true" />
-    <Property Name="Motocicleta" Type="bit" Nullable="true" />
-    <Property Name="Veiculo" Type="bit" Nullable="true" />
-    <Property Name="OutrosEletronicos" Type="bit" Nullable="true" />
-    <Property Name="Outros" Type="bit" Nullable="true" />
-    <Property Name="DenunciaIdDenuncia" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="AdministradorSet">
     <Key>
@@ -174,18 +153,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="DenunciaObjRoubado">
-    <End Role="Denuncia" Type="BDRadar.Store.DenunciaSet" Multiplicity="1" />
-    <End Role="ObjRoubado" Type="BDRadar.Store.ObjRoubadoSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Denuncia">
-        <PropertyRef Name="IdDenuncia" />
-      </Principal>
-      <Dependent Role="ObjRoubado">
-        <PropertyRef Name="DenunciaIdDenuncia" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="UsuarioDenuncia">
     <End Role="Usuario" Type="BDRadar.Store.UsuarioSet" Multiplicity="0..1" />
     <End Role="Denuncia" Type="BDRadar.Store.DenunciaSet" Multiplicity="*" />
@@ -229,7 +196,6 @@
         <EntityContainer Name="BDRadarContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="UsuarioSet" EntityType="BDRadar.Usuario" />
           <EntitySet Name="DenunciaSet" EntityType="BDRadar.Denuncia" />
-          <EntitySet Name="ObjRoubadoSet" EntityType="BDRadar.ObjRoubado" />
           <EntitySet Name="AdministradorSet" EntityType="BDRadar.Administrador" />
           <EntitySet Name="ContatosEmergenciaisSet" EntityType="BDRadar.ContatosEmergenciais" />
           <AssociationSet Name="AdministradorContatosEmergenciais" Association="BDRadar.AdministradorContatosEmergenciais">
@@ -245,10 +211,6 @@
           <AssociationSet Name="UsuarioFaleConosco" Association="BDRadar.UsuarioFaleConosco">
             <End Role="Usuario" EntitySet="UsuarioSet" />
             <End Role="FaleConosco" EntitySet="FaleConoscoSet" />
-          </AssociationSet>
-          <AssociationSet Name="DenunciaObjRoubado" Association="BDRadar.DenunciaObjRoubado">
-            <End Role="Denuncia" EntitySet="DenunciaSet" />
-            <End Role="ObjRoubado" EntitySet="ObjRoubadoSet" />
           </AssociationSet>
           <AssociationSet Name="UsuarioDenuncia" Association="BDRadar.UsuarioDenuncia">
             <End Role="Usuario" EntitySet="UsuarioSet" />
@@ -296,31 +258,21 @@
           <Property Name="TipoOcorrencia" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Descricao" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Prejuizo" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="ObjRoubado" Relationship="BDRadar.DenunciaObjRoubado" FromRole="Denuncia" ToRole="ObjRoubado" />
           <NavigationProperty Name="Usuario" Relationship="BDRadar.UsuarioDenuncia" FromRole="Denuncia" ToRole="Usuario" />
           <Property Name="UsuarioIdUsuario" Type="Int32" Nullable="true" />
-          <Property Name="Property1" Type="String" Nullable="false" />
-          <Property Name="Endreco" Type="String" Nullable="false" />
+          <Property Name="Endereco" Type="String" Nullable="false" />
           <Property Name="Numero" Type="String" Nullable="false" />
           <Property Name="Distrito" Type="String" Nullable="false" />
           <Property Name="City" Type="String" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ObjRoubado">
-          <Key>
-            <PropertyRef Name="IdObjRoubados" />
-          </Key>
-          <Property Name="IdObjRoubados" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Dinheiro" Type="Boolean" Nullable="true" />
-          <Property Name="Carteira" Type="Boolean" Nullable="true" />
-          <Property Name="Documentos" Type="Boolean" Nullable="true" />
-          <Property Name="Celular" Type="Boolean" Nullable="true" />
-          <Property Name="Notebook" Type="Boolean" Nullable="true" />
-          <Property Name="Motocicleta" Type="Boolean" Nullable="true" />
-          <Property Name="Veiculo" Type="Boolean" Nullable="true" />
-          <Property Name="OutrosEletronicos" Type="Boolean" Nullable="true" />
-          <Property Name="Outros" Type="Boolean" Nullable="true" />
-          <NavigationProperty Name="Denuncia" Relationship="BDRadar.DenunciaObjRoubado" FromRole="ObjRoubado" ToRole="Denuncia" />
-          <Property Name="DenunciaIdDenuncia" Type="Int32" Nullable="false" />
+          <Property Name="Dinheiro" Type="Boolean" Nullable="false" />
+          <Property Name="Carteira" Type="Boolean" Nullable="false" />
+          <Property Name="Documentos" Type="Boolean" Nullable="false" />
+          <Property Name="Celular" Type="Boolean" Nullable="false" />
+          <Property Name="Notebook" Type="Boolean" Nullable="false" />
+          <Property Name="Motocicleta" Type="Boolean" Nullable="false" />
+          <Property Name="Veiculo" Type="Boolean" Nullable="false" />
+          <Property Name="OutrosEletronicos" Type="Boolean" Nullable="false" />
+          <Property Name="Outros" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Administrador">
           <Key>
@@ -401,18 +353,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="DenunciaObjRoubado">
-          <End Type="BDRadar.Denuncia" Role="Denuncia" Multiplicity="1" />
-          <End Type="BDRadar.ObjRoubado" Role="ObjRoubado" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Denuncia">
-              <PropertyRef Name="IdDenuncia" />
-            </Principal>
-            <Dependent Role="ObjRoubado">
-              <PropertyRef Name="DenunciaIdDenuncia" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="UsuarioDenuncia">
           <End Type="BDRadar.Usuario" Role="Usuario" Multiplicity="0..1" />
           <End Type="BDRadar.Denuncia" Role="Denuncia" Multiplicity="*" />
@@ -486,23 +426,6 @@
           <ScalarProperty Name="Descricao" ColumnName="Descricao" />
           <ScalarProperty Name="Prejuizo" ColumnName="Prejuizo" />
           <ScalarProperty Name="UsuarioIdUsuario" ColumnName="UsuarioIdUsuario" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ObjRoubadoSet">
-      <EntityTypeMapping TypeName="IsTypeOf(BDRadar.ObjRoubado)">
-        <MappingFragment StoreEntitySet="ObjRoubadoSet">
-          <ScalarProperty Name="IdObjRoubados" ColumnName="IdObjRoubados" />
-          <ScalarProperty Name="Dinheiro" ColumnName="Dinheiro" />
-          <ScalarProperty Name="Carteira" ColumnName="Carteira" />
-          <ScalarProperty Name="Documentos" ColumnName="Documentos" />
-          <ScalarProperty Name="Celular" ColumnName="Celular" />
-          <ScalarProperty Name="Notebook" ColumnName="Notebook" />
-          <ScalarProperty Name="Motocicleta" ColumnName="Motocicleta" />
-          <ScalarProperty Name="Veiculo" ColumnName="Veiculo" />
-          <ScalarProperty Name="OutrosEletronicos" ColumnName="OutrosEletronicos" />
-          <ScalarProperty Name="Outros" ColumnName="Outros" />
-          <ScalarProperty Name="DenunciaIdDenuncia" ColumnName="DenunciaIdDenuncia" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

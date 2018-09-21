@@ -27,7 +27,6 @@ namespace Modelos
     
         public virtual DbSet<Usuario> UsuarioSet { get; set; }
         public virtual DbSet<Denuncia> DenunciaSet { get; set; }
-        public virtual DbSet<ObjRoubado> ObjRoubadoSet { get; set; }
         public virtual DbSet<Administrador> AdministradorSet { get; set; }
         public virtual DbSet<ContatosEmergenciais> ContatosEmergenciaisSet { get; set; }
         public virtual DbSet<DicasSeguranca> DicasSegurancaSet { get; set; }

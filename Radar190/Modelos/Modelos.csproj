@@ -82,9 +82,6 @@
     <Compile Include="FaleConosco.cs">
       <DependentUpon>BDRadar.tt</DependentUpon>
     </Compile>
-    <Compile Include="ObjRoubado.cs">
-      <DependentUpon>BDRadar.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs">
       <DependentUpon>BDRadar.tt</DependentUpon>
