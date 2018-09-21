@@ -18,7 +18,6 @@ namespace Modelos
         public Denuncia()
         {
             this.ObjRoubado = new HashSet<ObjRoubado>();
-            this.Mapa = new HashSet<Mapa>();
         }
     
         public int IdDenuncia { get; set; }
@@ -34,11 +33,14 @@ namespace Modelos
         public string Descricao { get; set; }
         public string Prejuizo { get; set; }
         public Nullable<int> UsuarioIdUsuario { get; set; }
+        public string Property1 { get; set; }
+        public string Endreco { get; set; }
+        public string Numero { get; set; }
+        public string Distrito { get; set; }
+        public string City { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ObjRoubado> ObjRoubado { get; set; }
         public virtual Usuario Usuario { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Mapa> Mapa { get; set; }
     }
 }

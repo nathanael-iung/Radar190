@@ -52,9 +52,6 @@
     <Compile Include="Administrador.cs">
       <DependentUpon>BDRadar.tt</DependentUpon>
     </Compile>
-    <Compile Include="Bairro.cs">
-      <DependentUpon>BDRadar.tt</DependentUpon>
-    </Compile>
     <Compile Include="BDRadar.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -73,9 +70,6 @@
     <Compile Include="Chat.cs">
       <DependentUpon>BDRadar.tt</DependentUpon>
     </Compile>
-    <Compile Include="Cidade.cs">
-      <DependentUpon>BDRadar.tt</DependentUpon>
-    </Compile>
     <Compile Include="ContatosEmergenciais.cs">
       <DependentUpon>BDRadar.tt</DependentUpon>
     </Compile>
@@ -86,9 +80,6 @@
       <DependentUpon>BDRadar.tt</DependentUpon>
     </Compile>
     <Compile Include="FaleConosco.cs">
-      <DependentUpon>BDRadar.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Mapa.cs">
       <DependentUpon>BDRadar.tt</DependentUpon>
     </Compile>
     <Compile Include="ObjRoubado.cs">

@@ -29,11 +29,10 @@ namespace Modelos
         public string Descricao { get; set; }
         public string User { get; set; }
         public string Senha { get; set; }
-        public int CidadeIdCidade { get; set; }
+        public string Cidade { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FaleConosco> FaleConosco { get; set; }
-        public virtual Cidade Cidade { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Denuncia> Denuncia { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
