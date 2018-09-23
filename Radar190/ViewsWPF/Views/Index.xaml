@@ -31,5 +31,6 @@
         <Label x:Name="lblIndexVantagens2" Content="• Acesso ao Mapa do Crime, contando com marcações e descrições de denúncias cadastradas" HorizontalAlignment="Left" Margin="178,473,0,0" VerticalAlignment="Top" Width="629" FontFamily="Century Gothic" FontSize="13" IsEnabled="False"/>
         <Label x:Name="lblIndexVantagens3" Content="• Acesso a tela Estatísticas, com informações detalhadas sobre as denúncias" HorizontalAlignment="Left" Margin="178,504,0,0" VerticalAlignment="Top" Width="503" FontFamily="Century Gothic" FontSize="13" IsEnabled="False"/>
         <Label x:Name="lblIndexVantagens4" Content="• Acesso a tela Chat, com interações com usuários sobre possíveis perigos no momento" HorizontalAlignment="Left" Margin="178,535,0,0" VerticalAlignment="Top" Width="568" FontFamily="Century Gothic" FontSize="13" IsEnabled="False"/>
+        <Button x:Name="btnIndexMapaForms" Content="MAPA-Forms" HorizontalAlignment="Center" Margin="399,353,301,0" VerticalAlignment="Top" Width="142" Height="44" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FFBD1010" Foreground="White" FontSize="16" FontWeight="Bold" Click="btnIndexMapaForms_Click"/>
     </Grid>
 </Window>

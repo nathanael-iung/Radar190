@@ -10,11 +10,24 @@ namespace Controller
 {
     public class DenunciaController
     {
+
+        BDRadarContainer contexto = new BDRadarContainer();
+        public int id;
+
+        public int RetornaID(string nome)
+        {
+            var encontraID = from userNome in contexto.UsuarioSet
+                             where userNome.NomeCompleto == nome
+                             select userNome.IdUsuario;
+
+            return id = encontraID.First();
+
+        }
+
         public void Insert(Denuncia denun)
         {
             try
             {
-                BDRadarContainer contexto = new BDRadarContainer();
                 contexto.DenunciaSet.Add(denun);
                 contexto.SaveChanges();
             }
@@ -36,7 +49,6 @@ namespace Controller
 
         public Denuncia BuscaID(int id)
         {
-            BDRadarContainer contexto = new BDRadarContainer();
             return contexto.DenunciaSet.Find();
         }
 
@@ -63,12 +75,12 @@ namespace Controller
                 contexto.SaveChanges();
             }
         }
-        
+
         public void Delete(int id)
         {
             Denuncia denunExcluir = BuscaID(id);
 
-            if(denunExcluir != null)
+            if (denunExcluir != null)
             {
                 BDRadarContainer contexto = new BDRadarContainer();
                 contexto.DenunciaSet.Remove(denunExcluir);

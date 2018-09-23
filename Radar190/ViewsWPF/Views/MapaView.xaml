@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ViewsWPF.Views"
+        xmlns:gmaps="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         mc:Ignorable="d"
         Title="-------" Height="606" Width="850" Top="60" Left="250">
     <Grid AllowDrop="True" Margin="0,0,0,-3">
@@ -24,6 +26,7 @@
 
         <TextBox x:Name="txtMapaTitulo" HorizontalAlignment="Center" Height="61" Margin="230,5,73,0" TextWrapping="Wrap" Text="Confira o índice de Crimes em sua Região" Width="539" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
         <WebBrowser x:Name="wbMaps" HorizontalAlignment="Left" Height="495" Margin="185,66,0,0" VerticalAlignment="Top" Width="633" Initialized="WebBrowser_Initialized"/>
+
     </Grid>
 </Window>
     

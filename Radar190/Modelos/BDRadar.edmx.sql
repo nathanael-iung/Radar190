@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/21/2018 00:04:34
+-- Date Created: 09/22/2018 20:50:22
 -- Generated from EDMX file: C:\Users\natha\Documents\CSharp\Radar190\Radar190\Modelos\BDRadar.edmx
 -- --------------------------------------------------
 
@@ -88,11 +88,11 @@ CREATE TABLE [dbo].[DenunciaSet] (
     [Tipo] nvarchar(max)  NOT NULL,
     [Sexo] nvarchar(max)  NULL,
     [Endereco] nvarchar(max)  NOT NULL,
-    [Numero] smallint  NULL,
+    [Numero] smallint  NOT NULL,
     [CPF] nvarchar(max)  NOT NULL,
-    [Bairro] nvarchar(max)  NOT NULL,
-    [Cidade] nvarchar(max)  NOT NULL,
-    [UF] nvarchar(max)  NULL,
+    [Distrito] nvarchar(max)  NOT NULL,
+    [City] nvarchar(max)  NOT NULL,
+    [UF] nvarchar(max)  NOT NULL,
     [Data] datetime  NOT NULL,
     [Hora] nvarchar(max)  NOT NULL,
     [BO] bit  NULL,

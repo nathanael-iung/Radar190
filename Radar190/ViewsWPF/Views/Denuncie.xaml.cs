@@ -26,6 +26,7 @@ namespace ViewsWPF.Views
             InitializeComponent();
         }
 
+        public int fkUsuario;
         //Variável que recebrá o tipo da denpuncia - testemunha e vitima
         private string tip;
         //Variável que receberá o resultado do radio button sexo
@@ -243,7 +244,10 @@ namespace ViewsWPF.Views
 
         private void btnDenuncieDenunciar_Click(object sender, RoutedEventArgs e)
         {
+            Controller.DenunciaController denunController = new Controller.DenunciaController();
             Denuncia denun = new Denuncia();
+
+            fkUsuario = denunController.RetornaID(txtDenuncieNome.Text);
 
             denun.NomeCompleto = txtDenuncieNome.Text;
             denun.Idade = short.Parse(txtDenuncieIdade.Text);
@@ -252,12 +256,13 @@ namespace ViewsWPF.Views
             denun.Endereco = txtDenuncieEndereco.Text;
             denun.Numero = short.Parse(txtDenuncieNumero.Text);
             denun.CPF = txtDenuncieCPF.Text;
-            denun.Distrito = cbDenuncieBairro.SelectedItem.ToString();
-            denun.City = cbDenuncieCidade.SelectedItem.ToString();
+            denun.Distrito = cbDenuncieBairro.SelectionBoxItem.ToString();
+            denun.City = cbDenuncieCidade.SelectionBoxItem.ToString();
+            denun.UF = ("PR");
             denun.Data = Convert.ToDateTime(dpDenuncieDataocorrido.SelectedDate.ToString()); //Conversão do DatePicker para DateTime
             denun.Hora = string.Concat(txtDenuncieHorarioHoras.Text, ":", txtDenuncieHorarioMinutos.Text); // Concatenação das strings de Hora e Minutos
             denun.BO = bo; //Bool com a resposta do CheckBox B.O.
-            denun.TipoOcorrencia = cbDenuncieTipoOcorrencia.SelectedItem.ToString();
+            denun.TipoOcorrencia = cbDenuncieTipoOcorrencia.SelectionBoxItem.ToString();
             denun.Prejuizo = txtDenunciePrejuizo.Text;
             denun.Dinheiro = dinheiroBool; //Bool's do CheckBox Objs Roubados 
             denun.Carteira = carteiraBool;
@@ -269,10 +274,21 @@ namespace ViewsWPF.Views
             denun.Veiculo = veiculoBool;
             denun.Outros = outrosBool;
             denun.Descricao = txtDenuncieDetalhes.Text;
+            denun.UsuarioIdUsuario = fkUsuario;
 
-            Controller.DenunciaController denunController = new Controller.DenunciaController();
+            
             denunController.Insert(denun);
 
+        }
+
+        private void wwDenuncie_Loaded(object sender, RoutedEventArgs e)
+        {
+            //DenuncieNome.Content = cbDenuncieBairro.SelectedItem.ToString();
+        }
+
+        private void cbDenuncieBairro_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DenuncieNome.Content = cbDenuncieBairro.SelectionBoxItem;
         }
     }
 }

@@ -105,6 +105,7 @@ namespace ViewsWPF.Views
             feedback.Email = txtFaleConoscoEmail.Text;
             feedback.Assunto = txtFaleConoscoAssunto.Text;
             feedback.Mensagem = txtFaleConoscoMensagem.Text;
+            feedback.UsuarioIdUsuario = 3;
 
             Controller.FaleConoscoController feedController = new Controller.FaleConoscoController();
             feedController.Insert(feedback);
