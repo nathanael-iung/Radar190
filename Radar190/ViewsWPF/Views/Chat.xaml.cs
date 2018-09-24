@@ -20,6 +20,7 @@ namespace ViewsWPF.Views
     /// </summary>
     public partial class Chat : Window
     {
+        private int fkUsuario;
 
         public Chat()
         {
@@ -102,19 +103,28 @@ namespace ViewsWPF.Views
         private void btnChatEnviarMensagem_Click(object sender, RoutedEventArgs e)
         {
             Modelos.Chat cht = new Modelos.Chat();
-            //Chat chat = new Chat();
+            Controller.ChatController chtController = new Controller.ChatController();
+
+            fkUsuario = chtController.RetornaID(txtChatNome.Text);
 
             cht.Nome = txtChatNome.Text;
             cht.Mensagem = txtChatMensagem.Text;
-            //Necessita correção
-            cht.UsuarioIdUsuario = 1;
+            cht.UsuarioIdUsuario = fkUsuario;
 
-            Controller.ChatController chtController = new Controller.ChatController();
-            chtController.Insert(cht);
-
-            dgChatLista.ItemsSource = chtController.ListChat();
-
-
+            if (string.IsNullOrWhiteSpace(txtChatNome.Text) || string.IsNullOrWhiteSpace(txtChatMensagem.Text))
+            {
+                MessageBox.Show("Ambos os campos são obrigatórios.");
+            }
+            else if(fkUsuario == 0)
+            {
+                MessageBox.Show("Você não está cadastrado");
+            }
+            else
+            {
+                chtController.Insert(cht);
+                MessageBox.Show("Mensagem enviada");
+                dgChatLista.ItemsSource = chtController.ListChat();
+            }
         }
 
         private void wwChat_Loaded(object sender, RoutedEventArgs e)
@@ -122,7 +132,7 @@ namespace ViewsWPF.Views
             Controller.ChatController chtController = new Controller.ChatController();
 
             dgChatLista.ItemsSource = chtController.ListChat();
-            
+
         }
     }
 }

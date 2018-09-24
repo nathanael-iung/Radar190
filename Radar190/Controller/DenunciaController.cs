@@ -20,7 +20,16 @@ namespace Controller
                              where userNome.NomeCompleto == nome
                              select userNome.IdUsuario;
 
-            return id = encontraID.First();
+            if (encontraID.ToList().Count > 0)
+            {
+                return id = encontraID.First();
+            }
+            else
+            {
+                return id = 0;
+            }
+
+            // return id = encontraID.First();
 
         }
 

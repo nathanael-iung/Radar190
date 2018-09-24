@@ -20,6 +20,8 @@ namespace ViewsWPF.Views
     /// </summary>
     public partial class Fale_Conosco : Window
     {
+        private int fkUsuario;
+
         public Fale_Conosco()
         {
             InitializeComponent();
@@ -100,6 +102,9 @@ namespace ViewsWPF.Views
         private void btnFaleConoscoEnviarMensagem_Click(object sender, RoutedEventArgs e)
         {
             FaleConosco feedback = new FaleConosco();
+            Controller.FaleConoscoController feedController = new Controller.FaleConoscoController();
+
+            fkUsuario = feedController.RetornaID(txtFaleConoscoNome.Text);
 
             feedback.Nome = txtFaleConoscoNome.Text;
             feedback.Email = txtFaleConoscoEmail.Text;
@@ -107,9 +112,15 @@ namespace ViewsWPF.Views
             feedback.Mensagem = txtFaleConoscoMensagem.Text;
             feedback.UsuarioIdUsuario = 3;
 
-            Controller.FaleConoscoController feedController = new Controller.FaleConoscoController();
-            feedController.Insert(feedback);
-
+            if (string.IsNullOrWhiteSpace(txtFaleConoscoNome.Text) || string.IsNullOrWhiteSpace(txtFaleConoscoEmail.Text) || string.IsNullOrWhiteSpace(txtFaleConoscoAssunto.Text) || string.IsNullOrWhiteSpace(txtFaleConoscoMensagem.Text))
+            {
+                MessageBox.Show("Todos os campos são obrigatórios");
+            } 
+            else if(fkUsuario == 0)
+            {
+                feedController.Insert(feedback);
+                MessageBox.Show("Agradecemos a sua colaboração");
+            }
         }
     }
 }

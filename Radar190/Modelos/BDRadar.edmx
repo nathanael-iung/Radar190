@@ -248,7 +248,7 @@
           <Property Name="NomeCompleto" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="DtNasc" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Experiencia" Type="Boolean" Nullable="true" />
-          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Descricao" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="User" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Senha" Type="String" Nullable="false" />
           <NavigationProperty Name="FaleConosco" Relationship="BDRadar.UsuarioFaleConosco" FromRole="Usuario" ToRole="FaleConosco" />

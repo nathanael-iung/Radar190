@@ -9,16 +9,33 @@ namespace Controller
 {
     public class ChatController
     {
+        BDRadarContainer contexto = new BDRadarContainer();
+        public int id;
+
+        public int RetornaID(string nome)
+        {
+            var encontraID = from chatNome in contexto.UsuarioSet
+                             where chatNome.NomeCompleto == nome
+                             select chatNome.IdUsuario;
+
+            if (encontraID.ToList().Count > 0)
+            {
+                return id = encontraID.First();
+            }
+            else
+            {
+                return id = 0;
+            }
+        }
+
         public void Insert(Chat ch)
         {
-            BDRadarContainer contexto = new BDRadarContainer();
             contexto.ChatSet.Add(ch);
             contexto.SaveChanges();
         }
 
         public Chat BuscaID(int id)
         {
-            BDRadarContainer contexto = new BDRadarContainer();
             return contexto.ChatSet.Find();
         }
 
@@ -31,7 +48,6 @@ namespace Controller
                 ChatAntigo.Nome = chatEditado.Nome;
                 ChatAntigo.Mensagem = chatEditado.Mensagem;
 
-                BDRadarContainer contexto = new BDRadarContainer();
                 contexto.Entry(ChatAntigo).State = System.Data.Entity.EntityState.Modified;
                 contexto.SaveChanges();
             }
@@ -43,7 +59,6 @@ namespace Controller
 
             if (chatExcluir != null)
             {
-                BDRadarContainer contexto = new BDRadarContainer();
                 contexto.ChatSet.Remove(chatExcluir);
                 contexto.SaveChanges();
             }
@@ -51,7 +66,6 @@ namespace Controller
 
         public List<Chat> ListChat()
         {
-            BDRadarContainer contexto = new BDRadarContainer();
             return contexto.ChatSet.ToList();
         }
 

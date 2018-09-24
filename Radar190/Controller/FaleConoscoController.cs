@@ -12,6 +12,25 @@ namespace Controller
     {
 
         BDRadarContainer contexto = new BDRadarContainer();
+
+        public int id;
+
+        public int RetornaID(string nome)
+        {
+            var encontraID = from feedbackNome in contexto.UsuarioSet
+                             where feedbackNome.NomeCompleto == nome
+                             select feedbackNome.IdUsuario;
+
+            if (encontraID.ToList().Count > 0)
+            {
+                return id = encontraID.First();
+            }
+            else
+            {
+                return id = 0;
+            }
+        }
+
         public void Insert(FaleConosco fale)
         {
             try

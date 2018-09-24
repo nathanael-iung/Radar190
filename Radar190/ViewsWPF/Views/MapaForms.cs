@@ -10,15 +10,19 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace ViewsWPF.Views
 {
     public partial class MapaForms : Form
     {
+
+        //GeoCoder geocoder = new GeoCoder("AIzaSyDkfKw-EFex5x_bUqPV1JfGiQAlssQCmUk");
 
         //private List<PointLatLng> points;
         private string convertEndereco, convertBairro, convertCidade;
@@ -36,16 +40,14 @@ namespace ViewsWPF.Views
 
         private void MapaForms_Load(object sender, EventArgs e)
         {
-            
+            /*
             var locationService = new GoogleLocationService();
             List<PointLatLng> localLatitudeLongitude = new List<PointLatLng>();
             var markOverlay = new GMapOverlay("markOverlay");
-            
+            */
 
             //Utilizando Google Maps
             gmMapa.MapProvider = GMapProviders.GoogleMap;
-            //double lat = Convert.ToDouble(txtLatitude.Text);
-            //double lon = Convert.ToDouble(txtLongitude.Text);
             gmMapa.Position = new PointLatLng(-25.4284, -49.2733);
             gmMapa.MinZoom = 5;
             gmMapa.MaxZoom = 100;
@@ -55,28 +57,32 @@ namespace ViewsWPF.Views
 
             Controller.DenunciaController denunController = new Controller.DenunciaController();
 
-            
-            foreach(var denun in denunController.ListDenuncia())
+            /*
+            foreach (var denun in denunController.ListDenuncia())
             {
-                /*
+                
                 convertEndereco = denun.Endereco;
                 convertNumero = denun.Numero;
                 convertBairro = denun.Distrito;
                 convertCidade = denun.City;
-                */
+                
 
                 teste1 = Convert.ToInt16(denun.Idade);
                 teste2 = Convert.ToInt16(denun.CPF);
 
-                /*
-                enderecoCompleto = string.Concat(convertEndereco, ", ", convertNumero, ", ", convertBairro, ", ", convertCidade);
-                var local = locationService.GetLatLongFromAddress(enderecoCompleto);
-                var latitude = local.Latitude;
-                var longitude = local.Longitude;
-                localLatitudeLongitude.Add(new PointLatLng(latitude, longitude));
                 */
 
-                localLatitudeLongitude.Add(new PointLatLng(teste1, teste2));
+
+
+            /*
+            enderecoCompleto = string.Concat(convertEndereco, ", ", convertNumero, ", ", convertBairro, ", ", convertCidade);
+            var local = locationService.GetLatLongFromAddress(enderecoCompleto);
+            var latitude = local.Latitude;
+            var longitude = local.Longitude;
+            localLatitudeLongitude.Add(new PointLatLng(latitude, longitude));
+
+
+            localLatitudeLongitude.Add(new PointLatLng(teste1, teste2));
 
             }
 
@@ -87,14 +93,11 @@ namespace ViewsWPF.Views
             }
 
             gmMapa.Overlays.Add(markOverlay);
-            
-            
 
+            */
 
-
-            //Conversão de endereço em latitude e longitude
             /*
-           // var endereco = "R. Alferes Ângelo Sampaio, 2300, Bigorrilho, Curitiba";
+            //var endereco = "R. Alferes Ângelo Sampaio, 2300, Bigorrilho, Curitiba";
             // var endereco = "R. Salvador Ferrante, 2380, Boqueirão, Curitiba";
             //var endereco = "Rua Barão do Serro Azul, 316, Centro, Curitiba";
             var locationService = new GoogleLocationService();
@@ -104,37 +107,38 @@ namespace ViewsWPF.Views
             var lon = ponto.Longitude;
             */
 
-                /*
-                //Adicionando endereço a ctba
-                PointLatLng ctba = new PointLatLng(-25.501649, -49.250739);
-                //PointLatLng ctba = new PointLatLng(lat, lon);
+            //Adicionando endereço a ctba
+            PointLatLng ctba = new PointLatLng(-28, -48);
+            //PointLatLng ctba = new PointLatLng(lat, lon);
 
-                //Local e estilo da marcação
-                GMapMarker m1 = new GMarkerGoogle(ctba, GMarkerGoogleType.red_dot);
-                //Criando uma camada p/ o mapa
-                GMapOverlay markers = new GMapOverlay("markers");
-                //Adicionando o(s) endereços a essa camada
-                markers.Markers.Add(m1);
-                //Adicionando a camada ao mapa
-                gmMapa.Overlays.Add(markers);
-                */
+            //Local e estilo da marcação
+            GMapMarker m1 = new GMarkerGoogle(ctba, GMarkerGoogleType.red_dot);
+            //Criando uma camada p/ o mapa
+            GMapOverlay markers = new GMapOverlay("markers");
+            //Adicionando o(s) endereços a essa camada
+            markers.Markers.Add(m1);
+            //Adicionando a camada ao mapa
+            gmMapa.Overlays.Add(markers);
+            
 
-                /*
-                var markers = new GMapOverlay("markers");
-                List<PointLatLng> pointLatLngs = new List<PointLatLng>()
-                {
-                    new PointLatLng(18.5204, 73.8567),
-                    new PointLatLng(19.0760, 72.8777)
-                };
-                foreach (PointLatLng pt in pointLatLngs)
-                {
-                    var marker = new GMarkerGoogle(pt, GMarkerGoogleType.red_dot);
-                    markers.Markers.Add(marker); // Adding multiple markers to the single overlay "markers"
-                }
-                gmMapa.Overlays.Add(markers);
-                */
 
+            #region "Exmplo código Lista de PointLatLng"
+            /*
+            var markers = new GMapOverlay("markers");
+            List<PointLatLng> pointLatLngs = new List<PointLatLng>()
+            {
+                new PointLatLng(18.5204, 73.8567),
+                new PointLatLng(19.0760, 72.8777)
+            };
+            foreach (PointLatLng pt in pointLatLngs)
+            {
+                var marker = new GMarkerGoogle(pt, GMarkerGoogleType.red_dot);
+                markers.Markers.Add(marker); // Adding multiple markers to the single overlay "markers"
             }
+            gmMapa.Overlays.Add(markers);
+            */
+            #endregion
+        }
 
         private void btnCarregar_Click(object sender, EventArgs e)
         {

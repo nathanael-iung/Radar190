@@ -21,7 +21,7 @@ namespace ViewsWPF.Views
     public partial class Cadastro : Window
     {
         //variável que receberá a decisão do RadioButton experiência
-        private bool dec;
+        private bool? dec = null;
 
         public Cadastro()
         {
@@ -130,28 +130,29 @@ namespace ViewsWPF.Views
         {
             Usuario user = new Usuario();
 
-            //DtNasc recebe o valor de um TextBox invisível para que seja convertido
-            //Variável bool dec que recebe a decisão do rabio button
-            //senha é a string em que o passwordBox foi armazenado para possibilitar a conversão
-            //CidadeIdCidade Recebe a variável que será utilizada como FK da cidade dentro de Cadastro
-
-            //user.CidadeIdCidade = int.Parse(cbCadastroCidade.SelectedValue.ToString()); -- Teste de FK
-
             user.NomeCompleto = txtCadastroNome.Text;
-            user.DtNasc = Convert.ToDateTime(txtCadastroData.Text);
-            user.Experiencia = dec;
+            user.DtNasc = Convert.ToDateTime(txtCadastroData.Text); // txtCadastroData é uma TextBox invisível que recebe o valor do DatePicker para que haja a conversão
+            user.Experiencia = dec; //Variável bool dec que recebe a decisão do rabio button
             user.Cidade = cbCadastroCidade.SelectionBoxItem.ToString();
             user.Descricao = txtCadastroDescricao.Text;
             user.User = txtCadastroUsuario.Text;
             user.Senha = (txtCadastroSenha.Password.ToString());
-            
 
+            #region "Validação teste"
+            /*
             //Verificação - campos senha e Confirmação de Senha são iguais e se a Captcha está correta
             if (txtCadastroCaptcha.Text.Equals("8") && txtCadastroSenha.Password.ToString().Equals(txtCadastroConfirmarSenha.Password.ToString()))
             {
                 Controller.UsuarioController userController = new Controller.UsuarioController();
                 userController.Insert(user);
                 MessageBox.Show("Cadastrado com sucesso");
+            }
+            */
+            #endregion
+
+            if (string.IsNullOrWhiteSpace(txtCadastroNome.Text) || dpCadastroDataNascimento.SelectedDate == null || cbCadastroCidade.SelectionBoxItem.ToString().Equals("") || string.IsNullOrWhiteSpace(txtCadastroUsuario.Text) || string.IsNullOrWhiteSpace(txtCadastroSenha.Password))
+            {
+                MessageBox.Show("Campos obrigatórios não preenchidos. (marcados com *)");
             }
             else if (!txtCadastroSenha.Password.ToString().Equals(txtCadastroConfirmarSenha.Password.ToString()) && txtCadastroCaptcha.Text.Equals("8"))
             {
@@ -161,9 +162,15 @@ namespace ViewsWPF.Views
             {
                 MessageBox.Show("Captcha incorreta");
             }
-            else 
+            else if (!txtCadastroSenha.Password.ToString().Equals(txtCadastroConfirmarSenha.Password.ToString()) && !txtCadastroCaptcha.Text.Equals("8"))
             {
                 MessageBox.Show("Campo Confirmação de Senha difere do campo Senha e Captcha incorreta");
+            }
+            else
+            {
+                Controller.UsuarioController userController = new Controller.UsuarioController();
+                userController.Insert(user);
+                MessageBox.Show("Cadastrado com sucesso");
             }
         }
     }

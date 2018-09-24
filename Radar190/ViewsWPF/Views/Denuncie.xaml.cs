@@ -276,9 +276,17 @@ namespace ViewsWPF.Views
             denun.Descricao = txtDenuncieDetalhes.Text;
             denun.UsuarioIdUsuario = fkUsuario;
 
-            
-            denunController.Insert(denun);
-
+            if (string.IsNullOrWhiteSpace(txtDenuncieNome.Text) || (rbDenuncieTestemunha.IsChecked == false && rbDenuncieVitima.IsChecked == false) || string.IsNullOrWhiteSpace(txtDenuncieEndereco.Text) ||
+                string.IsNullOrWhiteSpace(txtDenuncieNumero.Text) || string.IsNullOrWhiteSpace(txtDenuncieCPF.Text) || cbDenuncieBairro.SelectionBoxItem.ToString().Equals("") || cbDenuncieCidade.SelectionBoxItem.ToString().Equals("") ||
+                dpDenuncieDataocorrido.SelectedDate == null || cbDenuncieTipoOcorrencia.SelectionBoxItem.ToString().Equals("") || string.IsNullOrWhiteSpace(txtDenuncieHorarioHoras.Text) || string.IsNullOrWhiteSpace(txtDenuncieHorarioMinutos.Text))
+            {
+                MessageBox.Show("Campos obrigatórios não preenchidos. (marcados com *)");
+            }
+            else
+            {
+                denunController.Insert(denun);
+                MessageBox.Show("Denúncia cadastrada com sucesso.");
+            }
         }
 
         private void wwDenuncie_Loaded(object sender, RoutedEventArgs e)
@@ -286,9 +294,5 @@ namespace ViewsWPF.Views
             //DenuncieNome.Content = cbDenuncieBairro.SelectedItem.ToString();
         }
 
-        private void cbDenuncieBairro_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            DenuncieNome.Content = cbDenuncieBairro.SelectionBoxItem;
-        }
     }
 }
