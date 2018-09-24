@@ -140,7 +140,7 @@ namespace ViewsWPF.Views
             user.NomeCompleto = txtCadastroNome.Text;
             user.DtNasc = Convert.ToDateTime(txtCadastroData.Text);
             user.Experiencia = dec;
-            user.Cidade = cbCadastroCidade.SelectedItem.ToString();
+            user.Cidade = cbCadastroCidade.SelectionBoxItem.ToString();
             user.Descricao = txtCadastroDescricao.Text;
             user.User = txtCadastroUsuario.Text;
             user.Senha = (txtCadastroSenha.Password.ToString());

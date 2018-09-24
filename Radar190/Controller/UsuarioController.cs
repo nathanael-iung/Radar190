@@ -34,7 +34,7 @@ namespace Controller
                       where usu.User == usuario
                       select usu;
 
-            //necessita verificação
+           
             var pas = from usu in contexto.UsuarioSet
                       where usu.Senha == senha
                       select usu;
