@@ -135,17 +135,17 @@ namespace ViewsWPF.Views
             //geo.GeoCode();
 
             var geocoder = new Geocoder("AIzaSyAY_PbVbpKm_5oqAkplr72yc - QJxMboXwQ");
-            //var locations = geocoder.Geocode("Rua Alferes Ângelo Sampaio, 2300, Bigorrilho, Curitba");
-            var locations = geocoder.Geocode("Hawks Road, Kingston, UK");
+            //new System.Collections.Generic.Mscorlib_CollectionDebugView<GoogleDirections.Location>(locations).Items[0].LatLng.Longitude
 
-            
+            var locations = geocoder.Geocode("Rua Alferes Ângelo Sampaio, 2300, Bigorrilho, Curitba");
+            //GoogleDirections.LatLng lat = geocoder.Geocode("R. Salvador Ferrante, 2380, Boqueirão");
+
+            var result = string.Join("-", locations);
            
-
-            label1.Text = locations.ToString();
+            label1.Text = result;
+            txtLatitude.Text = result.ToString();
             
-
-
-
+            
             #region "Exmplo código Lista de PointLatLng"
             /*
             var markers = new GMapOverlay("markers");
@@ -194,7 +194,6 @@ namespace ViewsWPF.Views
             GMapMarker marcacoes2 = new GMarkerGoogle(mark2, GMarkerGoogleType.red_dot);
             GMapMarker marcacoes3 = new GMarkerGoogle(mark3, GMarkerGoogleType.red_dot);
             GMapMarker marcacoes4 = new GMarkerGoogle(mark4, GMarkerGoogleType.red_dot);
-
 
             GMapOverlay markers = new GMapOverlay("markers");
 

@@ -52,7 +52,8 @@ namespace ViewsWPF
                 throw new Exception("Não há Key válida");
             }
 
-            var url = string.Format("http://maps.google.com/geo?q={0}+{1}+{2}+{3}&output=xml&oe=utf8&sensor=false&key={4}", endereco + ", ",numero, ", " + bairro + ", ", cidade, mapskey);
+            //var url = string.Format("http://maps.google.com/geo?q={0}+{1}+{2}+{3}&output=xml&oe=utf8&sensor=false&key={4}", endereco, ", ", numero, ", ", bairro, ", ", cidade, mapskey);
+            var url = string.Format("http://maps.google.com/geo?q={0}&output=xml&oe=utf8&sensor=true&key={1}", endereco, mapskey);
 
             var webClient = new WebClient();
 
@@ -116,7 +117,7 @@ namespace ViewsWPF
 
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception("Erro foi: " + ex.Message);
             }
