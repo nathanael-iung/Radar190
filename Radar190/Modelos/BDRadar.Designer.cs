@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\celeparjcp\Documents\cSharp\Radar190\Radar190\Modelos\BDRadar.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\natha\Documents\CSharp\Radar190\Radar190\Modelos\BDRadar.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

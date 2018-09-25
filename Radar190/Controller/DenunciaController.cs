@@ -24,12 +24,14 @@ namespace Controller
             {
                 return id = encontraID.First();
             }
-            else
+            else if (encontraID.ToList().Count == 0)
             {
                 return id = 0;
             }
-
-            // return id = encontraID.First();
+            else
+            {
+                return id = 9999;
+            }
 
         }
 

@@ -2,6 +2,7 @@
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
+using GoogleDirections;
 using GoogleMaps.LocationServices;
 using System;
 using System.Collections;
@@ -107,6 +108,7 @@ namespace ViewsWPF.Views
             var lon = ponto.Longitude;
             */
 
+            /*
             //Adicionando endereço a ctba
             PointLatLng ctba = new PointLatLng(-28, -48);
             //PointLatLng ctba = new PointLatLng(lat, lon);
@@ -119,7 +121,29 @@ namespace ViewsWPF.Views
             markers.Markers.Add(m1);
             //Adicionando a camada ao mapa
             gmMapa.Overlays.Add(markers);
+            */
+
+            //var geo = new ViewsWPF.VpGeoCoding();
+            /*
+            geo.endereco = "R. Alferes Ângelo Sampaio";
+            geo.numero = 2300;
+            geo.bairro = "Bigorrilho";
+            geo.cidade = "Curitiba";
+            */
+            //geo.endereco = "30 Frank Lloyd Wright Drive";
+
+            //geo.GeoCode();
+
+            var geocoder = new Geocoder("AIzaSyAY_PbVbpKm_5oqAkplr72yc - QJxMboXwQ");
+            //var locations = geocoder.Geocode("Rua Alferes Ângelo Sampaio, 2300, Bigorrilho, Curitba");
+            var locations = geocoder.Geocode("Hawks Road, Kingston, UK");
+
             
+           
+
+            label1.Text = locations.ToString();
+            
+
 
 
             #region "Exmplo código Lista de PointLatLng"

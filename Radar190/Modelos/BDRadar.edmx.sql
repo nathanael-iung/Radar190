@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/22/2018 20:50:22
+-- Date Created: 09/24/2018 23:09:28
 -- Generated from EDMX file: C:\Users\natha\Documents\CSharp\Radar190\Radar190\Modelos\BDRadar.edmx
 -- --------------------------------------------------
 
@@ -72,7 +72,7 @@ CREATE TABLE [dbo].[UsuarioSet] (
     [NomeCompleto] nvarchar(max)  NOT NULL,
     [DtNasc] datetime  NOT NULL,
     [Experiencia] bit  NULL,
-    [Descricao] nvarchar(max)  NOT NULL,
+    [Descricao] nvarchar(max)  NULL,
     [User] nvarchar(max)  NOT NULL,
     [Senha] nvarchar(max)  NOT NULL,
     [Cidade] nvarchar(max)  NOT NULL,

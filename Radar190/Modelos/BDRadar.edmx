@@ -46,7 +46,7 @@
     <Property Name="NomeCompleto" Type="nvarchar(max)" Nullable="false" />
     <Property Name="DtNasc" Type="datetime" Nullable="false" />
     <Property Name="Experiencia" Type="bit" Nullable="true" />
-    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="true" />
     <Property Name="User" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Senha" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Cidade" Type="nvarchar(max)" Nullable="false" />
