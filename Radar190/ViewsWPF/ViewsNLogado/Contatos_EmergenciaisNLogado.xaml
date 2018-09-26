@@ -1,0 +1,35 @@
+﻿<Window x:Name="wwContatosNLogado" x:Class="ViewsWPF.ViewsNLogado.Contatos_EmergenciaisNLogado"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ViewsWPF.ViewsNLogado"
+        mc:Ignorable="d"
+        Title="-------" Height="606" Width="850" Top="60" Left="250" Loaded="wwContatosNLogado_Loaded">
+    <Grid AllowDrop="True" Margin="0,0,0,-3">
+
+        <DockPanel HorizontalAlignment="Left" Height="569" LastChildFill="False" VerticalAlignment="Top" Width="162" Background="Black"/>
+        <DockPanel HorizontalAlignment="Left" Height="0" LastChildFill="False" Margin="129,0,0,0" VerticalAlignment="Top" Width="663" Background="White"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="56" Margin="31,10,0,0" VerticalAlignment="Top" Width="100" Source="Logo-fundo-preto.png"/>
+
+        <Button x:Name="btnContatosHomeNLogado" Content="Home" HorizontalAlignment="Left" Margin="0,80,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15" Click="btnContatosHomeNLogado_Click"/>
+        <Button x:Name="btnContatosCadastroNLogado" Content="Cadastre-se" HorizontalAlignment="Left" Margin="0,135,0,0" VerticalAlignment="Top" Width="162" Height="50" FontFamily="Century Gothic" FontSize="15" Background="Black" BorderBrush="Black" Foreground="White" Click="btnContatosCadastroNLogado_Click"/>
+        <Button x:Name="btnContatosDenuncieNLogado" Content="Denuncie" HorizontalAlignment="Left" Margin="0,190,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15" Click="btnContatosDenuncieNLogado_Click"/>
+        <Button x:Name="btnContatosContatosEmergenciaisNLogado" Content="Contatos Emergênciais" HorizontalAlignment="Left" Margin="0,245,0,0" VerticalAlignment="Top" Width="162" Height="50" FontFamily="Century Gothic" FontSize="13" Background="Black" BorderBrush="Black" Foreground="White" Click="btnContatosContatosEmergenciaisNLogado_Click"/>
+        <Button x:Name="btnContatosDicasNLogado" Content="Dicas de Segurança" HorizontalAlignment="Left" VerticalAlignment="Top" Width="162" Margin="0,300,0,0" Height="50" FontFamily="Century Gothic" FontSize="15" Background="Black" BorderBrush="Black" Foreground="White" Click="btnContatosDicasNLogado_Click"/>
+        <Button x:Name="btnContatosMapaNLogado" IsEnabled="False" Content="Mapa do Crime" HorizontalAlignment="Left" Margin="0,355,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
+        <Button x:Name="btnContatosEstatisticasNLogado" IsEnabled="False" Content="Estatísticas" HorizontalAlignment="Left" Margin="0,410,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
+        <Button x:Name="btnContatosChatNLogado" IsEnabled="False" Content="Chat" HorizontalAlignment="Left" Margin="0,465,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
+        <Button x:Name="btnContatosFaleConoscoNLogado" IsEnabled="False" Content="Fale Conosco" HorizontalAlignment="Left" Margin="0,520,0,0" VerticalAlignment="Top" Width="162" Height="41" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
+
+        <TextBox x:Name="txtCadastroTituloNLogado" HorizontalAlignment="Center" Height="37" Margin="382,29,196,0" TextWrapping="Wrap" Text="Contatos Emergênciais" Width="264" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
+        <DataGrid x:Name="dgContatosEmergenciaisLista" HorizontalAlignment="Left" Margin="190,80,0,0" VerticalAlignment="Top" Height="481" Width="627">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="dgContatosEmergenciaisNumero" Header="Número: " Binding="{Binding Numero}" Width="80"/>
+                <DataGridTextColumn x:Name="dgContatosEmergenciaisNome" Header="Nome: " Binding="{Binding Nome}" Width="175"/>
+                <DataGridTextColumn x:Name="dgContatosEmergenciaisDescricao" Header="Descrição: " Binding="{Binding Descricao}" Width="500"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

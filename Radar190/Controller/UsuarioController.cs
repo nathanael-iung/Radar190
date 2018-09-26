@@ -35,7 +35,6 @@ namespace Controller
             var log = from usu in contexto.UsuarioSet
                       where usu.User == usuario
                       select usu;
-
            
             var pas = from usu in contexto.UsuarioSet
                       where usu.Senha == senha

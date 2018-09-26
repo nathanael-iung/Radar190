@@ -1,0 +1,34 @@
+﻿<Window x:Class="ViewsWPF.ViewsNLogado.IndexNLogado"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ViewsWPF.ViewsNLogado"
+        mc:Ignorable="d"
+        Title="-------" Height="606" Width="850" Top="60" Left="250">
+    <Grid AllowDrop="True" Margin="0,0,0,-3">
+        
+        <DockPanel HorizontalAlignment="Left" Height="569" LastChildFill="False" VerticalAlignment="Top" Width="162" Background="Black"/>
+        <DockPanel HorizontalAlignment="Left" Height="0" LastChildFill="False" Margin="129,0,0,0" VerticalAlignment="Top" Width="663" Background="White"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="56" Margin="31,10,0,0" VerticalAlignment="Top" Width="100" Source="Logo-fundo-preto.png"/>
+        
+        <Button x:Name="btnHomeHomeNLogado" Content="Home" HorizontalAlignment="Left" Margin="0,80,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15" Click="btnHomeHomeNLogado_Click"/>
+        <Button x:Name="btnHomeCadastroNLogado" Content="Cadastre-se" HorizontalAlignment="Left" Margin="0,135,0,0" VerticalAlignment="Top" Width="162" Height="50" FontFamily="Century Gothic" FontSize="15" Background="Black" BorderBrush="Black" Foreground="White" Click="btnHomeCadastroNLogado_Click"/>
+        <Button x:Name="btnHomeDenuncieNLogado" Content="Denuncie" HorizontalAlignment="Left" Margin="0,190,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15" Click="btnHomeDenuncieNLogado_Click"/>
+        <Button x:Name="btnHomeContatosEmergenciaisNLogado" Content="Contatos Emergênciais" HorizontalAlignment="Left" Margin="0,245,0,0" VerticalAlignment="Top" Width="162" Height="50" FontFamily="Century Gothic" FontSize="13" Background="Black" BorderBrush="Black" Foreground="White" Click="btnHomeContatosEmergenciaisNLogado_Click"/>
+        <Button x:Name="btnHomeDicasNLogado" Content="Dicas de Segurança" HorizontalAlignment="Left" VerticalAlignment="Top" Width="162" Margin="0,300,0,0" Height="50" FontFamily="Century Gothic" FontSize="15" Background="Black" BorderBrush="Black" Foreground="White" Click="btnHomeDicasNLogado_Click"/>
+        <Button x:Name="btnHomeMapaNLogado" IsEnabled="False" Content="Mapa do Crime" HorizontalAlignment="Left" Margin="0,355,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
+        <Button x:Name="btnHomeEstatisticasNLogado" IsEnabled="False" Content="Estatísticas" HorizontalAlignment="Left" Margin="0,410,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
+        <Button x:Name="btnHomeChatNLogado" IsEnabled="False" Content="Chat" HorizontalAlignment="Left" Margin="0,465,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
+        <Button x:Name="btnHomeFaleConoscoNLogado" IsEnabled="False" Content="Fale Conosco" HorizontalAlignment="Left" Margin="0,520,0,0" VerticalAlignment="Top" Width="162" Height="41" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
+        
+        <TextBox x:Name="txtCadastroTituloNLogado" HorizontalAlignment="Center" Height="37" Margin="382,29,301,0" TextWrapping="Wrap" Text="Index" Width="159" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
+        
+        <Label x:Name="lblIndexVantagens1NLogado" Content="Cadastre-se e obtenha as seguintes vantagens: " HorizontalAlignment="Left" Margin="178,421,0,0" VerticalAlignment="Top" Width="363" FontFamily="Century Gothic" FontSize="15" IsEnabled="False"/>
+        <Label x:Name="lblIndexVantagens2NLogado" Content="• Acesso ao Mapa do Crime, contando com marcações e descrições de denúncias cadastradas" HorizontalAlignment="Left" Margin="178,449,0,0" VerticalAlignment="Top" Width="629" FontFamily="Century Gothic" FontSize="13" IsEnabled="False"/>
+        <Label x:Name="lblIndexVantagens3NLogado" Content="• Acesso a tela Estatísticas, com informações detalhadas sobre as denúncias" HorizontalAlignment="Left" Margin="178,480,0,0" VerticalAlignment="Top" Width="503" FontFamily="Century Gothic" FontSize="13" IsEnabled="False"/>
+        <Label x:Name="lblIndexVantagens4NLogado" Content="• Acesso a tela Chat, com interações com usuários sobre possíveis perigos no momento" HorizontalAlignment="Left" Margin="178,511,0,0" VerticalAlignment="Top" Width="568" FontFamily="Century Gothic" FontSize="13" IsEnabled="False"/>
+        <Label x:Name="lblIndexVantagens5NLogado" Content="• Acesso a tela Fale Conosco, permitindo entrar em contato conosco para apresentar o seu feedback" HorizontalAlignment="Left" Margin="178,542,0,0" VerticalAlignment="Top" Width="664" FontFamily="Century Gothic" FontSize="13" IsEnabled="False"/>
+
+    </Grid>
+</Window>

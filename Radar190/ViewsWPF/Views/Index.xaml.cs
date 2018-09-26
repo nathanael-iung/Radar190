@@ -111,16 +111,7 @@ namespace ViewsWPF.Views
 
         private void wwIndex_Loaded(object sender, RoutedEventArgs e)
         {
-            Login welcome = new Login();
 
-            btnIndexLogin.IsEnabled = false;
-
-            if(logado == false)
-            {
-                btnHomeMapa.IsEnabled = false;
-                btnHomeEstatisticas.IsEnabled = false;
-                btnHomeChat.IsEnabled = false;
-            }
         }
 
         private void btnIndexEntrar_Click(object sender, RoutedEventArgs e)
