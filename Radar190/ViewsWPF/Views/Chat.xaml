@@ -30,7 +30,12 @@
         <TextBox x:Name="txtChatMensagem" HorizontalAlignment="Left" Height="98" Margin="183,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="609" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto" />
         <Label x:Name="ChatMensagem" Content="Mensagem:  *" HorizontalAlignment="Left" Margin="183,107,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="205" IsEnabled="False"/>
 
-        <DataGrid x:Name="dgChatLista" HorizontalAlignment="Left" Height="261" Margin="183,300,0,0" VerticalAlignment="Top" Width="609"/>
+        <DataGrid x:Name="dgChatLista" HorizontalAlignment="Left" Height="261" Margin="183,300,0,0" VerticalAlignment="Top" Width="609" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="dgNome" Header="Nome: " Binding="{Binding Nome}" Width="200"/>
+                <DataGridTextColumn x:Name="dgMensagem" Header="Mensagem: " Binding="{Binding Mensagem}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
         <Button x:Name="btnChatEnviarMensagem" Content="ENVIAR MENSAGEM" HorizontalAlignment="Left" Margin="383,245,0,0" VerticalAlignment="Top" Width="175" Height="45" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FF26CB0C" Foreground="White" FontSize="16" FontWeight="Bold" Click="btnChatEnviarMensagem_Click" />
 

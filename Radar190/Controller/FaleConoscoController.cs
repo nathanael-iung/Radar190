@@ -18,8 +18,8 @@ namespace Controller
         public int RetornaID(string nome)
         {
             var encontraID = from feedbackNome in contexto.UsuarioSet
-                             where feedbackNome.NomeCompleto == nome
-                             select feedbackNome.IdUsuario;
+                              where feedbackNome.NomeCompleto == nome
+                              select feedbackNome.IdUsuario;
 
             if (encontraID.ToList().Count > 0)
             {

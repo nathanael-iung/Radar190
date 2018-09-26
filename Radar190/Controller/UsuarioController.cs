@@ -28,6 +28,8 @@ namespace Controller
 
         public string id;
 
+        private int total;
+
         public bool VerificaLogin(string usuario, string senha)
         {
             var log = from usu in contexto.UsuarioSet
@@ -59,19 +61,15 @@ namespace Controller
             }
         }
 
-        /*
-        public Usuario RetornaId(string usuario, string senha)
+        
+        public List<char> TotalBairros()
         {
-            
-            var verifica = "SELECT Usuario.IdUsuario FROM Usuario WHERE Usuario.User =" + usuario + " AND USUario.Senha =" + senha;
 
-            //contexto.UsuarioSet.SqlQuery("SELECT Usuario.IdUsuario FROM Usuario WHERE Usuario.User =" + usuario + " AND USUario.Senha =" + senha);
+            var verifica = "SELECT TOP 10 Distrito, COUNT(*) AS Total FROM DenunciaSet GROUP BY Distrito ORDER BY Total DESC";
 
-            //contexto.UsuarioSet.Find();
-
-            //return id = verifica;
+            return verifica.ToList();
         }
-        */
+        
 
         public void Insert(Usuario user)
         {

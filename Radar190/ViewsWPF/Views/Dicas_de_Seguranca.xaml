@@ -22,7 +22,11 @@
         <Button x:Name="btnDicasHome" Content="Home" HorizontalAlignment="Left" Margin="0,80,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15" Click="btnDicasHome_Click"/>
 
         <TextBox HorizontalAlignment="Center" Height="37" Margin="373,5,189,0" TextWrapping="Wrap" Text="Dicas de Segurança" Width="280" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
-        <DataGrid x:Name="dgDicasSegurancaLista" HorizontalAlignment="Left" Margin="189,75,0,0" VerticalAlignment="Top" Height="486" Width="626"/>
+        <DataGrid x:Name="dgDicasSegurancaLista" HorizontalAlignment="Left" Margin="189,75,0,0" VerticalAlignment="Top" Height="486" Width="643" AutoGenerateColumns="false" IsReadOnly="true">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="dgDicasDescricao" Header="Descrição" Binding="{Binding Descricao}" Width="643"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Window>

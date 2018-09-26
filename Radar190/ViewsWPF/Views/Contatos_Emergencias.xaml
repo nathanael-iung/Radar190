@@ -23,7 +23,13 @@
         <Image x:Name="image" HorizontalAlignment="Left" Height="56" Margin="31,10,0,0" VerticalAlignment="Top" Width="100" Source="Logo-fundo-preto.png"/>
 
         <TextBox HorizontalAlignment="Center" Height="37" Margin="350,5,170,0" TextWrapping="Wrap" Text="Contatos Emergênciais" Width="322" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
-        <DataGrid x:Name="dgContatosEmergenciaisLista" HorizontalAlignment="Left" Margin="190,80,0,0" VerticalAlignment="Top" Height="481" Width="627"/>
+        <DataGrid x:Name="dgContatosEmergenciaisLista" HorizontalAlignment="Left" Margin="190,80,0,0" VerticalAlignment="Top" Height="481" Width="627">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="dgContatosEmergenciaisNumero" Header="Número: " Binding="{Binding Numero}" Width="80"/>
+                <DataGridTextColumn x:Name="dgContatosEmergenciaisNome" Header="Nome: " Binding="{Binding Nome}" Width="175"/>
+                <DataGridTextColumn x:Name="dgContatosEmergenciaisDescricao" Header="Descrição: " Binding="{Binding Descricao}" Width="500"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Window>

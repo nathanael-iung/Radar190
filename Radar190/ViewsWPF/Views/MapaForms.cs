@@ -22,30 +22,24 @@ namespace ViewsWPF.Views
 {
     public partial class MapaForms : Form
     {
-
-        //GeoCoder geocoder = new GeoCoder("AIzaSyDkfKw-EFex5x_bUqPV1JfGiQAlssQCmUk");
-
-        //private List<PointLatLng> points;
+        #region "Variáveis para conversão de endereço em latitude e longitude - Nâo Funcional"
         private string convertEndereco, convertBairro, convertCidade;
         private int convertNumero;
         private string enderecoCompleto;
-
-        private int teste1, teste2;
-
+        #endregion
 
         public MapaForms()
         {
             InitializeComponent();
-            //points = new List<PointLatLng>();
         }
 
         private void MapaForms_Load(object sender, EventArgs e)
         {
-            /*
+            
             var locationService = new GoogleLocationService();
             List<PointLatLng> localLatitudeLongitude = new List<PointLatLng>();
             var markOverlay = new GMapOverlay("markOverlay");
-            */
+            
 
             //Utilizando Google Maps
             gmMapa.MapProvider = GMapProviders.GoogleMap;
@@ -71,23 +65,25 @@ namespace ViewsWPF.Views
                 teste1 = Convert.ToInt16(denun.Idade);
                 teste2 = Convert.ToInt16(denun.CPF);
 
-                */
+                enderecoCompleto = string.Concat(convertEndereco, ", ", convertNumero, ", ", convertBairro, ", ", convertCidade);
+                var local = locationService.GetLatLongFromAddress(enderecoCompleto);
+                var latitude = local.Latitude;
+                var longitude = local.Longitude;
+                localLatitudeLongitude.Add(new PointLatLng(latitude, longitude));
 
 
+                localLatitudeLongitude.Add(new PointLatLng(teste1, teste2));
+            
+             }
+            */
+            localLatitudeLongitude.Add(new PointLatLng(-28, -45));
+            localLatitudeLongitude.Add(new PointLatLng(-29, -44));
+            localLatitudeLongitude.Add(new PointLatLng(-27, -43));
+            localLatitudeLongitude.Add(new PointLatLng(-30, -45));
+            localLatitudeLongitude.Add(new PointLatLng(-29, -45));
+      
 
-            /*
-            enderecoCompleto = string.Concat(convertEndereco, ", ", convertNumero, ", ", convertBairro, ", ", convertCidade);
-            var local = locationService.GetLatLongFromAddress(enderecoCompleto);
-            var latitude = local.Latitude;
-            var longitude = local.Longitude;
-            localLatitudeLongitude.Add(new PointLatLng(latitude, longitude));
-
-
-            localLatitudeLongitude.Add(new PointLatLng(teste1, teste2));
-
-            }
-
-            foreach(PointLatLng ptLatLong in localLatitudeLongitude)
+            foreach (PointLatLng ptLatLong in localLatitudeLongitude)
             {
                 var marcacao = new GMarkerGoogle(ptLatLong, GMarkerGoogleType.red_dot);
                 markOverlay.Markers.Add(marcacao);
@@ -95,8 +91,21 @@ namespace ViewsWPF.Views
 
             gmMapa.Overlays.Add(markOverlay);
 
+
+            /*
+            var geocoder = new Geocoder("AIzaSyAY_PbVbpKm_5oqAkplr72yc - QJxMboXwQ");
+            //new System.Collections.Generic.Mscorlib_CollectionDebugView<GoogleDirections.Location>(locations).Items[0].LatLng.Longitude
+
+            var locations = geocoder.Geocode("Rua Ângelo Sampaio, 2300");
+         
+            var result = string.Join("-", locations);
+
+            label1.Text = result;
+            txtLatitude.Text = result.ToString();
             */
 
+
+            #region "GoogleLocationService"
             /*
             //var endereco = "R. Alferes Ângelo Sampaio, 2300, Bigorrilho, Curitiba";
             // var endereco = "R. Salvador Ferrante, 2380, Boqueirão, Curitiba";
@@ -106,9 +115,7 @@ namespace ViewsWPF.Views
             var ponto = locationService.GetLatLongFromAddress(endereco);
             var lat = ponto.Latitude;
             var lon = ponto.Longitude;
-            */
-
-            /*
+            
             //Adicionando endereço a ctba
             PointLatLng ctba = new PointLatLng(-28, -48);
             //PointLatLng ctba = new PointLatLng(lat, lon);
@@ -133,19 +140,8 @@ namespace ViewsWPF.Views
             //geo.endereco = "30 Frank Lloyd Wright Drive";
 
             //geo.GeoCode();
+            #endregion
 
-            var geocoder = new Geocoder("AIzaSyAY_PbVbpKm_5oqAkplr72yc - QJxMboXwQ");
-            //new System.Collections.Generic.Mscorlib_CollectionDebugView<GoogleDirections.Location>(locations).Items[0].LatLng.Longitude
-
-            var locations = geocoder.Geocode("Rua Alferes Ângelo Sampaio, 2300, Bigorrilho, Curitba");
-            //GoogleDirections.LatLng lat = geocoder.Geocode("R. Salvador Ferrante, 2380, Boqueirão");
-
-            var result = string.Join("-", locations);
-           
-            label1.Text = result;
-            txtLatitude.Text = result.ToString();
-            
-            
             #region "Exmplo código Lista de PointLatLng"
             /*
             var markers = new GMapOverlay("markers");
@@ -166,6 +162,7 @@ namespace ViewsWPF.Views
 
         private void btnCarregar_Click(object sender, EventArgs e)
         {
+            #region "Teste botão carregar"
             /*
             //Utilizando Google Maps
             gmMapa.MapProvider = GMapProviders.GoogleMap;
@@ -204,7 +201,7 @@ namespace ViewsWPF.Views
 
             gmMapa.Overlays.Add(markers);
             */
-
+            #endregion
         }
     }
 }

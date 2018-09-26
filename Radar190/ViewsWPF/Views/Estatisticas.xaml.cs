@@ -95,6 +95,13 @@ namespace ViewsWPF.Views
             Fale_Conosco EstatisticaparaFaleConosco = new Fale_Conosco();
             EstatisticaparaFaleConosco.Show();
         }
+
+        private void wwEstatisticas_Loaded(object sender, RoutedEventArgs e)
+        {
+            Controller.UsuarioController userController = new Controller.UsuarioController();
+
+            dgEstatitsticas.ItemsSource = userController.TotalBairros();
+        }
     }
     
 }

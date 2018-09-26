@@ -116,10 +116,13 @@ namespace ViewsWPF.Views
             {
                 MessageBox.Show("Todos os campos são obrigatórios");
             } 
-            else if(fkUsuario == 0)
+            else if(fkUsuario != 0)
             {
                 feedController.Insert(feedback);
                 MessageBox.Show("Agradecemos a sua colaboração");
+            } else 
+            {
+                MessageBox.Show("Não possui cadastro");
             }
         }
     }
