@@ -83,6 +83,8 @@
     <Property Name="OutrosEletronicos" Type="bit" Nullable="true" />
     <Property Name="Outros" Type="bit" Nullable="true" />
     <Property Name="UsuarioIdUsuario" Type="int" Nullable="true" />
+    <Property Name="Latitude" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Longitude" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="AdministradorSet">
     <Key>
@@ -288,6 +290,8 @@
           <Property Name="OutrosEletronicos" Type="Boolean" Nullable="true" />
           <Property Name="Outros" Type="Boolean" Nullable="true" />
           <Property Name="UsuarioIdUsuario" Type="Int32" Nullable="true" />
+          <Property Name="Latitude" Type="String" Nullable="true" />
+          <Property Name="Longitude" Type="String" Nullable="true" />
         </EntityType>
         <EntityType Name="Administrador">
           <Key>
@@ -456,6 +460,8 @@
           <ScalarProperty Name="OutrosEletronicos" ColumnName="OutrosEletronicos" />
           <ScalarProperty Name="Outros" ColumnName="Outros" />
           <ScalarProperty Name="UsuarioIdUsuario" ColumnName="UsuarioIdUsuario" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

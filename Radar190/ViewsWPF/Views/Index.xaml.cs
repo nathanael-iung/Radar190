@@ -48,7 +48,7 @@ namespace ViewsWPF.Views
             Index IndexFechar = new Index();
             this.Close();
 
-            MapaView IndexparaMapa = new MapaView();
+            MapaForms IndexparaMapa = new MapaForms();
             IndexparaMapa.Show();
         }
 
@@ -105,34 +105,9 @@ namespace ViewsWPF.Views
         }
         #endregion
 
-        private string nomeUsuario; // Armazena o login do usuário para que seja exibido no Label da index antes que o txtLogin seja limpo
-        public bool logado; // Verificação se o usuário está logado ou não
-        private int id;
-
         private void wwIndex_Loaded(object sender, RoutedEventArgs e)
         {
 
-        }
-
-        private void btnIndexEntrar_Click(object sender, RoutedEventArgs e)
-        {
-            Controller.UsuarioController userController = new Controller.UsuarioController();
-
-            if (userController.VerificaLogin(txtIndexUsuario.Text, pbIndexSenha.Password))
-            {
-                nomeUsuario = txtIndexUsuario.Text;
-                logado = true;
-                btnIndexEntrar.IsEnabled = false;
-                txtIndexUsuario.Text = "";
-                pbIndexSenha.Password = "";
-                MessageBox.Show("Login efetuado com sucesso");
-                lblIndexOla.Content = ("Olá, " + nomeUsuario);
-            }
-            else
-            {
-                MessageBox.Show("Usuário e/ou Senha inválido(a)");
-                logado = false;
-            }
         }
 
         private void btnIndexMapaForms_Click(object sender, RoutedEventArgs e)

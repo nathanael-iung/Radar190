@@ -40,14 +40,14 @@
         <Label x:Name="DenuncieEndereco" Content="Endereço:  *" HorizontalAlignment="Left" Margin="349,104,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="75" IsEnabled="False"/>
         <TextBox x:Name="txtDenuncieEndereco" HorizontalAlignment="Left" Height="23" Margin="349,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
-        <Label x:Name="DenuncieNumero" Content="N° aproximado:  *" HorizontalAlignment="Left" Margin="538,104,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="107" IsEnabled="False"/>
+        <Label x:Name="DenuncieNumero" Content="N° aprox.:  *" HorizontalAlignment="Left" Margin="538,104,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="81" IsEnabled="False"/>
         <TextBox x:Name="txtDenuncieNumero" HorizontalAlignment="Left" Height="23" Margin="545,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.233,0.522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="txtDenuncieNumero_PreviewTextInput" />
 
-        <Label x:Name="DenuncieLatitude" Content="Latitude: *" HorizontalAlignment="Left" Margin="650,104,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="74" IsEnabled="False"/>
-        <TextBox x:Name="txtDenuncieLatitude" HorizontalAlignment="Left" Height="23" Margin="650,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.233,0.522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="DenuncieLatitude" Content="Latitude: *" HorizontalAlignment="Left" Margin="624,104,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="74" IsEnabled="False"/>
+        <TextBox x:Name="txtDenuncieLatitude" HorizontalAlignment="Left" Height="23" Margin="624,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="87" RenderTransformOrigin="0.233,0.522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
-        <Label x:Name="DenuncieLongitude" Content="Longitude: *" HorizontalAlignment="Left" Margin="741,104,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="88" IsEnabled="False"/>
-        <TextBox x:Name="txtDenuncieLongitude" HorizontalAlignment="Left" Height="23" Margin="754,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.233,0.522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="DenuncieLongitude" Content="Longitude: *" HorizontalAlignment="Left" Margin="728,104,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="88" IsEnabled="False"/>
+        <TextBox x:Name="txtDenuncieLongitude" HorizontalAlignment="Left" Height="23" Margin="728,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="87" RenderTransformOrigin="0.233,0.522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
         <!--https://archive.codeplex.com/?p=avaloncontrolslib-->
         <Label x:Name="DenuncieCPF" Content="CPF: *" HorizontalAlignment="Left" Margin="188,167,0,0" VerticalAlignment="Top" FontFamily="Palatino Linotype" Width="46" IsEnabled="False"/>

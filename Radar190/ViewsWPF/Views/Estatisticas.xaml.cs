@@ -100,8 +100,7 @@ namespace ViewsWPF.Views
         {
             Controller.UsuarioController userController = new Controller.UsuarioController();
 
-            dgEstatitsticas.ItemsSource = userController.TotalBairros();
         }
     }
-    
+
 }

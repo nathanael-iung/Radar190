@@ -26,7 +26,7 @@ namespace ViewsWPF.Views
             InitializeComponent();
         }
 
-        public int fkUsuario;
+        public int? fkUsuario;
         //Variável que recebrá o tipo da denpuncia - testemunha e vitima
         private string tip;
         //Variável que receberá o resultado do radio button sexo
@@ -249,6 +249,11 @@ namespace ViewsWPF.Views
 
             fkUsuario = denunController.RetornaID(txtDenuncieNome.Text);
 
+            if(denunController.RetornaID(txtDenuncieNome.Text) == 0)
+            {
+                fkUsuario = null;
+            }
+            
             denun.NomeCompleto = txtDenuncieNome.Text;
             denun.Idade = short.Parse(txtDenuncieIdade.Text);
             denun.Tipo = tip; //Bool com o tipo de ocorrência
@@ -275,6 +280,8 @@ namespace ViewsWPF.Views
             denun.Outros = outrosBool;
             denun.Descricao = txtDenuncieDetalhes.Text;
             denun.UsuarioIdUsuario = fkUsuario;
+            denun.Latitude = txtDenuncieLatitude.Text;
+            denun.Longitude = txtDenuncieLongitude.Text;
 
             if (string.IsNullOrWhiteSpace(txtDenuncieNome.Text) || (rbDenuncieTestemunha.IsChecked == false && rbDenuncieVitima.IsChecked == false) || string.IsNullOrWhiteSpace(txtDenuncieEndereco.Text) ||
                 string.IsNullOrWhiteSpace(txtDenuncieNumero.Text) || string.IsNullOrWhiteSpace(txtDenuncieCPF.Text) || cbDenuncieBairro.SelectionBoxItem.ToString().Equals("") || cbDenuncieCidade.SelectionBoxItem.ToString().Equals("") ||

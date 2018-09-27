@@ -23,11 +23,11 @@
         <Button x:Name="btnContatosFaleConoscoNLogado" IsEnabled="False" Content="Fale Conosco" HorizontalAlignment="Left" Margin="0,520,0,0" VerticalAlignment="Top" Width="162" Height="41" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15"/>
 
         <TextBox x:Name="txtCadastroTituloNLogado" HorizontalAlignment="Center" Height="37" Margin="382,29,196,0" TextWrapping="Wrap" Text="Contatos Emergênciais" Width="264" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
-        <DataGrid x:Name="dgContatosEmergenciaisLista" HorizontalAlignment="Left" Margin="190,80,0,0" VerticalAlignment="Top" Height="481" Width="627">
+        <DataGrid x:Name="dgContatosEmergenciaisLista" HorizontalAlignment="Left" Margin="190,80,0,0" VerticalAlignment="Top" Height="481" Width="627" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="dgContatosEmergenciaisNumero" Header="Número: " Binding="{Binding Numero}" Width="80"/>
                 <DataGridTextColumn x:Name="dgContatosEmergenciaisNome" Header="Nome: " Binding="{Binding Nome}" Width="175"/>
-                <DataGridTextColumn x:Name="dgContatosEmergenciaisDescricao" Header="Descrição: " Binding="{Binding Descricao}" Width="500"/>
+                <DataGridTextColumn x:Name="dgContatosEmergenciaisDescricao" Header="Descrição: " Binding="{Binding Descricao}" Width="1800"/>
             </DataGrid.Columns>
         </DataGrid>
 

@@ -22,13 +22,24 @@
         <Button x:Name="btnEstatisticaCadastro" Content="Cadastre-se" HorizontalAlignment="Left" Margin="0,135,0,0" VerticalAlignment="Top" Width="162" Height="50" FontFamily="Century Gothic" FontSize="15" Background="Black" BorderBrush="Black" Foreground="White" Click="btnEstatisticaCadastro_Click"/>
         <Button x:Name="btnEstatisticaHome" Content="Home" HorizontalAlignment="Left" Margin="0,80,0,0" VerticalAlignment="Top" Width="162" Height="50" Background="Black" BorderBrush="Black" Foreground="White" FontFamily="Century Gothic" FontSize="15" Click="btnEstatisticaHome_Click"/>
 
-        <TextBox HorizontalAlignment="Center" Height="37" Margin="413,5,232,0" TextWrapping="Wrap" Text="Estatísticas" Width="197" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
-        <Button x:Name="btnEstatisticasBairrosViolentos" Content="Bairros Violentos" HorizontalAlignment="Left" Margin="179,80,0,0" VerticalAlignment="Top" Width="127"/>
-        <Button x:Name="btnEstatisticasSexo" Content="Sexo" HorizontalAlignment="Left" Margin="311,80,0,0" VerticalAlignment="Top" Width="126"/>
-        <Button x:Name="btnFaixaEtaria" Content="Faixa Etaria" HorizontalAlignment="Left" Margin="442,80,0,0" VerticalAlignment="Top" Width="128"/>
-        <Button x:Name="btnEstatisticasTipoDeOcorrencia" Content="Tipo de Ocorrência:" HorizontalAlignment="Left" Margin="575,80,0,0" VerticalAlignment="Top" Width="126"/>
-        <Button x:Name="btnEstatisticasPorcentagemBO" Content="Porcentagem B.o." HorizontalAlignment="Left" Margin="706,80,0,0" VerticalAlignment="Top" Width="126"/>
-        <DataGrid x:Name="dgEstatitsticas" HorizontalAlignment="Left" Height="429" Margin="179,120,0,0" VerticalAlignment="Top" Width="640"/>
+        <TextBox HorizontalAlignment="Center" Height="37" Margin="411,10,234,0" TextWrapping="Wrap" Text="Estatísticas" Width="197" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" FontSize="24" FontFamily="Palatino Linotype" Foreground="#FF7A7878" FontWeight="Bold" FontStyle="Italic" IsEnabled="False"/>
+        <Label x:Name="lblEstatisticasTitulo" Content="• Nossa base de dados conta aproximadamente 7k Usuários cadastrados e 5k Denúncias registradas " HorizontalAlignment="Left" Margin="177,74,0,0" VerticalAlignment="Top" Height="27" Width="665" FontFamily="Arial Black" FontSize="11"/>
+        <Label x:Name="lblEstatisticasTitulo_Copy" Content="• Os 5 bairros com maior quantidade de ocorrências registradas" HorizontalAlignment="Left" Margin="177,106,0,0" VerticalAlignment="Top" Height="27" Width="665" FontFamily="Arial Black" FontSize="11"/>
+        <Label x:Name="lblEstatisticasTitulo_Copy1" Content="► Centro" HorizontalAlignment="Left" Margin="188,133,0,0" VerticalAlignment="Top" Height="27" Width="68" FontFamily="Arial Black" FontSize="11"/>
+        <Label x:Name="lblEstatisticasTitulo_Copy2" Content="► Batel" HorizontalAlignment="Left" Margin="188,160,0,0" VerticalAlignment="Top" Height="27" Width="68" FontFamily="Arial Black" FontSize="11"/>
+        <Label x:Name="lblEstatisticasTitulo_Copy3" Content="► Boqueirão" HorizontalAlignment="Left" Margin="188,187,0,0" VerticalAlignment="Top" Height="27" Width="88" FontFamily="Arial Black" FontSize="11"/>
+        <Label x:Name="lblEstatisticasTitulo_Copy4" Content="► Bigorrilho" HorizontalAlignment="Left" Margin="188,214,0,0" VerticalAlignment="Top" Height="27" Width="88" FontFamily="Arial Black" FontSize="11"/>
+        <Label x:Name="lblEstatisticasTitulo_Copy5" Content="► Água Verde" HorizontalAlignment="Left" Margin="188,241,0,0" VerticalAlignment="Top" Height="27" Width="105" FontFamily="Arial Black" FontSize="11"/>
+        <Label x:Name="lblEstatisticasTitulo_Copy6" Content="• 46% das vítimas de ocorrências registradas são do sexo Feminino" HorizontalAlignment="Left" Margin="177,273,0,0" VerticalAlignment="Top" Height="27" Width="431" FontFamily="Arial Black" FontSize="11"/>
+        <Label x:Name="lblEstatisticasTitulo_Copy7" Content="• As 3 ocorrências com maior quantidade de registros" HorizontalAlignment="Left" Margin="177,305,0,0" VerticalAlignment="Top" Height="27" Width="341" FontFamily="Arial Black" FontSize="11"/>
+        <Label x:Name="lblEstatisticasTitulo_Copy8" Content="► Roubo Veicular" HorizontalAlignment="Left" Margin="188,337,0,0" VerticalAlignment="Top" Height="27" Width="120" FontFamily="Arial Black" FontSize="11"/>
+        <Label x:Name="lblEstatisticasTitulo_Copy9" Content="► Roubo" HorizontalAlignment="Left" Margin="188,364,0,0" VerticalAlignment="Top" Height="27" Width="68" FontFamily="Arial Black" FontSize="11"/>
+        <Label x:Name="lblEstatisticasTitulo_Copy10" Content="► Furto" HorizontalAlignment="Left" Margin="188,391,0,0" VerticalAlignment="Top" Height="27" Width="68" FontFamily="Arial Black" FontSize="11"/>
+        <Label x:Name="lblEstatisticasTitulo_Copy11" Content="• 48% das ocorrências registradas NÂO POSSUEM B.O." HorizontalAlignment="Left" Margin="177,423,0,0" VerticalAlignment="Top" Height="27" Width="341" FontFamily="Arial Black" FontSize="11"/>
+        <Label x:Name="lblEstatisticasTitulo_Copy12" Content="• Os 3 objetos com maior quantidade de roubos" HorizontalAlignment="Left" Margin="177,455,0,0" VerticalAlignment="Top" Height="27" Width="306" FontFamily="Arial Black" FontSize="11"/>
+        <Label x:Name="lblEstatisticasTitulo_Copy13" Content="► Dinheiro" HorizontalAlignment="Left" Margin="188,487,0,0" VerticalAlignment="Top" Height="27" Width="88" FontFamily="Arial Black" FontSize="11"/>
+        <Label x:Name="lblEstatisticasTitulo_Copy14" Content="► Carteira" HorizontalAlignment="Left" Margin="188,514,0,0" VerticalAlignment="Top" Height="27" Width="88" FontFamily="Arial Black" FontSize="11"/>
+        <Label x:Name="lblEstatisticasTitulo_Copy15" Content="► Documentos" HorizontalAlignment="Left" Margin="188,541,0,0" VerticalAlignment="Top" Height="27" Width="105" FontFamily="Arial Black" FontSize="11"/>
 
     </Grid>
 </Window>

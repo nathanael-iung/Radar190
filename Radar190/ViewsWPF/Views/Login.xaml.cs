@@ -22,10 +22,8 @@ namespace ViewsWPF.Views
         public Login()
         {
             InitializeComponent();
-        }
+        } 
 
-        public bool logado;
-        public string nomeUsuario;
         public string senhaUsuario;
 
         private void btnLoginEntrar_Click(object sender, RoutedEventArgs e)
@@ -36,16 +34,32 @@ namespace ViewsWPF.Views
             //Caso o resultado de VerificaLogin seja true, o 1° Message box é exibido indicando o sucesso do Login
             if (userController.VerificaLogin(txtLoginNome.Text, senhaUsuario))
             {
-                nomeUsuario = txtLoginNome.Text;
-                logado = true;
                 MessageBox.Show("Login efetuado com sucesso");
                 this.Close();
+                ind.Show();
             }
             else
             {
                 MessageBox.Show("Usuário e/ou Senha inválido(a)");
-                logado = false;
             }
+        }
+
+        private void btnLoginCadastre_Click(object sender, RoutedEventArgs e)
+        {
+            Login lgn = new Login();
+            this.Close();
+
+            ViewsNLogado.CadastroNLogado loginParaCadastroNLogado = new ViewsNLogado.CadastroNLogado();
+            loginParaCadastroNLogado.Show();
+        }
+
+        private void btnLoginAcessar_Click(object sender, RoutedEventArgs e)
+        {
+            Login lgn = new Login();
+            this.Close();
+
+            ViewsNLogado.IndexNLogado loginParaIndexNLogado = new ViewsNLogado.IndexNLogado();
+            loginParaIndexNLogado.Show();
         }
     }
 }

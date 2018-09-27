@@ -41,6 +41,8 @@ namespace Modelos
         public Nullable<bool> OutrosEletronicos { get; set; }
         public Nullable<bool> Outros { get; set; }
         public Nullable<int> UsuarioIdUsuario { get; set; }
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
     
         public virtual Usuario Usuario { get; set; }
     }

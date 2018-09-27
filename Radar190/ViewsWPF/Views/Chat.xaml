@@ -32,8 +32,8 @@
 
         <DataGrid x:Name="dgChatLista" HorizontalAlignment="Left" Height="261" Margin="183,300,0,0" VerticalAlignment="Top" Width="609" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="dgNome" Header="Nome: " Binding="{Binding Nome}" Width="200"/>
-                <DataGridTextColumn x:Name="dgMensagem" Header="Mensagem: " Binding="{Binding Mensagem}" Width="100"/>
+                <DataGridTextColumn x:Name="dgNome" Header="Nome: " Binding="{Binding Nome}" Width="100"/>
+                <DataGridTextColumn x:Name="dgMensagem" Header="Mensagem: " Binding="{Binding Mensagem}" Width="3500"/>
             </DataGrid.Columns>
         </DataGrid>
 

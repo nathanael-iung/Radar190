@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -23,75 +24,76 @@ namespace ViewsWPF.Views
     public partial class MapaForms : Form
     {
         #region "Variáveis para conversão de endereço em latitude e longitude - Nâo Funcional"
+        /*
         private string convertEndereco, convertBairro, convertCidade;
         private int convertNumero;
         private string enderecoCompleto;
+        */
         #endregion
+        double latitude, longitude; // Variáveis que receberão os valores do BD
 
         public MapaForms()
         {
             InitializeComponent();
         }
 
+        private void btnMapaIndex_Click(object sender, EventArgs e)
+        {
+            MapaForms mapaFechar = new MapaForms();
+            this.Close();
+
+            Index mapaParaIndex = new Index();
+            mapaParaIndex.Show();
+        }
+
         private void MapaForms_Load(object sender, EventArgs e)
         {
-            
-            var locationService = new GoogleLocationService();
-            List<PointLatLng> localLatitudeLongitude = new List<PointLatLng>();
-            var markOverlay = new GMapOverlay("markOverlay");
-            
+            List<PointLatLng> localLatitudeLongitude = new List<PointLatLng>(); // Criação de uma Lista  do tipo PointLatLng para o recebimento de coordenadas
+            var markOverlay = new GMapOverlay("markOverlay"); // Camada de marcações que será adicionada ao mapa
+            Controller.DenunciaController denunController = new Controller.DenunciaController();
 
-            //Utilizando Google Maps
-            gmMapa.MapProvider = GMapProviders.GoogleMap;
-            gmMapa.Position = new PointLatLng(-25.4284, -49.2733);
-            gmMapa.MinZoom = 5;
+            
+            gmMapa.MapProvider = GMapProviders.GoogleMap; //Utilizando Google Maps p/ fornecer o mapa
+            gmMapa.Position = new PointLatLng(-25.4284, -49.2733); // Posição inicial do mapa (Curitiba)
+            gmMapa.MinZoom = 5; 
             gmMapa.MaxZoom = 100;
             gmMapa.Zoom = 10;
 
-            gmMapa.DragButton = MouseButtons.Left;
+            gmMapa.DragButton = MouseButtons.Left; // Botão esquerdo para movimentar o mapa
 
-            Controller.DenunciaController denunController = new Controller.DenunciaController();
-
-            /*
             foreach (var denun in denunController.ListDenuncia())
             {
-                
+                #region "Armazenamento do endereço completo das denúncias para concatenação e conversão em latitude e longitude - Não Funcional"
+                /*
+                var locationService = new GoogleLocationService();
                 convertEndereco = denun.Endereco;
                 convertNumero = denun.Numero;
                 convertBairro = denun.Distrito;
                 convertCidade = denun.City;
-                
-
-                teste1 = Convert.ToInt16(denun.Idade);
-                teste2 = Convert.ToInt16(denun.CPF);
-
+                enderecoCompleto = string.Concat(convertEndereco, ", ", convertNumero, ", ", convertBairro, ", ", convertCidade);
                 enderecoCompleto = string.Concat(convertEndereco, ", ", convertNumero, ", ", convertBairro, ", ", convertCidade);
                 var local = locationService.GetLatLongFromAddress(enderecoCompleto);
                 var latitude = local.Latitude;
                 var longitude = local.Longitude;
                 localLatitudeLongitude.Add(new PointLatLng(latitude, longitude));
+                */
+                #endregion
 
-
-                localLatitudeLongitude.Add(new PointLatLng(teste1, teste2));
+                latitude = double.Parse(denun.Latitude, CultureInfo.InvariantCulture);
+                longitude = double.Parse(denun.Longitude, CultureInfo.InvariantCulture);
+                localLatitudeLongitude.Add(new PointLatLng(latitude, longitude)); // Adição das coordenadas de todas as denúncias do BD em uma lista
             
              }
-            */
-            localLatitudeLongitude.Add(new PointLatLng(-28, -45));
-            localLatitudeLongitude.Add(new PointLatLng(-29, -44));
-            localLatitudeLongitude.Add(new PointLatLng(-27, -43));
-            localLatitudeLongitude.Add(new PointLatLng(-30, -45));
-            localLatitudeLongitude.Add(new PointLatLng(-29, -45));
-      
 
             foreach (PointLatLng ptLatLong in localLatitudeLongitude)
             {
                 var marcacao = new GMarkerGoogle(ptLatLong, GMarkerGoogleType.red_dot);
-                markOverlay.Markers.Add(marcacao);
+                markOverlay.Markers.Add(marcacao); // Adição de todas as marcações a camada
             }
 
-            gmMapa.Overlays.Add(markOverlay);
+            gmMapa.Overlays.Add(markOverlay); // Adição da camada ao mapa
 
-
+            #region "Conversão de endereço em coordenas via Geocode - Não Funcional"
             /*
             var geocoder = new Geocoder("AIzaSyAY_PbVbpKm_5oqAkplr72yc - QJxMboXwQ");
             //new System.Collections.Generic.Mscorlib_CollectionDebugView<GoogleDirections.Location>(locations).Items[0].LatLng.Longitude
@@ -101,9 +103,18 @@ namespace ViewsWPF.Views
             var result = string.Join("-", locations);
 
             label1.Text = result;
-            txtLatitude.Text = result.ToString();
             */
+            #endregion
 
+            #region "Adição de coordenadas teste"
+            /*
+            localLatitudeLongitude.Add(new PointLatLng(-28, -45));
+            localLatitudeLongitude.Add(new PointLatLng(-29, -44));
+            localLatitudeLongitude.Add(new PointLatLng(-27, -43));
+            localLatitudeLongitude.Add(new PointLatLng(-30, -45));
+            localLatitudeLongitude.Add(new PointLatLng(-29, -45));
+            */
+            #endregion
 
             #region "GoogleLocationService"
             /*
@@ -155,50 +166,6 @@ namespace ViewsWPF.Views
                 var marker = new GMarkerGoogle(pt, GMarkerGoogleType.red_dot);
                 markers.Markers.Add(marker); // Adding multiple markers to the single overlay "markers"
             }
-            gmMapa.Overlays.Add(markers);
-            */
-            #endregion
-        }
-
-        private void btnCarregar_Click(object sender, EventArgs e)
-        {
-            #region "Teste botão carregar"
-            /*
-            //Utilizando Google Maps
-            gmMapa.MapProvider = GMapProviders.GoogleMap;
-            //double lat = Convert.ToDouble(txtLatitude.Text);
-            //double lon = Convert.ToDouble(txtLongitude.Text);
-            gmMapa.Position = new PointLatLng(-25.4284, -49.2733);
-            gmMapa.MinZoom = 5;
-            gmMapa.MaxZoom = 100;
-            gmMapa.Zoom = 10;
-
-            gmMapa.DragButton = MouseButtons.Left;
-
-            /*
-            IList points = new List<PointLatLng>();
-            points.Add(new PointLatLng(-25, -50));
-            points.Add(new PointLatLng(-26, -51));
-            points.Add(new PointLatLng(-27, -53));
-            */
-
-            /*
-            PointLatLng mark1 = new PointLatLng(-28, -45);
-            PointLatLng mark2 = new PointLatLng(-29, -44);
-            PointLatLng mark3 = new PointLatLng(-30, -46);
-            PointLatLng mark4 = new PointLatLng(-27, -43);
-            GMapMarker marcacoes1 = new GMarkerGoogle(mark1, GMarkerGoogleType.red_dot);
-            GMapMarker marcacoes2 = new GMarkerGoogle(mark2, GMarkerGoogleType.red_dot);
-            GMapMarker marcacoes3 = new GMarkerGoogle(mark3, GMarkerGoogleType.red_dot);
-            GMapMarker marcacoes4 = new GMarkerGoogle(mark4, GMarkerGoogleType.red_dot);
-
-            GMapOverlay markers = new GMapOverlay("markers");
-
-            markers.Markers.Add(marcacoes1);
-            markers.Markers.Add(marcacoes2);
-            markers.Markers.Add(marcacoes3);
-            markers.Markers.Add(marcacoes4);
-
             gmMapa.Overlays.Add(markers);
             */
             #endregion

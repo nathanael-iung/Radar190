@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.gmMapa = new GMap.NET.WindowsForms.GMapControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtLatitude = new System.Windows.Forms.TextBox();
+            this.btnMapaIndex = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // gmMapa
@@ -55,47 +54,39 @@
             this.gmMapa.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gmMapa.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gmMapa.ShowTileGridLines = false;
-            this.gmMapa.Size = new System.Drawing.Size(552, 397);
+            this.gmMapa.Size = new System.Drawing.Size(629, 397);
             this.gmMapa.TabIndex = 0;
             this.gmMapa.Zoom = 0D;
             // 
-            // label1
+            // btnMapaIndex
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(602, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Teste";
-            // 
-            // txtLatitude
-            // 
-            this.txtLatitude.Location = new System.Drawing.Point(605, 51);
-            this.txtLatitude.Multiline = true;
-            this.txtLatitude.Name = "txtLatitude";
-            this.txtLatitude.Size = new System.Drawing.Size(489, 20);
-            this.txtLatitude.TabIndex = 3;
+            this.btnMapaIndex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnMapaIndex.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMapaIndex.Location = new System.Drawing.Point(216, 415);
+            this.btnMapaIndex.Name = "btnMapaIndex";
+            this.btnMapaIndex.Size = new System.Drawing.Size(214, 36);
+            this.btnMapaIndex.TabIndex = 1;
+            this.btnMapaIndex.Text = "Voltar para Index";
+            this.btnMapaIndex.UseVisualStyleBackColor = false;
+            this.btnMapaIndex.Click += new System.EventHandler(this.btnMapaIndex_Click);
             // 
             // MapaForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1105, 421);
-            this.Controls.Add(this.txtLatitude);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(651, 461);
+            this.Controls.Add(this.btnMapaIndex);
             this.Controls.Add(this.gmMapa);
             this.Name = "MapaForms";
             this.Text = "MapaForms";
             this.Load += new System.EventHandler(this.MapaForms_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private GMap.NET.WindowsForms.GMapControl gmMapa;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtLatitude;
+        private System.Windows.Forms.Button btnMapaIndex;
     }
 }
