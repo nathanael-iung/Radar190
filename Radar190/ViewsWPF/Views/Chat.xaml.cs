@@ -20,13 +20,14 @@ namespace ViewsWPF.Views
     /// </summary>
     public partial class Chat : Window
     {
-        private int fkUsuario;
+        private int fkUsuario; // Variável que receberá a ID do usuário
 
         public Chat()
         {
             InitializeComponent();
         }
 
+        #region "Botões de transição de telas"
         private void btnChatHome_Click(object sender, RoutedEventArgs e)
         {
 
@@ -69,8 +70,8 @@ namespace ViewsWPF.Views
             Chat ChatFechar = new Chat();
             this.Close();
 
-            MapaView ChatparaMapa = new MapaView();
-            ChatparaMapa.Show();
+            MapaForms ChatparaMapaForms = new MapaForms();
+            ChatparaMapaForms.Show();
         }
 
         private void btnChatEstatisticas_Click(object sender, RoutedEventArgs e)
@@ -99,18 +100,21 @@ namespace ViewsWPF.Views
             Dicas_de_Seguranca ChatparaDicasDeSeguranca = new Dicas_de_Seguranca();
             ChatparaDicasDeSeguranca.Show();
         }
+        #endregion           
 
         private void btnChatEnviarMensagem_Click(object sender, RoutedEventArgs e)
         {
             Modelos.Chat cht = new Modelos.Chat();
             Controller.ChatController chtController = new Controller.ChatController();
 
+            // fkUsuario recebe o ID do usuário cadastrado
             fkUsuario = chtController.RetornaID(txtChatNome.Text);
 
             cht.Nome = txtChatNome.Text;
             cht.Mensagem = txtChatMensagem.Text;
             cht.UsuarioIdUsuario = fkUsuario;
 
+            // Validações dos campos para não permitir o cadastro de campos em branco. Caso fkUsuario == 0, não será permitido o envio até que esteja cadastrado
             if (string.IsNullOrWhiteSpace(txtChatNome.Text) || string.IsNullOrWhiteSpace(txtChatMensagem.Text))
             {
                 MessageBox.Show("Ambos os campos são obrigatórios.");
@@ -121,6 +125,7 @@ namespace ViewsWPF.Views
             }
             else
             {
+                // Ao cadastrar no BD, a DataGrid será atualizada
                 chtController.Insert(cht);
                 MessageBox.Show("Mensagem enviada");
                 dgChatLista.ItemsSource = chtController.ListChat();
@@ -131,6 +136,7 @@ namespace ViewsWPF.Views
         {
             Controller.ChatController chtController = new Controller.ChatController();
 
+            // Quando a tela carregar, a DataGrid sera preenchida com a tabela do BD
             dgChatLista.ItemsSource = chtController.ListChat();
 
         }

@@ -24,6 +24,7 @@ namespace ViewsWPF.Views
             InitializeComponent();
         }
 
+        #region "Botões de transição de telas"
         private void btnDicasHome_Click(object sender, RoutedEventArgs e)
         {
             Dicas_de_Seguranca DicasFechar = new Dicas_de_Seguranca();
@@ -56,8 +57,8 @@ namespace ViewsWPF.Views
             Dicas_de_Seguranca DicasFechar = new Dicas_de_Seguranca();
             this.Close();
 
-            MapaView DicasparaMapa = new MapaView();
-            DicasparaMapa.Show();
+            MapaForms DicasparaMapaForms = new MapaForms();
+            DicasparaMapaForms.Show();
         }
 
         private void btnDicasEstatisticas_Click(object sender, RoutedEventArgs e)
@@ -95,11 +96,13 @@ namespace ViewsWPF.Views
             Fale_Conosco DicasparaFaleConosco = new Fale_Conosco();
             DicasparaFaleConosco.Show();
         }
+        #endregion
 
         private void wwDicasDeSeguranca_Loaded(object sender, RoutedEventArgs e)
         {
             Controller.DicasSegurancaController dicasController = new Controller.DicasSegurancaController();
             
+            // Ao carregar a tela, a DataGrid será preenchida com a tabela do BD
             dgDicasSegurancaLista.ItemsSource = dicasController.ListDicasSeguranca();
         }
     }

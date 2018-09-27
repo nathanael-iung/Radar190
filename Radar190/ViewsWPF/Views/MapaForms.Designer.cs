@@ -62,6 +62,7 @@
             // 
             this.btnMapaIndex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnMapaIndex.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMapaIndex.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnMapaIndex.Location = new System.Drawing.Point(216, 415);
             this.btnMapaIndex.Name = "btnMapaIndex";
             this.btnMapaIndex.Size = new System.Drawing.Size(214, 36);

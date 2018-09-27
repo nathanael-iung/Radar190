@@ -12,35 +12,23 @@ namespace Controller
 {
     public class UsuarioController
     {
-        //List<Product> PesquisarPorCor(string cor)
-        //{
-        //    AdventureWorks2016Entities contexto = new AdventureWorks2016Entities();
-        //    var list = from prod in contexto.Product
-        //               where prod.Color == cor
-        //               select prod;
-
-        //    return list.ToList();
-        //}
-
         BDRadarContainer contexto = new BDRadarContainer();
 
-        public bool userOk, pasOk;
-
-        public string id;
-
-        private int total;
+        public bool userOk, pasOk; // Verificação do usuário cadastrado ou não
 
         public bool VerificaLogin(string usuario, string senha)
         {
+            // log recebe os usuários iguais a usuario
             var log = from usu in contexto.UsuarioSet
                       where usu.User == usuario
                       select usu;
            
+            // pas recebe os usuários iguais a senha
             var pas = from usu in contexto.UsuarioSet
                       where usu.Senha == senha
                       select usu;
 
-            //retorna true caso seja encontrada usuário e senha no BD e false caso o resultado do select seja 0
+            // caso log e pas retornam + do 0, significa que o usuário está correto
             if (log.ToList().Count > 0)
             {
                 userOk = true;
@@ -50,6 +38,7 @@ namespace Controller
                 pasOk = true;
             }
 
+            //caso usuário e senha sejam encontrados no BD, retorna true e false caso o resultado do select seja 0
             if (userOk && pasOk)
             {
                 return true;
@@ -60,7 +49,8 @@ namespace Controller
             }
         }
 
-        
+        #region "Lista teste de consulta ao BD - Não Funcional"
+        /*
         public List<char> TotalBairros()
         {
 
@@ -68,7 +58,9 @@ namespace Controller
 
             return verifica.ToList();
         }
-        
+        */
+        #endregion
+
 
         public void Insert(Usuario user)
         {

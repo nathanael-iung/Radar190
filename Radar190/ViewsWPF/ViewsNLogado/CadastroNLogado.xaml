@@ -70,6 +70,7 @@
 
         <Button x:Name="btnCadastroCadastrar" Content="CADASTRAR" HorizontalAlignment="Left" Margin="227,519,0,0" VerticalAlignment="Top" Width="175" Height="39" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="#FF26CB0C" Foreground="White" FontSize="16" FontWeight="Bold" Click="btnCadastroCadastrar_Click" Grid.Column="1"/>
         <TextBox x:Name="txtCadastroData" HorizontalAlignment="Left" Height="8" Margin="441,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" Visibility="Hidden" Grid.Column="1"/>
+        <Button x:Name="btnCadastroNLogadoRetornarLogin" Content="RETORNAR A LOGIN" HorizontalAlignment="Left" Margin="441,519,0,0" VerticalAlignment="Top" Width="175" Height="39" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" Background="Red" Foreground="White" FontSize="16" FontWeight="Bold" Grid.Column="1" Click="btnCadastroNLogadoRetornarLogin_Click"/>
 
     </Grid>
 </Window>

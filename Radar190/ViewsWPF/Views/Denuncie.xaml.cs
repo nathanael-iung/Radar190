@@ -26,14 +26,15 @@ namespace ViewsWPF.Views
             InitializeComponent();
         }
 
-        public int? fkUsuario;
-        //Variável que recebrá o tipo da denpuncia - testemunha e vitima
-        private string tip;
-        //Variável que receberá o resultado do radio button sexo
-        private string sx;
-        //Variável que receberá o resultado do radio button B.O.
-        private bool bo;
-        //Bool's que receberão o true ou false do CheckBox Objs Roubados
+        public int? fkUsuario; 
+
+        private string tip; // Variável que recebrá o tipo da denúncia - testemunha e vitima
+
+        private string sx; // Variável que receberá o resultado do radio button sexo
+
+        private bool bo; // Variável que receberá o resultado do radio button B.O.
+
+        // Bool's que receberão o true ou false do CheckBox Objs Roubados
         private bool dinheiroBool = false;
         private bool carteiraBool = false;
         private bool documentosBool = false;
@@ -77,8 +78,8 @@ namespace ViewsWPF.Views
             Denuncie DenuncieFechar = new Denuncie();
             this.Close();
 
-            MapaView DenuncieparaMapa = new MapaView();
-            DenuncieparaMapa.Show();
+            MapaForms DenuncieparaMapaForms = new MapaForms();
+            DenuncieparaMapaForms.Show();
         }
 
         private void btnDenuncieEstatisticas_Click(object sender, RoutedEventArgs e)
@@ -130,11 +131,13 @@ namespace ViewsWPF.Views
         #region "RadioButton Sexo"
         private void rbDenuncieFeminino_Checked(object sender, RoutedEventArgs e)
         {
+            // sx receberá "fem" caso feminino seja Checkado
             sx = "fem";
         }
 
         private void rbDenuncieMasculino_Checked(object sender, RoutedEventArgs e)
         {
+            // sx receberá "masc" caso masculino seja Checkado
             sx = "masc";
         }
         #endregion
@@ -142,16 +145,19 @@ namespace ViewsWPF.Views
         #region "Radiobutton Vítima ou Testemunha"
         private void rbDenuncieVitima_Checked(object sender, RoutedEventArgs e)
         {
+            // tip receberá "vítima" caso seja Checkado
             tip = "Vítima";
         }
 
         private void rbDenuncieTestemunha_Checked(object sender, RoutedEventArgs e)
         {
+            //tip receberá "testemunha" caso seja Checkado
             tip = "Testemunha";
         }
         #endregion
 
         #region "Apenas números aceitos nos TextBox indicados"
+        // Edição dos TextBox para aceitarem somente números
         private void txtDenuncieNumero_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
@@ -186,16 +192,19 @@ namespace ViewsWPF.Views
         #region "RadioButton B.O.
         private void rbDenuncieBOsim_Checked(object sender, RoutedEventArgs e)
         {
+            // bo receberá true caso B.O. Sim seja checkado
             bo = true;
         }
 
         private void rbDenuncieBOnao_Checked(object sender, RoutedEventArgs e)
         {
+            // bo receberá true caso B.O. Não seja checkado
             bo = false;
         }
         #endregion
 
         #region "Booleans CheckBox ObjsRoubados
+        // objs roubados Checkados serão marcados como true
         private void cbDenuncieDinheiro_Checked(object sender, RoutedEventArgs e)
         {
             dinheiroBool = true;
@@ -247,16 +256,18 @@ namespace ViewsWPF.Views
             Controller.DenunciaController denunController = new Controller.DenunciaController();
             Denuncia denun = new Denuncia();
 
+            // fkUsuario receberá o resultado de RetornaID. Caso o usuário esteja cadastrado irá retornar seus respectivo ID. Caso ñ esteja cadastrado irá retornar 0 e será cadastrado como null no BD
             fkUsuario = denunController.RetornaID(txtDenuncieNome.Text);
 
             if(denunController.RetornaID(txtDenuncieNome.Text) == 0)
             {
+                //Caso o retorno de ResultaID seja 0, fkUsuario será null
                 fkUsuario = null;
             }
             
             denun.NomeCompleto = txtDenuncieNome.Text;
             denun.Idade = short.Parse(txtDenuncieIdade.Text);
-            denun.Tipo = tip; //Bool com o tipo de ocorrência
+            denun.Tipo = tip; // Bool com o tipo de ocorrência
             denun.Sexo = sx;
             denun.Endereco = txtDenuncieEndereco.Text;
             denun.Numero = short.Parse(txtDenuncieNumero.Text);
@@ -283,6 +294,7 @@ namespace ViewsWPF.Views
             denun.Latitude = txtDenuncieLatitude.Text;
             denun.Longitude = txtDenuncieLongitude.Text;
 
+            // Validações que impedem o cadastro de campos em branco
             if (string.IsNullOrWhiteSpace(txtDenuncieNome.Text) || (rbDenuncieTestemunha.IsChecked == false && rbDenuncieVitima.IsChecked == false) || string.IsNullOrWhiteSpace(txtDenuncieEndereco.Text) ||
                 string.IsNullOrWhiteSpace(txtDenuncieNumero.Text) || string.IsNullOrWhiteSpace(txtDenuncieCPF.Text) || cbDenuncieBairro.SelectionBoxItem.ToString().Equals("") || cbDenuncieCidade.SelectionBoxItem.ToString().Equals("") ||
                 dpDenuncieDataocorrido.SelectedDate == null || cbDenuncieTipoOcorrencia.SelectionBoxItem.ToString().Equals("") || string.IsNullOrWhiteSpace(txtDenuncieHorarioHoras.Text) || string.IsNullOrWhiteSpace(txtDenuncieHorarioMinutos.Text))
@@ -298,7 +310,7 @@ namespace ViewsWPF.Views
 
         private void wwDenuncie_Loaded(object sender, RoutedEventArgs e)
         {
-            //DenuncieNome.Content = cbDenuncieBairro.SelectedItem.ToString();
+           
         }
 
     }

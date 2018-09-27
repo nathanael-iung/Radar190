@@ -28,14 +28,7 @@ namespace ViewsWPF.Views
             InitializeComponent();
         }
 
-        private void Cadastre_se_Click(object sender, RoutedEventArgs e)
-        {
-            Cadastro Cadastro = new Cadastro();
-            Cadastro.Show();
-            Cadastro.Close();
-        }
-
-
+        #region "Botões de transição de telas"
         private void btnCadastroHome_Click(object sender, RoutedEventArgs e)
         {
             Cadastro CadastroFechar = new Cadastro();
@@ -59,8 +52,8 @@ namespace ViewsWPF.Views
             Cadastro CadastroFechar = new Cadastro();
             this.Close();
 
-            MapaView CadastroparaMapaView = new MapaView();
-            CadastroparaMapaView.Show();
+            MapaForms CadastroparaMapaForms = new MapaForms();
+            CadastroparaMapaForms.Show();
         }
 
         private void btnCadastroEstatisticas_Click(object sender, RoutedEventArgs e)
@@ -107,6 +100,7 @@ namespace ViewsWPF.Views
             Fale_Conosco CadastroparaFaleConosco = new Fale_Conosco();
             CadastroparaFaleConosco.Show();
         }
+        #endregion
 
         private void dpCadastroDataNascimento_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -150,6 +144,7 @@ namespace ViewsWPF.Views
             */
             #endregion
 
+            // Validação para não permitir o cadastro de campos em branco
             if (string.IsNullOrWhiteSpace(txtCadastroNome.Text) || dpCadastroDataNascimento.SelectedDate == null || cbCadastroCidade.SelectionBoxItem.ToString().Equals("") || string.IsNullOrWhiteSpace(txtCadastroUsuario.Text) || string.IsNullOrWhiteSpace(txtCadastroSenha.Password))
             {
                 MessageBox.Show("Campos obrigatórios não preenchidos. (marcados com *)");

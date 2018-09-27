@@ -26,13 +26,14 @@ namespace ViewsWPF.ViewsNLogado
             InitializeComponent();
         }
 
-        public int fkUsuario;
-        //Variável que recebrá o tipo da denpuncia - testemunha e vitima
-        private string tip;
-        //Variável que receberá o resultado do radio button sexo
-        private string sx;
-        //Variável que receberá o resultado do radio button B.O.
-        private bool bo;
+        public int? fkUsuario; // Recebrá o ID do usuário cadastrado
+        
+        private string tip; // Variável que recebrá o tipo da denpuncia - testemunha e vitima
+        
+        private string sx; // Variável que receberá o resultado do radio button sexo
+        
+        private bool bo; // Variável que receberá o resultado do radio button B.O.
+
         //Bool's que receberão o true ou false do CheckBox Objs Roubados
         private bool dinheiroBool = false;
         private bool carteiraBool = false;
@@ -44,6 +45,7 @@ namespace ViewsWPF.ViewsNLogado
         private bool veiculoBool = false;
         private bool outrosBool = false;
 
+        #region "Botões de transição de telas"
         private void btnDenuncieHomeNLogado_Click(object sender, RoutedEventArgs e)
         {
             DenuncieNLogado denuncieNLogadoFechar = new DenuncieNLogado();
@@ -87,8 +89,10 @@ namespace ViewsWPF.ViewsNLogado
             Dicas_de_SegurancaNLogado denuncieParaDicasNLogado = new Dicas_de_SegurancaNLogado();
             denuncieParaDicasNLogado.Show();
         }
+        #endregion
 
         #region "RadioButton Sexo"
+        // sx recebe o valor que foi Checkado
         private void rbDenuncieFeminino_Checked(object sender, RoutedEventArgs e)
         {
             sx = "fem";
@@ -101,6 +105,7 @@ namespace ViewsWPF.ViewsNLogado
         #endregion
 
         #region "Radiobutton Vítima ou Testemunha"
+        // tip recebe o valor que foi Checkado
         private void rbDenuncieVitima_Checked(object sender, RoutedEventArgs e)
         {
             tip = "Vítima";
@@ -145,6 +150,7 @@ namespace ViewsWPF.ViewsNLogado
         #endregion
 
         #region "RadioButton B.O.
+        // bo recebe o valor que for Checkado
         private void rbDenuncieBOsim_Checked(object sender, RoutedEventArgs e)
         {
             bo = true;
@@ -157,6 +163,7 @@ namespace ViewsWPF.ViewsNLogado
         #endregion
 
         #region "Booleans CheckBox ObjsRoubados
+        // Bool's que forem marcado receberão true
         private void cbDenuncieDinheiro_Checked(object sender, RoutedEventArgs e)
         {
             dinheiroBool = true;
@@ -209,7 +216,14 @@ namespace ViewsWPF.ViewsNLogado
             Controller.DenunciaController denunController = new Controller.DenunciaController();
             Denuncia denun = new Denuncia();
 
+            // fkUsuario receberá o Id do usuário cadastrado
             fkUsuario = denunController.RetornaID(txtDenuncieNome.Text);
+
+            if (denunController.RetornaID(txtDenuncieNome.Text) == 0)
+            {
+                //Caso o retorno de ResultaID seja 0, fkUsuario será null
+                fkUsuario = null;
+            }
 
             denun.NomeCompleto = txtDenuncieNome.Text;
             denun.Idade = short.Parse(txtDenuncieIdade.Text);
@@ -238,6 +252,7 @@ namespace ViewsWPF.ViewsNLogado
             denun.Descricao = txtDenuncieDetalhes.Text;
             denun.UsuarioIdUsuario = fkUsuario;
 
+            // Validações para não permitir o cadastro de campos em branco
             if (string.IsNullOrWhiteSpace(txtDenuncieNome.Text) || (rbDenuncieTestemunha.IsChecked == false && rbDenuncieVitima.IsChecked == false) || string.IsNullOrWhiteSpace(txtDenuncieEndereco.Text) ||
                 string.IsNullOrWhiteSpace(txtDenuncieNumero.Text) || string.IsNullOrWhiteSpace(txtDenuncieCPF.Text) || cbDenuncieBairro.SelectionBoxItem.ToString().Equals("") || cbDenuncieCidade.SelectionBoxItem.ToString().Equals("") ||
                 dpDenuncieDataocorrido.SelectedDate == null || cbDenuncieTipoOcorrencia.SelectionBoxItem.ToString().Equals("") || string.IsNullOrWhiteSpace(txtDenuncieHorarioHoras.Text) || string.IsNullOrWhiteSpace(txtDenuncieHorarioMinutos.Text))

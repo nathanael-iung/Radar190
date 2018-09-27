@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ViewsWPF.Views;
 
 namespace ViewsWPF.ViewsNLogado
 {
@@ -28,6 +29,7 @@ namespace ViewsWPF.ViewsNLogado
         //variável que receberá a decisão do RadioButton experiência
         private bool? dec = null;
 
+        #region "Botões de transição de telas"
         private void btnCadastroHomeNLogado_Click(object sender, RoutedEventArgs e)
         {
             CadastroNLogado cadastroNLogadoFechar = new CadastroNLogado();
@@ -72,12 +74,25 @@ namespace ViewsWPF.ViewsNLogado
             cadastroParaDicasNLogado.Show();
         }
 
+        private void btnCadastroNLogadoRetornarLogin_Click(object sender, RoutedEventArgs e)
+        {
+            CadastroNLogado cadastroNLogadoFechar = new CadastroNLogado();
+            this.Close();
+
+            Login cadastroNLogadoParaLogin = new Login();
+            cadastroNLogadoParaLogin.Show();
+        }
+        #endregion
+
+        #region "Valor do DatePicker para um textBox invisível"
         private void dpCadastroDataNascimento_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             //Armazenamento da data em um TextBox invisível para que haja a conversão para DateTime ao pressionar o botão
             txtCadastroData.Text = dpCadastroDataNascimento.ToString();
         }
+        #endregion
 
+        #region "Valor Checkado de Experiência"
         private void rbCadastroExperienciaSim_Checked(object sender, RoutedEventArgs e)
         {
             //dec recebe true caso Sim seja Checkado
@@ -89,6 +104,7 @@ namespace ViewsWPF.ViewsNLogado
             //dec rece false caso Não seja Checkado
             dec = false;
         }
+        #endregion
 
         private void btnCadastroCadastrar_Click(object sender, RoutedEventArgs e)
         {
@@ -114,6 +130,7 @@ namespace ViewsWPF.ViewsNLogado
             */
             #endregion
 
+            // Validação para evitar o cadastro de campos em branco. validação da repetição de senha e resposta da captcha
             if (string.IsNullOrWhiteSpace(txtCadastroNome.Text) || dpCadastroDataNascimento.SelectedDate == null || cbCadastroCidade.SelectionBoxItem.ToString().Equals("") || string.IsNullOrWhiteSpace(txtCadastroUsuario.Text) || string.IsNullOrWhiteSpace(txtCadastroSenha.Password))
             {
                 MessageBox.Show("Campos obrigatórios não preenchidos. (marcados com *)");

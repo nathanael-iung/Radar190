@@ -79,7 +79,7 @@ namespace ViewsWPF.Views
                 */
                 #endregion
 
-                latitude = double.Parse(denun.Latitude, CultureInfo.InvariantCulture);
+                latitude = double.Parse(denun.Latitude, CultureInfo.InvariantCulture); // recebimento do valor do BD de latitude e longitude e conversão de string para double
                 longitude = double.Parse(denun.Longitude, CultureInfo.InvariantCulture);
                 localLatitudeLongitude.Add(new PointLatLng(latitude, longitude)); // Adição das coordenadas de todas as denúncias do BD em uma lista
             

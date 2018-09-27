@@ -23,7 +23,8 @@ namespace ViewsWPF.Views
         {
             InitializeComponent();
         }
-       
+
+        #region "Botões de transição de telas"
         private void btnContatosHome_Click(object sender, RoutedEventArgs e)
         {
             Contatos_Emergencias ContatosEmergenciaisFechar = new Contatos_Emergencias();
@@ -56,8 +57,8 @@ namespace ViewsWPF.Views
             Contatos_Emergencias ContatosEmergenciaisFechar = new Contatos_Emergencias();
             this.Close();
 
-            MapaView ContatosEmergenciasparaMapa = new MapaView();
-            ContatosEmergenciasparaMapa.Show();
+            MapaForms ContatosEmergenciasparaMapaForms = new MapaForms();
+            ContatosEmergenciasparaMapaForms.Show();
         }
 
         private void btnContatosEstatisticas_Click(object sender, RoutedEventArgs e)
@@ -83,8 +84,8 @@ namespace ViewsWPF.Views
             Contatos_Emergencias ContatosEmergenciaisFechar = new Contatos_Emergencias();
             this.Close();
 
-            Contatos_Emergencias ContatosEmergenciasparaContatosEmergencias = new Contatos_Emergencias();
-            ContatosEmergenciasparaContatosEmergencias.Show();
+            Dicas_de_Seguranca ContatosEmergenciasparaDicas = new Dicas_de_Seguranca();
+            ContatosEmergenciasparaDicas.Show();
         }
 
         private void btnContatosFaleConosco_Click(object sender, RoutedEventArgs e)
@@ -95,11 +96,13 @@ namespace ViewsWPF.Views
             Fale_Conosco ContatosEmergenciasparaFaleConosco = new Fale_Conosco();
             ContatosEmergenciasparaFaleConosco.Show();
         }
+        #endregion
 
         private void wwContatosEmergenciais_Loaded(object sender, RoutedEventArgs e)
         {
             Controller.ContatosEmergenciaisController contatosController = new Controller.ContatosEmergenciaisController();
 
+            // Quando a tela carregar, a DataGrid será preenchida com os dados do BD
             dgContatosEmergenciaisLista.ItemsSource = contatosController.ListContatosEmergenciais();
         }
     }

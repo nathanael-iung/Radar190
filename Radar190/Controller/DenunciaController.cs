@@ -12,7 +12,8 @@ namespace Controller
     {
 
         BDRadarContainer contexto = new BDRadarContainer();
-        public int id;
+
+        public int id; // retornará o ID do usuário correspondente
 
         public int RetornaID(string nome)
         {
@@ -20,12 +21,13 @@ namespace Controller
                              where userNome.NomeCompleto == nome
                              select userNome.IdUsuario;
 
+            // Caso encontraID devolva mais de 0, retorna o ID do usuário
             if (encontraID.ToList().Count > 0)
             {
                 return id = encontraID.First();
             }
             else
-            {
+            { 
                 return id = 0;
             }
 

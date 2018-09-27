@@ -24,6 +24,7 @@ namespace ViewsWPF.ViewsNLogado
             InitializeComponent();
         }
 
+        #region "Botões de transição de telas"
         private void btnHomeHomeNLogado_Click(object sender, RoutedEventArgs e)
         {
             Dicas_de_SegurancaNLogado dicasNLogadoFechar = new Dicas_de_SegurancaNLogado();
@@ -67,11 +68,13 @@ namespace ViewsWPF.ViewsNLogado
 
             dicasNLogadoFechar.Show();
         }
+        #endregion
 
         private void wwDicasSeguracaNLogado_Loaded(object sender, RoutedEventArgs e)
         {
             Controller.DicasSegurancaController dicasController = new Controller.DicasSegurancaController();
 
+            // Ao carregar a tela, o DataGrid receberá o conteúdo da tabela do BD
             dgDicasSegurancaLista.ItemsSource = dicasController.ListDicasSeguranca();
         }
     }

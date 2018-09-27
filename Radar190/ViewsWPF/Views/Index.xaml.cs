@@ -109,13 +109,5 @@ namespace ViewsWPF.Views
         {
 
         }
-
-        private void btnIndexMapaForms_Click(object sender, RoutedEventArgs e)
-        {
-            MapaForms mapa = new MapaForms();
-            mapa.Show();
-        }
-
-        // Construir queries de estatísticas
     }
 }

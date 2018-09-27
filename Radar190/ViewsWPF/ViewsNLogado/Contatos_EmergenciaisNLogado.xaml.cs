@@ -24,6 +24,7 @@ namespace ViewsWPF.ViewsNLogado
             InitializeComponent();
         }
 
+        #region "Botões de transição de telas"
         private void btnContatosHomeNLogado_Click(object sender, RoutedEventArgs e)
         {
             Contatos_EmergenciaisNLogado contatosNLogadoFechar = new Contatos_EmergenciaisNLogado();
@@ -67,11 +68,13 @@ namespace ViewsWPF.ViewsNLogado
             Dicas_de_SegurancaNLogado contatosParaDicasNLogado = new Dicas_de_SegurancaNLogado();
             contatosParaDicasNLogado.Show();
         }
+        #endregion
 
         private void wwContatosNLogado_Loaded(object sender, RoutedEventArgs e)
         {
             Controller.ContatosEmergenciaisController contatosController = new Controller.ContatosEmergenciaisController();
 
+            // ao carregar a tela, o DataGrid receberá as informções do BD
             dgContatosEmergenciaisLista.ItemsSource = contatosController.ListContatosEmergenciais();
         }
     }

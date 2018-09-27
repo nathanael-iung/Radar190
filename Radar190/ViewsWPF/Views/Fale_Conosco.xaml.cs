@@ -27,6 +27,7 @@ namespace ViewsWPF.Views
             InitializeComponent();
         }
 
+        #region "Botões de transição de telas"
         private void btnFaleConoscoHome_Click(object sender, RoutedEventArgs e)
         {
             Fale_Conosco FaleConoscoFechar = new Fale_Conosco();
@@ -59,8 +60,8 @@ namespace ViewsWPF.Views
             Fale_Conosco FaleConoscoFechar = new Fale_Conosco();
             this.Close();
 
-            MapaView FaleConoscoparaMapa = new MapaView();
-            FaleConoscoparaMapa.Show();
+            MapaForms FaleConoscoparaMapaForms = new MapaForms();
+            FaleConoscoparaMapaForms.Show();
         }
 
         private void btnFaleConoscoEstatisticas_Click(object sender, RoutedEventArgs e)
@@ -98,20 +99,23 @@ namespace ViewsWPF.Views
             Dicas_de_Seguranca FaleConoscoparaDicas = new Dicas_de_Seguranca();
             FaleConoscoparaDicas.Show();
         }
+        #endregion
 
         private void btnFaleConoscoEnviarMensagem_Click(object sender, RoutedEventArgs e)
         {
             FaleConosco feedback = new FaleConosco();
             Controller.FaleConoscoController feedController = new Controller.FaleConoscoController();
 
+            // fkUsuario receberá  a ID do usuário cadastrado. Caso fkUsuario == 0, o mesmo não possui cadastro
             fkUsuario = feedController.RetornaID(txtFaleConoscoNome.Text);
 
             feedback.Nome = txtFaleConoscoNome.Text;
             feedback.Email = txtFaleConoscoEmail.Text;
             feedback.Assunto = txtFaleConoscoAssunto.Text;
             feedback.Mensagem = txtFaleConoscoMensagem.Text;
-            feedback.UsuarioIdUsuario = 3;
+            feedback.UsuarioIdUsuario = fkUsuario;
 
+            // Validação de campos em branco e permite apenas usuário cadastrados enviarem o feedback
             if (string.IsNullOrWhiteSpace(txtFaleConoscoNome.Text) || string.IsNullOrWhiteSpace(txtFaleConoscoEmail.Text) || string.IsNullOrWhiteSpace(txtFaleConoscoAssunto.Text) || string.IsNullOrWhiteSpace(txtFaleConoscoMensagem.Text))
             {
                 MessageBox.Show("Todos os campos são obrigatórios");

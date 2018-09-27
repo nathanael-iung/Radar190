@@ -24,6 +24,7 @@ namespace ViewsWPF.Views
             InitializeComponent();
         }
 
+        #region "Botões de transição de tela"
         private void btnEstatisticaHome_Click(object sender, RoutedEventArgs e)
         {
             Estatisticas EstatisticasFechar = new Estatisticas();
@@ -56,8 +57,8 @@ namespace ViewsWPF.Views
             Estatisticas EstatisticasFechar = new Estatisticas();
             this.Close();
 
-            MapaView EstatisticaparaMapa = new MapaView();
-            EstatisticaparaMapa.Show();
+            MapaForms EstatisticaparaMapaForms = new MapaForms();
+            EstatisticaparaMapaForms.Show();
         }
 
         private void btnEstatisticaChat_Click(object sender, RoutedEventArgs e)
@@ -95,11 +96,11 @@ namespace ViewsWPF.Views
             Fale_Conosco EstatisticaparaFaleConosco = new Fale_Conosco();
             EstatisticaparaFaleConosco.Show();
         }
+        #endregion
 
         private void wwEstatisticas_Loaded(object sender, RoutedEventArgs e)
         {
-            Controller.UsuarioController userController = new Controller.UsuarioController();
-
+            
         }
     }
 
