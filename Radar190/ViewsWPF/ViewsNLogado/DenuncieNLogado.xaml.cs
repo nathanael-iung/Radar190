@@ -251,6 +251,8 @@ namespace ViewsWPF.ViewsNLogado
             denun.Outros = outrosBool;
             denun.Descricao = txtDenuncieDetalhes.Text;
             denun.UsuarioIdUsuario = fkUsuario;
+            denun.Latitude = txtDenuncieLatitude.Text;
+            denun.Longitude = txtDenuncieLongitude.Text;
 
             // Validações para não permitir o cadastro de campos em branco
             if (string.IsNullOrWhiteSpace(txtDenuncieNome.Text) || (rbDenuncieTestemunha.IsChecked == false && rbDenuncieVitima.IsChecked == false) || string.IsNullOrWhiteSpace(txtDenuncieEndereco.Text) ||
